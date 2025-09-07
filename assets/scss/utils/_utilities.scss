@@ -1,0 +1,34 @@
+$utilities: map-merge(
+  $utilities,
+  (
+    "rounded": (
+      property: border-radius,
+      class: rounded,
+      values: (
+        null: $border-radius,
+        // 8
+        0: 0,
+        1: $border-radius-sm,
+        // 4
+        2: $border-radius,
+        // 8
+        3: $border-radius-lg,
+        // 12
+        4: $border-radius-xl,
+        // 16
+        5: $border-radius-xxl,
+        // 9999
+        circle: 50%,
+        pill: var(--#{$prefix}border-radius-pill),
+      ),
+    ),
+
+    "font-size":
+      map-merge(
+        map-get($utilities, "font-size"),
+        (
+          responsive: true,
+        )
+      ),
+  )
+);
