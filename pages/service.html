@@ -4,23 +4,310 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="/assets/images/logo.svg"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
-    <title>首頁 | 默隅 Moonook</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/logo.svg"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js@10.2.0/public/assets/styles/choices.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <title>預約空間 | 默隅 Moonook</title>
   </head>
   <body>
-    <%- include('./layout/header'); -%>
-    <h1>我是contact</h1>
+
+    
+    <!-- 
+    【 因主要先拉皮，尚未進行細部設定】
+      -- 待辦事項 --
+        1. padding , margin 尚未設定
+        2. 顏色尚未設定
+        3. 圖片皆為假圖 
+    -->
+
+    <main class="service-section">
+    
+      <!-- 預約頁-banner區塊 -->
+      <section class="s__banner bgPhoto-set">
+        <div class="container">
+          <%- include('./layout/header'); -%>
+        </div>
+
+        <div class="container h-680px">
+          <div class="d-flex align-items-center h-100">
+            <div class="w-416px">
+              <h2>選擇專注，也選擇空間</h2>
+              <p>線上預約，抵達即可入座</p>
+              <p>兩小時專屬片段，讓時間回到你手中</p>
+              <div>
+                <button class="btn btn-primary  w-100">立即預約</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 預約頁-預約功能區 -->
+      <section class="bg-fcbg py-lg-12">
+        <div class="container">
+          <div class="row">
+            <div class="col-10 mx-auto">
+
+              <!-- 預約功能主圖片 -->
+              <div class="not-sure1">
+                <img src="https://images.unsplash.com/photo-1457369804613-52c61a468e7d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"  class="w-100 h-100" alt="">
+              </div>
+
+              <div class="bg-primary-100 p-6">
+                <div class="s__booking-date d-flex">
+                  <div class="w-50  p-6">
+                    <h2 class="text-center">立即預約</h2>
+                    <form action="">
+                      <div class="form-group d-flex justify-content-between align-items-center">
+                        <label for="basicDate">日期</label>
+                        <input type="text" id="basicDate" class="form-control" placeholder="請選擇日期">
+                      </div>
+                      <div class="form-group d-flex justify-content-between align-items-center">
+                        <label for="custom-select" >時間</label>
+                        <select id="time-select">
+                            <option value="">請選擇時段</option>
+                            <option value="morning">08:00 - 10:00</option>
+                            <option value="afternoon">10:00 - 12:00</option>
+                            <option value="evening">12:00 - 14:00</option>
+                        </select>
+                      </div>
+                      <div class="text-center">
+                        <button class="btn btn-primary " type="submit">查詢座位</button>
+                      </div>
+                    </form>
+                  </div>
+                  
+                  
+                  <div class="w-50">
+                    <img class="w-100 h-356px" src="https://images.unsplash.com/photo-1709860698887-2044b62f84e8?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                  </div>
+                  
+                </div>
+                <div></div>
+              </div>
+
+
+            </div>
+          </div>
+          
+        </div>
+        
+
+      </section>
+
+      <!-- 預約頁-提供服務區 -->
+      <section class="s__seat-service bgPhoto-set  py-12">
+        <div class="container">
+          <div class="row">
+            <div class="col-8 mx-auto">
+
+              <div class="py-8 d-flex justify-content-between">
+                <div class="card p-6 w-196px">
+                  <div class="border-bottom text-center">
+                    <div>
+                      <img src="/assets/images/logo.svg" alt="">
+                    </div>
+                    <h4>Wi-Fi</h4>
+                  </div>
+                  <p class="text-center">工作學習不中斷<br> 隨時保持 <br>連線順暢</p>
+                </div>
+
+                <div class="card p-6 w-196px">
+                  <div class="border-bottom text-center">
+                    <div>
+                      <img src="/assets/images/logo.svg" alt="">
+                    </div>
+                    <h4>專屬插座</h4>
+                  </div>
+                  <p class="text-center">每個座位 <br>配備電源插座 <br>保障設備電力充沛</p>
+                </div>
+
+                <div class="card p-6 w-196px">
+                  <div class="border-bottom text-center">
+                    <div>
+                      <img src="/assets/images/logo.svg" alt="">
+                    </div>
+                    <h4>獨立閱讀燈</h4>
+                  </div>
+                  <p class="text-center">可調節光源 <br>閱讀與工作更舒適 <br>不傷眼</p>
+                </div>
+
+              </div>
+              
+
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- 預約頁-收費標準 -->
+      <section class="s__price bgPhoto-set py-12">
+        <div class="container">
+          <h2 class="d-inline-block px-3 pb-2 underline-set">收費標準</h2>
+          <div class="d-flex flex-column justify-content-center align-items-center">
+            <h3>我們保留最單純的方式</h3>
+            <h5>不分座位、不分時段</h5>
+            <ul>
+              <li>兩小時使用空間 150元</li>
+              <li>當次消費可折抵30元飲品</li>
+            </ul>
+            <a href="menu.html" class="btn btn-primary">詳細菜單</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 預約頁-預約須知 -->
+      <section class="s__booking-rule py-12">
+        <div class="container">
+          <div class="text-center mb-6">
+            <h2 class="d-inline-block px-3 pb-2 underline-set">預約須知</h2>
+          </div>
+          <div class="row mb-6 py-6 area-bg-1 bgPhoto-set align-items-center">
+            <div class="col-6">
+              <div class="">
+                <img src="https://images.unsplash.com/photo-1626978396804-54433b489aa5?q=80&w=2103&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="w-100 rounded-r-l" alt="">
+              </div>
+            </div>
+            <div class="col-6">
+              <div>
+                <h4>預約與費用</h4>
+                <p>本空間採預約制，每次預約為2小時，費用為NT$150。
+                  <br>抵達現場報到後付款，即可安心使用座位與空間
+                  <br>每當次消費可享NT$30餐飲折抵。</p>
+              </div>
+            </div>
+          </div>
+          <div class="row mb-6 py-6 area-bg-1 bgPhoto-set align-items-center">
+            <div class="col-6">
+              <div>
+                <h4>報到與使用規則</h4>
+                <p>請於預約時間准時報到，逾時 10分鐘將自動取消不另行通知。
+                  <br> 每人限預約一席座位，恕不接受多人共用。
+                  <br> 預約時可選擇座位，恕不接受現場更換。
+                  <br> 如需取消，請於預約開始前於線上操作。
+                </p>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="">
+                <img src="https://images.unsplash.com/photo-1626978396804-54433b489aa5?q=80&w=2103&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="w-100 rounded-r-l" alt="">
+              </div>
+            </div>
+          </div>
+          <div class="row mb-6 py-6 area-bg-1 bgPhoto-set align-items-center">
+            <div class="col-6">
+              <div class="">
+                <img src="https://images.unsplash.com/photo-1626978396804-54433b489aa5?q=80&w=2103&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="w-100 rounded-r-l" alt="">
+              </div>
+            </div>
+            <div class="col-6">
+              <div>
+                <h4>使用時段結束</h4>
+                <p>時間結束請准時離席，將空間留給下一位使用者。
+                  <br>若欲延長使用,請提前洽詢現場人員，視現場狀況安排。
+                  <br>逾時未雕席，現場人具將提醒，並保留收回座位之權利。
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="row mb-6 py-6 area-bg-1 bgPhoto-set align-items-center">
+            <div class="col-6">
+              <div>
+                <h4>空間使用提醒</h4>
+                <p>本空間為安静場域，請避免交談、通話或其他干擾他人的行為。
+                  <br>我們珍惜這份靜謐，也邀請你一同維持空間品質。
+                </p>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="">
+                <img src="https://images.unsplash.com/photo-1626978396804-54433b489aa5?q=80&w=2103&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="w-100 rounded-r-l" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-12 s__space-photo bgPhoto-set">
+        <div class="container">
+          <div class="row position-relative">
+            
+            <div class="col-10 mx-auto">
+              <div class="swiper mySwiper ">
+                <div class="swiper-wrapper not-sure1">
+                  <div class="swiper-slide ">
+                    <img src="https://images.unsplash.com/photo-1731661553530-9fa227db04ed?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="w-100 h-100 rounded-140" alt="">
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="https://images.unsplash.com/photo-1610797833463-374c6f3443fe?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="w-100 h-100 rounded-140" alt="">
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="https://images.unsplash.com/photo-1649510639612-79f7052b128b?q=80&w=927&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="w-100 h-100 rounded-140 " alt="">
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="https://images.unsplash.com/photo-1742654230675-7074a37b344b?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="w-100 h-100 rounded-140 " alt="">
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+          </div>
+          
+        </div>
+        
+      </section>
+
+    </main>
+    
     <%- include('./layout/footer'); -%>
 
     <script type="module" src="../main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/zh-tw.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/choices.js@10.2.0/public/assets/scripts/choices.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      const basicPicker = flatpickr("#basicDate", {
+            locale: "zh_tw",            // 繁體中文
+            dateFormat: "Y-m-d",        // 格式：2024-01-01
+            // defaultDate: "today",       // 預設今天
+            onChange: function(selectedDates, dateStr, instance) {
+                updateResult("基本日期", dateStr);
+            }
+        });
+
+      new Choices('#time-select', {
+          searchEnabled: false,
+          itemSelectText: '' 
+      });
+
+      const swiper = new Swiper('.swiper', {
+          slidesPerGroup: 1,   
+          loop: true,         
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          },
+          breakpoints: {
+            0: {            
+              slidesPerView: 1.2,
+              spaceBetween: 24,
+            },
+            576: {          
+              slidesPerView: 2,
+              spaceBetween: 16,
+            },
+            992: {          
+              slidesPerView: 3,
+              spaceBetween: 20,
+            },
+          }
+        });
+
+    </script>
   </body>
 </html>
