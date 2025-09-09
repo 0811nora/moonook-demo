@@ -1,4 +1,45 @@
-.footer{
-  background: #69F0AE;
-  font-size: 64px;
+footer {
+  .f-pagetop:hover {
+    .f-pagetop-def {
+      display: none !important;
+    }
+    .f-pagetop-hov {
+      display: block !important;
+    }
+    .f-pagetop-sm-def {
+      display: none !important;
+    }
+    .f-pagetop-sm-hov {
+      display: block !important;
+    }
+  }
+  .f-pagetop-def {
+    position: absolute;
+    left: 50%;
+    top: -70px;
+    transform: translate(-50%, -50%);
+  }
+  .f-pagetop-hov {
+    position: absolute;
+    left: 50%;
+    top: -70px;
+    transform: translate(-50%, -50%);
+  }
+  .f-pagetop-sm-def {
+    position: absolute;
+    left: 50%;
+    top: -40px;
+    transform: translate(-50%, -50%);
+  }
+  .f-pagetop-sm-hov {
+    position: absolute;
+    left: 50%;
+    top: -40px;
+    transform: translate(-50%, -50%);
+  }
+  .f-link-hov {
+    a:hover {
+      opacity: 0.5;
+    }
+  }
 }
