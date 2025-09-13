@@ -5,9 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/logo.svg"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js@10.2.0/public/assets/styles/choices.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/css/tom-select.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <title>預約空間 | 默隅 Moonook</title>
   </head>
@@ -54,34 +55,99 @@
               <div class="not-sure1">
                 <img src="https://images.unsplash.com/photo-1457369804613-52c61a468e7d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"  class="w-100 h-100" alt="">
               </div>
-
-              <div class="bg-primary-100 p-6">
+              <div class="bg-primary-100 p-6 position-relative">
                 <div class="s__booking-date d-flex">
-                  <div class="w-50  p-6">
+                  <div class="w-45  p-6">
                     <h2 class="text-center">立即預約</h2>
-                    <form action="">
-                      <div class="form-group d-flex justify-content-between align-items-center">
+                    <form id="bookingForm">
+                      <div class="form-group  d-flex justify-content-between align-items-center">
                         <label for="basicDate">日期</label>
-                        <input type="text" id="basicDate" class="form-control" placeholder="請選擇日期">
+                        <input type="text" id="basicDate" class="select-date form-control" placeholder="請選擇日期" >
                       </div>
                       <div class="form-group d-flex justify-content-between align-items-center">
                         <label for="custom-select" >時間</label>
-                        <select id="time-select">
+                        <select id="my-select" class="select-time ms-3" >
                             <option value="">請選擇時段</option>
-                            <option value="morning">08:00 - 10:00</option>
-                            <option value="afternoon">10:00 - 12:00</option>
-                            <option value="evening">12:00 - 14:00</option>
+                            <option value="8:00-10:00">08:00-10:00</option>
+                            <option value="10:00-12:00">10:00-12:00</option>
+                            <option value="12:00-14:00">12:00-14:00</option>
+                            <option value="14:00-16:00">14:00-16:00</option>
+                            <option value="16:00-18:00">16:00-18:00</option>
+                            <option value="18:00-20:00">18:00-20:00</option>
                         </select>
                       </div>
                       <div class="text-center">
-                        <button class="btn btn-primary " type="submit">查詢座位</button>
+                        <button class="check-seat-btn btn btn-primary  " type="button" disabled>查詢座位</button>
                       </div>
                     </form>
                   </div>
+
                   
-                  
-                  <div class="w-50">
-                    <img class="w-100 h-356px" src="https://images.unsplash.com/photo-1709860698887-2044b62f84e8?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                  <div class="w-55 ">
+                    <div class="h-356px seat-img">
+                      <img class="w-100 h-100 " src="https://images.unsplash.com/photo-1709860698887-2044b62f84e8?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                    </div>
+
+                    <div class=" all-seat h-356px  p-4 d-none ">
+                      <h3>請選擇座位</h3>
+                      <div class="">
+                        <form id="bookingForm">
+                          <div class="s__choose-seats d-flex  gap-5 flex-wrap py-6">
+                            <button type="button" class="s__seat-btn disabled" >A1</button>
+                            <button type="button" class="s__seat-btn " >A2</button>
+                            <button type="button" class="s__seat-btn " >A3</button>
+                            <button type="button" class="s__seat-btn disabled" >A4</button>
+                            <button type="button" class="s__seat-btn " >A5</button>
+                            <button type="button" class="s__seat-btn " >B1</button>
+                            <button type="button" class="s__seat-btn disabled" >B2</button>
+                            <button type="button" class="s__seat-btn disabled" >B3</button>
+                            <button type="button" class="s__seat-btn " >B4</button>
+                            <button type="button" class="s__seat-btn " >B5</button>
+                            <button type="button" class="s__seat-btn disabled" >C1</button>
+                            <button type="button" class="s__seat-btn " >C2</button>
+                            <button type="button" class="s__seat-btn " >C3</button>
+                            <button type="button" class="s__seat-btn " >C4</button>
+                            <button type="button" class="s__seat-btn disabled" >C5</button>
+                          </div>
+                          
+                          
+                          <button type="button" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#seatModal">預約</button>
+                          <div class="modal fade" id="seatModal" tabindex="-1" aria-labelledby="seatModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                              <div class="modal-content comfirmBooking-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title" id="seatModalLabel">請確認預約資訊：</h5>
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                  <p>日期： <span class="show-date">222</span></p>
+                                  <p>時段： <span class="show-time">222-222</span></p>
+                                  <p>座位： <span class="show-seat">DD</span></p>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">重選選位</button>
+                                  <button type="button" class="comfirmBooking_btn btn btn-primary">確認預約</button>
+                                </div>
+                              </div>
+
+                              <div class="modal-content doneBooking-content d-none text-center p-6 ">
+                                <div class="text-end">
+                                  <button type="button" class="btn-close close-done-booking" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                                </div>
+                                <h3>已預約成功！</h3>
+                                <p>當日請至櫃檯報到即可入座。</p>
+                                <a href="login.html" class="btn btn-primary">查看預約紀錄</a>
+                              </div>
+                            </div>
+                          </div>
+                        </form>
+
+
+
+                      </div>
+                    </div>
+                    
                   </div>
                   
                 </div>
@@ -231,6 +297,7 @@
         </div>
       </section>
 
+      <!-- 預約頁-輪播圖片 -->
       <section class="py-12 s__space-photo bgPhoto-set">
         <div class="container">
           <div class="row position-relative">
@@ -269,21 +336,203 @@
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/zh-tw.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/choices.js@10.2.0/public/assets/scripts/choices.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/js/tom-select.complete.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
-      const basicPicker = flatpickr("#basicDate", {
-            locale: "zh_tw",            // 繁體中文
-            dateFormat: "Y-m-d",        // 格式：2024-01-01
-            // defaultDate: "today",       // 預設今天
-            onChange: function(selectedDates, dateStr, instance) {
-                updateResult("基本日期", dateStr);
-            }
-        });
 
-      new Choices('#time-select', {
-          searchEnabled: false,
-          itemSelectText: '' 
+
+      const selectDate = document.querySelector(".select-date");
+      const selectTime = document.querySelector(".select-time");
+      const checkSeatBtn = document.querySelector(".check-seat-btn");
+      const seatImg = document.querySelector(".seat-img");
+      const allSeat = document.querySelector(".all-seat");
+      const seatBtn = document.querySelectorAll(".s__seat-btn");
+      const comfirmBookingBtn = document.querySelector(".comfirmBooking_btn");
+      const comfirmBookingContent = document.querySelector(".comfirmBooking-content");
+      const doneBookingContent = document.querySelector(".doneBooking-content");
+      const showDate = document.querySelector(".show-date");
+      const showTime = document.querySelector(".show-time");
+      const showSeat = document.querySelector(".show-seat");
+
+
+      let bookingDate;
+      let bookingtime;
+      let bookingSeat;
+
+
+      // 日期樣式的套件
+      const basicPicker = flatpickr("#basicDate", {
+        locale: "zh_tw",            // 繁體中文
+        dateFormat: "Y / m / d",        // 格式：2024-01-01
+        minDate: "today",
+        onChange: function(selectedDates, dateStr, instance) {
+            updateResult("日期", dateStr);
+        }
       });
+
+      function updateResult(label, value) {
+        bookingDate = value;
+        console.log(`預約日期：${bookingDate}`);
+        showDate.innerHTML = bookingDate;  // 確認訊息的時候，日期吃變數的資料;
+      }
+
+      // Tom Select 時間下拉選單套件
+      const select = new TomSelect('#my-select', {
+        // 基本設定
+        create: false,          
+        sortField: {
+          field: "text",
+          direction: "asc"
+        },
+        onDropdownOpen: function(dropdown) {
+        // 確保不會重複加
+          if (!dropdown.querySelector('.ts-footer')) {
+            const footer = document.createElement('div');
+            footer.className = 'ts-footer p-2 text-muted border-top';
+            footer.innerHTML = `
+              <ul>
+                <li><img src="public/test-Icon.svg" width="10">
+                  靜謐充裕（70% 以上空位
+                </li>
+                <li><img src="public/test-Icon.svg" width="10">
+                  舒適剛好（40–70% 空位）</li>
+                <li><img src="public/test-Icon.svg" width="10">
+                  座位稀少（10–40% 空位）</li>
+                <li><img src="public/test-Icon.svg" width="10">
+                  客滿（0% 空位）</li>
+              </ul>
+            `;
+            dropdown.appendChild(footer);
+          }
+        }
+      });
+
+
+      // 預約日期及時間都寫好，才可以按查詢座位，未填寫按鈕disable
+      function checkSeat(){
+        if(selectDate.value && selectTime.value){
+          checkSeatBtn.disabled = false;
+        }else{
+          checkSeatBtn.disabled = true;
+        }
+      }
+
+      // 點選座位時的樣式
+
+      seatBtn.forEach((e)=>{
+        e.addEventListener("click",()=>{
+          bookingSeat = e.textContent
+          console.log(`選擇座位：${bookingSeat}`)
+          showSeat.innerHTML = bookingSeat;  // 確認訊息的時候，座位吃變數的資料;
+
+          seatBtn.forEach((e)=>{
+            e.classList.remove("s__seat-select")
+          })
+          e.classList.add("s__seat-select")
+        })
+      })
+
+    
+      
+      // 日期及時間有異動的時候，按查詢按鈕進行檢查，看是否要放行
+      // 檢查沒問題，將資料寫到變數中
+      // 放行以後，顯示座位表
+      selectDate.addEventListener('input',checkSeat);
+      selectTime.addEventListener('change',()=>{
+        checkSeat();
+        bookingtime = selectTime.value;
+        console.log(`預約時段：${bookingtime}`);
+        showTime.innerHTML = bookingtime;  // 確認訊息的時候，時間吃變數的資料;
+      });
+      
+
+      // 顯示「預約前的圖片」的畫面
+      function showbookingImg(){
+        seatImg.classList.remove("d-none");
+      }
+
+      // 隱藏「預約前的圖片」的畫面
+      function hidebookingImg(){
+        seatImg.classList.add("d-none");
+      }
+
+      // 顯示「所有座位」的畫面
+      function showAllSeat(){
+        allSeat.classList.add("d-block");
+        allSeat.classList.remove("d-none");
+
+      }
+
+      // 隱藏「所有座位」的畫面
+      function hideAllSeat(){
+        allSeat.classList.remove("d-block");
+        allSeat.classList.add("d-none");
+      }
+
+      // 顯示「已預約成功」的畫面
+      function showdonebooking(){
+        doneBookingContent.classList.add("d-block");
+        doneBookingContent.classList.remove("d-none");
+      }
+
+      // 隱藏「已預約成功」的畫面
+      function hidedonebooking(){
+        doneBookingContent.classList.add("d-none");
+        doneBookingContent.classList.remove("d-block");
+      }
+
+      // 隱藏「確認預約資訊」的畫面
+      function hideComfirmBooking(){
+        comfirmBookingContent.classList.add("d-none");
+      }
+
+      // 顯示「確認預約資訊」的畫面
+      function showComfirmBooking(){
+        comfirmBookingContent.classList.remove("d-none");
+      }
+
+      // 按下查詢座位時，隱藏圖片，顯示座位
+      checkSeatBtn.addEventListener("click", ()=>{
+        hidebookingImg();
+        showAllSeat();
+      })
+      
+
+      // 按下確認預約以後，顯示預約成功畫面，隱藏確認預約的畫面。
+      comfirmBookingBtn.addEventListener("click", ()=>{
+        hideComfirmBooking();
+        showdonebooking();
+      })
+
+      // 加入互動模組的位置，並且判斷預約成功以後，關閉提示的行為(清除全部填寫資料)
+      const seatModalEl = document.getElementById('seatModal');
+
+      seatModal.addEventListener('hide.bs.modal', function () {
+        if (!doneBookingContent.classList.contains('d-none')) {
+          resetAll();
+        }
+      });
+
+      function resetAll (){
+        select.clear();
+        select.addOption({value: '', text: '請選擇時段'});
+
+        basicPicker.clear();
+
+        bookingDate = " ";
+        bookingtime = " ";
+        bookingSeat = " ";
+        
+
+        hidedonebooking();
+        showbookingImg();
+        hideAllSeat();
+        showComfirmBooking();
+        seatBtn.forEach((btn) => {
+          btn.classList.remove("s__seat-select");
+        });
+      }
+
 
       const swiper = new Swiper('.swiper', {
           slidesPerGroup: 1,   
@@ -294,7 +543,7 @@
           },
           breakpoints: {
             0: {            
-              slidesPerView: 1.2,
+              slidesPerView: 1,
               spaceBetween: 24,
             },
             576: {          
