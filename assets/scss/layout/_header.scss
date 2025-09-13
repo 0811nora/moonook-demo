@@ -1,4 +1,57 @@
-.header{
-  background: #69F0AE;
-  font-size: 64px;
+
+
+header {
+  a {
+    display: inline-block;
+  }
+  /* 導覽列初始樣式 */
+  #h-main-nav {
+    background-color: transparent;
+    transition: background-color 0.5s ease-in-out;
+  }
+
+  .h-nav-link-item {
+    color: $fcbg;
+    transition: color 0.5s ease-in-out;
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
+  /* 導覽列滾動後樣式 */
+  #h-main-nav.scrolled {
+    background: linear-gradient(
+      to bottom,
+      hwb(37 91% 4%) 40%,
+      hsla(37, 37%, 93%, 0.2) 80%,
+      hsla(37, 37%, 93%, 0) 100%
+    );
+    // backdrop-filter: blur(5px);
+  }
+
+  #h-main-nav.scrolled .h-nav-link-item {
+    color: $fc;
+  }
+
+  /* 切換 Logo 的顯示與隱藏 */
+  #h-main-nav.scrolled .h-logo-white {
+    display: none;
+  }
+
+  #h-main-nav.scrolled .h-logo-green {
+    display: block !important;
+  }
+
+  .h-offcanvas {
+    a:hover {
+      opacity: 1 !important;
+      background-color: $fc-700;
+      .h-list-item-def {
+        display: none;
+      }
+      .h-list-item-hov {
+        display: block !important;
+      }
+    }
+  }
 }

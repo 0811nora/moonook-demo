@@ -1,7 +1,168 @@
-<h1 class="header">快速通道</h1>
-<a href="index.html">首頁</a>
-<a href="service.html">預約頁</a>
-<a href="menu.html">菜單頁</a>
-<a href="about.html">品牌關於頁</a>
-<a href="login.html">會員頁</a>
-<a href="ztestz.html">測試隨便用頁</a>
+
+<header>
+  <nav id="h-main-nav" class="fixed-top">
+    <div class="container d-flex py-5">
+      <a href="index.html" class="me-auto">
+        <img
+          class="h-logo-white"
+          src="/assets/images/header/logo_small_white.svg"
+          alt="logo_small_white"
+        />
+        <img
+          class="h-logo-green d-none"
+          src="/assets/images/header/logo_small_green.svg"
+          alt="logo_small_green"
+        />
+      </a>
+
+      <ul class="list-unstyled d-lg-flex mb-0 d-none">
+        <li>
+          <a href="service.html" class="h-nav-link-item py-3 px-5 me-3"
+            >預約座位</a
+          >
+        </li>
+        <li>
+          <a href="menu.html" class="h-nav-link-item py-3 px-5 me-3"
+            >精選菜單</a
+          >
+        </li>
+        <li>
+          <a href="about.html" class="h-nav-link-item py-3 px-5 me-3"
+            >關於品牌</a
+          >
+        </li>
+        <li>
+          <a href="login.html" class="h-nav-link-item py-3 px-5"
+            ><span class="material-symbols-outlined align-bottom">
+              person
+            </span></a
+          >
+        </li>
+      </ul>
+
+      <button
+        class="btn border-0 d-lg-none p-3 h-nav-link-item"
+        type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasBottom"
+        aria-controls="offcanvasBottom"
+      >
+        Menu
+
+        <span class="material-symbols-outlined align-bottom ms-5">
+          dehaze
+        </span>
+      </button>
+
+      <div
+        class="offcanvas offcanvas-bottom h-100 bg-fc"
+        tabindex="-1"
+        id="offcanvasBottom"
+        aria-labelledby="offcanvasBottomLabel"
+      >
+        <div class="offcanvas-header">
+          <a href="index.html" class="me-auto"
+            ><img
+              src="/assets/images/header/logo_small_white.svg"
+              alt="logo_small_white"
+          /></a>
+          <button
+            type="button"
+            class="btn text-fcbg p-3 border-0"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          >
+            Menu
+            <span class="material-symbols-outlined align-bottom ms-5">
+              close
+            </span>
+          </button>
+        </div>
+        <div
+          class="offcanvas-body h-offcanvas d-flex flex-column justify-content-between p-0"
+        >
+          <ul class="list-unstyled">
+            <li>
+              <a
+                href="about.html"
+                class="text-fcbg py-8 px-6 opacity-50 fs-4 d-flex justify-content-between"
+                >關於品牌
+                <img
+                  class="h-list-item-def"
+                  src="/assets/images/header/menu_about_def.svg"
+                  alt="menu_about_def"
+                />
+                <img
+                  class="h-list-item-hov d-none"
+                  src="/assets/images/header/menu_about_hov.svg"
+                  alt="menu_about_def"
+                />
+              </a>
+            </li>
+            <li>
+              <a
+                href="menu.html"
+                class="text-fcbg py-8 px-6 opacity-50 fs-4 d-flex justify-content-between"
+                >精選菜單
+                <img
+                  class="h-list-item-def"
+                  src="/assets/images/header/menu_menu_def.svg"
+                  alt="menu_menu_def"
+                />
+                <img
+                  class="h-list-item-hov d-none"
+                  src="/assets/images/header/menu_menu_hov.svg"
+                  alt="menu_menu_hov"
+                />
+              </a>
+            </li>
+            <li>
+              <a
+                href="service.html"
+                class="text-fcbg py-8 px-6 opacity-50 fs-4 d-flex justify-content-between"
+                >預約座位
+                <img
+                  class="h-list-item-def"
+                  src="/assets/images/header/menu_seat_def.svg"
+                  alt="menu_seat_def"
+                />
+                <img
+                  class="h-list-item-hov d-none"
+                  src="/assets/images/header/menu_seat_hov.svg"
+                  alt="menu_seat_hov"
+                />
+              </a>
+            </li>
+          </ul>
+          <div class="d-flex flex-column align-items-center">
+            <p class="text-fcbg fs-sm fw-normal py-8 px-6">
+              Copyright @2025 默隅 Moonook All Rights Reserved
+            </p>
+            <img src="/assets/images/header/menu_icon.png" alt="menu_icon" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const nav = document.getElementById("h-main-nav");
+    const scrollThreshold = 200; // 設定滾動多少像素後觸發變化
+
+    function handleScroll() {
+      if (window.scrollY > scrollThreshold) {
+        nav.classList.add("scrolled");
+      } else {
+        nav.classList.remove("scrolled");
+      }
+    }
+
+    // 監聽滾動事件
+    window.addEventListener("scroll", handleScroll);
+
+    // 確保網頁重新整理時能正確顯示狀態
+    handleScroll();
+  });
+</script>
