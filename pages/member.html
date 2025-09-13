@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/logo.svg" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <title>會員中心 | 默隅 Moonook</title>
+</head>
+
+<body>
+  <%- include('./layout/header'); -%>
+    <main class="d-flex justify-content-center">
+      <div class="col-2 d-flex flex-column align-items-center">
+        <div class="ratio ratio-1x1 w-50">
+          <img src="../assets/images/member_photo.jpg" alt="會員頭像"
+            class="img-fluid object-fit-cover d-block rounded-circle">
+        </div>
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">預約紀錄</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">基本資料</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">會員登出</a>
+          </li>
+
+        </ul>
+      </div>
+      <div class="col-10">
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown button
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+    </main>
+
+
+    <%- include('./layout/footer'); -%>
+
+      <script type="module" src="../main.js"></script>
+</body>
+
+</html>
