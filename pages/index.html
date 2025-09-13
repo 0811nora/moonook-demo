@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -17,67 +17,884 @@
     <title>首頁 | 默隅 Moonook</title>
   </head>
   <body>
-    <%- include('./layout/header'); -%>
-
-    <h1 class="index-title">我是首頁</h1>
-
-    <div class="card" style="width: 18rem">
-      <img src="../assets/images/dog.jpg" class="card-img-top" alt="cat" />
-      <div class="card-body">
-        <h5 class="card-title">卡片元件</h5>
-        <p class="card-text">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, odit,
-          iusto odio assumenda alias id nobis earum!
-        </p>
-      </div>
-    </div>
-
-    <!-- Modal 按鈕 -->
-    <button
-      type="button"
-      class="btn btn-primary text-primary-50"
-      data-bs-toggle="modal"
-      data-bs-target="#exampleModal"
-    >
-      打開 modal
-    </button>
-
-    <!-- Modal 元件 -->
-    <div
-      class="modal fade"
-      id="exampleModal"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Modal 標題</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
+    <!-- <%- include('./layout/header'); -%> -->
+    <main class="index-page">
+      <!-- Banner -->
+      <section>
+        <img
+          class="d-none d-sm-block w-100"
+          src="/assets/images/index/Dt-Banner.png"
+          alt="Dt-Banner"
+        />
+        <img
+          class="d-sm-none w-100"
+          src="/assets/images/index/Mb-Banner.png"
+          alt="Mb-Banner"
+        />
+        <div
+          class="container py-8 py-lg-12 d-xl-flex justify-content-lg-between"
+        >
+          <h1 class="d-none d-lg-block mb-6">
+            <img src="/assets/images/index/banner-logo.svg" alt="banner-logo" />
+          </h1>
+          <div>
+            <h3 class="text-primary fs-sm fs-xl-4 fw-normal lh-lg mb-6">
+              這裡是一個留白的所在，讓片刻安靜得以發生。 <br />
+              你可以專注、創作，也可以什麼都不做，只是坐著。
+            </h3>
           </div>
-          <div class="modal-body">內容</div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
+          <h2 class="d-lg-none">
+            <img
+              src="/assets/images/index/banner-logo-sm.svg"
+              alt="banner-logo-sm"
+            />
+          </h2>
+        </div>
+      </section>
+
+      <!-- 預約空間介紹 -->
+      <section class="container py-8 py-lg-12">
+        <h2
+          class="d-inline-block fs-4 fs-lg-1 p-4 text-fc border-bottom border-4 border-fc mb-8"
+        >
+          預約空間介紹
+        </h2>
+        <div class="row justify-content-lg-between">
+          <!-- 文字 -->
+          <div class="col-lg-6 order-lg-2 mb-6 mb-lg-0">
+            <!-- 標語 -->
+            <div
+              class="d-xxl-flex justify-content-xxl-between align-items-center pb-6 border-bottom border-fc mb-6"
             >
-              關閉
-            </button>
-            <button type="button" class="btn btn-primary">確定</button>
+              <div class="d-flex">
+                <div class="text-fc mb-6 mb-xxl-0">
+                  <h4 class="mb-4 fs-5 fs-xl-4">在默隅 Moonook</h4>
+                  <h4 class="fs-5 fs-xl-4 text-nowrap">
+                    我們為你留下一個不被打擾的角落 .
+                  </h4>
+                </div>
+                <img
+                  class="d-none d-xl-block"
+                  src="/assets/images/index/leaf-1.svg"
+                  alt="leaf-1"
+                />
+                <img
+                  class="d-xl-none"
+                  src="/assets/images/index/leaf-sm.svg"
+                  alt="leaf-sm"
+                />
+              </div>
+              <!-- 預約按鈕 -->
+              <div class="text-center">
+                <button
+                  type="button"
+                  class="btn border-3 border-fc rounded-5 fs-sm fs-lg-lg p-3"
+                >
+                  立即預約
+                  <img
+                    class="ms-3 align-bottom"
+                    src="/assets/images/index/icon-moon.svg"
+                    alt="icon-moon"
+                  />
+                </button>
+              </div>
+            </div>
+            <div>
+              <!-- 卡片1 -->
+              <div class="bg-primary-100 px-4 py-30 mb-6">
+                <div class="d-flex mb-lg-6 mb-5">
+                  <img
+                    class="mx-3"
+                    src="/assets/images/index/alert-circle-1.svg"
+                    alt="1"
+                  />
+                  <h5 class="text-primary fs-6 fs-md-5">適合以下使用情境</h5>
+                </div>
+                <div class="d-xl-flex justify-content-xl-around ms-11 ms-xl-0">
+                  <ul class="list-unstyled fs-lg">
+                    <li class="d-flex mb-5 text-primary">
+                      <img
+                        class="me-3"
+                        src="/assets/images/index/circle.svg"
+                        alt="circle"
+                      />
+                      <p class="fs-sm fs-md-lg">想好好工作，不被打擾</p>
+                    </li>
+                    <li class="d-flex text-primary">
+                      <img
+                        class="me-3"
+                        src="/assets/images/index/circle.svg"
+                        alt="circle"
+                      />
+                      <p class="fs-sm fs-md-lg">閱讀一本書、寫日記、程式等</p>
+                    </li>
+                  </ul>
+                  <ul class="list-unstyled fs-lg">
+                    <li class="d-flex mb-5 text-primary">
+                      <img
+                        class="me-3"
+                        src="/assets/images/index/circle.svg"
+                        alt="circle"
+                      />
+                      <p class="fs-sm fs-md-lg">創作、備課、靜靜坐著想事情</p>
+                    </li>
+                    <li class="d-flex text-primary">
+                      <img
+                        class="me-3"
+                        src="/assets/images/index/circle.svg"
+                        alt="circle"
+                      />
+                      <p class="fs-sm fs-md-lg">或只是給自己一段安靜的時間</p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <!-- 卡片2 -->
+              <div class="bg-primary-100 px-4 py-30 mb-6">
+                <div class="d-flex mb-6">
+                  <img
+                    class="mx-3"
+                    src="/assets/images/index/alert-circle-2.svg"
+                    alt="1"
+                  />
+                  <h5 class="text-primary fs-6 fs-md-5">我們提供</h5>
+                </div>
+                <div class="d-xl-flex justify-content-xl-around ms-11 ms-xl-0">
+                  <ul class="list-unstyled fs-lg">
+                    <li class="d-flex mb-5 text-primary">
+                      <img
+                        class="me-3"
+                        src="/assets/images/index/circle.svg"
+                        alt="circle"
+                      />
+                      <p class="fs-sm fs-md-lg">可預約的座位(單人/雙人桌)</p>
+                    </li>
+                    <li class="d-flex text-primary">
+                      <img
+                        class="me-3"
+                        src="/assets/images/index/circle.svg"
+                        alt="circle"
+                      />
+                      <p class="fs-sm fs-md-lg">穩定的Wi-Fi與插座</p>
+                    </li>
+                  </ul>
+                  <ul class="list-unstyled fs-lg">
+                    <li class="d-flex mb-5 text-primary">
+                      <img
+                        class="me-3"
+                        src="/assets/images/index/circle.svg"
+                        alt="circle"
+                      />
+                      <p class="fs-sm fs-md-lg">柔和照明與安靜環境</p>
+                    </li>
+                    <li class="d-flex text-primary">
+                      <img
+                        class="me-3"
+                        src="/assets/images/index/circle.svg"
+                        alt="circle"
+                      />
+                      <p class="fs-sm fs-md-lg">
+                        美味餐點與飲品<span class="text-fc fw-bold"
+                          >(需另外付費)</span
+                        >
+                      </p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <!-- 卡片3 -->
+              <div class="bg-primary-100 px-4 py-30">
+                <div class="d-flex mb-6">
+                  <img
+                    class="mx-3"
+                    src="/assets/images/index/alert-circle-3.svg"
+                    alt="3"
+                  />
+                  <h5 class="text-primary fs-6 fs-lg-5">預約方式</h5>
+                </div>
+                <div class="d-flex ms-lg-6 ms-sm-5 ms-3">
+                  <div>
+                    <div class="text-center">
+                      <img
+                        class="mb-3 step-icon-wrapper"
+                        src="/assets/images/index/calendar.svg"
+                        alt="calendar"
+                      />
+                    </div>
+                    <p class="text-primary text-center fs-sm fs-md-lg">
+                      線上預約
+                    </p>
+                  </div>
+                  <img
+                    class="px-2"
+                    src="/assets/images/index/arrow-right.svg"
+                    alt="arrow-right"
+                  />
+                  <div>
+                    <div class="text-center">
+                      <img
+                        class="mb-3 step-icon-wrapper"
+                        src="/assets/images/index/time.svg"
+                        alt="calendar"
+                      />
+                    </div>
+                    <p class="text-primary text-center fs-sm fs-md-lg">
+                      選擇時段與座位
+                    </p>
+                  </div>
+                  <img
+                    class="px-2"
+                    src="/assets/images/index/arrow-right.svg"
+                    alt="arrow-right"
+                  />
+                  <div>
+                    <div class="text-center">
+                      <img
+                        class="mb-3 step-icon-wrapper"
+                        src="/assets/images/index/list.svg"
+                        alt="calendar"
+                      />
+                    </div>
+                    <p class="text-primary text-center fs-sm fs-md-lg">
+                      填寫資料
+                    </p>
+                  </div>
+                  <img
+                    class="px-2"
+                    src="/assets/images/index/arrow-right.svg"
+                    alt="arrow-right"
+                  />
+                  <div>
+                    <div class="text-center">
+                      <img
+                        class="mb-3 step-icon-wrapper"
+                        src="/assets/images/index/people.svg"
+                        alt="calendar"
+                      />
+                    </div>
+                    <p class="text-primary text-center fs-sm fs-md-lg">
+                      當天報到即可
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 照片 -->
+          <div class="col-lg-5 order-lg-1">
+            <div class="swiper i-serviceSwiper d-flex">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img
+                    src="/assets/images/index/service-img-1.png"
+                    alt="service-img-1"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="/assets/images/index/service-img-2.png"
+                    alt="service-img-2"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="/assets/images/index/service-img-3.png"
+                    alt="service-img-3"
+                  />
+                </div>
+              </div>
+              <button
+                type="button"
+                class="btn i-service-swiper-button-next border-0"
+              >
+                <img
+                  src="/assets/images/index/arrow-right-circle-r.svg"
+                  alt="arrow-right-circle-r"
+                />
+              </button>
+              <button
+                type="button"
+                class="btn i-service-swiper-button-prev border-0"
+              >
+                <img
+                  src="/assets/images/index/arrow-right-circle-l.svg"
+                  alt="arrow-right-circle-l"
+                />
+              </button>
+              <div class="swiper-pagination"></div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
+      </section>
 
-    <%- include('./layout/footer'); -%>
+      <!-- 菜單精選 -->
+      <section class="py-8 py-lg-12 px">
+        <div class="text-center">
+          <h2
+            class="d-inline-block fs-4 fs-lg-1 p-4 text-fc border-bottom border-4 border-fc mb-8"
+          >
+            菜單精選
+          </h2>
+        </div>
+        <!-- 手機板 -->
+        <div class="container d-lg-none">
+          <!-- 卡片1 -->
+          <div class="i-menu-card-bg-blue-sm mb-6">
+            <div class="container">
+              <div>
+                <img
+                  class="me-lg-6 w-100"
+                  src="/assets/images/index/Food Card.png"
+                  alt="Food Card"
+                />
+              </div>
+              <div class="px-4 py-5">
+                <h3 class="border-bottom border-fc pb-6 mb-6 text-center">
+                  輕食
+                </h3>
+                <p class="text-secondary mb-6 fs-lg text-center">
+                  我們提供簡單的輕食，<br />
+                  讓你在專注之餘也能好好吃一頓。
+                </p>
+                <ul class="list-unstyled">
+                  <li class="d-flex mb-5">
+                    <img
+                      class="me-3"
+                      src="/assets/images/index/circle.svg"
+                      alt="circle"
+                    />
+                    <p class="fs-sm fs-md-lg fw-bold">
+                      推薦火腿起司三明治，營養均衡、低負擔
+                    </p>
+                  </li>
+                  <li class="d-flex">
+                    <img
+                      class="me-3"
+                      src="/assets/images/index/circle.svg"
+                      alt="circle"
+                    />
+                    <p class="fs-sm fs-md-lg fw-bold">適合長時間停留時享</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- 卡片2 -->
+          <div class="i-menu-card-bg-yellow-sm mb-6">
+            <div class="container">
+              <div>
+                <img
+                  class="ms-lg-6 w-100"
+                  src="/assets/images/index/Food Card-1.png"
+                  alt="Food Card"
+                />
+              </div>
+
+              <div class="px-4 py-5">
+                <h3 class="border-bottom border-fc pb-6 mb-6 text-center">
+                  飲品
+                </h3>
+                <p class="text-secondary mb-6 fs-lg text-center">
+                  手沖單品到燕麥奶拿鐵，<br />
+                  我們精選每一杯適合静静品嚐的飲品。
+                </p>
+                <ul class="list-unstyled">
+                  <li class="d-flex mb-5">
+                    <img
+                      class="me-3"
+                      src="/assets/images/index/circle.svg"
+                      alt="circle"
+                    />
+                    <p class="fs-sm fs-md-lg fw-bold">
+                      推薦燕麥奶拿鐵,滑順順醒腦
+                    </p>
+                  </li>
+                  <li class="d-flex">
+                    <img
+                      class="me-3"
+                      src="/assets/images/index/circle.svg"
+                      alt="circle"
+                    />
+                    <p class="fs-sm fs-md-lg fw-bold">陪你度過一段專注的時光</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- 卡片3 -->
+          <div class="i-menu-card-bg-blue-sm mb-8">
+            <div class="container">
+              <div>
+                <img
+                  class="me-lg-6 w-100"
+                  src="/assets/images/index/Food Card-2.png"
+                  alt="Food Card"
+                />
+              </div>
+              <div class="px-4 py-5">
+                <h3 class="border-bottom border-fc pb-6 mb-6 text-center">
+                  小食
+                </h3>
+                <p class="text-secondary mb-6 fs-lg text-center">
+                  適合邊工作邊享用的小點心，<br />
+                  溫柔陪伴你的每一個午後。
+                </p>
+                <ul class="list-unstyled">
+                  <li class="d-flex mb-5">
+                    <img
+                      class="me-3"
+                      src="/assets/images/index/circle.svg"
+                      alt="circle"
+                    />
+                    <p class="fs-sm fs-md-lg fw-bold">
+                      推薦巴斯克蛋糕與檸檬奶油磅蛋糕
+                    </p>
+                  </li>
+                  <li class="d-flex">
+                    <img
+                      class="me-3"
+                      src="/assets/images/index/circle.svg"
+                      alt="circle"
+                    />
+                    <p class="fs-sm fs-md-lg fw-bold">
+                      剛剛好的甜,讓靈感慢慢發酵
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 桌機板 -->
+        <div class="d-none d-lg-block">
+          <!-- 卡片1 -->
+          <div class="i-menu-card-bg-blue mb-6">
+            <div class="container d-lg-flex align-items-center">
+              <div>
+                <img
+                  class="me-lg-6 w-100"
+                  src="/assets/images/index/Food Card.png"
+                  alt="Food Card"
+                />
+              </div>
+              <div class="px-4 py-5">
+                <h3 class="border-bottom border-fc pb-6 mb-6">輕食</h3>
+                <p class="text-secondary mb-6 fs-lg">
+                  我們提供簡單的輕食，讓你在專注之餘也能好好吃一頓。
+                </p>
+                <ul class="list-unstyled">
+                  <li class="d-flex mb-5">
+                    <img
+                      class="me-3"
+                      src="/assets/images/index/circle.svg"
+                      alt="circle"
+                    />
+                    <p class="fs-sm fs-md-lg fw-bold">
+                      推薦火腿起司三明治，營養均衡、低負擔
+                    </p>
+                  </li>
+                  <li class="d-flex">
+                    <img
+                      class="me-3"
+                      src="/assets/images/index/circle.svg"
+                      alt="circle"
+                    />
+                    <p class="fs-sm fs-md-lg fw-bold">適合長時間停留時享</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- 卡片2 -->
+          <div class="i-menu-card-bg-yellow mb-6">
+            <div
+              class="container d-lg-flex flex-row-reverse align-items-center"
+            >
+              <div>
+                <img
+                  class="ms-lg-6 w-100"
+                  src="/assets/images/index/Food Card-1.png"
+                  alt="Food Card"
+                />
+              </div>
+
+              <div class="px-4 py-5">
+                <h3 class="border-bottom border-fc pb-6 mb-6">輕食</h3>
+                <p class="text-secondary mb-6 fs-lg">
+                  我們提供簡單的輕食，讓你在專注之餘也能好好吃一頓。
+                </p>
+                <ul class="list-unstyled">
+                  <li class="d-flex mb-5">
+                    <img
+                      class="me-3"
+                      src="/assets/images/index/circle.svg"
+                      alt="circle"
+                    />
+                    <p class="fs-sm fs-md-lg fw-bold">
+                      推薦火腿起司三明治，營養均衡、低負擔
+                    </p>
+                  </li>
+                  <li class="d-flex">
+                    <img
+                      class="me-3"
+                      src="/assets/images/index/circle.svg"
+                      alt="circle"
+                    />
+                    <p class="fs-sm fs-md-lg fw-bold">適合長時間停留時享</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- 卡片3 -->
+          <div class="i-menu-card-bg-blue mb-8">
+            <div class="container d-lg-flex align-items-center">
+              <div>
+                <img
+                  class="me-lg-6 w-100"
+                  src="/assets/images/index/Food Card-2.png"
+                  alt="Food Card"
+                />
+              </div>
+              <div class="px-4 py-5">
+                <h3 class="border-bottom border-fc pb-6 mb-6">輕食</h3>
+                <p class="text-secondary mb-6 fs-lg">
+                  我們提供簡單的輕食，讓你在專注之餘也能好好吃一頓。
+                </p>
+                <ul class="list-unstyled">
+                  <li class="d-flex mb-5">
+                    <img
+                      class="me-3"
+                      src="/assets/images/index/circle.svg"
+                      alt="circle"
+                    />
+                    <p class="fs-sm fs-md-lg fw-bold">
+                      推薦火腿起司三明治，營養均衡、低負擔
+                    </p>
+                  </li>
+                  <li class="d-flex">
+                    <img
+                      class="me-3"
+                      src="/assets/images/index/circle.svg"
+                      alt="circle"
+                    />
+                    <p class="fs-sm fs-md-lg fw-bold">適合長時間停留時享</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <button
+            type="button"
+            class="btn border-3 border-fc rounded-5 fs-sm fs-lg-lg p-3"
+          >
+            詳細菜單
+            <img
+              class="ms-3 align-bottom"
+              src="/assets/images/index/icon-moon.svg"
+              alt="icon-moon"
+            />
+          </button>
+        </div>
+      </section>
+
+      <!-- 好評推薦 -->
+      <section class="container py-12">
+        <h2
+          class="d-inline-block fs-4 fs-lg-1 p-4 text-fc border-bottom border-4 border-fc mb-8"
+        >
+          好評推薦
+        </h2>
+        <div class="swiper i-reviewsSwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="bg-accent p-7 rounded-4">
+                <div
+                  class="d-flex justify-content-between align-items-center mb-5"
+                >
+                  <div class="d-flex align-items-center">
+                    <div class="me-4">
+                      <img
+                        src="/assets/images/index/Dt-girl.png"
+                        alt="Dt-girl"
+                      />
+                    </div>
+                    <p class="fs-4 fw-bold text-fcbg">芋頭</p>
+                  </div>
+                  <div style="height: 20px">
+                    <img
+                      class="h-100"
+                      src="/assets/images/index/Rating.png"
+                      alt="star"
+                    />
+                  </div>
+                </div>
+                <p class="text-fcbg fs-lg">
+                  第一次來就愛上這裡的氛圍，安靜又舒服。超適合帶筆電來寫東西，飲品也很有水准!
+                </p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="bg-accent p-7 rounded-4">
+                <div
+                  class="d-flex justify-content-between align-items-center mb-5"
+                >
+                  <div class="d-flex align-items-center">
+                    <div class="me-4">
+                      <img
+                        src="/assets/images/index/Dt-girl.png"
+                        alt="Dt-girl"
+                      />
+                    </div>
+                    <p class="fs-4 fw-bold text-fcbg">芋頭</p>
+                  </div>
+                  <div style="height: 20px">
+                    <img
+                      class="h-100"
+                      src="/assets/images/index/Rating.png"
+                      alt="star"
+                    />
+                  </div>
+                </div>
+                <p class="text-fcbg fs-lg">
+                  第一次來就愛上這裡的氛圍，安靜又舒服。超適合帶筆電來寫東西，飲品也很有水准!
+                </p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="bg-accent p-7 rounded-4">
+                <div
+                  class="d-flex justify-content-between align-items-center mb-5"
+                >
+                  <div class="d-flex align-items-center">
+                    <div class="me-4">
+                      <img
+                        src="/assets/images/index/Dt-girl.png"
+                        alt="Dt-girl"
+                      />
+                    </div>
+                    <p class="fs-4 fw-bold text-fcbg">芋頭</p>
+                  </div>
+                  <div style="height: 20px">
+                    <img
+                      class="h-100"
+                      src="/assets/images/index/Rating.png"
+                      alt="star"
+                    />
+                  </div>
+                </div>
+                <p class="text-fcbg fs-lg">
+                  第一次來就愛上這裡的氛圍，安靜又舒服。超適合帶筆電來寫東西，飲品也很有水准!
+                </p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="bg-accent p-7 rounded-4">
+                <div
+                  class="d-flex justify-content-between align-items-center mb-5"
+                >
+                  <div class="d-flex align-items-center">
+                    <div class="me-4">
+                      <img
+                        src="/assets/images/index/Dt-girl.png"
+                        alt="Dt-girl"
+                      />
+                    </div>
+                    <p class="fs-4 fw-bold text-fcbg">芋頭</p>
+                  </div>
+                  <div style="height: 20px">
+                    <img
+                      class="h-100"
+                      src="/assets/images/index/Rating.png"
+                      alt="star"
+                    />
+                  </div>
+                </div>
+                <p class="text-fcbg fs-lg">
+                  第一次來就愛上這裡的氛圍，安靜又舒服。超適合帶筆電來寫東西，飲品也很有水准!
+                </p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="bg-accent p-7 rounded-4">
+                <div
+                  class="d-flex justify-content-between align-items-center mb-5"
+                >
+                  <div class="d-flex align-items-center">
+                    <div class="me-4">
+                      <img
+                        src="/assets/images/index/Dt-girl.png"
+                        alt="Dt-girl"
+                      />
+                    </div>
+                    <p class="fs-4 fw-bold text-fcbg">芋頭</p>
+                  </div>
+                  <div style="height: 20px">
+                    <img
+                      class="h-100"
+                      src="/assets/images/index/Rating.png"
+                      alt="star"
+                    />
+                  </div>
+                </div>
+                <p class="text-fcbg fs-lg">
+                  第一次來就愛上這裡的氛圍，安靜又舒服。超適合帶筆電來寫東西，飲品也很有水准!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex justify-content-end align-items-center">
+          <div class="i-reviews-swiper-pagination w-auto me-6"></div>
+          <div class="i-reviews-swiper-pagination-progressbar me-6"></div>
+          <button
+            type="button"
+            class="btn border-0 i-reviews-swiper-button-prev p-0"
+          >
+            <img
+              src="/assets/images/index/arrow-right-circle-l.svg"
+              alt="arrow-right-circle-l"
+            />
+          </button>
+          <button
+            type="button"
+            class="btn border-0 i-reviews-swiper-button-next p-0"
+          >
+            <img
+              src="/assets/images/index/arrow-right-circle-r.svg"
+              alt="arrow-right-circle-r"
+            />
+          </button>
+        </div>
+      </section>
+      <!-- 品牌標語 -->
+      <section class="py-12 overflow-hidden px-5 px-lg-0">
+        <div class="text-center container slogan-bg py-12">
+          <div class="slogan-img-w rounded-3 overflow-hidden mx-auto">
+            <img
+              class="slogan-img-hov"
+              src="/assets/images/index/slogan_img.png"
+              alt="slogan_img"
+            />
+          </div>
+
+          <p class="lh-lg text-fcbg fs-4 mt-8">
+            咖啡 | 空間 | 安静 <br />
+            一點光，一張桌。 <br />
+            默隅 Moonook，為想專注的人而存在。
+          </p>
+        </div>
+      </section>
+    </main>
+    <!-- <%- include('./layout/footer'); -%> -->
 
     <script type="module" src="../main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      var swiper = new Swiper(".i-serviceSwiper", {
+        cssMode: true,
+        slidesPerView: 1.1,
+        spaceBetween: 16,
+        breakpoints: {
+          768: {
+            slidesPerView: 1,
+            spaceBetween: 24,
+          },
+        },
+        navigation: {
+          nextEl: ".i-service-swiper-button-next",
+          prevEl: ".i-service-swiper-button-prev",
+        },
+        pagination: {
+          el: ".swiper-pagination",
+        },
+        mousewheel: true,
+        keyboard: true,
+      });
+    </script>
+
+    <script>
+      var swiper = new Swiper(".i-reviewsSwiper", {
+        pagination: {
+          el: ".i-reviews-swiper-pagination",
+          type: "fraction",
+          formatFractionTotal: function (number) {
+            return number < 10 ? "0" + number : number;
+          },
+          formatFractionCurrent: function (number) {
+            return number < 10 ? "0" + number : number;
+          },
+        },
+
+        navigation: {
+          nextEl: ".i-reviews-swiper-button-next",
+          prevEl: ".i-reviews-swiper-button-prev",
+        },
+        slidesPerView: 1.1,
+        spaceBetween: 12,
+        breakpoints: {
+          1200: {
+            slidesPerView: 3.1,
+            spaceBetween: 24,
+          },
+          768: {
+            slidesPerView: 2.1,
+            spaceBetween: 24,
+          },
+        },
+
+        // 監聽 Swiper 的初始化和滑動事件
+        on: {
+          init: function () {
+            // 在 Swiper 初始化時，呼叫更新進度條的函式
+            updateProgressBar(this);
+          },
+          slideChange: function () {
+            // 在頁面切換時，呼叫更新進度條的函式
+            updateProgressBar(this);
+          },
+        },
+      });
+
+      // 自訂函式來更新進度條
+      function updateProgressBar(swiperInstance) {
+        // 獲取進度條的 HTML 元素
+        const progressBar = document.querySelector(
+          ".i-reviews-swiper-pagination-progressbar"
+        );
+
+        // --- 核心修改部分 ---
+
+        // 獲取當前可見幻燈片組的索引 (從 0 開始)
+        const activeIndex = swiperInstance.snapIndex;
+
+        // 獲取所有可見幻燈片組的總數
+        // 這是 Swiper 在 `slidesPerView > 1` 時，用來計算分頁總數的公式
+        const totalSlides =
+          swiperInstance.slides.length -
+          Math.floor(swiperInstance.params.slidesPerView) +
+          1;
+
+        // 計算進度條的百分比
+        // 判斷總頁數是否大於 1，以避免分母為零的錯誤
+        let percentage = 0;
+        if (totalSlides > 1) {
+          // 由於當前索引是從 0 開始，我們需要將其視為頁碼，從 1 開始
+          const currentPage = activeIndex + 1;
+          percentage = (currentPage / totalSlides) * 100;
+        } else {
+          // 如果只有一頁，進度條則顯示 100%
+          percentage = 100;
+        }
+
+        // 更新 CSS 變數，並確保找到了元素
+        if (progressBar) {
+          progressBar.style.setProperty("--progress-width", `${percentage}%`);
+        }
+      }
+    </script>
   </body>
 </html>

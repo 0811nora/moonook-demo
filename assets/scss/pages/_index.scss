@@ -1,3 +1,187 @@
-.index-title {
-  font-size: 100px;
+.index-page {
+  background-color: $fcbg;
+  // 通用
+
+  .py-30 {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .swiper {
+    padding-bottom: 50px;
+  }
+
+  // .swiper-slide {
+  //   // text-align: center;
+  //   // font-size: 18px;
+  //   // background: #444;
+  //   // display: flex;
+  //   // justify-content: center;
+  //   // align-items: center;
+  // }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .i-service-swiper-button-next {
+    position: absolute;
+    right: -10px;
+    top: 50%;
+    z-index: 1;
+    transform: translateY(-50%);
+  }
+  .i-service-swiper-button-prev {
+    position: absolute;
+    left: -10px;
+    top: 50%;
+    z-index: 1;
+    transform: translateY(-50%);
+  }
+
+  .swiper-pagination {
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* 設定所有分頁點的基礎樣式 */
+  .swiper-pagination-bullet {
+    background-color: $primary;
+    opacity: 1;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+  }
+
+  /* 設定作用中分頁點的樣式 */
+  .swiper-pagination-bullet-active {
+    background-color: $fc;
+    width: 24px;
+    height: 8px;
+    border-radius: 100px;
+  }
+  .i-service-content {
+    max-width: 636px;
+  }
+
+  .i-menu-card-bg-blue {
+    background: linear-gradient(
+      to right,
+      rgba(102, 124, 156, 0.1) 0%,
+      rgba(255, 251, 243, 0.1) 100%
+    );
+  }
+  .i-menu-card-bg-yellow {
+    background: linear-gradient(
+      to right,
+      rgba(255, 251, 243, 0.2) 0%,
+      rgba(227, 215, 197, 0.2) 100%
+    );
+  }
+
+  .i-menu-card-bg-blue-sm {
+    background: linear-gradient(
+      to bottom,
+      rgba(102, 124, 156, 0.1) 0%,
+      rgba(255, 251, 243, 0.1) 100%
+    );
+    border-radius: 28px;
+  }
+  .i-menu-card-bg-yellow-sm {
+    background: linear-gradient(
+      to top,
+      rgba(255, 251, 243, 0.2) 0%,
+      rgba(227, 215, 197, 0.2) 100%
+    );
+    border-radius: 28px;
+  }
+  .step-icon-wrapper {
+    max-width: 40px;
+    @include size-lg {
+      max-width: 56px;
+    }
+  }
+
+  .swiper-pagination-fraction {
+    color: $accent;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .swiper-pagination-current {
+    color: $fc;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .swiper-pagination-total {
+    color: $accent;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .i-reviews-swiper-pagination-progressbar {
+    --progress-width: 0%; /* 設定 CSS 變數的初始值 */
+    height: 4px;
+    background-color: rgba(132, 146, 102, 0.5);
+    width: 180px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .i-reviews-swiper-pagination-progressbar::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: var(--progress-width); /* 使用 CSS 變數 */
+    background-color: $fc;
+    transition: width 0.3s ease;
+  }
+  .slogan-bg {
+    /* 設定相對定位，讓偽元素可以準確定位 */
+    position: relative;
+
+    /* 確保裡面的內容物在最上層 */
+    z-index: 1;
+
+    /* 移除這裡的 transition，因為我們要將它加到偽元素上 */
+  }
+
+  /* 新增偽元素來作為背景層 */
+  .slogan-bg::before {
+    content: ""; /* 偽元素必須有 content 屬性 */
+
+    /* 絕對定位，讓它填滿整個父容器 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    /* 這裡才是背景顏色和過渡效果的設定 */
+    background-color: $primary; /* 請替換為你 `bg-primary` 的顏色值 */
+    border-radius: 28px;
+    transition: transform 0.8s ease-in-out;
+
+    /* 將背景層放在內容物的後面 */
+    z-index: -1;
+  }
+
+  /* 在 hover 時只對偽元素進行變形 */
+  .slogan-bg:hover::before {
+    transform: scale(3); /* 將放大倍數改為你想要的數值，例如 1.1 */
+  }
+  .slogan-img-hov {
+    transition: transform 1s ease-in-out;
+  }
+  .slogan-img-hov:hover {
+    transform: scale(1.1);
+  }
+  .slogan-img-w {
+    max-width: 848px;
+  }
 }
