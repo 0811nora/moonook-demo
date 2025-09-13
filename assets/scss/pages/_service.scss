@@ -9,15 +9,8 @@
     .w-20px{
         width: 20px;
     }
-    .w-45{
-        width: 45%;
-    }
-    .w-55{
-        width: 55%;
-    }
-    .w-196px{
-        width: 196px;
-    }
+
+    
     .w-416px{
         width: 416px;
     }
@@ -176,7 +169,7 @@
 
     .s__seat-service{
         background-image: url("https://images.unsplash.com/photo-1566139828235-b1609848315c?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") ;
-        height: 480px;
+        
         
 
         .border-bottom{
@@ -205,7 +198,6 @@
 
     // ---------- 請到時候確認設計稿的設定是否與此相符
     .not-sure1{
-        height: 480px;
         img{
             object-fit: cover;
             object-position: center;
@@ -221,4 +213,19 @@
 
     }
 
+}
+
+@include size-lg{
+    .w-lg-45{
+        width: 45%;
+    }
+    .w-lg-55{
+        width: 55%;
+    }
+    .w-lg-196px{
+        width: 196px;
+    }
+    .not-sure1{
+        height: 480px;
+    }
 }
