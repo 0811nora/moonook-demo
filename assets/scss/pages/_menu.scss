@@ -1,0 +1,230 @@
+// 基本設定
+img {
+  max-width: 100%;
+  min-width: 0;
+  object-fit: cover;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  // outline: 1px solid red;
+}
+
+// hero swiper setting
+.menu__hero-swiper {
+  .swiper-slide {
+    width: 100%;
+    height: auto;
+    img {
+      width: 100vw;
+      height: 680px;
+      object-fit: cover;
+      object-position: center;
+      @media (max-width: 768px) {
+        height: 580px;
+        aspect-ratio: 1/1.618;
+      }
+    }
+  }
+}
+
+// 客製hero swiper pagination樣式
+.menu__hero-swiper .swiper-pagination-bullet {
+  width: var(
+    --swiper-pagination-bullet-width,
+    var(--swiper-pagination-bullet-size, 8px)
+  );
+  height: var(
+    --swiper-pagination-bullet-height,
+    var(--swiper-pagination-bullet-size, 8px)
+  );
+  display: inline-block;
+  border-radius: var(--swiper-pagination-bullet-border-radius, 50%);
+  background: $fcbg;
+  opacity: var(--swiper-pagination-bullet-inactive-opacity, 0.4);
+  transition: width 0.3s ease, border-radius 0.3s ease, opacity 0.3s ease;
+}
+
+.menu__hero-swiper .swiper-pagination-bullet-active {
+  width: 20px;
+  border-radius: 8px;
+  background: $fcbg;
+  opacity: var(--swiper-pagination-bullet-opacity, 1);
+}
+
+.menu__hero-swiper .swiper-pagination {
+  position: absolute;
+  text-align: center;
+  transition: 0.3s opacity;
+  transform: translate3d(0, 0, 0);
+  z-index: 10;
+}
+
+// 設計稿有調整 待改
+.menu__side-bar {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+// 先試用個動畫效果
+.menu__side-bar.fade-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.menu__side-bar {
+  position: fixed;
+  left: 0;
+  top: 80px;
+  width: 20vw;
+  max-width: 400px;
+  height: auto;
+  padding-top: 75px;
+  border-top-right-radius: 28px;
+  border-bottom-right-radius: 28px;
+  a {
+    display: block;
+    position: relative;
+
+    p {
+      position: relative;
+      width: fit-content;
+    }
+
+    p::after {
+      content: "";
+      position: absolute;
+      bottom: -3px;
+      left: 50%;
+      width: 0;
+      height: 1px;
+      background-color: $secondary-200;
+      transition: 0.3s ease-in-out;
+      transform: translateX(-50%);
+    }
+
+    &:hover {
+      opacity: 0.8;
+      p::after {
+        width: 100%;
+        left: 0;
+        transform: translateX(0);
+      }
+    }
+  }
+}
+
+.leaf-decor-t {
+  position: absolute;
+  top: 28px;
+  right: 0;
+  z-index: inherit;
+}
+.leaf-decor-b {
+  position: absolute;
+  bottom: 28px;
+  right: 0;
+  z-index: inherit;
+}
+
+.menu__sideBar-border {
+  border-bottom: 1px dashed $fcbg;
+}
+
+.menu__fav {
+  width: 100%;
+  height: auto;
+  position: relative;
+  border-radius: 28px;
+  background-image: url(/assets/images/menu/menu-bg.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  @media (max-width: 768px) {
+    background-image: url(/assets/images/menu/menu-mob-bg.png);
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba($fcbg, 0.8);
+  }
+}
+
+.menu__hr-divider {
+  color: black;
+  border: 0;
+  border-top: var(--bs-border-width) dashed;
+  opacity: 1;
+}
+
+.menu__card {
+  background-color: transparent;
+  cursor: pointer;
+  &:hover {
+    h5,
+    p {
+      color: $fc;
+    }
+  }
+}
+
+// swiper-nav
+.swiper-nav {
+  width: 376px;
+  margin-left: auto;
+}
+
+.desktopPag {
+  width: 64px;
+  padding: 0;
+}
+
+.mobilePag {
+  width: 52px;
+}
+
+.desktopScroll,
+.mobileScroll {
+  position: static !important;
+  width: 180px;
+  height: 4px;
+  background: rgba($fc, 0.5);
+  border-radius: 2px;
+  margin: 0;
+}
+
+.swiper-scrollbar-drag {
+  background: $fc;
+  border-radius: 2px;
+}
+
+.menu-desktop-prev-btn,
+.menu-desktop-next-btn,
+.menu-mobile-prev-btn,
+.menu-mobile-next-btn {
+  @include menu_swiper-btn-base;
+  img,
+  svg {
+    border-radius: 50px;
+    overflow: hidden;
+    color: $primary;
+    background-color: $primary;
+    border: 1px solid $primary;
+  }
+  &:hover {
+    svg {
+      color: $fc;
+      background-color: $fc;
+      border: 1px solid $primary;
+    }
+  }
+  &:disabled {
+    opacity: 0.4;
+    pointer-events: none;
+  }
+}
