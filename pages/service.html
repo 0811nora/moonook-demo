@@ -24,6 +24,7 @@
     -->
 
     <main class="service-section">
+
     
       <!-- 預約頁-banner區塊 -->
       <section class="s__banner bgPhoto-set">
@@ -34,6 +35,9 @@
         <div class="container h-680px">
           <div class="d-flex align-items-center h-100">
             <div class="w-416px">
+          <%- include('./layout/login'); -%>
+          <a href="ztestz.html">測試頁</a>
+
               <h2>選擇專注，也選擇空間</h2>
               <p>線上預約，抵達即可入座</p>
               <p>兩小時專屬片段，讓時間回到你手中</p>
@@ -47,6 +51,7 @@
 
       <!-- 預約頁-預約功能區 -->
       <section class="bg-fcbg py-lg-12">
+
         <div class="container">
           <div class="row">
             <div class="col-lg-10 mx-auto">
@@ -91,7 +96,7 @@
                     <div class=" all-seat h-356px  p-4 d-none ">
                       <h3>請選擇座位</h3>
                       <div class="">
-                        <form id="bookingForm">
+                        <form id="bookingSeat">
                           <div class="s__choose-seats d-flex  gap-5 flex-wrap py-6">
                             <button type="button" class="s__seat-btn disabled" >A1</button>
                             <button type="button" class="s__seat-btn " >A2</button>
@@ -137,14 +142,11 @@
                                 </div>
                                 <h3>已預約成功！</h3>
                                 <p>當日請至櫃檯報到即可入座。</p>
-                                <a href="login.html" class="btn btn-primary">查看預約紀錄</a>
+                                <a href="member.html" class="btn btn-primary">查看預約紀錄</a>
                               </div>
                             </div>
                           </div>
                         </form>
-
-
-
                       </div>
                     </div>
                     
@@ -338,224 +340,240 @@
     <script src="https://cdn.jsdelivr.net/npm/choices.js@10.2.0/public/assets/scripts/choices.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/js/tom-select.complete.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
     <script>
 
-
-      const selectDate = document.querySelector(".select-date");
-      const selectTime = document.querySelector(".select-time");
-      const checkSeatBtn = document.querySelector(".check-seat-btn");
-      const seatImg = document.querySelector(".seat-img");
-      const allSeat = document.querySelector(".all-seat");
-      const seatBtn = document.querySelectorAll(".s__seat-btn");
-      const comfirmBookingBtn = document.querySelector(".comfirmBooking_btn");
-      const comfirmBookingContent = document.querySelector(".comfirmBooking-content");
-      const doneBookingContent = document.querySelector(".doneBooking-content");
-      const showDate = document.querySelector(".show-date");
-      const showTime = document.querySelector(".show-time");
-      const showSeat = document.querySelector(".show-seat");
-
-
-      let bookingDate;
-      let bookingtime;
-      let bookingSeat;
+// fetch("https://reqres.in/api/register", {
+//   method: "POST",
+//   headers: {
+//     "Content-Type": "application/json",
+//     "x-api-key": "reqres-free-v1"
+//   },
+//   body: JSON.stringify({
+//     email: "eve.holt@reqres.in",
+//     password: "pistol"
+//   })
+// })
+//   .then(res => res.json())
+//   .then(data => console.log("註冊結果：", data))
+//   .catch(err => console.error("錯誤：", err));
 
 
-      // 日期樣式的套件
-      const basicPicker = flatpickr("#basicDate", {
-        locale: "zh_tw",            // 繁體中文
-        dateFormat: "Y / m / d",        // 格式：2024-01-01
-        minDate: "today",
-        onChange: function(selectedDates, dateStr, instance) {
-            updateResult("日期", dateStr);
-        }
-      });
+  const selectDate = document.querySelector(".select-date");
+  const selectTime = document.querySelector(".select-time");
+  const checkSeatBtn = document.querySelector(".check-seat-btn");
+  const seatImg = document.querySelector(".seat-img");
+  const allSeat = document.querySelector(".all-seat");
+  const seatBtn = document.querySelectorAll(".s__seat-btn");
+  const comfirmBookingBtn = document.querySelector(".comfirmBooking_btn");
+  const comfirmBookingContent = document.querySelector(".comfirmBooking-content");
+  const doneBookingContent = document.querySelector(".doneBooking-content");
+  const showDate = document.querySelector(".show-date");
+  const showTime = document.querySelector(".show-time");
+  const showSeat = document.querySelector(".show-seat");
 
-      function updateResult(label, value) {
-        bookingDate = value;
-        console.log(`預約日期：${bookingDate}`);
-        showDate.innerHTML = bookingDate;  // 確認訊息的時候，日期吃變數的資料;
+
+  let bookingDate;
+  let bookingtime;
+  let bookingSeat;
+
+
+  // 日期樣式的套件
+  const basicPicker = flatpickr("#basicDate", {
+    locale: "zh_tw",            // 繁體中文
+    dateFormat: "Y / m / d",        // 格式：2024-01-01
+    minDate: "today",
+    onChange: function(selectedDates, dateStr, instance) {
+        updateResult("日期", dateStr);
+    }
+  });
+
+  function updateResult(label, value) {
+    bookingDate = value;
+    console.log(`預約日期：${bookingDate}`);
+    showDate.innerHTML = bookingDate;  // 確認訊息的時候，日期吃變數的資料;
+  }
+
+  // Tom Select 時間下拉選單套件
+  const select = new TomSelect('#my-select', {
+    // 基本設定
+    create: false,          
+    sortField: {
+      field: "text",
+      direction: "asc"
+    },
+    onDropdownOpen: function(dropdown) {
+    // 確保不會重複加
+      if (!dropdown.querySelector('.ts-footer')) {
+        const footer = document.createElement('div');
+        footer.className = 'ts-footer p-2 text-muted border-top';
+        footer.innerHTML = `
+          <ul>
+            <li><img src="public/test-Icon.svg" width="10">
+              靜謐充裕（70% 以上空位
+            </li>
+            <li><img src="public/test-Icon.svg" width="10">
+              舒適剛好（40–70% 空位）</li>
+            <li><img src="public/test-Icon.svg" width="10">
+              座位稀少（10–40% 空位）</li>
+            <li><img src="public/test-Icon.svg" width="10">
+              客滿（0% 空位）</li>
+          </ul>
+        `;
+        dropdown.appendChild(footer);
       }
-
-      // Tom Select 時間下拉選單套件
-      const select = new TomSelect('#my-select', {
-        // 基本設定
-        create: false,          
-        sortField: {
-          field: "text",
-          direction: "asc"
-        },
-        onDropdownOpen: function(dropdown) {
-        // 確保不會重複加
-          if (!dropdown.querySelector('.ts-footer')) {
-            const footer = document.createElement('div');
-            footer.className = 'ts-footer p-2 text-muted border-top';
-            footer.innerHTML = `
-              <ul>
-                <li><img src="public/test-Icon.svg" width="10">
-                  靜謐充裕（70% 以上空位
-                </li>
-                <li><img src="public/test-Icon.svg" width="10">
-                  舒適剛好（40–70% 空位）</li>
-                <li><img src="public/test-Icon.svg" width="10">
-                  座位稀少（10–40% 空位）</li>
-                <li><img src="public/test-Icon.svg" width="10">
-                  客滿（0% 空位）</li>
-              </ul>
-            `;
-            dropdown.appendChild(footer);
-          }
-        }
-      });
+    }
+  });
 
 
-      // 預約日期及時間都寫好，才可以按查詢座位，未填寫按鈕disable
-      function checkSeat(){
-        if(selectDate.value && selectTime.value){
-          checkSeatBtn.disabled = false;
-        }else{
-          checkSeatBtn.disabled = true;
-        }
-      }
+  // 預約日期及時間都寫好，才可以按查詢座位，未填寫按鈕disable
+  function checkSeat(){
+    if(selectDate.value && selectTime.value){
+      checkSeatBtn.disabled = false;
+    }else{
+      checkSeatBtn.disabled = true;
+    }
+  }
 
-      // 點選座位時的樣式
+  // 點選座位時的樣式
+
+  seatBtn.forEach((e)=>{
+    e.addEventListener("click",()=>{
+      bookingSeat = e.textContent
+      console.log(`選擇座位：${bookingSeat}`)
+      showSeat.innerHTML = bookingSeat;  // 確認訊息的時候，座位吃變數的資料;
 
       seatBtn.forEach((e)=>{
-        e.addEventListener("click",()=>{
-          bookingSeat = e.textContent
-          console.log(`選擇座位：${bookingSeat}`)
-          showSeat.innerHTML = bookingSeat;  // 確認訊息的時候，座位吃變數的資料;
-
-          seatBtn.forEach((e)=>{
-            e.classList.remove("s__seat-select")
-          })
-          e.classList.add("s__seat-select")
-        })
+        e.classList.remove("s__seat-select")
       })
+      e.classList.add("s__seat-select")
+    })
+  })
 
+
+  
+  // 日期及時間有異動的時候，按查詢按鈕進行檢查，看是否要放行
+  // 檢查沒問題，將資料寫到變數中
+  // 放行以後，顯示座位表
+  selectDate.addEventListener('input',checkSeat);
+  selectTime.addEventListener('change',()=>{
+    checkSeat();
+    bookingtime = selectTime.value;
+    console.log(`預約時段：${bookingtime}`);
+    showTime.innerHTML = bookingtime;  // 確認訊息的時候，時間吃變數的資料;
+  });
+  
+
+  // 顯示「預約前的圖片」的畫面
+  function showbookingImg(){
+    seatImg.classList.remove("d-none");
+  }
+
+  // 隱藏「預約前的圖片」的畫面
+  function hidebookingImg(){
+    seatImg.classList.add("d-none");
+  }
+
+  // 顯示「所有座位」的畫面
+  function showAllSeat(){
+    allSeat.classList.add("d-block");
+    allSeat.classList.remove("d-none");
+
+  }
+
+  // 隱藏「所有座位」的畫面
+  function hideAllSeat(){
+    allSeat.classList.remove("d-block");
+    allSeat.classList.add("d-none");
+  }
+
+  // 顯示「已預約成功」的畫面
+  function showdonebooking(){
+    doneBookingContent.classList.add("d-block");
+    doneBookingContent.classList.remove("d-none");
+  }
+
+  // 隱藏「已預約成功」的畫面
+  function hidedonebooking(){
+    doneBookingContent.classList.add("d-none");
+    doneBookingContent.classList.remove("d-block");
+  }
+
+  // 隱藏「確認預約資訊」的畫面
+  function hideComfirmBooking(){
+    comfirmBookingContent.classList.add("d-none");
+  }
+
+  // 顯示「確認預約資訊」的畫面
+  function showComfirmBooking(){
+    comfirmBookingContent.classList.remove("d-none");
+  }
+
+  // 按下查詢座位時，隱藏圖片，顯示座位
+  checkSeatBtn.addEventListener("click", ()=>{
+    hidebookingImg();
+    showAllSeat();
+  })
+  
+
+  // 按下確認預約以後，顯示預約成功畫面，隱藏確認預約的畫面。
+  comfirmBookingBtn.addEventListener("click", ()=>{
+    hideComfirmBooking();
+    showdonebooking();
+  })
+
+  // 加入互動模組的位置，並且判斷預約成功以後，關閉提示的行為(清除全部填寫資料)
+  const seatModalEl = document.getElementById('seatModal');
+
+  seatModal.addEventListener('hide.bs.modal', function () {
+    if (!doneBookingContent.classList.contains('d-none')) {
+      resetAll();
+    }
+  });
+
+  function resetAll (){
+    select.clear();
+    select.addOption({value: '', text: '請選擇時段'});
+
+    basicPicker.clear();
+
+    bookingDate = " ";
+    bookingtime = " ";
+    bookingSeat = " ";
     
-      
-      // 日期及時間有異動的時候，按查詢按鈕進行檢查，看是否要放行
-      // 檢查沒問題，將資料寫到變數中
-      // 放行以後，顯示座位表
-      selectDate.addEventListener('input',checkSeat);
-      selectTime.addEventListener('change',()=>{
-        checkSeat();
-        bookingtime = selectTime.value;
-        console.log(`預約時段：${bookingtime}`);
-        showTime.innerHTML = bookingtime;  // 確認訊息的時候，時間吃變數的資料;
-      });
-      
 
-      // 顯示「預約前的圖片」的畫面
-      function showbookingImg(){
-        seatImg.classList.remove("d-none");
+    hidedonebooking();
+    showbookingImg();
+    hideAllSeat();
+    showComfirmBooking();
+    seatBtn.forEach((btn) => {
+      btn.classList.remove("s__seat-select");
+    });
+  }
+
+
+  const swiper = new Swiper('.swiper', {
+      slidesPerGroup: 1,   
+      loop: true,         
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      breakpoints: {
+        0: {            
+          slidesPerView: 1,
+          spaceBetween: 24,
+        },
+        576: {          
+          slidesPerView: 2,
+          spaceBetween: 16,
+        },
+        992: {          
+          slidesPerView: 3,
+          spaceBetween: 20,
+        },
       }
-
-      // 隱藏「預約前的圖片」的畫面
-      function hidebookingImg(){
-        seatImg.classList.add("d-none");
-      }
-
-      // 顯示「所有座位」的畫面
-      function showAllSeat(){
-        allSeat.classList.add("d-block");
-        allSeat.classList.remove("d-none");
-
-      }
-
-      // 隱藏「所有座位」的畫面
-      function hideAllSeat(){
-        allSeat.classList.remove("d-block");
-        allSeat.classList.add("d-none");
-      }
-
-      // 顯示「已預約成功」的畫面
-      function showdonebooking(){
-        doneBookingContent.classList.add("d-block");
-        doneBookingContent.classList.remove("d-none");
-      }
-
-      // 隱藏「已預約成功」的畫面
-      function hidedonebooking(){
-        doneBookingContent.classList.add("d-none");
-        doneBookingContent.classList.remove("d-block");
-      }
-
-      // 隱藏「確認預約資訊」的畫面
-      function hideComfirmBooking(){
-        comfirmBookingContent.classList.add("d-none");
-      }
-
-      // 顯示「確認預約資訊」的畫面
-      function showComfirmBooking(){
-        comfirmBookingContent.classList.remove("d-none");
-      }
-
-      // 按下查詢座位時，隱藏圖片，顯示座位
-      checkSeatBtn.addEventListener("click", ()=>{
-        hidebookingImg();
-        showAllSeat();
-      })
-      
-
-      // 按下確認預約以後，顯示預約成功畫面，隱藏確認預約的畫面。
-      comfirmBookingBtn.addEventListener("click", ()=>{
-        hideComfirmBooking();
-        showdonebooking();
-      })
-
-      // 加入互動模組的位置，並且判斷預約成功以後，關閉提示的行為(清除全部填寫資料)
-      const seatModalEl = document.getElementById('seatModal');
-
-      seatModal.addEventListener('hide.bs.modal', function () {
-        if (!doneBookingContent.classList.contains('d-none')) {
-          resetAll();
-        }
-      });
-
-      function resetAll (){
-        select.clear();
-        select.addOption({value: '', text: '請選擇時段'});
-
-        basicPicker.clear();
-
-        bookingDate = " ";
-        bookingtime = " ";
-        bookingSeat = " ";
-        
-
-        hidedonebooking();
-        showbookingImg();
-        hideAllSeat();
-        showComfirmBooking();
-        seatBtn.forEach((btn) => {
-          btn.classList.remove("s__seat-select");
-        });
-      }
-
-
-      const swiper = new Swiper('.swiper', {
-          slidesPerGroup: 1,   
-          loop: true,         
-          navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-          },
-          breakpoints: {
-            0: {            
-              slidesPerView: 1,
-              spaceBetween: 24,
-            },
-            576: {          
-              slidesPerView: 2,
-              spaceBetween: 16,
-            },
-            992: {          
-              slidesPerView: 3,
-              spaceBetween: 20,
-            },
-          }
-        });
+    });
 
     </script>
   </body>
