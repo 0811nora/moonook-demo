@@ -7,10 +7,10 @@
         --bs-modal-width: 600px;
     }
     .modal-content {
-        background-color: #d4d4d447;
+        background-color: #d4d4d43a;
         // background-color: transparent;
-        backdrop-filter: blur(18px);
-        border-radius: 180px 0 180px 0;
+        backdrop-filter: blur(12px);
+        border-radius: 100px 0 100px 0;
         box-shadow: 10px 8px 10px #32323277;
 
     }
@@ -29,4 +29,14 @@
     .rounded-20px{
         border-radius: 20px;
     }
+}
+
+@include size-sm{
+    .login-page{
+        .modal-content {
+            margin: 0 auto;
+            
+
+        }
+    } 
 }
