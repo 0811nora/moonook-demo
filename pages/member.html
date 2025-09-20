@@ -8,6 +8,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/logo.svg" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <title>會員中心 | 默隅 Moonook</title>
+  <script src="https://unpkg.com/feather-icons"></script>
 </head>
 
 <body>
@@ -20,6 +21,7 @@
           <div class="ratio ratio-1x1 w-75">
             <img src="../assets/images/member_photo.jpg" alt="會員頭像"
               class="img-fluid object-fit-cover d-block rounded-circle">
+
           </div>
           <!--導覽列-->
           <div class="d-none d-lg-block d-flex align-items-start py-12">
@@ -359,7 +361,9 @@
 
 
     <%- include('./layout/footer'); -%>
-
+      <script>
+        feather.replace();
+      </script>
       <script type="module" src="../main.js"></script>
 </body>
 
