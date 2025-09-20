@@ -1,0 +1,30 @@
+<div class="scroll-top-btn "></div>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const scrollBtn = document.querySelector(".scroll-top-btn");
+
+        // 初始化狀態
+        toggleScrollBtn();
+
+        // 監聽滾動
+        window.addEventListener("scroll", toggleScrollBtn);
+
+        // 點擊回頂端
+        scrollBtn.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+            });
+        });
+
+        function toggleScrollBtn() {
+            if (window.scrollY > 250) {
+                scrollBtn.classList.add("show");
+            } else {
+                scrollBtn.classList.remove("show");
+            }
+        }
+    });
+</script>
