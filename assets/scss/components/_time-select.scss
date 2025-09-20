@@ -1,0 +1,229 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.text-red-sp{
+    color: #9c666c;
+}
+
+.text-red-dis{
+    color: #beabab;
+}
+
+.timeslot-dropdown-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+}
+
+.timeslot-dropdown-header {
+    background: $fcbg-50;
+    border: 2px solid $fc-600;
+    border-radius: 15px;
+    padding: 12px 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    color: $fc;
+    transition: all 0.3s ease;
+}
+
+.timeslot-dropdown-header:focus {
+    background: $fcbg-50;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.timeslot-dropdown-arrow {
+
+    transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.timeslot-dropdown-arrow img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+.timeslot-dropdown-header.active .timeslot-dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.timeslot-dropdown-content {
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 0;
+    right: 0;
+    background: $fcbg-50;
+    border: 2px solid $fc-600;
+    border-radius: 15px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px) scale(0.95);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    overflow: hidden;
+    min-width: 300px;
+    width: min(max(100%, 300px), 400px);
+
+}
+
+.timeslot-dropdown-content.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+    box-shadow: 1px 1px 5px 2px #3e615889;
+
+}
+
+.timeslot-container {
+    max-height: 180px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 10px;
+}
+
+.timeslot-container::-webkit-scrollbar {
+    width: 3px;
+}
+
+.timeslot-container::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.timeslot-container::-webkit-scrollbar-thumb {
+    background: $fc-400;
+    border-radius: 10px;
+}
+
+.timeslot-container::-webkit-scrollbar-thumb:hover {
+    background: $fc-400;
+}
+
+.timeslot-item {
+    padding: 7px 20px;
+    margin: 10px 0;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    border: 1px solid;
+    background: $fcbg-50;
+}
+
+.timeslot-item.available {
+    color: $primary-500;
+    border-color: $primary-500;
+    
+}
+
+.timeslot-item.available:hover {
+    background: #dee7c366;
+    transform: translateY(-2px);
+
+}
+
+.timeslot-item.moderate {
+    color: $accent;
+    border-color: $accent;
+}
+
+.timeslot-item.moderate:hover {
+    background: #e9e2c07f;
+    transform: translateY(-2px);
+}
+
+.timeslot-item.limited {
+    color: #9c666c;
+    border-color: #9c666c
+}
+
+.timeslot-item.limited:hover {
+    background: #ebc1c638;
+    transform: translateY(-2px);
+
+}
+
+.timeslot-legend {
+    padding: 6px 16px;
+    background: $fcbg-50;
+    pointer-events: none;
+    border-top: 2px solid rgba(123, 156, 123, 0.2);
+    border-radius: 0 0 18px 18px;
+}
+
+.timeslot-legend-item {
+    display: flex;
+    align-items: center;
+    margin: 8px 0;
+    font-size: 14px;
+    color: #666;
+}
+
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.timeslot-item, .timeslot-legend-item {
+    animation: slideIn 0.3s ease forwards;
+}
+
+.timeslot-item:nth-child(1) { animation-delay: 0.1s; }
+.timeslot-item:nth-child(2) { animation-delay: 0.2s; }
+.timeslot-item:nth-child(3) { animation-delay: 0.3s; }
+.timeslot-item:nth-child(4) { animation-delay: 0.4s; }
+.timeslot-item:nth-child(5) { animation-delay: 0.5s; }
+.timeslot-item:nth-child(6) { animation-delay: 0.6s; }
+
+@media (max-width: 992px) {
+
+
+    .timeslot-dropdown-header {
+        padding: 12px 17px 12px 15px;
+        font-size: 15px;
+        width: 100%;
+    }
+
+    .timeslot-item {
+        padding: 7px 18px;
+        font-size: 15px;
+        margin: 6px 0;
+    }
+
+    .timeslot-legend {
+        padding: 16px 18px;
+    }
+
+    .timeslot-legend-item {
+        font-size: 14px;
+        margin: 8px 0;
+    }
+
+    .timeslot-legend-dot {
+        width: 12px;
+        height: 12px;
+        margin-right: 10px;
+    }
+}
