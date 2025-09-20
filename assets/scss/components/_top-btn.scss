@@ -1,0 +1,45 @@
+.scroll-top-btn {
+    width: 64px;
+    height: 64px;
+    border-radius: 999px;
+    cursor: pointer;
+    position: fixed;
+    right: 21px;
+    bottom: 50px;
+    z-index: 1000;
+    background: url("/assets/images/icon/icon-top-smBtn.svg") no-repeat center/contain;
+    transition: background 0.2s ease-in;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease, background 0.2s ease-in;
+    visibility: hidden;  
+
+    &.show {
+        opacity: 1;
+        pointer-events: auto;
+        visibility: visible;
+    }
+
+
+    &:active {
+        background: url("/assets/images/icon/icon-top-smBtn-hover.svg") no-repeat center/contain;
+    }
+    
+}
+
+
+
+@include size-lg {
+    .scroll-top-btn {
+        width: 80px;
+        height: 80px;
+        right: 5%;
+        bottom: 100px;
+
+        background: url("/assets/images/icon/icon-top-btn.svg") no-repeat center/contain;
+        &:hover {
+            background: url("/assets/images/icon/icon-top-btn-hover.svg") no-repeat center/contain;
+        }
+    }
+    
+}

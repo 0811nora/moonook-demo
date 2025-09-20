@@ -1,0 +1,42 @@
+.login-page{
+    .user-img{
+        width: 24px;
+        height: 24px;
+    }
+    .modal{
+        --bs-modal-width: 600px;
+    }
+    .modal-content {
+        background-color: #d4d4d43a;
+        // background-color: transparent;
+        backdrop-filter: blur(12px);
+        border-radius: 100px 0 100px 0;
+        box-shadow: 10px 8px 10px #32323277;
+
+    }
+    .form-control{
+
+        border-radius:  0 20px 0 20px;
+        background-color: #ffffff6f;
+        backdrop-filter: blur(5px);
+        border: none;
+
+    }
+    label[for="floatingInput"],
+    label[for="floatingPassword"] {
+        color: #646464;
+    }
+    .rounded-20px{
+        border-radius: 20px;
+    }
+}
+
+@include size-sm{
+    .login-page{
+        .modal-content {
+            margin: 0 auto;
+            
+
+        }
+    } 
+}
