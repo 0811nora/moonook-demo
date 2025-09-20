@@ -1,7 +1,301 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
 
-
 .member_icon {
-    left: 25px;
-    top: 50;
+  left: 25px;
+  top: 50;
+}
+
+// 基本資料頁設定
+// 標題參照菜單頁 手機h4/電腦h2 color:$fc
+// 頭貼大小 手機64px/電腦120px
+// input 間距 手機12px/電腦24px  mb-4 mb-lg-6  color:$primary
+// input 手機 bdrs8px / padding: 8px 12px / border 1px
+// input 電腦 bdrs20px / padding: 16px 12px /  border 1px
+// input focus box-shadow: 0 0 0 0.25rem rgba(132, 146, 102, 0.25);
+
+.m_user-badge {
+  position: absolute;
+  border: none;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 0;
+  bottom: 0;
+  color: $fcbg;
+  background-color: $fc;
+  border-radius: 50px;
+  z-index: 5;
+  &:hover {
+    background-color: $primary-200;
+  }
+  &:active,
+  &:focus {
+    background-color: $primary;
+  }
+  @media (max-width: 768px) {
+    right: 6px;
+  }
+}
+.material-symbols-outlined {
+  font-size: 16px;
+}
+
+.m_userinfo .form-select {
+  --bs-form-select-bg-img: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.8975 7.40347C2.3675 7.94045 2.3675 8.81086 2.8975 9.34784L11.0404 17.598C11.5705 18.135 12.4296 18.135 12.9596 17.598L21.1025 9.34784C21.6325 8.81086 21.6325 7.94045 21.1025 7.40347C20.5725 6.86649 19.7134 6.86649 19.1834 7.40347L12 14.6814L4.81661 7.40347C4.28661 6.86649 3.42751 6.86649 2.8975 7.40347Z' fill='%233E5E4E'/%3E%3C/svg%3E%0A");
+  display: block;
+  width: 100%;
+  height: auto;
+  color: rgba($fc, 0.5);
+  border: var(--bs-border-width) solid var(--bs-border-color);
+  border-radius: var(--bs-border-radius);
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.m_text-opacity {
+  color: rgba($fc, 0.5);
+}
+
+.m__hr-divider {
+  color: $fc-200;
+  border: 0;
+  border-top: var(--bs-border-width) dashed;
+  opacity: 1;
+}
+
+// 生日樣式設定
+.flatpickr-months .flatpickr-month {
+  background: transparent;
+  color: $fc;
+  fill: $fc;
+  height: 34px;
+  line-height: 1;
+  text-align: center;
+  position: relative;
+  user-select: none;
+  overflow: hidden;
+  flex: 1;
+}
+
+.flatpickr-months {
+  background: $fcbg;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  border-bottom: 1px solid $fc-800;
+  padding-bottom: 6px;
+}
+
+.flatpickr-calendar {
+  background: $fcbg;
+  box-shadow: 0 0 0 0.25rem rgba(132, 146, 102, 0.25);
+  border-radius: 16px;
+  border: 1px solid $fc-200;
+  margin-top: 4px;
+}
+
+.flatpickr-current-month {
+  color: $fc-900;
+}
+
+.flatpickr-months .flatpickr-prev-month,
+.flatpickr-months .flatpickr-next-month {
+  color: $fc-900;
+  &:hover {
+    color: $fc-400;
+  }
+  &:active,
+  &:focus {
+    color: $accent;
+  }
+}
+
+span.flatpickr-weekday {
+  background: transparent;
+  color: $fc-400;
+  font-weight: bold;
+}
+
+.flatpickr-day {
+  color: $fc-400;
+}
+
+.flatpickr-day.prevMonthDay,
+.flatpickr-day.nextMonthDay {
+  color: $neutral-200;
+}
+
+.flatpickr-day {
+  &:hover,
+  &:active {
+    background-color: $fc-100;
+  }
+  &.today {
+    border-color: $secondary-400;
+    &:hover {
+      background: $secondary;
+      color: $secondary-200;
+    }
+  }
+}
+
+.flatpickr-day.selected,
+.flatpickr-day.selected:hover {
+  background: $fc-500;
+  color: $fcbg;
+  border-color: $fc-100;
+}
+
+.flatpickr-current-month {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  color: $fc;
+}
+
+// 偏好標籤輸入樣式設定
+.is-focused .choices__inner,
+.is-open .choices__inner {
+  border-color: #dee2e6;
+}
+
+.choices__inner {
+  background-color: $fcbg;
+  display: flex;
+  align-items: center;
+  padding: 2px 12px;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  font-size: 14px;
+  min-height: 50px;
+  overflow: none;
+}
+
+.choices__list--multiple .choices__item {
+  margin-right: 4px;
+  margin-bottom: 2px;
+  background-color: $fc-500;
+  border: 1px solid $fc-500;
+  color: $fcbg;
+  &:hover,
+  &:active {
+    background-color: $fc-300;
+    border: 1px solid $fc-300;
+    color: $fcbg;
+  }
+}
+
+.choices[data-type*="select-multiple"] .choices__button,
+.choices[data-type*="text"] .choices__button {
+  border-left: 1px solid $fcbg;
+}
+
+.choices .is-focused .choices__inner,
+.choices .is-open .choices__inner {
+  border-color: $fcbg;
+  &:hover {
+    background-color: $fcbg-200;
+  }
+}
+
+.choices__list--dropdown,
+.choices__list[aria-expanded] {
+  width: 100%;
+  background-color: $fcbg;
+  border: 1px solid #dee2e6;
+}
+
+// input 手機 bdrs8px / padding: 8px 12px / border 1px
+// input 電腦 bdrs20px / padding: 16px 12px /  border 1px
+.m_btn-base {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  overflow: hidden;
+  z-index: 10;
+  @media (max-width: 576px) {
+    width: 100%;
+  }
+}
+.m_modal-btn {
+  padding: 12px;
+  font-size: 18px;
+  color: $fcbg;
+  background-color: $primary;
+  border: 1px solid $primary;
+  border-radius: 9999px;
+  img {
+    width: 24px;
+    height: 24px;
+  }
+  &:hover {
+    background-color: $fc;
+    border: 1px solid $fc;
+  }
+  &:active,
+  &:focus {
+    background-color: $fc;
+    border: 1px solid $fc;
+    box-shadow: 0 0 0 0.25rem rgba($fc, 0.25);
+  }
+  @media (max-width: 576px) {
+    padding: 8px;
+    font-size: 14px;
+    img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+.m_modal-btn-cancel {
+  padding: 12px;
+  font-size: 18px;
+  color: $fc;
+  background-color: transparent;
+  border: 1px solid $fc;
+  border-radius: 9999px;
+  img {
+    width: 24px;
+    height: 24px;
+  }
+  &:hover {
+    background-color: $fc;
+    border: 1px solid $fc;
+    color: $fcbg;
+  }
+  &:active,
+  &:focus {
+    color: $fc;
+    background-color: transparent;
+    border: 1px solid $fc;
+    opacity: 0.5;
+    box-shadow: 0 0 0 0.25rem rgba($fc, 0.25);
+  }
+  @media (max-width: 576px) {
+    padding: 8px;
+    font-size: 14px;
+    img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+#checkEye {
+  font-size: 24px;
+  position: absolute;
+  top: 40%;
+  right: 16px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+#checkEyeCheck {
+  font-size: 24px;
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  cursor: pointer;
 }
