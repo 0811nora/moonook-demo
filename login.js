@@ -34,9 +34,6 @@ const registerPassword = document.getElementById("redisterPassword");
 const registerPassword2 = document.getElementById("redisterPassword2");
 
 
-
-
-
 let storedLoginState = JSON.parse(sessionStorage.getItem('loginState'));
 
 if (storedLoginState === null) {
