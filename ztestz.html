@@ -5,16 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>index</title>
-    <script type="module" crossorigin src="/moonook-demo/assets/main-DE48vKrH.js"></script>
-    <link rel="stylesheet" crossorigin href="/moonook-demo/assets/main-DNyK5OOc.css">
+    <script type="module" crossorigin src="/moonook-demo/assets/main-CqOdXyUT.js"></script>
+    <script type="module" crossorigin src="/moonook-demo/assets/login-CjK6_qpe.js"></script>
+    <link rel="stylesheet" crossorigin href="/moonook-demo/assets/main-DL54PhQt.css">
   </head>
   <body>
     <header>
   <nav id="h-main-nav" class="fixed-top">
     <div class="container d-flex py-5">
       <a href="index.html" class="me-auto">
-        <img class="h-logo-white" src="/moonook-demo/assets/logo_small_white-BbogZjJN.svg" alt="logo_small_white" />
-        <img class="h-logo-green d-none" src="/moonook-demo/assets/logo_small_green-BruFvL_I.svg" alt="logo_small_green" />
+        <img class="h-logo-white" src="/moonook-demo/assets/logo_small_white-B4mvx7ux.svg" alt="logo_small_white" />
+        <img class="h-logo-green d-none" src="/moonook-demo/assets/logo_small_green-DSdplH0x.svg" alt="logo_small_green" />
       </a>
 
       <ul class="list-unstyled d-lg-flex mb-0 d-none">
@@ -46,7 +47,7 @@
       <div class="offcanvas offcanvas-bottom h-100 bg-fc" tabindex="-1" id="offcanvasBottom"
         aria-labelledby="offcanvasBottomLabel">
         <div class="offcanvas-header">
-          <a href="index.html" class="me-auto"><img src="/moonook-demo/assets/logo_small_white-BbogZjJN.svg"
+          <a href="index.html" class="me-auto"><img src="/moonook-demo/assets/logo_small_white-B4mvx7ux.svg"
               alt="logo_small_white" /></a>
           <button type="button" class="btn text-fcbg p-3 border-0" data-bs-dismiss="offcanvas" aria-label="Close">
             Menu
@@ -111,6 +112,572 @@
 </script>
     <h1 class="index-title">我是首頁</h1>
 
+    <div class="scroll-top-btn "></div>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const scrollBtn = document.querySelector(".scroll-top-btn");
+
+        // 初始化狀態
+        toggleScrollBtn();
+
+        // 監聽滾動
+        window.addEventListener("scroll", toggleScrollBtn);
+
+        // 點擊回頂端
+        scrollBtn.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+            });
+        });
+
+        function toggleScrollBtn() {
+            if (window.scrollY > 250) {
+                scrollBtn.classList.add("show");
+            } else {
+                scrollBtn.classList.remove("show");
+            }
+        }
+    });
+</script>
+    
+<body>
+    <div class="date-picker-wrapper">
+        <!-- 日期輸入框 -->
+        <div class="date-input-container">
+            <input type="text" class="date-input" id="dateDisplay" placeholder="請選擇日期" readonly>
+            <span class="dropdown-arrow" id="dropdownArrow"><img src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M2.8975%207.40274C2.3675%207.93972%202.3675%208.81013%202.8975%209.34711L11.0404%2017.5973C11.5705%2018.1342%2012.4296%2018.1342%2012.9596%2017.5973L21.1025%209.34711C21.6325%208.81013%2021.6325%207.93972%2021.1025%207.40274C20.5725%206.86576%2019.7134%206.86576%2019.1834%207.40274L12%2014.6807L4.81661%207.40274C4.28661%206.86575%203.42751%206.86575%202.8975%207.40274Z'%20fill='%233E5E4E'/%3e%3c/svg%3e" alt=""></span>
+        </div>
+
+        <!-- 遮罩層 -->
+        <div class="overlay" id="overlay"></div>
+
+        <!-- 月曆下拉框 -->
+        <div class="calendar-container" id="calendarContainer">
+            <div class="calendar-header">
+                <div class="month-nav">
+                    <div class="current-month" id="currentMonth"></div>
+                    <div class="nav-buttons">
+                        <button type="button" class="nav-btn" id="prevBtn">‹</button>
+                        <button type="button" class="nav-btn" id="nextBtn">›</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="calendar-body">
+                <div class="weekdays">
+                    <div class="weekday">一</div>
+                    <div class="weekday">二</div>
+                    <div class="weekday">三</div>
+                    <div class="weekday">四</div>
+                    <div class="weekday">五</div>
+                    <div class="weekday">六</div>
+                    <div class="weekday">日</div>
+                </div>
+                <div class="calendar-days" id="calendarDays"></div>
+            </div>
+        </div>
+
+        <!-- 隱藏的表單輸入框 -->
+        <input type="hidden" class="hidden-input" id="selectedDateInput" name="selectedDate">
+    </div>
+
+    <script>
+        class DropdownCalendar {
+            constructor(options = {}) {
+                this.currentDate = new Date();
+                this.selectedDate = null;
+                this.today = new Date();
+                this.isOpen = false;
+                
+                // 設定最小日期（預設為今天，不能選擇過去的日期）
+                this.minDate = options.minDate || new Date();
+                
+                // 設定最大日期（可選，預設無限制）
+                this.maxDate = options.maxDate || null;
+                
+                this.elements = {
+                    dateInput: document.getElementById('dateDisplay'),
+                    dropdownArrow: document.getElementById('dropdownArrow'),
+                    overlay: document.getElementById('overlay'),
+                    calendarContainer: document.getElementById('calendarContainer'),
+                    currentMonth: document.getElementById('currentMonth'),
+                    prevBtn: document.getElementById('prevBtn'),
+                    nextBtn: document.getElementById('nextBtn'),
+                    calendarDays: document.getElementById('calendarDays'),
+                    hiddenInput: document.getElementById('selectedDateInput')
+                };
+                
+                this.init();
+            }
+            
+            init() {
+                this.bindEvents();
+                this.render();
+            }
+            
+            bindEvents() {
+                // 點擊輸入框展開/收合
+                this.elements.dateInput.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    this.toggle();
+                });
+
+                // 點擊遮罩層關閉
+                this.elements.overlay.addEventListener('click', () => {
+                    this.close();
+                });
+
+                // 阻止月曆容器的點擊事件冒泡
+                this.elements.calendarContainer.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                });
+
+                // 月份導航按鈕
+                this.elements.prevBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    this.currentDate.setMonth(this.currentDate.getMonth() - 1);
+                    this.render();
+                });
+                
+                this.elements.nextBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    this.currentDate.setMonth(this.currentDate.getMonth() + 1);
+                    this.render();
+                });
+
+                // ESC 鍵關閉
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && this.isOpen) {
+                        this.close();
+                    }
+                });
+            }
+
+            clearSelection() {
+                this.selectedDate = null;
+                this.updateDateDisplay();
+                this.updateHiddenInput();
+                this.render();
+            }
+            
+            toggle() {
+                if (this.isOpen) {
+                    this.close();
+                } else {
+                    this.open();
+                }
+            }
+            
+            open() {
+                this.isOpen = true;
+                this.elements.calendarContainer.classList.add('show');
+                this.elements.overlay.classList.add('show');
+                this.elements.dropdownArrow.classList.add('rotated');
+                this.elements.dateInput.classList.add('active');
+            }
+            
+            close() {
+                this.isOpen = false;
+                this.elements.calendarContainer.classList.remove('show');
+                this.elements.overlay.classList.remove('show');
+                this.elements.dropdownArrow.classList.remove('rotated');
+                this.elements.dateInput.classList.remove('active');
+            }
+            
+            render() {
+                this.renderHeader();
+                this.renderDays();
+            }
+            
+            renderHeader() {
+                const year = this.currentDate.getFullYear();
+                const month = this.currentDate.getMonth();
+                this.elements.currentMonth.textContent = this.getMonthName(month, year);
+            }
+            
+            getMonthName(month, year) {
+                const monthNames = [
+                    '一月', '二月', '三月', '四月', '五月', '六月',
+                    '七月', '八月', '九月', '十月', '十一月', '十二月'
+                ];
+                return `${monthNames[month]} ${year}`;
+            }
+            
+            renderDays() {
+                const year = this.currentDate.getFullYear();
+                const month = this.currentDate.getMonth();
+                const firstDay = new Date(year, month, 1);
+                const lastDay = new Date(year, month + 1, 0);
+                const daysInMonth = lastDay.getDate();
+                
+                // 調整為週一開始
+                let startDate = (firstDay.getDay() + 6) % 7;
+                
+                this.elements.calendarDays.innerHTML = '';
+                
+                // 上個月的日期
+                const prevMonth = new Date(year, month - 1, 0);
+                for (let i = startDate - 1; i >= 0; i--) {
+                    const day = prevMonth.getDate() - i;
+                    const dayElement = this.createDayElement(day, 'other-month');
+                    this.elements.calendarDays.appendChild(dayElement);
+                }
+                
+                // 當月的日期
+                for (let day = 1; day <= daysInMonth; day++) {
+                    const currentDateObj = new Date(year, month, day);
+                    const dayElement = this.createDayElement(day, 'current-month', currentDateObj);
+                    
+                    // 檢查是否為今天
+                    if (this.isToday(year, month, day)) {
+                        dayElement.classList.add('today');
+                    }
+                    
+                    // 檢查是否為選中的日期
+                    if (this.selectedDate && this.isSameDate(this.selectedDate, currentDateObj)) {
+                        dayElement.classList.add('selected');
+                    }
+                    
+                    // 檢查是否為過期日期
+                    if (this.isDateDisabled(currentDateObj)) {
+                        dayElement.classList.add('disabled');
+                    }
+                    
+                    this.elements.calendarDays.appendChild(dayElement);
+                }
+                
+                // 下個月的日期
+                const totalCells = Math.ceil((startDate + daysInMonth) / 7) * 7;
+                const remainingCells = totalCells - (startDate + daysInMonth);
+                for (let day = 1; day <= remainingCells; day++) {
+                    const dayElement = this.createDayElement(day, 'other-month');
+                    this.elements.calendarDays.appendChild(dayElement);
+                }
+            }
+            
+            createDayElement(day, type, dateObj = null) {
+                const dayElement = document.createElement('button');
+                dayElement.className = `day ${type}`;
+                dayElement.textContent = day;
+                
+                if (type === 'current-month' && dateObj) {
+                    // 檢查日期是否被禁用
+                    if (this.isDateDisabled(dateObj)) {
+                        dayElement.disabled = true;
+                        dayElement.classList.add('disabled');
+                    } else {
+                        dayElement.addEventListener('click', (e) => {
+                            e.stopPropagation();
+                            this.selectDate(dateObj);
+                        });
+                    }
+                }
+                
+                return dayElement;
+            }
+            
+            selectDate(date) {
+                this.selectedDate = date;
+                this.updateDateDisplay();
+                this.updateHiddenInput();
+                this.render();
+                this.close(); // 選擇後自動關閉
+                
+                // 觸發自訂事件
+                const event = new CustomEvent('dateSelected', {
+                    detail: {
+                        date: date,
+                        formattedDate: this.formatDate(date)
+                    }
+                });
+                document.dispatchEvent(event);
+                
+                console.log('選中日期：', this.formatDate(date));
+            }
+            
+            updateDateDisplay() {
+                if (this.selectedDate) {
+                    this.elements.dateInput.value = this.formatDate(this.selectedDate);
+                    this.elements.dateInput.style.color = '#3E5E4E';
+                } else {
+                    this.elements.dateInput.value = '';
+                    this.elements.dateInput.placeholder = '請選擇日期';
+                }
+            }
+            
+            updateHiddenInput() {
+                if (this.selectedDate) {
+                    this.elements.hiddenInput.value = this.formatDate(this.selectedDate, 'YYYY-MM-DD');
+                }
+            }
+            
+            formatDate(date, format = 'YYYY / MM / DD') {
+                const year = date.getFullYear();
+                const month = String(date.getMonth() + 1).padStart(2, '0');
+                const day = String(date.getDate()).padStart(2, '0');
+                
+                return format
+                    .replace('YYYY', year)
+                    .replace('MM', month)
+                    .replace('DD', day);
+            }
+            
+            isToday(year, month, day) {
+                return year === this.today.getFullYear() &&
+                    month === this.today.getMonth() &&
+                    day === this.today.getDate();
+            }
+            
+            isSameDate(date1, date2) {
+                return date1.getFullYear() === date2.getFullYear() &&
+                    date1.getMonth() === date2.getMonth() &&
+                    date1.getDate() === date2.getDate();
+            }
+            
+            // 檢查日期是否被禁用（過期或超出範圍）
+            isDateDisabled(date) {
+                const dateToCheck = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+                const minDate = new Date(this.minDate.getFullYear(), this.minDate.getMonth(), this.minDate.getDate());
+                
+                // 檢查是否早於最小日期
+                if (dateToCheck < minDate) {
+                    return true;
+                }
+                
+                // 檢查是否晚於最大日期（如果有設定的話）
+                if (this.maxDate) {
+                    const maxDate = new Date(this.maxDate.getFullYear(), this.maxDate.getMonth(), this.maxDate.getDate());
+                    if (dateToCheck > maxDate) {
+                        return true;
+                    }
+                }
+                
+                return false;
+            }
+            
+            // 公開方法
+            getSelectedDate() {
+                return this.selectedDate;
+            }
+            
+            setSelectedDate(date) {
+                this.selectedDate = date;
+                this.currentDate = new Date(date);
+                this.updateDateDisplay();
+                this.updateHiddenInput();
+                this.render();
+            }
+
+            getFormattedDate() {
+                return this.selectedDate ? this.formatDate(this.selectedDate) : '';
+            }
+            
+            getValue() {
+                return this.elements.hiddenInput.value;
+            }
+            
+            // 設定最小日期（不能選擇此日期之前的日期）
+            setMinDate(date) {
+                this.minDate = new Date(date);
+                this.render();
+            }
+            
+            // 設定最大日期（不能選擇此日期之後的日期）
+            setMaxDate(date) {
+                this.maxDate = new Date(date);
+                this.render();
+            }
+            
+            // 取得最小日期
+            getMinDate() {
+                return this.minDate;
+            }
+            
+            // 取得最大日期
+            getMaxDate() {
+                return this.maxDate;
+            }
+        }
+        
+        // 初始化日期選擇器
+        const datePicker = new DropdownCalendar({
+            // minDate: new Date(), // 預設不能選擇今天之前的日期
+            // maxDate: new Date('2025-12-31') // 可選：設定最大日期
+        });
+        
+        // 監聽日期選擇事件
+        document.addEventListener('dateSelected', function(event) {
+            console.log('用戶選擇了：', event.detail.formattedDate);
+            // console.log('Date 物件：', event.detail.date);
+            // console.log('表單值：', datePicker.getValue());
+            
+        });
+        
+    </script>
+</body>
+</html>
+    <div class="">
+    <div class="timeslot-dropdown-container">
+        <div class="timeslot-dropdown-header" onclick="toggleTimeslotDropdown()">
+            <span id="timeslot-selected-time">請選擇時段</span>
+            <div class="timeslot-dropdown-arrow">
+                <img src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M2.8975%207.40274C2.3675%207.93972%202.3675%208.81013%202.8975%209.34711L11.0404%2017.5973C11.5705%2018.1342%2012.4296%2018.1342%2012.9596%2017.5973L21.1025%209.34711C21.6325%208.81013%2021.6325%207.93972%2021.1025%207.40274C20.5725%206.86576%2019.7134%206.86576%2019.1834%207.40274L12%2014.6807L4.81661%207.40274C4.28661%206.86575%203.42751%206.86575%202.8975%207.40274Z'%20fill='%233E5E4E'/%3e%3c/svg%3e" alt="">
+            </div>
+        </div>
+        
+        <div class="timeslot-dropdown-content" id="timeslot-dropdown-content">
+            <div class="timeslot-container">
+                <div class="timeslot-item available" onclick="selectTimeslot('08:00-10:00', 'available')">
+                    08:00-10:00 (靜謐充裕)
+                </div>
+                
+                <div class="timeslot-item available" onclick="selectTimeslot('10:00-12:00', 'available')">
+                    10:00-12:00 (靜謐充裕)
+                </div>
+                
+                <div class="timeslot-item moderate" onclick="selectTimeslot('12:00-14:00', 'moderate')">
+                    12:00-14:00 (舒適剛好)
+                </div>
+                
+                <div class="timeslot-item limited" onclick="selectTimeslot('14:00-16:00', 'limited')">
+                    14:00-16:00 (座位稀少)
+                </div>
+                
+                <div class="timeslot-item moderate" onclick="selectTimeslot('16:00-18:00', 'moderate')">
+                    16:00-18:00 (舒適剛好)
+                </div>
+                
+                <div class="timeslot-item available" onclick="selectTimeslot('18:00-20:00', 'available')">
+                    18:00-20:00 (靜謐充裕)
+                </div>
+            </div>
+            
+            <div class="timeslot-legend">
+                <div class="timeslot-legend-item">
+                    <div class="timeslot-legend-dot available"></div>
+                    <span class="text-primary-500 ">
+                        <img src="data:image/svg+xml,%3csvg%20width='16'%20height='17'%20viewBox='0%200%2016%2017'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M13.9745%209.02667C13.8697%2010.1615%2013.4438%2011.2429%2012.7467%2012.1445C12.0496%2013.0461%2011.1102%2013.7305%2010.0383%2014.1177C8.96649%2014.5049%207.80653%2014.5787%206.69421%2014.3307C5.58189%2014.0827%204.56321%2013.523%203.75736%2012.7172C2.95151%2011.9113%202.39184%2010.8927%202.14382%209.78033C1.89579%208.66801%201.96969%207.50806%202.35685%206.4362C2.74401%205.36434%203.42843%204.42491%204.33002%203.72784C5.23161%203.03076%206.31307%202.60487%207.44788%202.5C6.78349%203.39884%206.46378%204.5063%206.5469%205.62094C6.63002%206.73559%207.11045%207.78337%207.90081%208.57373C8.69117%209.36409%209.73896%209.84452%2010.8536%209.92765C11.9682%2010.0108%2013.0757%209.69106%2013.9745%209.02667Z'%20fill='%23849266'/%3e%3c/svg%3e" class="me-2" alt="">靜謐充裕 (70% 以上空位)</span>
+                </div>
+                <div class="timeslot-legend-item">
+                    <div class="timeslot-legend-dot moderate"></div>
+                    <span class="text-accent">
+                        <img src="data:image/svg+xml,%3csvg%20width='16'%20height='17'%20viewBox='0%200%2016%2017'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M13.9745%209.02667C13.8697%2010.1615%2013.4438%2011.2429%2012.7467%2012.1445C12.0496%2013.0461%2011.1102%2013.7305%2010.0383%2014.1177C8.96649%2014.5049%207.80653%2014.5787%206.69421%2014.3307C5.58189%2014.0827%204.56321%2013.523%203.75736%2012.7172C2.95151%2011.9113%202.39184%2010.8927%202.14382%209.78033C1.89579%208.66801%201.96969%207.50806%202.35685%206.4362C2.74401%205.36434%203.42843%204.42491%204.33002%203.72784C5.23161%203.03076%206.31307%202.60487%207.44788%202.5C6.78349%203.39884%206.46378%204.5063%206.5469%205.62094C6.63002%206.73559%207.11045%207.78337%207.90081%208.57373C8.69117%209.36409%209.73896%209.84452%2010.8536%209.92765C11.9682%2010.0108%2013.0757%209.69106%2013.9745%209.02667Z'%20fill='%23988C6B'/%3e%3c/svg%3e" class="me-2"  alt="">舒適剛好 (40-70% 空位)</span>
+                </div>
+                <div class="timeslot-legend-item">
+                    <div class="timeslot-legend-dot limited"></div>
+                    <span class="text-red-sp">
+                        <img src="data:image/svg+xml,%3csvg%20width='16'%20height='17'%20viewBox='0%200%2016%2017'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M13.9745%209.02667C13.8697%2010.1615%2013.4438%2011.2429%2012.7467%2012.1445C12.0496%2013.0461%2011.1102%2013.7305%2010.0383%2014.1177C8.96649%2014.5049%207.80653%2014.5787%206.69421%2014.3307C5.58189%2014.0827%204.56321%2013.523%203.75736%2012.7172C2.95151%2011.9113%202.39184%2010.8927%202.14382%209.78033C1.89579%208.66801%201.96969%207.50806%202.35685%206.4362C2.74401%205.36434%203.42843%204.42491%204.33002%203.72784C5.23161%203.03076%206.31307%202.60487%207.44788%202.5C6.78349%203.39884%206.46378%204.5063%206.5469%205.62094C6.63002%206.73559%207.11045%207.78337%207.90081%208.57373C8.69117%209.36409%209.73896%209.84452%2010.8536%209.92765C11.9682%2010.0108%2013.0757%209.69106%2013.9745%209.02667Z'%20fill='%239C6667'/%3e%3c/svg%3e" class="me-2"  alt="">座位稀少 (10-40% 空位)</span>
+                </div>
+                <div class="timeslot-legend-item">
+                    <div class="timeslot-legend-dot full"></div>
+                    <span class="text-red-dis" >
+                        <img src="data:image/svg+xml,%3csvg%20width='16'%20height='17'%20viewBox='0%200%2016%2017'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M13.9745%209.02667C13.8697%2010.1615%2013.4438%2011.2429%2012.7467%2012.1445C12.0496%2013.0461%2011.1102%2013.7305%2010.0383%2014.1177C8.96649%2014.5049%207.80653%2014.5787%206.69421%2014.3307C5.58189%2014.0827%204.56321%2013.523%203.75736%2012.7172C2.95151%2011.9113%202.39184%2010.8927%202.14382%209.78033C1.89579%208.66801%201.96969%207.50806%202.35685%206.4362C2.74401%205.36434%203.42843%204.42491%204.33002%203.72784C5.23161%203.03076%206.31307%202.60487%207.44788%202.5C6.78349%203.39884%206.46378%204.5063%206.5469%205.62094C6.63002%206.73559%207.11045%207.78337%207.90081%208.57373C8.69117%209.36409%209.73896%209.84452%2010.8536%209.92765C11.9682%2010.0108%2013.0757%209.69106%2013.9745%209.02667Z'%20fill='%23beabab'/%3e%3c/svg%3e" class="me-2"  alt="">客滿 (0% 空位)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    let selectedTimeslotValue = null;
+    let selectedTimeslotStatus = null;
+
+    function toggleTimeslotDropdown() {
+        const header = document.querySelector('.timeslot-dropdown-header');
+        const content = document.getElementById('timeslot-dropdown-content');
+        
+        header.classList.toggle('active');
+        content.classList.toggle('active');
+    }
+
+    function selectTimeslot(timeValue, status) {
+        const selectedTime = document.getElementById('timeslot-selected-time');
+        const header = document.querySelector('.timeslot-dropdown-header');
+        const content = document.getElementById('timeslot-dropdown-content');
+        
+        // 儲存選擇的值
+        selectedTimeslotValue = timeValue;
+        selectedTimeslotStatus = status;
+        
+        // 根據狀態顯示對應的文字
+        let statusText = '';
+        switch(status) {
+            case 'available':
+                statusText = '(靜謐充裕)';
+                break;
+            case 'moderate':
+                statusText = '(舒適剛好)';
+                break;
+            case 'limited':
+                statusText = '(座位稀少)';
+                break;
+            case 'full':
+                statusText = '(客滿)';
+                break;
+        }
+        
+        selectedTime.textContent = timeValue + ' ' + statusText;
+        header.classList.remove('active');
+        content.classList.remove('active');
+        
+        // 觸發自定義事件，方便外部監聽
+        const event = new CustomEvent('timeslotSelected', {
+            detail: {
+                time: timeValue,
+                status: status,
+                displayText: timeValue + ' ' + statusText
+            }
+        });
+        document.dispatchEvent(event);
+    }
+
+    // 提供全域函數來取得選擇的值
+    function getSelectedTimeslot() {
+        return {
+            time: selectedTimeslotValue,
+            status: selectedTimeslotStatus,
+            displayText: selectedTimeslotValue ? selectedTimeslotValue + ' ' + getTimeslotStatusText(selectedTimeslotStatus) : null
+        };
+    }
+
+    function getTimeslotStatusText(status) {
+        switch(status) {
+            case 'available': return '(靜謐充裕)';
+            case 'moderate': return '(舒適剛好)';
+            case 'limited': return '(座位稀少)';
+            case 'full': return '(客滿)';
+            default: return '';
+        }
+    }
+
+    // 點擊外部關閉下拉選單
+    document.addEventListener('click', function(event) {
+        const container = document.querySelector('.timeslot-dropdown-container');
+        if (!container.contains(event.target)) {
+            const header = document.querySelector('.timeslot-dropdown-header');
+            const content = document.getElementById('timeslot-dropdown-content');
+            header.classList.remove('active');
+            content.classList.remove('active');
+        }
+    });
+
+    // 示範如何監聽選擇事件
+    document.addEventListener('timeslotSelected', function(event) {
+        console.log('選擇的時間:', event.detail.time);
+        // console.log('選擇的狀態:', event.detail.status);
+        // console.log('顯示文字:', event.detail.displayText);
+    });
+</script>
+
+
+
+
+    
+
     <div class="card" style="width: 18rem">
       <img src="/moonook-demo/assets/dog-C9XCfHyE.jpg" class="card-img-top" alt="cat" />
       <div class="card-body">
@@ -120,6 +687,101 @@
           nobis earum!
         </p>
       </div>
+    </div>
+
+    <div class="bg-black">
+      <main class="login-page">
+  <div class="userIcon-btn d-inline-block">
+    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#userLoginPage">
+      <div>
+        <img src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M20%2019.5C20%2019.4034%2019.9674%2019.1708%2019.5508%2018.7861C19.1201%2018.3887%2018.4272%2017.9777%2017.5078%2017.6094C15.6659%2016.8715%2013.4187%2016.5%2012%2016.5C10.5813%2016.5%208.33407%2016.8715%206.49219%2017.6094C5.57284%2017.9777%204.87987%2018.3887%204.44922%2018.7861C4.03255%2019.1708%204%2019.4034%204%2019.5V20H20V19.5ZM15%207C15%205.34207%2013.6579%204%2012%204C10.3421%204%209%205.34207%209%207C9%208.65793%2010.3421%2010%2012%2010V12C9.2375%2012%207%209.7625%207%207C7%204.2375%209.2375%202%2012%202C14.7625%202%2017%204.2375%2017%207C17%209.7625%2014.7625%2012%2012%2012V10C13.6579%2010%2015%208.65793%2015%207ZM22%2020.75C22%2021.4375%2021.4375%2022%2020.75%2022H3.25C2.5625%2022%202%2021.4375%202%2020.75V19.5C2%2016.175%208.6625%2014.5%2012%2014.5C15.3375%2014.5%2022%2016.175%2022%2019.5V20.75Z'%20fill='%23FFFBF3'/%3e%3c/svg%3e" alt="">
+      </div>
+    </button>
+  </div>
+
+  <div class="userImg-btn d-none">
+    <a href="member.html" class="btn border-0">
+      <div class="rounded-circle overflow-hidden user-img">
+        <img src="/moonook-demo/assets/member_photo--2BvKFfG.jpg" class="w-100 h-100"  alt="">
+      </div>
+    </a>
+  </div>
+
+  <button type="button" id="logoutBtn" class="btn btn-primary">登出</button>
+
+
+  <div class="modal fade" id="userLoginPage" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <button type="button" id="hiddenCloseBtn" class="btn-close d-none" data-bs-dismiss="modal" aria-label="Close"></button>
+
+      <div class="modal-content p-lg-10 p-6 user-login" >
+        <h3 class="text-center text-white mb-7 fs-4 fs-lg-3 mt-5 mt-lg-0">會員登入</h3>
+        <div class="px-lg-8 px-5">
+          <div class="form-floating mb-6">
+            <input type="email" class="form-control" id="loginInput" placeholder="">
+            <label for="loginInput">帳號</label>
+          </div>
+          <div class="form-floating mb-4">
+            <input type="password" class="form-control" id="loginPassword" placeholder="Password">
+            <label for="loginPassword">密碼</label>
+          </div>
+          <div class="d-flex justify-content-between p-3 mb-4">
+            <button class="go-register-btn btn p-0 text-primary-300 fw-bold border-0 fs-6">加入會員</button>
+            <button class="btn p-0 text-primary-300 fw-bold border-0 fs-6">忘記密碼</button>
+          </div>
+
+          <div class="">
+            <p class="login-alert d-none text-danger text-center">* 請輸入帳號及密碼 *</p>
+            <button type="button" class="confirm-login btn btn-primary-300 rounded-20px py-4  w-100 mb-7" >登入</button>
+            
+          </div>
+        </div>
+        
+        
+      </div>
+      <div class="modal-content p-lg-10 p-6 user-register d-none">
+        <h3 class="text-center text-white mb-7 fs-4 fs-lg-3 mt-5 mt-lg-0">加入會員</h3>
+        <div class="px-lg-8 px-5">
+          <div class="d-flex gap-6">
+            <div class="form-floating mb-6">
+              <input type="text" class="form-control" id="redisterName" placeholder="">
+              <label for="redisterNam">姓名</label>
+            </div>
+            <div class="form-floating mb-6">
+              <input type="tel" class="form-control" id="redisterTel" placeholder="">
+              <label for="redisterTel">手機號碼</label>
+            </div>
+          </div>
+          
+          <div class="form-floating mb-6">
+            <input type="email" class="form-control" id="redisteraccount" placeholder="">
+            <label for="redisteraccount">帳號</label>
+          </div>
+          <div class="form-floating mb-6">
+            <input type="password" class="form-control" id="redisterPassword" placeholder="Password">
+            <label for="redisterPassword">密碼</label>
+          </div>
+          <div class="form-floating mb-2">
+            <input type="password" class="form-control" id="redisterPassword2" placeholder="Password">
+            <label for="redisterPassword2">確認密碼</label>
+          </div>
+          <div class="text-end p-3 mb-4">
+            <button class="go-login-btn btn p-0 text-primary-300 fw-bold border-0 fs-6">會員登入</button>
+          </div>
+
+          <div class="mb-4">
+            <p class="redister-alert text-danger text-center d-none">* 所有欄位皆需填寫 *</p>
+            <button type="button" class="confirm-redister btn btn-primary-300 rounded-20px py-4  w-100 mb-7 " >註冊</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> -->
+
+
     </div>
 
     <!-- Modal 按鈕 -->
@@ -159,7 +821,7 @@
       <div>
         <img
           class="mb-8"
-          src="/moonook-demo/assets/Logo-SBKDe3fx.svg"
+          src="/moonook-demo/assets/Logo-BOPmqeYa.svg"
           alt="logo_small_white"
         />
         <p class="mb-4">地址：台北市中山區幸福路77號</p>
@@ -197,29 +859,29 @@
     <div class="d-none d-lg-block">
       <img
         class="f-pagetop-def"
-        src="/moonook-demo/assets/footer_pagetop_def-B6aOTXcw.svg"
+        src="/moonook-demo/assets/footer_pagetop_def-CK01M_Xc.svg"
         alt="footer_pagetop_def"
       />
       <img
         class="f-pagetop-hov d-none"
-        src="/moonook-demo/assets/footer_pagetop_hov-CRttxFFC.svg"
+        src="/moonook-demo/assets/footer_pagetop_hov-3nYPp1CE.svg"
         alt="footer_pagetop_hov"
       />
     </div>
     <div class="d-lg-none">
       <img
         class="f-pagetop-sm-def"
-        src="/moonook-demo/assets/footer_pagetop_sm_def-CSO1Mz-R.svg"
+        src="/moonook-demo/assets/footer_pagetop_sm_def-DPl3mA9U.svg"
         alt="footer_pagetop_def"
       />
       <img
         class="f-pagetop-sm-hov d-none"
-        src="/moonook-demo/assets/footer_pagetop_sm_hov-ijH0v1WY.svg"
+        src="/moonook-demo/assets/footer_pagetop_sm_hov-egUxG-pV.svg"
         alt="footer_pagetop_hov"
       />
     </div>
   </a>
 </footer>
-
+
   </body>
 </html>

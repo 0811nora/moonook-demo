@@ -1,41 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/moonook-demo/assets/logo-BRQLKJ81.svg"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js@10.2.0/public/assets/styles/choices.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/css/tom-select.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <title>預約空間 | 默隅 Moonook</title>
-    <script type="module" crossorigin src="/moonook-demo/assets/main-DE48vKrH.js"></script>
-    <link rel="stylesheet" crossorigin href="/moonook-demo/assets/main-DNyK5OOc.css">
-  </head>
-  <body>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/moonook-demo/assets/logo-Be9wTYls.svg"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <title>預約空間 | 默隅 Moonook</title>
+  <script type="module" crossorigin src="/moonook-demo/assets/main-CqOdXyUT.js"></script>
+  <script type="module" crossorigin src="/moonook-demo/assets/login-CjK6_qpe.js"></script>
+  <link rel="stylesheet" crossorigin href="/moonook-demo/assets/main-DL54PhQt.css">
+</head>
+<body>
+  <main class="service-section bggg-color">
+    <div class="scroll-top-btn "></div>
 
-    
-    <!-- 
-    【 因主要先拉皮，尚未進行細部設定】
-      -- 待辦事項 --
-        1. padding , margin 尚未設定
-        2. 顏色尚未設定
-        3. 圖片皆為假圖 
-    -->
 
-    <main class="service-section">
-    
-      <!-- 預約頁-banner區塊 -->
-      <section class="s__banner bgPhoto-set">
-        <div class="container">
-          <header>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const scrollBtn = document.querySelector(".scroll-top-btn");
+
+        // 初始化狀態
+        toggleScrollBtn();
+
+        // 監聽滾動
+        window.addEventListener("scroll", toggleScrollBtn);
+
+        // 點擊回頂端
+        scrollBtn.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+            });
+        });
+
+        function toggleScrollBtn() {
+            if (window.scrollY > 250) {
+                scrollBtn.classList.add("show");
+            } else {
+                scrollBtn.classList.remove("show");
+            }
+        }
+    });
+</script>
+
+  
+    <!-- 預約頁-banner區塊 -->
+    <section class="s__banner bgPhoto-set position-relative">
+      <div class="swiper mySwiper-top h-680px">
+        <div class="top-cover position-absolute">mmmm</div>
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="/moonook-demo/assets/d2861e9883ff9ee942475cd8f1e6018649bf3db6-C9IlC8e_.jpg" alt="" class="swiper-img-set">
+          </div>
+          <div class="swiper-slide">
+            <img src="/moonook-demo/assets/9f048f17515101674f0c18ebfdff6210%20(1)-DxMSCAbZ.jpg" alt="" class="swiper-img-set">
+          </div>
+          <div class="swiper-slide">
+            <img src="/moonook-demo/assets/banner-2-BYRBh5Qs.jpg" alt="" class="swiper-img-set">
+          </div>
+          <div class="swiper-slide">
+            <img src="/moonook-demo/assets/banner-3-BCUgMYyn.jpg" alt="" class="swiper-img-set">
+          </div>
+          <div class="swiper-slide">
+            <img src="/moonook-demo/assets/banner-4-X6GnCYnC.jpg" alt="" class="swiper-img-set">
+          </div>
+          <div class="swiper-slide">
+            <img src="/moonook-demo/assets/banner-5-DnO5i46c.jpg" alt="" class="swiper-img-set">
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+
+      <div class="container ">
+        <header>
   <nav id="h-main-nav" class="fixed-top">
     <div class="container d-flex py-5">
       <a href="index.html" class="me-auto">
-        <img class="h-logo-white" src="/moonook-demo/assets/logo_small_white-BbogZjJN.svg" alt="logo_small_white" />
-        <img class="h-logo-green d-none" src="/moonook-demo/assets/logo_small_green-BruFvL_I.svg" alt="logo_small_green" />
+        <img class="h-logo-white" src="/moonook-demo/assets/logo_small_white-B4mvx7ux.svg" alt="logo_small_white" />
+        <img class="h-logo-green d-none" src="/moonook-demo/assets/logo_small_green-DSdplH0x.svg" alt="logo_small_green" />
       </a>
 
       <ul class="list-unstyled d-lg-flex mb-0 d-none">
@@ -67,7 +111,7 @@
       <div class="offcanvas offcanvas-bottom h-100 bg-fc" tabindex="-1" id="offcanvasBottom"
         aria-labelledby="offcanvasBottomLabel">
         <div class="offcanvas-header">
-          <a href="index.html" class="me-auto"><img src="/moonook-demo/assets/logo_small_white-BbogZjJN.svg"
+          <a href="index.html" class="me-auto"><img src="/moonook-demo/assets/logo_small_white-B4mvx7ux.svg"
               alt="logo_small_white" /></a>
           <button type="button" class="btn text-fcbg p-3 border-0" data-bs-dismiss="offcanvas" aria-label="Close">
             Menu
@@ -129,77 +173,717 @@
     // 確保網頁重新整理時能正確顯示狀態
     handleScroll();
   });
-</script>        </div>
+</script>      </div>
 
-        <div class="container h-680px">
+      <div class="w-100 position-absolute top-0 start-0 z-index-100">
+        <div class="container h-680px ">
           <div class="d-flex align-items-center h-100">
-            <div class="w-416px">
-              <h2>選擇專注，也選擇空間</h2>
-              <p>線上預約，抵達即可入座</p>
-              <p>兩小時專屬片段，讓時間回到你手中</p>
-              <div>
-                <button class="btn btn-primary  w-100">立即預約</button>
+            <div class="title">
+
+              <main class="login-page">
+  <div class="userIcon-btn d-inline-block">
+    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#userLoginPage">
+      <div>
+        <img src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M20%2019.5C20%2019.4034%2019.9674%2019.1708%2019.5508%2018.7861C19.1201%2018.3887%2018.4272%2017.9777%2017.5078%2017.6094C15.6659%2016.8715%2013.4187%2016.5%2012%2016.5C10.5813%2016.5%208.33407%2016.8715%206.49219%2017.6094C5.57284%2017.9777%204.87987%2018.3887%204.44922%2018.7861C4.03255%2019.1708%204%2019.4034%204%2019.5V20H20V19.5ZM15%207C15%205.34207%2013.6579%204%2012%204C10.3421%204%209%205.34207%209%207C9%208.65793%2010.3421%2010%2012%2010V12C9.2375%2012%207%209.7625%207%207C7%204.2375%209.2375%202%2012%202C14.7625%202%2017%204.2375%2017%207C17%209.7625%2014.7625%2012%2012%2012V10C13.6579%2010%2015%208.65793%2015%207ZM22%2020.75C22%2021.4375%2021.4375%2022%2020.75%2022H3.25C2.5625%2022%202%2021.4375%202%2020.75V19.5C2%2016.175%208.6625%2014.5%2012%2014.5C15.3375%2014.5%2022%2016.175%2022%2019.5V20.75Z'%20fill='%23FFFBF3'/%3e%3c/svg%3e" alt="">
+      </div>
+    </button>
+  </div>
+
+  <div class="userImg-btn d-none">
+    <a href="member.html" class="btn border-0">
+      <div class="rounded-circle overflow-hidden user-img">
+        <img src="/moonook-demo/assets/member_photo--2BvKFfG.jpg" class="w-100 h-100"  alt="">
+      </div>
+    </a>
+  </div>
+
+  <button type="button" id="logoutBtn" class="btn btn-primary">登出</button>
+
+
+  <div class="modal fade" id="userLoginPage" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <button type="button" id="hiddenCloseBtn" class="btn-close d-none" data-bs-dismiss="modal" aria-label="Close"></button>
+
+      <div class="modal-content p-lg-10 p-6 user-login" >
+        <h3 class="text-center text-white mb-7 fs-4 fs-lg-3 mt-5 mt-lg-0">會員登入</h3>
+        <div class="px-lg-8 px-5">
+          <div class="form-floating mb-6">
+            <input type="email" class="form-control" id="loginInput" placeholder="">
+            <label for="loginInput">帳號</label>
+          </div>
+          <div class="form-floating mb-4">
+            <input type="password" class="form-control" id="loginPassword" placeholder="Password">
+            <label for="loginPassword">密碼</label>
+          </div>
+          <div class="d-flex justify-content-between p-3 mb-4">
+            <button class="go-register-btn btn p-0 text-primary-300 fw-bold border-0 fs-6">加入會員</button>
+            <button class="btn p-0 text-primary-300 fw-bold border-0 fs-6">忘記密碼</button>
+          </div>
+
+          <div class="">
+            <p class="login-alert d-none text-danger text-center">* 請輸入帳號及密碼 *</p>
+            <button type="button" class="confirm-login btn btn-primary-300 rounded-20px py-4  w-100 mb-7" >登入</button>
+            
+          </div>
+        </div>
+        
+        
+      </div>
+      <div class="modal-content p-lg-10 p-6 user-register d-none">
+        <h3 class="text-center text-white mb-7 fs-4 fs-lg-3 mt-5 mt-lg-0">加入會員</h3>
+        <div class="px-lg-8 px-5">
+          <div class="d-flex gap-6">
+            <div class="form-floating mb-6">
+              <input type="text" class="form-control" id="redisterName" placeholder="">
+              <label for="redisterNam">姓名</label>
+            </div>
+            <div class="form-floating mb-6">
+              <input type="tel" class="form-control" id="redisterTel" placeholder="">
+              <label for="redisterTel">手機號碼</label>
+            </div>
+          </div>
+          
+          <div class="form-floating mb-6">
+            <input type="email" class="form-control" id="redisteraccount" placeholder="">
+            <label for="redisteraccount">帳號</label>
+          </div>
+          <div class="form-floating mb-6">
+            <input type="password" class="form-control" id="redisterPassword" placeholder="Password">
+            <label for="redisterPassword">密碼</label>
+          </div>
+          <div class="form-floating mb-2">
+            <input type="password" class="form-control" id="redisterPassword2" placeholder="Password">
+            <label for="redisterPassword2">確認密碼</label>
+          </div>
+          <div class="text-end p-3 mb-4">
+            <button class="go-login-btn btn p-0 text-primary-300 fw-bold border-0 fs-6">會員登入</button>
+          </div>
+
+          <div class="mb-4">
+            <p class="redister-alert text-danger text-center d-none">* 所有欄位皆需填寫 *</p>
+            <button type="button" class="confirm-redister btn btn-primary-300 rounded-20px py-4  w-100 mb-7 " >註冊</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> -->
+
+
+              <a href="ztestz.html">測試頁</a>
+
+              <h2 class="fs-lg-1 fs-xl text-fcbg mb-8 ">選擇專注，也選擇空間</h2>
+              <p class="text-fcbg fs-lg-xl fs-normal mb-6">線上預約，抵達即可入座</p>
+              <p class="text-fcbg fs-lg-xl fs-normal mb-8">兩小時專屬片段，讓時間回到你手中</p>
+              <div class="w-lg-100 w-sm-108px mx-auto">
+                <a href="#booking-area" class="btn btn-fcbg   w-100 fs-lg">立即預約</a>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+      
+    </section>
 
-      <!-- 預約頁-預約功能區 -->
-      <section class="bg-fcbg py-lg-12">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-10 mx-auto">
+    <!-- 預約頁-預約功能區 -->
+    <section class="bg-fcbg py-lg-12 py-8 px-3 s__booking-fuc">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-10 mx-auto">
 
-              <!-- 預約功能主圖片 -->
-              <div class="not-sure1">
-                <img src="https://images.unsplash.com/photo-1513530176992-0cf39c4cbed4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"  class="w-100 " alt="">
+
+
+            <!-- 預約功能主圖片 -->
+            <div class=" " id="booking-area">
+              <img src="/moonook-demo/assets/booking-title-D_VrtxC0.png"  class="w-100 " alt="">
+            </div>
+            <div class="bg-primary-200 p-6 position-relative rounded-28">
+              <div>
+                <div class="position-absolute top-020 start-0">
+                  <img src="data:image/svg+xml,%3csvg%20width='34'%20height='34'%20viewBox='0%200%2034%2034'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M0%200.0111414C0.864727%202.30753%200.789536%204.78229%201.04018%207.19016C1.77958%2014.4249%205.65204%2021.3698%2011.6801%2026.2747C17.7081%2031.1797%2025.829%2033.9889%2034%2034C31.4058%2018.2931%2016.9311%205.02754%200%200V0.0111414Z'%20fill='%23849266'/%3e%3c/svg%3e" alt="">
+                </div>
+                <div class="position-absolute top-020 end-0">
+                  <img src="data:image/svg+xml,%3csvg%20width='34'%20height='34'%20viewBox='0%200%2034%2034'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M34%200.0111414C33.1353%202.30753%2033.2105%204.78229%2032.9598%207.19016C32.2204%2014.4249%2028.348%2021.3698%2022.3199%2026.2747C16.2919%2031.1797%208.17103%2033.9889%200%2034C2.59418%2018.2931%2017.0689%205.02754%2034%200V0.0111414Z'%20fill='%23849266'/%3e%3c/svg%3e" alt="">
+                </div>
+                <div class="position-absolute bottom-0 right-012 ">
+                  <img src="data:image/svg+xml,%3csvg%20width='40'%20height='40'%20viewBox='0%200%2040%2040'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M40%200.0131075C38.9827%202.71475%2039.0711%205.62622%2038.7763%208.45901C37.9064%2016.9705%2033.3505%2025.141%2026.2588%2030.9115C19.167%2036.682%209.61298%2039.9869%200%2040C3.05197%2021.5213%2020.0811%205.91475%2040%200V0.0131075Z'%20fill='%233E5E4E'/%3e%3c/svg%3e" alt="">
+                </div>
+                <div class="position-absolute bottom-0 left-012 ">
+                  <img src="data:image/svg+xml,%3csvg%20width='40'%20height='40'%20viewBox='0%200%2040%2040'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M0%200.0131075C1.01732%202.71475%200.928867%205.62622%201.22374%208.45901C2.09363%2016.9705%206.64946%2025.141%2013.7412%2030.9115C20.833%2036.682%2030.387%2039.9869%2040%2040C36.948%2021.5213%2019.9189%205.91475%200%200V0.0131075Z'%20fill='%233E5E4E'/%3e%3c/svg%3e" alt="">
+                </div>
               </div>
-              <div class="bg-primary-100 p-6 position-relative">
-                <div class="s__booking-date d-lg-flex">
-                  <div class="w-lg-45  p-6">
-                    <h2 class="text-center">立即預約</h2>
-                    <form id="bookingForm">
-                      <div class="form-group  d-flex justify-content-between align-items-center">
-                        <label for="basicDate">日期</label>
-                        <input type="text" id="basicDate" class="select-date form-control" placeholder="請選擇日期" >
-                      </div>
-                      <div class="form-group d-flex justify-content-between align-items-center">
-                        <label for="custom-select" >時間</label>
-                        <select id="my-select" class="select-time ms-3" >
-                            <option value="">請選擇時段</option>
-                            <option value="8:00-10:00">08:00-10:00</option>
-                            <option value="10:00-12:00">10:00-12:00</option>
-                            <option value="12:00-14:00">12:00-14:00</option>
-                            <option value="14:00-16:00">14:00-16:00</option>
-                            <option value="16:00-18:00">16:00-18:00</option>
-                            <option value="18:00-20:00">18:00-20:00</option>
-                        </select>
-                      </div>
-                      <div class="text-center">
-                        <button class="check-seat-btn btn btn-primary  " type="button" disabled>查詢座位</button>
-                      </div>
-                    </form>
+              
+              <div class="s__booking-date d-lg-flex gap-6">
+                <div class="w-lg-45  p-lg-6 px-0 py-6" >
+                  <h2 class="text-center text-pc-600 fs-lg-2 fs-xl mb-lg-9 mb-6">立即預約</h2>
+                  <form id="bookingForm">
+                    <div class=" d-flex justify-content-between align-items-center mb-6 position-relative">
+                      <label for="" class="fs-lg d-inline-block text-nowrap me-lg-6 me-5">日期</label>
+                      <div class="flex-grow-1 ">
+                        
+<body>
+    <div class="date-picker-wrapper">
+        <!-- 日期輸入框 -->
+        <div class="date-input-container">
+            <input type="text" class="date-input" id="dateDisplay" placeholder="請選擇日期" readonly>
+            <span class="dropdown-arrow" id="dropdownArrow"><img src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M2.8975%207.40274C2.3675%207.93972%202.3675%208.81013%202.8975%209.34711L11.0404%2017.5973C11.5705%2018.1342%2012.4296%2018.1342%2012.9596%2017.5973L21.1025%209.34711C21.6325%208.81013%2021.6325%207.93972%2021.1025%207.40274C20.5725%206.86576%2019.7134%206.86576%2019.1834%207.40274L12%2014.6807L4.81661%207.40274C4.28661%206.86575%203.42751%206.86575%202.8975%207.40274Z'%20fill='%233E5E4E'/%3e%3c/svg%3e" alt=""></span>
+        </div>
+
+        <!-- 遮罩層 -->
+        <div class="overlay" id="overlay"></div>
+
+        <!-- 月曆下拉框 -->
+        <div class="calendar-container" id="calendarContainer">
+            <div class="calendar-header">
+                <div class="month-nav">
+                    <div class="current-month" id="currentMonth"></div>
+                    <div class="nav-buttons">
+                        <button type="button" class="nav-btn" id="prevBtn">‹</button>
+                        <button type="button" class="nav-btn" id="nextBtn">›</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="calendar-body">
+                <div class="weekdays">
+                    <div class="weekday">一</div>
+                    <div class="weekday">二</div>
+                    <div class="weekday">三</div>
+                    <div class="weekday">四</div>
+                    <div class="weekday">五</div>
+                    <div class="weekday">六</div>
+                    <div class="weekday">日</div>
+                </div>
+                <div class="calendar-days" id="calendarDays"></div>
+            </div>
+        </div>
+
+        <!-- 隱藏的表單輸入框 -->
+        <input type="hidden" class="hidden-input" id="selectedDateInput" name="selectedDate">
+    </div>
+
+    <script>
+        class DropdownCalendar {
+            constructor(options = {}) {
+                this.currentDate = new Date();
+                this.selectedDate = null;
+                this.today = new Date();
+                this.isOpen = false;
+                
+                // 設定最小日期（預設為今天，不能選擇過去的日期）
+                this.minDate = options.minDate || new Date();
+                
+                // 設定最大日期（可選，預設無限制）
+                this.maxDate = options.maxDate || null;
+                
+                this.elements = {
+                    dateInput: document.getElementById('dateDisplay'),
+                    dropdownArrow: document.getElementById('dropdownArrow'),
+                    overlay: document.getElementById('overlay'),
+                    calendarContainer: document.getElementById('calendarContainer'),
+                    currentMonth: document.getElementById('currentMonth'),
+                    prevBtn: document.getElementById('prevBtn'),
+                    nextBtn: document.getElementById('nextBtn'),
+                    calendarDays: document.getElementById('calendarDays'),
+                    hiddenInput: document.getElementById('selectedDateInput')
+                };
+                
+                this.init();
+            }
+            
+            init() {
+                this.bindEvents();
+                this.render();
+            }
+            
+            bindEvents() {
+                // 點擊輸入框展開/收合
+                this.elements.dateInput.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    this.toggle();
+                });
+
+                // 點擊遮罩層關閉
+                this.elements.overlay.addEventListener('click', () => {
+                    this.close();
+                });
+
+                // 阻止月曆容器的點擊事件冒泡
+                this.elements.calendarContainer.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                });
+
+                // 月份導航按鈕
+                this.elements.prevBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    this.currentDate.setMonth(this.currentDate.getMonth() - 1);
+                    this.render();
+                });
+                
+                this.elements.nextBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    this.currentDate.setMonth(this.currentDate.getMonth() + 1);
+                    this.render();
+                });
+
+                // ESC 鍵關閉
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && this.isOpen) {
+                        this.close();
+                    }
+                });
+            }
+
+            clearSelection() {
+                this.selectedDate = null;
+                this.updateDateDisplay();
+                this.updateHiddenInput();
+                this.render();
+            }
+            
+            toggle() {
+                if (this.isOpen) {
+                    this.close();
+                } else {
+                    this.open();
+                }
+            }
+            
+            open() {
+                this.isOpen = true;
+                this.elements.calendarContainer.classList.add('show');
+                this.elements.overlay.classList.add('show');
+                this.elements.dropdownArrow.classList.add('rotated');
+                this.elements.dateInput.classList.add('active');
+            }
+            
+            close() {
+                this.isOpen = false;
+                this.elements.calendarContainer.classList.remove('show');
+                this.elements.overlay.classList.remove('show');
+                this.elements.dropdownArrow.classList.remove('rotated');
+                this.elements.dateInput.classList.remove('active');
+            }
+            
+            render() {
+                this.renderHeader();
+                this.renderDays();
+            }
+            
+            renderHeader() {
+                const year = this.currentDate.getFullYear();
+                const month = this.currentDate.getMonth();
+                this.elements.currentMonth.textContent = this.getMonthName(month, year);
+            }
+            
+            getMonthName(month, year) {
+                const monthNames = [
+                    '一月', '二月', '三月', '四月', '五月', '六月',
+                    '七月', '八月', '九月', '十月', '十一月', '十二月'
+                ];
+                return `${monthNames[month]} ${year}`;
+            }
+            
+            renderDays() {
+                const year = this.currentDate.getFullYear();
+                const month = this.currentDate.getMonth();
+                const firstDay = new Date(year, month, 1);
+                const lastDay = new Date(year, month + 1, 0);
+                const daysInMonth = lastDay.getDate();
+                
+                // 調整為週一開始
+                let startDate = (firstDay.getDay() + 6) % 7;
+                
+                this.elements.calendarDays.innerHTML = '';
+                
+                // 上個月的日期
+                const prevMonth = new Date(year, month - 1, 0);
+                for (let i = startDate - 1; i >= 0; i--) {
+                    const day = prevMonth.getDate() - i;
+                    const dayElement = this.createDayElement(day, 'other-month');
+                    this.elements.calendarDays.appendChild(dayElement);
+                }
+                
+                // 當月的日期
+                for (let day = 1; day <= daysInMonth; day++) {
+                    const currentDateObj = new Date(year, month, day);
+                    const dayElement = this.createDayElement(day, 'current-month', currentDateObj);
+                    
+                    // 檢查是否為今天
+                    if (this.isToday(year, month, day)) {
+                        dayElement.classList.add('today');
+                    }
+                    
+                    // 檢查是否為選中的日期
+                    if (this.selectedDate && this.isSameDate(this.selectedDate, currentDateObj)) {
+                        dayElement.classList.add('selected');
+                    }
+                    
+                    // 檢查是否為過期日期
+                    if (this.isDateDisabled(currentDateObj)) {
+                        dayElement.classList.add('disabled');
+                    }
+                    
+                    this.elements.calendarDays.appendChild(dayElement);
+                }
+                
+                // 下個月的日期
+                const totalCells = Math.ceil((startDate + daysInMonth) / 7) * 7;
+                const remainingCells = totalCells - (startDate + daysInMonth);
+                for (let day = 1; day <= remainingCells; day++) {
+                    const dayElement = this.createDayElement(day, 'other-month');
+                    this.elements.calendarDays.appendChild(dayElement);
+                }
+            }
+            
+            createDayElement(day, type, dateObj = null) {
+                const dayElement = document.createElement('button');
+                dayElement.className = `day ${type}`;
+                dayElement.textContent = day;
+                
+                if (type === 'current-month' && dateObj) {
+                    // 檢查日期是否被禁用
+                    if (this.isDateDisabled(dateObj)) {
+                        dayElement.disabled = true;
+                        dayElement.classList.add('disabled');
+                    } else {
+                        dayElement.addEventListener('click', (e) => {
+                            e.stopPropagation();
+                            this.selectDate(dateObj);
+                        });
+                    }
+                }
+                
+                return dayElement;
+            }
+            
+            selectDate(date) {
+                this.selectedDate = date;
+                this.updateDateDisplay();
+                this.updateHiddenInput();
+                this.render();
+                this.close(); // 選擇後自動關閉
+                
+                // 觸發自訂事件
+                const event = new CustomEvent('dateSelected', {
+                    detail: {
+                        date: date,
+                        formattedDate: this.formatDate(date)
+                    }
+                });
+                document.dispatchEvent(event);
+                
+                console.log('選中日期：', this.formatDate(date));
+            }
+            
+            updateDateDisplay() {
+                if (this.selectedDate) {
+                    this.elements.dateInput.value = this.formatDate(this.selectedDate);
+                    this.elements.dateInput.style.color = '#3E5E4E';
+                } else {
+                    this.elements.dateInput.value = '';
+                    this.elements.dateInput.placeholder = '請選擇日期';
+                }
+            }
+            
+            updateHiddenInput() {
+                if (this.selectedDate) {
+                    this.elements.hiddenInput.value = this.formatDate(this.selectedDate, 'YYYY-MM-DD');
+                }
+            }
+            
+            formatDate(date, format = 'YYYY / MM / DD') {
+                const year = date.getFullYear();
+                const month = String(date.getMonth() + 1).padStart(2, '0');
+                const day = String(date.getDate()).padStart(2, '0');
+                
+                return format
+                    .replace('YYYY', year)
+                    .replace('MM', month)
+                    .replace('DD', day);
+            }
+            
+            isToday(year, month, day) {
+                return year === this.today.getFullYear() &&
+                    month === this.today.getMonth() &&
+                    day === this.today.getDate();
+            }
+            
+            isSameDate(date1, date2) {
+                return date1.getFullYear() === date2.getFullYear() &&
+                    date1.getMonth() === date2.getMonth() &&
+                    date1.getDate() === date2.getDate();
+            }
+            
+            // 檢查日期是否被禁用（過期或超出範圍）
+            isDateDisabled(date) {
+                const dateToCheck = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+                const minDate = new Date(this.minDate.getFullYear(), this.minDate.getMonth(), this.minDate.getDate());
+                
+                // 檢查是否早於最小日期
+                if (dateToCheck < minDate) {
+                    return true;
+                }
+                
+                // 檢查是否晚於最大日期（如果有設定的話）
+                if (this.maxDate) {
+                    const maxDate = new Date(this.maxDate.getFullYear(), this.maxDate.getMonth(), this.maxDate.getDate());
+                    if (dateToCheck > maxDate) {
+                        return true;
+                    }
+                }
+                
+                return false;
+            }
+            
+            // 公開方法
+            getSelectedDate() {
+                return this.selectedDate;
+            }
+            
+            setSelectedDate(date) {
+                this.selectedDate = date;
+                this.currentDate = new Date(date);
+                this.updateDateDisplay();
+                this.updateHiddenInput();
+                this.render();
+            }
+
+            getFormattedDate() {
+                return this.selectedDate ? this.formatDate(this.selectedDate) : '';
+            }
+            
+            getValue() {
+                return this.elements.hiddenInput.value;
+            }
+            
+            // 設定最小日期（不能選擇此日期之前的日期）
+            setMinDate(date) {
+                this.minDate = new Date(date);
+                this.render();
+            }
+            
+            // 設定最大日期（不能選擇此日期之後的日期）
+            setMaxDate(date) {
+                this.maxDate = new Date(date);
+                this.render();
+            }
+            
+            // 取得最小日期
+            getMinDate() {
+                return this.minDate;
+            }
+            
+            // 取得最大日期
+            getMaxDate() {
+                return this.maxDate;
+            }
+        }
+        
+        // 初始化日期選擇器
+        const datePicker = new DropdownCalendar({
+            // minDate: new Date(), // 預設不能選擇今天之前的日期
+            // maxDate: new Date('2025-12-31') // 可選：設定最大日期
+        });
+        
+        // 監聽日期選擇事件
+        document.addEventListener('dateSelected', function(event) {
+            console.log('用戶選擇了：', event.detail.formattedDate);
+            // console.log('Date 物件：', event.detail.date);
+            // console.log('表單值：', datePicker.getValue());
+            
+        });
+        
+    </script>
+</body>
+</html>                      </div>
+                      
+                    </div>
+                    <div class="form-group d-flex justify-content-between align-items-center position-relative mb-lg-8 mb-6">
+                      <label for="custom-select" class="fs-lg d-inline-block text-nowrap me-lg-6 me-5" >時間</label>
+                      <div class="flex-grow-1">
+                        <div class="">
+    <div class="timeslot-dropdown-container">
+        <div class="timeslot-dropdown-header" onclick="toggleTimeslotDropdown()">
+            <span id="timeslot-selected-time">請選擇時段</span>
+            <div class="timeslot-dropdown-arrow">
+                <img src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M2.8975%207.40274C2.3675%207.93972%202.3675%208.81013%202.8975%209.34711L11.0404%2017.5973C11.5705%2018.1342%2012.4296%2018.1342%2012.9596%2017.5973L21.1025%209.34711C21.6325%208.81013%2021.6325%207.93972%2021.1025%207.40274C20.5725%206.86576%2019.7134%206.86576%2019.1834%207.40274L12%2014.6807L4.81661%207.40274C4.28661%206.86575%203.42751%206.86575%202.8975%207.40274Z'%20fill='%233E5E4E'/%3e%3c/svg%3e" alt="">
+            </div>
+        </div>
+        
+        <div class="timeslot-dropdown-content" id="timeslot-dropdown-content">
+            <div class="timeslot-container">
+                <div class="timeslot-item available" onclick="selectTimeslot('08:00-10:00', 'available')">
+                    08:00-10:00 (靜謐充裕)
+                </div>
+                
+                <div class="timeslot-item available" onclick="selectTimeslot('10:00-12:00', 'available')">
+                    10:00-12:00 (靜謐充裕)
+                </div>
+                
+                <div class="timeslot-item moderate" onclick="selectTimeslot('12:00-14:00', 'moderate')">
+                    12:00-14:00 (舒適剛好)
+                </div>
+                
+                <div class="timeslot-item limited" onclick="selectTimeslot('14:00-16:00', 'limited')">
+                    14:00-16:00 (座位稀少)
+                </div>
+                
+                <div class="timeslot-item moderate" onclick="selectTimeslot('16:00-18:00', 'moderate')">
+                    16:00-18:00 (舒適剛好)
+                </div>
+                
+                <div class="timeslot-item available" onclick="selectTimeslot('18:00-20:00', 'available')">
+                    18:00-20:00 (靜謐充裕)
+                </div>
+            </div>
+            
+            <div class="timeslot-legend">
+                <div class="timeslot-legend-item">
+                    <div class="timeslot-legend-dot available"></div>
+                    <span class="text-primary-500 ">
+                        <img src="data:image/svg+xml,%3csvg%20width='16'%20height='17'%20viewBox='0%200%2016%2017'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M13.9745%209.02667C13.8697%2010.1615%2013.4438%2011.2429%2012.7467%2012.1445C12.0496%2013.0461%2011.1102%2013.7305%2010.0383%2014.1177C8.96649%2014.5049%207.80653%2014.5787%206.69421%2014.3307C5.58189%2014.0827%204.56321%2013.523%203.75736%2012.7172C2.95151%2011.9113%202.39184%2010.8927%202.14382%209.78033C1.89579%208.66801%201.96969%207.50806%202.35685%206.4362C2.74401%205.36434%203.42843%204.42491%204.33002%203.72784C5.23161%203.03076%206.31307%202.60487%207.44788%202.5C6.78349%203.39884%206.46378%204.5063%206.5469%205.62094C6.63002%206.73559%207.11045%207.78337%207.90081%208.57373C8.69117%209.36409%209.73896%209.84452%2010.8536%209.92765C11.9682%2010.0108%2013.0757%209.69106%2013.9745%209.02667Z'%20fill='%23849266'/%3e%3c/svg%3e" class="me-2" alt="">靜謐充裕 (70% 以上空位)</span>
+                </div>
+                <div class="timeslot-legend-item">
+                    <div class="timeslot-legend-dot moderate"></div>
+                    <span class="text-accent">
+                        <img src="data:image/svg+xml,%3csvg%20width='16'%20height='17'%20viewBox='0%200%2016%2017'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M13.9745%209.02667C13.8697%2010.1615%2013.4438%2011.2429%2012.7467%2012.1445C12.0496%2013.0461%2011.1102%2013.7305%2010.0383%2014.1177C8.96649%2014.5049%207.80653%2014.5787%206.69421%2014.3307C5.58189%2014.0827%204.56321%2013.523%203.75736%2012.7172C2.95151%2011.9113%202.39184%2010.8927%202.14382%209.78033C1.89579%208.66801%201.96969%207.50806%202.35685%206.4362C2.74401%205.36434%203.42843%204.42491%204.33002%203.72784C5.23161%203.03076%206.31307%202.60487%207.44788%202.5C6.78349%203.39884%206.46378%204.5063%206.5469%205.62094C6.63002%206.73559%207.11045%207.78337%207.90081%208.57373C8.69117%209.36409%209.73896%209.84452%2010.8536%209.92765C11.9682%2010.0108%2013.0757%209.69106%2013.9745%209.02667Z'%20fill='%23988C6B'/%3e%3c/svg%3e" class="me-2"  alt="">舒適剛好 (40-70% 空位)</span>
+                </div>
+                <div class="timeslot-legend-item">
+                    <div class="timeslot-legend-dot limited"></div>
+                    <span class="text-red-sp">
+                        <img src="data:image/svg+xml,%3csvg%20width='16'%20height='17'%20viewBox='0%200%2016%2017'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M13.9745%209.02667C13.8697%2010.1615%2013.4438%2011.2429%2012.7467%2012.1445C12.0496%2013.0461%2011.1102%2013.7305%2010.0383%2014.1177C8.96649%2014.5049%207.80653%2014.5787%206.69421%2014.3307C5.58189%2014.0827%204.56321%2013.523%203.75736%2012.7172C2.95151%2011.9113%202.39184%2010.8927%202.14382%209.78033C1.89579%208.66801%201.96969%207.50806%202.35685%206.4362C2.74401%205.36434%203.42843%204.42491%204.33002%203.72784C5.23161%203.03076%206.31307%202.60487%207.44788%202.5C6.78349%203.39884%206.46378%204.5063%206.5469%205.62094C6.63002%206.73559%207.11045%207.78337%207.90081%208.57373C8.69117%209.36409%209.73896%209.84452%2010.8536%209.92765C11.9682%2010.0108%2013.0757%209.69106%2013.9745%209.02667Z'%20fill='%239C6667'/%3e%3c/svg%3e" class="me-2"  alt="">座位稀少 (10-40% 空位)</span>
+                </div>
+                <div class="timeslot-legend-item">
+                    <div class="timeslot-legend-dot full"></div>
+                    <span class="text-red-dis" >
+                        <img src="data:image/svg+xml,%3csvg%20width='16'%20height='17'%20viewBox='0%200%2016%2017'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M13.9745%209.02667C13.8697%2010.1615%2013.4438%2011.2429%2012.7467%2012.1445C12.0496%2013.0461%2011.1102%2013.7305%2010.0383%2014.1177C8.96649%2014.5049%207.80653%2014.5787%206.69421%2014.3307C5.58189%2014.0827%204.56321%2013.523%203.75736%2012.7172C2.95151%2011.9113%202.39184%2010.8927%202.14382%209.78033C1.89579%208.66801%201.96969%207.50806%202.35685%206.4362C2.74401%205.36434%203.42843%204.42491%204.33002%203.72784C5.23161%203.03076%206.31307%202.60487%207.44788%202.5C6.78349%203.39884%206.46378%204.5063%206.5469%205.62094C6.63002%206.73559%207.11045%207.78337%207.90081%208.57373C8.69117%209.36409%209.73896%209.84452%2010.8536%209.92765C11.9682%2010.0108%2013.0757%209.69106%2013.9745%209.02667Z'%20fill='%23beabab'/%3e%3c/svg%3e" class="me-2"  alt="">客滿 (0% 空位)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    let selectedTimeslotValue = null;
+    let selectedTimeslotStatus = null;
+
+    function toggleTimeslotDropdown() {
+        const header = document.querySelector('.timeslot-dropdown-header');
+        const content = document.getElementById('timeslot-dropdown-content');
+        
+        header.classList.toggle('active');
+        content.classList.toggle('active');
+    }
+
+    function selectTimeslot(timeValue, status) {
+        const selectedTime = document.getElementById('timeslot-selected-time');
+        const header = document.querySelector('.timeslot-dropdown-header');
+        const content = document.getElementById('timeslot-dropdown-content');
+        
+        // 儲存選擇的值
+        selectedTimeslotValue = timeValue;
+        selectedTimeslotStatus = status;
+        
+        // 根據狀態顯示對應的文字
+        let statusText = '';
+        switch(status) {
+            case 'available':
+                statusText = '(靜謐充裕)';
+                break;
+            case 'moderate':
+                statusText = '(舒適剛好)';
+                break;
+            case 'limited':
+                statusText = '(座位稀少)';
+                break;
+            case 'full':
+                statusText = '(客滿)';
+                break;
+        }
+        
+        selectedTime.textContent = timeValue + ' ' + statusText;
+        header.classList.remove('active');
+        content.classList.remove('active');
+        
+        // 觸發自定義事件，方便外部監聽
+        const event = new CustomEvent('timeslotSelected', {
+            detail: {
+                time: timeValue,
+                status: status,
+                displayText: timeValue + ' ' + statusText
+            }
+        });
+        document.dispatchEvent(event);
+    }
+
+    // 提供全域函數來取得選擇的值
+    function getSelectedTimeslot() {
+        return {
+            time: selectedTimeslotValue,
+            status: selectedTimeslotStatus,
+            displayText: selectedTimeslotValue ? selectedTimeslotValue + ' ' + getTimeslotStatusText(selectedTimeslotStatus) : null
+        };
+    }
+
+    function getTimeslotStatusText(status) {
+        switch(status) {
+            case 'available': return '(靜謐充裕)';
+            case 'moderate': return '(舒適剛好)';
+            case 'limited': return '(座位稀少)';
+            case 'full': return '(客滿)';
+            default: return '';
+        }
+    }
+
+    // 點擊外部關閉下拉選單
+    document.addEventListener('click', function(event) {
+        const container = document.querySelector('.timeslot-dropdown-container');
+        if (!container.contains(event.target)) {
+            const header = document.querySelector('.timeslot-dropdown-header');
+            const content = document.getElementById('timeslot-dropdown-content');
+            header.classList.remove('active');
+            content.classList.remove('active');
+        }
+    });
+
+    // 示範如何監聽選擇事件
+    document.addEventListener('timeslotSelected', function(event) {
+        console.log('選擇的時間:', event.detail.time);
+        // console.log('選擇的狀態:', event.detail.status);
+        // console.log('顯示文字:', event.detail.displayText);
+    });
+</script>                      </div>
+                    </div> 
+                    <div class="text-center ">
+                      <button class="check-seat-btn btn btn-primary w-lg-196px rounded-5 " type="button" disabled>查詢座位</button>
+                    </div>
+                  </form>
+                </div>
+
+                
+                <div class="w-lg-55 ">
+                  <div class="h-lg-365px h-sm-212px w-100 seat-img ">
+                    <img class="w-100 h-100 rounded-3 " src="/moonook-demo/assets/22da4000882579774f17a5f754845ebc-BzUfxU5U.jpg"  alt="">
                   </div>
 
-                  
-                  <div class="w-lg-55 ">
-                    <div class="h-356px seat-img">
-                      <img class="w-100 h-100 " src="https://images.unsplash.com/photo-1709860698887-2044b62f84e8?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
-                    </div>
-
-                    <div class=" all-seat h-356px  p-4 d-none ">
-                      <h3>請選擇座位</h3>
+                  <div class="h-lg-365px all-seat  p-lg-6 p-5 d-none  border-style rounded-3">
+                    <div class="w-100 h-100">
+                      <h3 class="fs-lg-3 fs-5 text-pc-600 mb-3">請選擇座位：</h3>
                       <div class="">
-                        <form id="bookingForm">
-                          <div class="s__choose-seats d-flex  gap-5 flex-wrap py-6">
+                        <form id="bookingSeat">
+                          <div class="s__choose-seats d-flex  column-gap-lg-6 gap-5 flex-wrap p-lg-5 p-4 mb-4">
                             <button type="button" class="s__seat-btn disabled" >A1</button>
                             <button type="button" class="s__seat-btn " >A2</button>
                             <button type="button" class="s__seat-btn " >A3</button>
                             <button type="button" class="s__seat-btn disabled" >A4</button>
                             <button type="button" class="s__seat-btn " >A5</button>
                             <button type="button" class="s__seat-btn " >B1</button>
-                            <button type="button" class="s__seat-btn disabled" >B2</button>
+                            <button type="button" class="s__seat-btn " >B2</button>
                             <button type="button" class="s__seat-btn disabled" >B3</button>
                             <button type="button" class="s__seat-btn " >B4</button>
                             <button type="button" class="s__seat-btn " >B5</button>
@@ -212,225 +896,277 @@
                           
                           
                           <button type="button" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#seatModal">預約</button>
+
                           <div class="modal fade" id="seatModal" tabindex="-1" aria-labelledby="seatModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered">
-                              <div class="modal-content comfirmBooking-content">
-                                <div class="modal-header">
-                                  <h5 class="modal-title" id="seatModalLabel">請確認預約資訊：</h5>
-                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              <div class="modal-content comfirmBooking-content bg-accent-50 p-lg-8 p-6 m-lg-0 m-5">
+                                <!-- <button type="button" class="btn-close m-4" data-bs-dismiss="modal" aria-label="Close"></button> -->
+                                <h3 class="text-fc-600 fs-lg-4 fs-5 text-center mb-6">請確認您的預約資訊</h3>
+                                <div class="d-flex flex-column-reverse flex-lg-row  gap-6 mb-8">
+                                  <div class="w-lg-55 d-flex flex-column justify-content-between gap-4">
+                                    <div class=" bg-primary-200 p-lg-5 p-4 text-fc-600 left-border rounded-3  ">
+                                      <div class="d-flex justify-content-between ">
+                                        <p class="fs-lg-lg fs-normal fw-bold">日期</p>
+                                        <span class="show-date fs-lg-lg fs-normal fw-bold"></span>
+                                      </div>
+                                    </div>
+
+                                    <div class="bg-primary-200 p-lg-5 p-4 text-fc-600 left-border rounded-3 ">
+                                      <div class="d-flex justify-content-between ">
+                                        <p class="fs-lg-lg fs-normal fw-bold">時段</p>
+                                        <span class="show-time fs-lg-lg fs-normal fw-bold"></span>
+                                      </div>
+                                    </div>
+
+                                    <div class="bg-primary-200 p-lg-5 p-4 text-fc-600 left-border rounded-3 ">
+                                      <div class="d-flex justify-content-between ">
+                                        <p class="fs-lg-lg fs-normal fw-bold">座位</p>
+                                        <span class="show-seat fs-lg-lg fs-normal fw-bold"></span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="w-lg-45 ">
+                                    <div class="w-lg-100 w-sm-80 mx-auto">
+                                      <img src="/moonook-demo/assets/28125371a9401d3f61511801eccf25aa%20(1)-BDxlNcqX.jpg" class="w-100  h-100 rounded-3" alt="">
+                                    </div>
+                                  </div>
                                 </div>
-                                <div class="modal-body">
-                                  <p>日期： <span class="show-date">222</span></p>
-                                  <p>時段： <span class="show-time">222-222</span></p>
-                                  <p>座位： <span class="show-seat">DD</span></p>
-                                </div>
-                                <div class="modal-footer">
-                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">重選選位</button>
+                                
+                                <div class=" text-center">
+                                  <button type="button" class="btn btn-secondary me-4" data-bs-dismiss="modal">重選選位</button>
                                   <button type="button" class="comfirmBooking_btn btn btn-primary">確認預約</button>
                                 </div>
                               </div>
 
-                              <div class="modal-content doneBooking-content d-none text-center p-6 ">
+                              <div class="modal-content doneBooking-content d-none text-center p-8 m-5">
                                 <div class="text-end">
                                   <button type="button" class="btn-close close-done-booking" data-bs-dismiss="modal" aria-label="Close"></button>
 
                                 </div>
-                                <h3>已預約成功！</h3>
-                                <p>當日請至櫃檯報到即可入座。</p>
-                                <a href="login.html" class="btn btn-primary">查看預約紀錄</a>
+                                <h3 class="fs-2 fw-bold mb-6">已預約成功！</h3>
+                                <p class="fs-lg mb-8">當日請至櫃檯報到即可入座。</p>
+                                <a href="member.html" class="btn btn-primary">查看預約紀錄</a>
                               </div>
                             </div>
                           </div>
                         </form>
-
-
-
                       </div>
                     </div>
-                    
                   </div>
                   
                 </div>
-                <div></div>
+                
               </div>
-
-
             </div>
+
+
           </div>
-          
         </div>
         
+      </div>
+      
 
-      </section>
+    </section>
 
-      <!-- 預約頁-提供服務區 -->
-      <section class="s__seat-service bgPhoto-set  py-12">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-8 mx-auto ">
+    <!-- 預約頁-提供服務區 -->
+    <section class="s__seat-service bgPhoto-set  py-lg-12 py-8">
+      <div class="container ">
+        <div class="row">
+          <div class="col-lg-8 mx-auto ">
 
-              <div class="py-8 d-flex flex-column flex-lg-row justify-content-between gap-6">
-                <div class="card p-6 w-lg-196px">
-                  <div class="border-bottom text-center">
-                    <div>
-                      <img src="data:image/svg+xml,%3csvg%20width='61'%20height='59'%20viewBox='0%200%2061%2059'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M60.5464%2022.9652C60.46%2022.5023%2059.7935%2021.6012%2059.1948%2021.6012H45.4251V2.15948C45.4251%201.83237%2045.2276%201.50525%2044.8511%201.22134C44.4993%200.955944%2043.9315%200.696721%2043.4501%200.789301L2.35079%200.88188L2.19031%200.906568C1.52374%201.12876%201.26456%201.72127%201.07322%202.15331L0.999163%202.32612L0.900391%2056.4791L0.912747%2056.6581C0.943607%2057.2938%200.999179%2058.2566%202.01756%2058.6023L2.09779%2058.6269L58.806%2058.7504C58.8677%2058.7504%2058.9232%2058.7504%2058.9725%2058.7504C59.8613%2058.7504%2060.0897%2058.3307%2060.3181%2057.695L60.3674%2057.5592L60.5588%2022.9961V22.9467L60.5464%2022.9652ZM43.3081%2025.0822H57.0778L56.8926%2055.2756H4.56659V4.46163H41.9441V23.7182C41.9441%2024.1873%2042.8329%2025.0761%2043.3019%2025.0761L43.3081%2025.0822Z'%20fill='%23849266'/%3e%3cpath%20d='M44.7648%2040.2158C30.7914%2044.2461%2019.1634%2029.7049%2024.8292%2016.4969C25.5452%2014.8305%2028.8534%2011.2199%2025.0021%2011.7568C18.9844%2012.5962%2013.1766%2019.1447%2011.5225%2024.7612C6.68365%2041.2219%2022.6629%2055.2878%2038.5249%2049.3072C41.7282%2048.0974%2047.7088%2043.6783%2048.6037%2040.2776C49.2765%2037.7038%2045.8572%2039.9011%2044.7586%2040.222L44.7648%2040.2158Z'%20fill='%23849266'/%3e%3c/svg%3e" alt="">
-                    </div>
-                    <h4>Wi-Fi</h4>
+            <div class="py-8 px-lg-0 px-8 d-flex flex-column flex-lg-row justify-content-between gap-6">
+              <div class="card p-lg-6 p-6 w-lg-196px rounded-28">
+                <div class="border-bottom text-center pb-4 mb-3">
+                  <div class="mb-4">
+                    <img src="data:image/svg+xml,%3csvg%20width='56'%20height='57'%20viewBox='0%200%2056%2057'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M4.66699%2013.6516C4.66699%209.00904%208.50928%205.16675%2013.1519%205.16675H42.8489C47.4914%205.16675%2051.3337%209.00904%2051.3337%2013.6516V43.3486C51.3337%2047.9913%2047.4914%2051.8335%2042.8489%2051.8335H13.1519C8.50928%2051.8334%204.66699%2047.9913%204.66699%2043.3485L4.66699%2013.6516ZM21.5939%2033.2768C25.2008%2029.6699%2030.7999%2029.6699%2034.4068%2033.2768C35.2352%2034.1051%2036.5781%2034.1051%2037.4066%2033.2768C38.235%2032.4483%2038.235%2031.1053%2037.4066%2030.2768C32.1429%2025.0132%2023.8576%2025.0132%2018.594%2030.2768C17.7656%2031.1053%2017.7656%2032.4483%2018.594%2033.2768C19.4224%2034.1051%2020.7655%2034.1051%2021.5939%2033.2768ZM42.1202%2025.3719C34.2711%2017.5226%2021.5369%2017.5226%2013.6876%2025.3719C12.8592%2026.2003%2011.5161%2026.2003%2010.6877%2025.3719C9.85933%2024.5436%209.85933%2023.2005%2010.6877%2022.3721C20.1938%2012.866%2035.614%2012.866%2045.1201%2022.3721C45.9485%2023.2005%2045.9485%2024.5435%2045.1201%2025.3719C44.2917%2026.2003%2042.9487%2026.2003%2042.1202%2025.3719ZM30.8928%2039.6848C30.8928%2041.2822%2029.5978%2042.5775%2028.0004%2042.5775C26.4029%2042.5775%2025.1079%2041.2823%2025.1079%2039.6848C25.1079%2038.0873%2026.4029%2036.7923%2028.0004%2036.7923C29.5978%2036.7923%2030.8928%2038.0873%2030.8928%2039.6848Z'%20fill='%233E5E4E'/%3e%3c/svg%3e" alt="">
                   </div>
-                  <p class="text-center">工作學習不中斷<br> 隨時保持 <br>連線順暢</p>
+                  <h4 class="fs-5 fw-bold">Wi-Fi</h4>
                 </div>
-
-                <div class="card p-6 w-lg-196px">
-                  <div class="border-bottom text-center">
-                    <div>
-                      <img src="data:image/svg+xml,%3csvg%20width='61'%20height='59'%20viewBox='0%200%2061%2059'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M60.5464%2022.9652C60.46%2022.5023%2059.7935%2021.6012%2059.1948%2021.6012H45.4251V2.15948C45.4251%201.83237%2045.2276%201.50525%2044.8511%201.22134C44.4993%200.955944%2043.9315%200.696721%2043.4501%200.789301L2.35079%200.88188L2.19031%200.906568C1.52374%201.12876%201.26456%201.72127%201.07322%202.15331L0.999163%202.32612L0.900391%2056.4791L0.912747%2056.6581C0.943607%2057.2938%200.999179%2058.2566%202.01756%2058.6023L2.09779%2058.6269L58.806%2058.7504C58.8677%2058.7504%2058.9232%2058.7504%2058.9725%2058.7504C59.8613%2058.7504%2060.0897%2058.3307%2060.3181%2057.695L60.3674%2057.5592L60.5588%2022.9961V22.9467L60.5464%2022.9652ZM43.3081%2025.0822H57.0778L56.8926%2055.2756H4.56659V4.46163H41.9441V23.7182C41.9441%2024.1873%2042.8329%2025.0761%2043.3019%2025.0761L43.3081%2025.0822Z'%20fill='%23849266'/%3e%3cpath%20d='M44.7648%2040.2158C30.7914%2044.2461%2019.1634%2029.7049%2024.8292%2016.4969C25.5452%2014.8305%2028.8534%2011.2199%2025.0021%2011.7568C18.9844%2012.5962%2013.1766%2019.1447%2011.5225%2024.7612C6.68365%2041.2219%2022.6629%2055.2878%2038.5249%2049.3072C41.7282%2048.0974%2047.7088%2043.6783%2048.6037%2040.2776C49.2765%2037.7038%2045.8572%2039.9011%2044.7586%2040.222L44.7648%2040.2158Z'%20fill='%23849266'/%3e%3c/svg%3e" alt="">
-                    </div>
-                    <h4>專屬插座</h4>
-                  </div>
-                  <p class="text-center">每個座位 <br>配備電源插座 <br>保障設備電力充沛</p>
-                </div>
-
-                <div class="card p-6 w-lg-196px">
-                  <div class="border-bottom text-center">
-                    <div>
-                      <img src="data:image/svg+xml,%3csvg%20width='61'%20height='59'%20viewBox='0%200%2061%2059'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M60.5464%2022.9652C60.46%2022.5023%2059.7935%2021.6012%2059.1948%2021.6012H45.4251V2.15948C45.4251%201.83237%2045.2276%201.50525%2044.8511%201.22134C44.4993%200.955944%2043.9315%200.696721%2043.4501%200.789301L2.35079%200.88188L2.19031%200.906568C1.52374%201.12876%201.26456%201.72127%201.07322%202.15331L0.999163%202.32612L0.900391%2056.4791L0.912747%2056.6581C0.943607%2057.2938%200.999179%2058.2566%202.01756%2058.6023L2.09779%2058.6269L58.806%2058.7504C58.8677%2058.7504%2058.9232%2058.7504%2058.9725%2058.7504C59.8613%2058.7504%2060.0897%2058.3307%2060.3181%2057.695L60.3674%2057.5592L60.5588%2022.9961V22.9467L60.5464%2022.9652ZM43.3081%2025.0822H57.0778L56.8926%2055.2756H4.56659V4.46163H41.9441V23.7182C41.9441%2024.1873%2042.8329%2025.0761%2043.3019%2025.0761L43.3081%2025.0822Z'%20fill='%23849266'/%3e%3cpath%20d='M44.7648%2040.2158C30.7914%2044.2461%2019.1634%2029.7049%2024.8292%2016.4969C25.5452%2014.8305%2028.8534%2011.2199%2025.0021%2011.7568C18.9844%2012.5962%2013.1766%2019.1447%2011.5225%2024.7612C6.68365%2041.2219%2022.6629%2055.2878%2038.5249%2049.3072C41.7282%2048.0974%2047.7088%2043.6783%2048.6037%2040.2776C49.2765%2037.7038%2045.8572%2039.9011%2044.7586%2040.222L44.7648%2040.2158Z'%20fill='%23849266'/%3e%3c/svg%3e" alt="">
-                    </div>
-                    <h4>獨立閱讀燈</h4>
-                  </div>
-                  <p class="text-center">可調節光源 <br>閱讀與工作更舒適 <br>不傷眼</p>
-                </div>
-
+                <p class="text-center fs-lg">工作學習不中斷<br> 隨時保持 <br>連線順暢</p>
               </div>
-              
+
+              <div class="card p-lg-6 p-5 w-lg-196px rounded-28">
+                <div class="border-bottom text-center pb-4 mb-4">
+                  <div class="mb-4">
+                    <img src="data:image/svg+xml,%3csvg%20width='56'%20height='57'%20viewBox='0%200%2056%2057'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M45.7838%208.64127C40.0605%203.5103%2032.6696%201.14826%2024.9676%202.00555C12.8708%203.34286%203.01639%2013.0813%201.53526%2025.1596C0.133539%2036.5872%206.11628%2047.6089%2016.4206%2052.5863C17.2814%2053.0006%2018.32%2052.6403%2018.7371%2051.7767C19.1532%2050.913%2018.7911%2049.8756%2017.9282%2049.4581C8.96208%2045.1282%203.75855%2035.5328%204.97818%2025.5835C6.26555%2015.0841%2014.8326%206.6194%2025.3487%205.45693C32.0503%204.71515%2038.4904%206.76457%2043.4695%2011.228C48.3808%2015.6309%2051.198%2021.9371%2051.198%2028.5315C51.198%2040.6426%2041.7766%2050.7986%2029.7317%2051.6887V43.6849H29.8143C31.7899%2043.6849%2033.3959%2042.0774%2033.3959%2040.1V37.3128C37.049%2035.7445%2039.5163%2032.0936%2039.5163%2028.0515V20.3561C39.5163%2018.5037%2038.0119%2016.9979%2036.1612%2016.9979H34.6748V11.5225C34.6748%2010.5635%2033.8988%209.78678%2032.9407%209.78678C31.9825%209.78678%2031.2065%2010.5635%2031.2065%2011.5225V16.9979H24.7876V11.5225C24.7876%2010.5635%2024.0116%209.78678%2023.0534%209.78678C22.0953%209.78678%2021.3193%2010.5635%2021.3193%2011.5225V16.9979H19.8329C17.9833%2016.9979%2016.4789%2018.5037%2016.4789%2020.3561V28.0515C16.4789%2032.0933%2018.9461%2035.7442%2022.5982%2037.3127V40.1C22.5982%2042.0774%2024.2042%2043.6849%2026.1798%2043.6849H26.2634V51.7767C26.2634%2052.7134%2026.6562%2053.6163%2027.3412%2054.2553C27.9701%2054.8413%2028.8022%2055.1666%2029.6555%2055.1666C29.7349%2055.1666%2029.8133%2055.1645%2029.8927%2055.1581C43.785%2054.1811%2054.6663%2042.4854%2054.6663%2028.5315C54.6663%2020.9516%2051.4288%2013.7023%2045.7838%208.64127ZM19.9472%2028.0515V20.4694H36.048V28.0515C36.048%2030.8819%2034.2037%2033.4251%2031.5358%2034.3184H24.4583C21.7915%2033.4251%2019.9472%2030.8819%2019.9472%2028.0515ZM26.0665%2040.1V37.7899H29.9276V40.1C29.9276%2040.1626%2029.8768%2040.2134%2029.8143%2040.2134H26.1798C26.1173%2040.2134%2026.0665%2040.1626%2026.0665%2040.1Z'%20fill='%233E5E4E'/%3e%3c/svg%3e" alt="">
+                  </div>
+                  <h4 class="fs-5 fw-bold">專屬插座</h4>
+                </div>
+                <p class="text-center fs-lg">每個座位 <br>配備電源插座 <br>保障設備電力充沛</p>
+              </div>
+
+              <div class="card p-lg-6 p-5 w-lg-196px rounded-28">
+                <div class="border-bottom text-center pb-3 mb-3">
+                  <div class="mb-4">
+                    <img src="/moonook-demo/assets/icon-lamp-mafEa_3E.svg" alt="">
+                  </div>
+                  <h4 class="fs-5 fw-bold">獨立閱讀燈</h4>
+                </div>
+                <p class="text-center fs-lg">可調節光源 <br>閱讀與工作更舒適 <br>不傷眼</p>
+              </div>
 
             </div>
+            
+
           </div>
         </div>
+      </div>
 
-      </section>
+    </section>
 
-      <!-- 預約頁-收費標準 -->
-      <section class="s__price bgPhoto-set py-12">
-        <div class="container">
-          <h2 class="d-inline-block px-3 pb-2 underline-set">收費標準</h2>
+    <!-- 預約頁-收費標準 -->
+    <section class="s__price bgPhoto-set h-lg-712px py-lg-12  py-10">
+      <div class="container  px-6">
+        <div class="p-5 p-lg-0">
+          <div class="text-center mb-lg-8 mb-6">
+            <h2 class="d-inline-block px-5 p-4 underline-set fs-lg-1 fs-xl fc-600 fw-bold">收費標準</h2>
+          </div>
           <div class="d-flex flex-column justify-content-center align-items-center">
-            <h3>我們保留最單純的方式</h3>
-            <h5>不分座位、不分時段</h5>
-            <ul>
-              <li>兩小時使用空間 150元</li>
-              <li>當次消費可折抵30元飲品</li>
+            <h3 class="fc-60 fs-lg-2 fs-5 fw-bold mb-lg-8 mb-6">我們保留最單純的方式</h3>
+            <h5 class="text-primary fw-bold fs-lg-4 fs-sm mb-6 ">不分座位、不分時段</h5>
+            <ul class="mb-8">
+              <li class="list-style-circle fw-bold fs-lg-5 fw-normal mb-lg-6 mb-3">兩小時使用空間 150元</li>
+              <li class="list-style-circle fw-bold fs-lg-5 fw-normal ">當次消費可折抵30元飲品</li>
             </ul>
-            <a href="menu.html" class="btn btn-primary">詳細菜單</a>
+            <div class="w-lg-268px">
+              <a href="menu.html" class="btn btn-primary w-100 rounded-28">詳細菜單</a>
+            </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- 預約頁-預約須知 -->
-      <section class="s__booking-rule py-12">
-        <div class="container">
-          <div class="text-center mb-6">
-            <h2 class="d-inline-block px-3 pb-2 underline-set">預約須知</h2>
+    <!-- 預約頁-預約須知 -->
+    <section class="s__booking-rule py-lg-12 py-8 position-relative">
+      <div class="position-absolute bottom-020 start-50 translate-middle d-none d-lg-block">
+        <img src="data:image/svg+xml,%3csvg%20width='40'%20height='40'%20viewBox='0%200%2040%2040'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M0%200.0131075C1.01732%202.71475%200.928867%205.62622%201.22374%208.45901C2.09363%2016.9705%206.64946%2025.141%2013.7412%2030.9115C20.833%2036.682%2030.387%2039.9869%2040%2040C36.948%2021.5213%2019.9189%205.91475%200%200V0.0131075Z'%20fill='%233E5E4E'/%3e%3c/svg%3e" alt="">
+        <img src="data:image/svg+xml,%3csvg%20width='40'%20height='40'%20viewBox='0%200%2040%2040'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M40%200.0131075C38.9827%202.71475%2039.0711%205.62622%2038.7763%208.45901C37.9064%2016.9705%2033.3505%2025.141%2026.2588%2030.9115C19.167%2036.682%209.61298%2039.9869%200%2040C3.05197%2021.5213%2020.0811%205.91475%2040%200V0.0131075Z'%20fill='%233E5E4E'/%3e%3c/svg%3e" alt="">
+      </div>
+      <div class="container ">
+        <div class="text-center mb-6">
+          <h2 class="d-inline-block px-4 pb-3 underline-set fs-lg-1 fs-xl fw-bold">預約須知</h2>
+        </div>
+        <div class="position-relative">
+          <div class="position-absolute top-53 start-50 translate-middle d-none d-lg-block">
+            <img src="data:image/svg+xml,%3csvg%20width='2'%20height='1344'%20viewBox='0%200%202%201344'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M1%201C1%20189.002%201%20376.878%201%201343'%20stroke='%233E5E4E'%20stroke-linecap='round'%20stroke-dasharray='5%205'/%3e%3c/svg%3e" alt="">
           </div>
-          <div class="row mb-6 py-6 area-bg-1 bgPhoto-set align-items-center">
-            <div class="col-lg-6">
+          <div class="row mb-lg-6 mb-0 py-6  bgPhoto-set align-items-center ">
+            <div class="col-lg-6 position-relative  px-lg-4 px-5">
               <div class="">
-                <img src="https://images.unsplash.com/photo-1626978396804-54433b489aa5?q=80&w=2103&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="w-100 rounded-r-l" alt="">
+                <img src="/moonook-demo/assets/booking-rule-1-68YuMzIu.png" class="w-100 " alt="">
               </div>
             </div>
-            <div class="col-lg-6">
-              <div>
-                <h4>預約與費用</h4>
-                <p>本空間採預約制，每次預約為2小時，費用為NT$150。
+            <div class="col-lg-6 position-relative px-lg-4 px-5">
+              <div class="py-lg-8 py-5 px-lg-6 px-0">
+                <h4 class="fs-5 pb-6 mb-6 title-border-b fw-bold">預約與費用</h4>
+                <p class="fs-lg">本空間採<b>預約制</b>，每次預 <b>約為2小時，費用為NT$150</b>。
                   <br>抵達現場報到後付款，即可安心使用座位與空間
                   <br>每當次消費可享NT$30餐飲折抵。</p>
               </div>
+              <div class="position-absolute bottom-050 start-0 d-none d-lg-block">
+                <img src="data:image/svg+xml,%3csvg%20width='32'%20height='32'%20viewBox='0%200%2032%2032'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M29.9863%201.17188C30.4007%201.02855%2030.8173%200.891451%2031.2354%200.758789C31.1993%200.891493%2031.1649%201.02416%2031.1338%201.15723L31.6211%201.27148C31.302%202.63654%2031.2296%204.04825%2031.1299%205.45312L30.6328%205.41895C30.6173%205.63738%2030.6008%205.85443%2030.583%206.07031L30.5234%206.71582V6.7168C30.4562%207.37465%2030.361%208.03015%2030.2383%208.68164L30.7275%208.77344C30.3299%2010.885%2029.6521%2012.9533%2028.7217%2014.9287L28.2715%2014.7168C27.71%2015.9089%2027.0544%2017.0667%2026.3115%2018.1787L26.7246%2018.4561C25.5375%2020.2331%2024.1334%2021.8951%2022.5342%2023.3945L22.1924%2023.0303C21.8304%2023.3697%2021.4581%2023.7004%2021.0762%2024.0225L20.6914%2024.3418C20.1402%2024.7903%2019.5692%2025.2196%2018.9814%2025.6299L19.2676%2026.0381C17.3846%2027.3528%2015.3295%2028.47%2013.1592%2029.3691L12.9688%2028.9082C11.654%2029.4529%2010.2957%2029.9169%208.9082%2030.2949L9.03906%2030.7754C6.8081%2031.3833%204.50272%2031.7734%202.17578%2031.9258L2.14355%2031.4277C1.6284%2031.4615%201.11226%2031.4832%200.595703%2031.4932C0.696556%2030.9518%200.813453%2030.4137%200.944336%2029.8789L0.459961%2029.7598C1.03701%2027.4023%201.89623%2025.1127%203%2022.9141L3.44531%2023.1387C4.11437%2021.8059%204.87594%2020.5055%205.71973%2019.2441L5.30273%2018.9658C6.64026%2016.9664%208.18315%2015.0648%209.89648%2013.2812L10.2578%2013.6279C11.2937%2012.5495%2012.3932%2011.5143%2013.5488%2010.5273L13.2246%2010.1465C15.0607%208.57843%2017.036%207.13179%2019.1201%205.82422L19.3857%206.24707C20.6595%205.44794%2021.9749%204.70148%2023.3242%204.01172L23.0967%203.56738C25.2613%202.46078%2027.5126%201.49834%2029.8232%200.699219L29.9863%201.17188Z'%20stroke='%233E5E4E'%20stroke-dasharray='5%208'/%3e%3c/svg%3e" alt="">
+              </div>
             </div>
+            
           </div>
-          <div class="row mb-6 py-6 area-bg-1 bgPhoto-set align-items-center flex-lg-row flex-column-reverse">
-            <div class="col-lg-6">
-              <div>
-                <h4>報到與使用規則</h4>
-                <p>請於預約時間准時報到，逾時 10分鐘將自動取消不另行通知。
+          <div class="row mb-lg-6 mb-0 py-6  bgPhoto-set align-items-center flex-lg-row flex-column-reverse">
+            <div class="col-lg-6 position-relative px-lg-4 px-5">
+              <div class="py-lg-8 py-5 px-lg-6 px-0">
+                <h4 class="fs-5 pb-6 mb-6 title-border-b fw-bold">報到與使用規則</h4>
+                <p class="fs-lg">請於預約時間 <b>准時報到，逾時10分鐘將自動取消不另行通知</b>。
                   <br> 每人限預約一席座位，恕不接受多人共用。
                   <br> 預約時可選擇座位，恕不接受現場更換。
                   <br> 如需取消，請於預約開始前於線上操作。
                 </p>
               </div>
+              <div class="position-absolute bottom-050 end-0 d-none d-lg-block">
+                <img src="data:image/svg+xml,%3csvg%20width='32'%20height='32'%20viewBox='0%200%2032%2032'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M2.01367%201.17188C1.59927%201.02855%201.18267%200.891451%200.764648%200.758789C0.80067%200.891493%200.835103%201.02416%200.866211%201.15723L0.378906%201.27148C0.697976%202.63654%200.770392%204.04825%200.870117%205.45312L1.36719%205.41895C1.3827%205.63738%201.39917%205.85443%201.41699%206.07031L1.47656%206.71582V6.7168C1.54381%207.37465%201.63903%208.03015%201.76172%208.68164L1.27246%208.77344C1.67007%2010.885%202.34789%2012.9533%203.27832%2014.9287L3.72852%2014.7168C4.29%2015.9089%204.94564%2017.0667%205.68848%2018.1787L5.27539%2018.4561C6.46252%2020.2331%207.86665%2021.8951%209.46582%2023.3945L9.80762%2023.0303C10.1696%2023.3697%2010.5419%2023.7004%2010.9238%2024.0225L11.3086%2024.3418C11.8598%2024.7903%2012.4308%2025.2196%2013.0186%2025.6299L12.7324%2026.0381C14.6154%2027.3528%2016.6705%2028.47%2018.8408%2029.3691L19.0312%2028.9082C20.346%2029.4529%2021.7043%2029.9169%2023.0918%2030.2949L22.9609%2030.7754C25.1919%2031.3833%2027.4973%2031.7734%2029.8242%2031.9258L29.8564%2031.4277C30.3716%2031.4615%2030.8877%2031.4832%2031.4043%2031.4932C31.3034%2030.9518%2031.1865%2030.4137%2031.0557%2029.8789L31.54%2029.7598C30.963%2027.4023%2030.1038%2025.1127%2029%2022.9141L28.5547%2023.1387C27.8856%2021.8059%2027.1241%2020.5055%2026.2803%2019.2441L26.6973%2018.9658C25.3597%2016.9664%2023.8169%2015.0648%2022.1035%2013.2812L21.7422%2013.6279C20.7063%2012.5495%2019.6068%2011.5143%2018.4512%2010.5273L18.7754%2010.1465C16.9393%208.57843%2014.964%207.13179%2012.8799%205.82422L12.6143%206.24707C11.3405%205.44794%2010.0251%204.70148%208.67578%204.01172L8.90332%203.56738C6.73867%202.46078%204.48736%201.49834%202.17676%200.699219L2.01367%201.17188Z'%20stroke='%233E5E4E'%20stroke-dasharray='5%208'/%3e%3c/svg%3e" alt="">
+              </div>
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-6 px-lg-4 px-5">
               <div class="">
-                <img src="https://images.unsplash.com/photo-1626978396804-54433b489aa5?q=80&w=2103&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="w-100 rounded-r-l" alt="">
+                <img src="/moonook-demo/assets/booking-rule-2-a8db_aMx.png" class="w-100 " alt="">
               </div>
             </div>
           </div>
-          <div class="row mb-6 py-6 area-bg-1 bgPhoto-set align-items-center ">
-            <div class="col-lg-6">
+          <div class="row mb-lg-6 mb-0 py-6  bgPhoto-set align-items-center ">
+            <div class="col-lg-6 px-lg-4 px-5">
               <div class="">
-                <img src="https://images.unsplash.com/photo-1626978396804-54433b489aa5?q=80&w=2103&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="w-100 rounded-r-l" alt="">
+                <img src="/moonook-demo/assets/booking-rule-3-na6Gdv5E.png" class="w-100 " alt="">
               </div>
             </div>
-            <div class="col-lg-6">
-              <div>
-                <h4>使用時段結束</h4>
-                <p>時間結束請准時離席，將空間留給下一位使用者。
+            <div class="col-lg-6 position-relative px-lg-4 px-5">
+              <div class="py-lg-8 py-5 px-lg-6 px-0">
+                <h4 class="fs-5 pb-6 mb-6 title-border-b fw-bold">使用時段結束</h4>
+                <p class="fs-lg">時間結束請 <b>准時離席</b>，將空間留給下一位使用者。
                   <br>若欲延長使用,請提前洽詢現場人員，視現場狀況安排。
                   <br>逾時未雕席，現場人具將提醒，並保留收回座位之權利。
                 </p>
               </div>
+              <div class="position-absolute bottom-050 start-0 d-none d-lg-block">
+                <img src="data:image/svg+xml,%3csvg%20width='32'%20height='32'%20viewBox='0%200%2032%2032'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M29.9863%201.17188C30.4007%201.02855%2030.8173%200.891451%2031.2354%200.758789C31.1993%200.891493%2031.1649%201.02416%2031.1338%201.15723L31.6211%201.27148C31.302%202.63654%2031.2296%204.04825%2031.1299%205.45312L30.6328%205.41895C30.6173%205.63738%2030.6008%205.85443%2030.583%206.07031L30.5234%206.71582V6.7168C30.4562%207.37465%2030.361%208.03015%2030.2383%208.68164L30.7275%208.77344C30.3299%2010.885%2029.6521%2012.9533%2028.7217%2014.9287L28.2715%2014.7168C27.71%2015.9089%2027.0544%2017.0667%2026.3115%2018.1787L26.7246%2018.4561C25.5375%2020.2331%2024.1334%2021.8951%2022.5342%2023.3945L22.1924%2023.0303C21.8304%2023.3697%2021.4581%2023.7004%2021.0762%2024.0225L20.6914%2024.3418C20.1402%2024.7903%2019.5692%2025.2196%2018.9814%2025.6299L19.2676%2026.0381C17.3846%2027.3528%2015.3295%2028.47%2013.1592%2029.3691L12.9688%2028.9082C11.654%2029.4529%2010.2957%2029.9169%208.9082%2030.2949L9.03906%2030.7754C6.8081%2031.3833%204.50272%2031.7734%202.17578%2031.9258L2.14355%2031.4277C1.6284%2031.4615%201.11226%2031.4832%200.595703%2031.4932C0.696556%2030.9518%200.813453%2030.4137%200.944336%2029.8789L0.459961%2029.7598C1.03701%2027.4023%201.89623%2025.1127%203%2022.9141L3.44531%2023.1387C4.11437%2021.8059%204.87594%2020.5055%205.71973%2019.2441L5.30273%2018.9658C6.64026%2016.9664%208.18315%2015.0648%209.89648%2013.2812L10.2578%2013.6279C11.2937%2012.5495%2012.3932%2011.5143%2013.5488%2010.5273L13.2246%2010.1465C15.0607%208.57843%2017.036%207.13179%2019.1201%205.82422L19.3857%206.24707C20.6595%205.44794%2021.9749%204.70148%2023.3242%204.01172L23.0967%203.56738C25.2613%202.46078%2027.5126%201.49834%2029.8232%200.699219L29.9863%201.17188Z'%20stroke='%233E5E4E'%20stroke-dasharray='5%208'/%3e%3c/svg%3e" alt="">
+              </div>
             </div>
           </div>
-          <div class="row mb-6 py-6 area-bg-1 bgPhoto-set align-items-center flex-lg-row flex-column-reverse">
-            <div class="col-lg-6">
-              <div>
-                <h4>空間使用提醒</h4>
-                <p>本空間為安静場域，請避免交談、通話或其他干擾他人的行為。
+          <div class="row mb-lg-6 mb-0 py-6  bgPhoto-set align-items-center flex-lg-row flex-column-reverse">
+            <div class="col-lg-6 position-relative px-lg-4 px-5">
+              <div class="py-lg-8 py-5 px-lg-6 px-0">
+                <h4 class="fs-5 pb-6 mb-6 title-border-b fw-bold">空間使用提醒</h4>
+                <p class="fs-lg">本空間為安静場域，請避免交談、通話或其他干擾他人的行為。
                   <br>我們珍惜這份靜謐，也邀請你一同維持空間品質。
                 </p>
               </div>
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-6 px-lg-4 px-5">
               <div class="">
-                <img src="https://images.unsplash.com/photo-1626978396804-54433b489aa5?q=80&w=2103&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="w-100 rounded-r-l" alt="">
+                <img src="/moonook-demo/assets/booking-rule-4-DQq5D18o.png" class="w-100 " alt="">
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- 預約頁-輪播圖片 -->
-      <section class="py-12 s__space-photo bgPhoto-set">
-        <div class="container">
-          <div class="row position-relative">
-            
-            <div class="col-10 mx-auto">
-              <div class="swiper mySwiper ">
-                <div class="swiper-wrapper not-sure1">
-                  <div class="swiper-slide ">
-                    <img src="https://images.unsplash.com/photo-1731661553530-9fa227db04ed?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="w-100 h-100 rounded-140" alt="">
-                  </div>
-                  <div class="swiper-slide">
-                    <img src="https://images.unsplash.com/photo-1610797833463-374c6f3443fe?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="w-100 h-100 rounded-140" alt="">
-                  </div>
-                  <div class="swiper-slide">
-                    <img src="https://images.unsplash.com/photo-1649510639612-79f7052b128b?q=80&w=927&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="w-100 h-100 rounded-140 " alt="">
-                  </div>
-                  <div class="swiper-slide">
-                    <img src="https://images.unsplash.com/photo-1742654230675-7074a37b344b?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="w-100 h-100 rounded-140 " alt="">
-                  </div>
+    <!-- 預約頁-輪播圖片 -->
+    <section class="py-12 s__space-photo bgPhoto-set">
+      <div class="container">
+        <div class="row position-relative">
+          
+          <div class="col-lg-10 col-9 mx-auto">
+            <div class="swiper mySwiper-bottom ">
+              <div class="swiper-wrapper ">
+                <div class="swiper-slide ">
+                  <img src="/moonook-demo/assets/Rectangle%209-BqOxTqG9.png" class="w-100 h-100 " alt="">
+                </div>
+                <div class="swiper-slide">
+                  <img src="/moonook-demo/assets/Rectangle%2010-DcyBMDxC.png" class="w-100 h-100 " alt="">
+                </div>
+                <div class="swiper-slide">
+                  <img src="/moonook-demo/assets/Rectangle%208-DbpTRE1_.png" class="w-100 h-100  " alt="">
+                </div>
+                <div class="swiper-slide">
+                  <img src="/moonook-demo/assets/ali-shafei-jbM3OFlSFiA-unsplash%201-BjlQhW-m.png" class="w-100 h-100  " alt="">
+                </div>
+                <div class="swiper-slide">
+                  <img src="/moonook-demo/assets/imad-786-TqC4QgxCSeM-unsplash-C7zGqTCJ.png" class="w-100 h-100  " alt="">
+                </div>
+                <div class="swiper-slide">
+                  <img src="/moonook-demo/assets/banner-4%201-Div5nojP.png" class="w-100 h-100  " alt="">
                 </div>
               </div>
-              <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
             </div>
+            <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
           </div>
-          
         </div>
         
-      </section>
+      </div>
+      
+    </section>
 
-    </main>
+  </main>
     
-    <footer class="bg-fc position-relative">
+  <footer class="bg-fc position-relative">
   <div class="container py-5 py-lg-12 text-fcbg">
     <div
       class="d-flex flex-column flex-lg-row justify-content-between align-items-center align-items-lg-stretch mb-6 mb-lg-12"
@@ -439,7 +1175,7 @@
       <div>
         <img
           class="mb-8"
-          src="/moonook-demo/assets/Logo-SBKDe3fx.svg"
+          src="/moonook-demo/assets/Logo-BOPmqeYa.svg"
           alt="logo_small_white"
         />
         <p class="mb-4">地址：台北市中山區幸福路77號</p>
@@ -477,254 +1213,235 @@
     <div class="d-none d-lg-block">
       <img
         class="f-pagetop-def"
-        src="/moonook-demo/assets/footer_pagetop_def-B6aOTXcw.svg"
+        src="/moonook-demo/assets/footer_pagetop_def-CK01M_Xc.svg"
         alt="footer_pagetop_def"
       />
       <img
         class="f-pagetop-hov d-none"
-        src="/moonook-demo/assets/footer_pagetop_hov-CRttxFFC.svg"
+        src="/moonook-demo/assets/footer_pagetop_hov-3nYPp1CE.svg"
         alt="footer_pagetop_hov"
       />
     </div>
     <div class="d-lg-none">
       <img
         class="f-pagetop-sm-def"
-        src="/moonook-demo/assets/footer_pagetop_sm_def-CSO1Mz-R.svg"
+        src="/moonook-demo/assets/footer_pagetop_sm_def-DPl3mA9U.svg"
         alt="footer_pagetop_def"
       />
       <img
         class="f-pagetop-sm-hov d-none"
-        src="/moonook-demo/assets/footer_pagetop_sm_hov-ijH0v1WY.svg"
+        src="/moonook-demo/assets/footer_pagetop_sm_hov-egUxG-pV.svg"
         alt="footer_pagetop_hov"
       />
     </div>
   </a>
 </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/zh-tw.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/choices.js@10.2.0/public/assets/scripts/choices.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/js/tom-select.complete.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+  <script>
 
 
-      const selectDate = document.querySelector(".select-date");
-      const selectTime = document.querySelector(".select-time");
-      const checkSeatBtn = document.querySelector(".check-seat-btn");
-      const seatImg = document.querySelector(".seat-img");
-      const allSeat = document.querySelector(".all-seat");
-      const seatBtn = document.querySelectorAll(".s__seat-btn");
-      const comfirmBookingBtn = document.querySelector(".comfirmBooking_btn");
-      const comfirmBookingContent = document.querySelector(".comfirmBooking-content");
-      const doneBookingContent = document.querySelector(".doneBooking-content");
-      const showDate = document.querySelector(".show-date");
-      const showTime = document.querySelector(".show-time");
-      const showSeat = document.querySelector(".show-seat");
+    const dateInput = document.querySelector(".date-input");
+    const checkSeatBtn = document.querySelector(".check-seat-btn");
+    const seatImg = document.querySelector(".seat-img");
+    const allSeat = document.querySelector(".all-seat");
+    const seatBtn = document.querySelectorAll(".s__seat-btn");
+    const comfirmBookingBtn = document.querySelector(".comfirmBooking_btn");
+    const comfirmBookingContent = document.querySelector(".comfirmBooking-content");
+    const doneBookingContent = document.querySelector(".doneBooking-content");
+    const showDate = document.querySelector(".show-date");
+    const showTime = document.querySelector(".show-time");
+    const showSeat = document.querySelector(".show-seat");
 
 
-      let bookingDate;
-      let bookingtime;
-      let bookingSeat;
+    let bookingDate;
+    let bookingtime;
+    let bookingSeat;;
 
 
-      // 日期樣式的套件
-      const basicPicker = flatpickr("#basicDate", {
-        locale: "zh_tw",            // 繁體中文
-        dateFormat: "Y / m / d",        // 格式：2024-01-01
-        minDate: "today",
-        onChange: function(selectedDates, dateStr, instance) {
-            updateResult("日期", dateStr);
-        }
-      });
-
-      function updateResult(label, value) {
-        bookingDate = value;
-        console.log(`預約日期：${bookingDate}`);
-        showDate.innerHTML = bookingDate;  // 確認訊息的時候，日期吃變數的資料;
-      }
-
-      // Tom Select 時間下拉選單套件
-      const select = new TomSelect('#my-select', {
-        // 基本設定
-        create: false,          
-        sortField: {
-          field: "text",
-          direction: "asc"
-        },
-        onDropdownOpen: function(dropdown) {
-        // 確保不會重複加
-          if (!dropdown.querySelector('.ts-footer')) {
-            const footer = document.createElement('div');
-            footer.className = 'ts-footer p-2 text-muted border-top';
-            footer.innerHTML = `
-              <ul>
-                <li><img src="public/test-Icon.svg" width="10">
-                  靜謐充裕（70% 以上空位
-                </li>
-                <li><img src="public/test-Icon.svg" width="10">
-                  舒適剛好（40–70% 空位）</li>
-                <li><img src="public/test-Icon.svg" width="10">
-                  座位稀少（10–40% 空位）</li>
-                <li><img src="public/test-Icon.svg" width="10">
-                  客滿（0% 空位）</li>
-              </ul>
-            `;
-            dropdown.appendChild(footer);
-          }
-        }
-      });
+    // 頁面載入時檢查一次
+    checkSeat();
 
 
-      // 預約日期及時間都寫好，才可以按查詢座位，未填寫按鈕disable
-      function checkSeat(){
-        if(selectDate.value && selectTime.value){
+  function checkSeat(){
+      const selectedTimeslot = getSelectedTimeslot(); // 每次都重新獲取最新狀態
+      
+      if(dateInput.value && selectedTimeslot.time){
           checkSeatBtn.disabled = false;
-        }else{
+      }else{
           checkSeatBtn.disabled = true;
-        }
       }
+  }
+    // 點選座位時的樣式
 
-      // 點選座位時的樣式
+    seatBtn.forEach((e)=>{
+      e.addEventListener("click",()=>{
+        bookingSeat = e.textContent
+        console.log(`選擇座位：${bookingSeat}`)
+        showSeat.innerHTML = bookingSeat;  // 確認訊息的時候，座位吃變數的資料;
 
-      seatBtn.forEach((e)=>{
-        e.addEventListener("click",()=>{
-          bookingSeat = e.textContent
-          console.log(`選擇座位：${bookingSeat}`)
-          showSeat.innerHTML = bookingSeat;  // 確認訊息的時候，座位吃變數的資料;
-
-          seatBtn.forEach((e)=>{
-            e.classList.remove("s__seat-select")
-          })
-          e.classList.add("s__seat-select")
+        seatBtn.forEach((e)=>{
+          e.classList.remove("s__seat-select")
         })
+        e.classList.add("s__seat-select")
       })
-
+    })
     
-      
-      // 日期及時間有異動的時候，按查詢按鈕進行檢查，看是否要放行
-      // 檢查沒問題，將資料寫到變數中
-      // 放行以後，顯示座位表
-      selectDate.addEventListener('input',checkSeat);
-      selectTime.addEventListener('change',()=>{
-        checkSeat();
-        bookingtime = selectTime.value;
-        console.log(`預約時段：${bookingtime}`);
-        showTime.innerHTML = bookingtime;  // 確認訊息的時候，時間吃變數的資料;
-      });
-      
 
-      // 顯示「預約前的圖片」的畫面
-      function showbookingImg(){
-        seatImg.classList.remove("d-none");
-      }
+    // 監聽日期變化
+    document.addEventListener('dateSelected', function(event) {
+        bookingDate = event.detail.formattedDate; 
+        showDate.innerHTML = bookingDate;
+        console.log("訪客選中的日期：", bookingDate);
+        checkSeat(); // 日期變化時檢查按鈕狀態
+    });
 
-      // 隱藏「預約前的圖片」的畫面
-      function hidebookingImg(){
-        seatImg.classList.add("d-none");
-      }
+    // 監聽時間變化
+    document.addEventListener('timeslotSelected', function(event) {
+        console.log('選擇的時間:', event.detail.time);
+        bookingtime = event.detail.time;
+        showTime.innerHTML = bookingtime; 
+        console.log("訪客選中的時段：", bookingtime);
+        checkSeat(); // 時間變化時檢查按鈕狀態
+    });
 
-      // 顯示「所有座位」的畫面
-      function showAllSeat(){
-        allSeat.classList.add("d-block");
-        allSeat.classList.remove("d-none");
+    // 顯示「預約前的圖片」的畫面
+    function showbookingImg(){
+      seatImg.classList.remove("d-none");
+    }
 
-      }
+    // 隱藏「預約前的圖片」的畫面
+    function hidebookingImg(){
+      seatImg.classList.add("d-none");
+    }
 
-      // 隱藏「所有座位」的畫面
-      function hideAllSeat(){
-        allSeat.classList.remove("d-block");
-        allSeat.classList.add("d-none");
-      }
+    // 顯示「所有座位」的畫面
+    function showAllSeat(){
+      allSeat.classList.add("d-block");
+      allSeat.classList.remove("d-none");
 
-      // 顯示「已預約成功」的畫面
-      function showdonebooking(){
-        doneBookingContent.classList.add("d-block");
-        doneBookingContent.classList.remove("d-none");
-      }
+    }
 
-      // 隱藏「已預約成功」的畫面
-      function hidedonebooking(){
-        doneBookingContent.classList.add("d-none");
-        doneBookingContent.classList.remove("d-block");
-      }
+    // 隱藏「所有座位」的畫面
+    function hideAllSeat(){
+      allSeat.classList.remove("d-block");
+      allSeat.classList.add("d-none");
+    }
 
-      // 隱藏「確認預約資訊」的畫面
-      function hideComfirmBooking(){
-        comfirmBookingContent.classList.add("d-none");
-      }
+    // 顯示「已預約成功」的畫面
+    function showdonebooking(){
+      doneBookingContent.classList.add("d-block");
+      doneBookingContent.classList.remove("d-none");
+    }
 
-      // 顯示「確認預約資訊」的畫面
-      function showComfirmBooking(){
-        comfirmBookingContent.classList.remove("d-none");
-      }
+    // 隱藏「已預約成功」的畫面
+    function hidedonebooking(){
+      doneBookingContent.classList.add("d-none");
+      doneBookingContent.classList.remove("d-block");
+    }
 
-      // 按下查詢座位時，隱藏圖片，顯示座位
-      checkSeatBtn.addEventListener("click", ()=>{
-        hidebookingImg();
-        showAllSeat();
-      })
-      
+    // 隱藏「確認預約資訊」的畫面
+    function hideComfirmBooking(){
+      comfirmBookingContent.classList.add("d-none");
+    }
 
-      // 按下確認預約以後，顯示預約成功畫面，隱藏確認預約的畫面。
-      comfirmBookingBtn.addEventListener("click", ()=>{
-        hideComfirmBooking();
-        showdonebooking();
-      })
+    // 顯示「確認預約資訊」的畫面
+    function showComfirmBooking(){
+      comfirmBookingContent.classList.remove("d-none");
+    }
 
-      // 加入互動模組的位置，並且判斷預約成功以後，關閉提示的行為(清除全部填寫資料)
-      const seatModalEl = document.getElementById('seatModal');
+    // 按下查詢座位時，隱藏圖片，顯示座位
+    checkSeatBtn.addEventListener("click", ()=>{
+      hidebookingImg();
+      showAllSeat();
+    })
+    
 
-      seatModal.addEventListener('hide.bs.modal', function () {
+    // 按下確認預約以後，顯示預約成功畫面，隱藏確認預約的畫面。
+    comfirmBookingBtn.addEventListener("click", ()=>{
+      hideComfirmBooking();
+      showdonebooking();
+    })
+
+
+    const seatModalEl = document.getElementById('seatModal');
+
+    seatModalEl.addEventListener('hide.bs.modal', function () {
         if (!doneBookingContent.classList.contains('d-none')) {
-          resetAll();
+            resetAll();
         }
-      });
+    });
 
-      function resetAll (){
-        select.clear();
-        select.addOption({value: '', text: '請選擇時段'});
-
-        basicPicker.clear();
-
-        bookingDate = " ";
-        bookingtime = " ";
-        bookingSeat = " ";
+    function resetAll() {
+        // 清除時間選擇 - 使用新的時間下拉選單方法
+        selectedTimeslotValue = null;
+        selectedTimeslotStatus = null;
+        document.getElementById('timeslot-selected-time').textContent = '請選擇時段';
         
-
+        // 清除日期選擇 - 使用新的日曆方法
+        datePicker.clearSelection();
+        
+        // 清除變數
+        bookingDate = "";
+        bookingtime = "";
+        bookingSeat = "";
+        
+        // 重置顯示內容
+        showDate.innerHTML = "";
+        showTime.innerHTML = "";
+        showSeat.innerHTML = "";
+        
+        // 重置UI狀態
         hidedonebooking();
         showbookingImg();
         hideAllSeat();
         showComfirmBooking();
+        
+        // 清除座位選擇
         seatBtn.forEach((btn) => {
-          btn.classList.remove("s__seat-select");
+            btn.classList.remove("s__seat-select");
         });
-      }
+        
+        // 重新檢查按鈕狀態
+        checkSeat();
+    }
+
+    const swiperT = new Swiper(".mySwiper-top", {
+      pagination: {
+        el: ".swiper-pagination",
+        dynamicBullets: true,
+      },
+      autoplay: {
+        delay: 2500, // 每 3 秒切換一次
+        disableOnInteraction: false, // 使用者滑動後仍繼續自動播放
+      },
+      loop: true, // 建議加上 loop，不然播到最後一張就停了
+    });
 
 
-      const swiper = new Swiper('.swiper', {
-          slidesPerGroup: 1,   
-          loop: true,         
-          navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
+    const swiperB = new Swiper('.mySwiper-bottom', {
+        slidesPerGroup: 1,   
+        loop: true,         
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+          0: {            
+            slidesPerView: 1,
+            spaceBetween: 24,
           },
-          breakpoints: {
-            0: {            
-              slidesPerView: 1,
-              spaceBetween: 24,
-            },
-            576: {          
-              slidesPerView: 2,
-              spaceBetween: 16,
-            },
-            992: {          
-              slidesPerView: 3,
-              spaceBetween: 20,
-            },
-          }
-        });
-
+          576: {          
+            slidesPerView: 2,
+            spaceBetween: 24,
+          },
+          992: {          
+            slidesPerView: 3,
+            spaceBetween: 24,
+          },
+        }
+      });
     </script>
   </body>
 </html>
