@@ -62,38 +62,37 @@ img {
   z-index: 10;
 }
 
-// 設計稿有調整 待改
-.menu__side-bar {
-  opacity: 0;
-  transform: translateX(-100%);
-  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+// side-bar 設計稿有調整 待改
+// .menu__side-bar {
+//   opacity: 1;
+//   transform: translateX(-100%);
+//   transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+// }
+
+.menu__sidebar-container {
+  position: absolute;
+  margin-left: calc((100vw - 100%) / 2 * -1);
+  height: 100%;
 }
 
-// 先試用個動畫效果
-.menu__side-bar.fade-in {
-  opacity: 1;
-  transform: translateX(0);
-}
-
 .menu__side-bar {
-  position: fixed;
+  position: sticky;
   left: 0;
   top: 80px;
   width: 20vw;
   max-width: 400px;
-  height: auto;
-  padding-top: 75px;
+  height: 680px;
   border-top-right-radius: 28px;
   border-bottom-right-radius: 28px;
+
+  // hover跑出底線效果
   a {
     display: block;
-    position: relative;
-
+    // position: relative;
     p {
       position: relative;
       width: fit-content;
     }
-
     p::after {
       content: "";
       position: absolute;
@@ -105,7 +104,6 @@ img {
       transition: 0.3s ease-in-out;
       transform: translateX(-50%);
     }
-
     &:hover {
       opacity: 0.8;
       p::after {
@@ -162,13 +160,19 @@ img {
   opacity: 1;
 }
 
+.menu__itemDesktop-swiper .swiper-wrapper {
+  width: calc((100vw - 20vw - 80px));
+}
 .menu__card {
+  width: 100%;
+  // max-width: 340px;
   background-color: transparent;
   cursor: pointer;
   &:hover {
     h5,
     p {
       color: $fc;
+      background-color: transparent;
     }
   }
 }
@@ -220,11 +224,93 @@ img {
     svg {
       color: $fc;
       background-color: $fc;
-      border: 1px solid $primary;
+      border: 1px solid $fc;
     }
   }
   &:disabled {
     opacity: 0.4;
     pointer-events: none;
+  }
+}
+
+.m_btn-base {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  overflow: hidden;
+  z-index: 10;
+  @media (max-width: 576px) {
+    width: 100%;
+  }
+}
+.m_modal-btn {
+  padding: 12px;
+  font-size: 18px;
+  color: $fcbg;
+  background-color: $primary;
+  border: 1px solid $primary;
+  border-radius: 9999px;
+  img {
+    width: 24px;
+    height: 24px;
+  }
+  &:hover {
+    background-color: $fc;
+    border: 1px solid $fc;
+  }
+  &:active,
+  &:focus {
+    background-color: $fc;
+    border: 1px solid $fc;
+    box-shadow: 0 0 0 0.25rem rgba($fc, 0.25);
+  }
+  @media (max-width: 576px) {
+    padding: 8px;
+    font-size: 14px;
+    img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+.m_modal-btn-cancel {
+  padding: 12px;
+  font-size: 18px;
+  color: $fc;
+  background-color: transparent;
+  border: 1px solid $fc;
+  border-radius: 9999px;
+  img {
+    width: 24px;
+    height: 24px;
+  }
+  &:hover {
+    background-color: $fc;
+    border: 1px solid $fc;
+    color: $fcbg;
+  }
+  &:active,
+  &:focus {
+    color: $fc;
+    background-color: transparent;
+    border: 1px solid $fc;
+    opacity: 0.5;
+    box-shadow: 0 0 0 0.25rem rgba($fc, 0.25);
+  }
+  @media (max-width: 576px) {
+    padding: 8px;
+    font-size: 14px;
+    img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+.m_footer-btn {
+  width: 196px;
+  @media (max-width: 576px) {
+    width: 108px;
   }
 }

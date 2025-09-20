@@ -1,20 +1,20 @@
 @import "../../node_modules/bootstrap/scss/functions";
-@import './utils/variables';
+@import "./utils/variables";
 @import "./utils/mixins";
 @import "../../node_modules/bootstrap";
 @import "./utils/utilities";
 @import "bootstrap/scss/utilities/api";
 
-@import './components/button';
-@import './components/card';
-@import './components/seat-button';
+@import "./components/button";
+@import "./components/card";
+@import "./components/seat-button";
+@import "./components/loader.scss";
 
+@import "./layout/header.scss";
+@import "./layout/footer.scss";
 
-@import './layout/header.scss';
-@import './layout/footer.scss';
-
-@import './pages/index.scss';
-@import './pages/service.scss';
-@import './pages/member.scss';
-@import './pages/about.scss';
-@import './pages/menu.scss';
+@import "./pages/index.scss";
+@import "./pages/service.scss";
+@import "./pages/member.scss";
+@import "./pages/about.scss";
+@import "./pages/menu.scss";

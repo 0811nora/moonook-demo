@@ -16,81 +16,84 @@
     />
     <title>靜隅食光 | 默隅 Moonook</title>
   </head>
-  <body class="position-relative">
-    <%- include('./layout/header'); -%>
+  <body class="loaded">
+    <%- include('./layout/components/loader'); -%> <%-
+    include('./layout/header'); -%>
 
-    <main id="content" class="content-container hidden">
-      <!-- hero swiper -->
-      <section class="menu__hero">
-        <div class="swiper menu__hero-swiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <img
-                class="img-fluid d-none d-md-block"
-                src="/assets/images/menu/hero-1.png"
-                alt="menu_hero-pic"
-              />
-              <img
-                class="img-fluid d-md-none"
-                src="/assets/images/menu/hero-mob-1.png"
-                alt="menu_hero-mob-pic"
-              />
-            </div>
-            <div class="swiper-slide">
-              <img
-                class="img-fluid d-none d-md-block"
-                src="/assets/images/menu/hero-2.png"
-                alt="menu_hero-pic2"
-              />
-              <img
-                class="img-fluid d-md-none"
-                src="/assets/images/menu/hero-mob-2.png"
-                alt="menu_hero-mob-pic2"
-              />
-            </div>
-            <div class="swiper-slide">
-              <img
-                class="img-fluid d-none d-md-block"
-                src="/assets/images/menu/hero-3.png"
-                alt="menu_hero-pic3"
-              />
-              <img
-                class="img-fluid d-md-none"
-                src="/assets/images/menu/hero-mob-3.png"
-                alt="menu_hero-mob-pic3"
-              />
-            </div>
-            <div class="swiper-slide">
-              <img
-                class="img-fluid d-none d-md-block"
-                src="/assets/images/menu/hero-4.png"
-                alt="menu_hero-pic4"
-              />
-              <img
-                class="img-fluid d-md-none"
-                src="/assets/images/menu/hero-mob-4.png"
-                alt="menu_hero-mob-pic4"
-              />
-            </div>
-            <div class="swiper-slide">
-              <img
-                class="img-fluid d-none d-md-block"
-                src="/assets/images/menu/hero-5.png"
-                alt="menu_hero-pic5"
-              />
-              <img
-                class="img-fluid d-md-none"
-                src="/assets/images/menu/hero-mob-5.png"
-                alt="menu_hero-mob-pic5"
-              />
-            </div>
+    <!-- hero swiper -->
+    <section class="menu__hero">
+      <div class="swiper menu__hero-swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img
+              class="img-fluid d-none d-md-block"
+              src="/assets/images/menu/hero-1.png"
+              alt="menu_hero-pic"
+            />
+            <img
+              class="img-fluid d-md-none"
+              src="/assets/images/menu/hero-mob-1.png"
+              alt="menu_hero-mob-pic"
+            />
           </div>
-          <div class="swiper-pagination"></div>
+          <div class="swiper-slide">
+            <img
+              class="img-fluid d-none d-md-block"
+              src="/assets/images/menu/hero-2.png"
+              alt="menu_hero-pic2"
+            />
+            <img
+              class="img-fluid d-md-none"
+              src="/assets/images/menu/hero-mob-2.png"
+              alt="menu_hero-mob-pic2"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              class="img-fluid d-none d-md-block"
+              src="/assets/images/menu/hero-3.png"
+              alt="menu_hero-pic3"
+            />
+            <img
+              class="img-fluid d-md-none"
+              src="/assets/images/menu/hero-mob-3.png"
+              alt="menu_hero-mob-pic3"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              class="img-fluid d-none d-md-block"
+              src="/assets/images/menu/hero-4.png"
+              alt="menu_hero-pic4"
+            />
+            <img
+              class="img-fluid d-md-none"
+              src="/assets/images/menu/hero-mob-4.png"
+              alt="menu_hero-mob-pic4"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              class="img-fluid d-none d-md-block"
+              src="/assets/images/menu/hero-5.png"
+              alt="menu_hero-pic5"
+            />
+            <img
+              class="img-fluid d-md-none"
+              src="/assets/images/menu/hero-mob-5.png"
+              alt="menu_hero-mob-pic5"
+            />
+          </div>
         </div>
-      </section>
-      <!-- side-bar -->
-      <section class="position-fixed">
-        <div class="menu__side-bar bg-secondary d-none d-lg-block px-8 pb-8">
+        <div class="swiper-pagination"></div>
+      </div>
+    </section>
+    <main class="position-relative d-flex justify-content-between">
+      <div class="menu__sidebar-container">
+        <!-- side-bar -->
+        <div
+          class="menu__side-bar bg-secondary d-none d-lg-block px-6 py-lg-7 py-xxl-8 my-12"
+        >
           <img
             class="leaf-decor-t"
             src="/assets/images/menu/leaf-2.svg"
@@ -137,1690 +140,1712 @@
             alt="icon-leaf"
           />
         </div>
-      </section>
-
-      <!-- 主內容 -->
-      <section class="container" id="main-content">
+      </div>
+      <div class="container">
         <div class="row">
-          <div class="col-lg-2"></div>
-          <div class="col-lg-10 px-5 px-md-auto">
-            <!-- menu-info -->
-            <section class="py-8 py-lg-12">
-              <img
-                class="mb-lg-8"
-                src="/assets/images/menu/menu.svg"
-                alt="menu-title"
-              />
-              <p class="mb-lg-8 lh-lg text-primary">
-                真正的專注<br />
-                有時不是來自外在刺激的聚焦<br />
-                而是與內在深處的連結。<br />
-                因此,我們精心準備了這些飲品與餐點<br />
-                希望它們能在你靜靜前行的旅途中，温柔地陪伴你。<br />
-                <br />
-                願你在每一次停留之中，都能更靠近自己。
-              </p>
-              <div class="d-flex flex-row-reverse">
-                <a
-                  href="service.html"
-                  role="button"
-                  class="btn-outline-m btn-icon"
-                >
-                  預約座位
-                </a>
-              </div>
-            </section>
-            <hr class="menu__hr-divider my-6 my-lg-8" />
-            <!-- 人氣精選 -->
-            <section class="menu__fav py-8 py-lg-12" id="menu-houseFav">
-              <div>
-                <h1 class="fs-4 fs-lg-2 p-4">人氣精選</h1>
-                <h3 class="fs-6 fs-lg-4 p-4 border-top border-fc border-4">
-                  HOUSE FAVORITES
-                </h3>
-                <div
-                  class="d-flex flex-column flex-md-row justify-content-around align-items-center align-items-md-baseline my-6 my-lg-8"
-                >
-                  <img
-                    src="/assets/images/menu/flat-white.svg"
-                    alt="flat-white"
-                  />
-                  <img
-                    class="py-5 py-md-0"
-                    src="/assets/images/icon/icon-cross-fc.svg"
-                    alt="icon-cross"
-                  />
-                  <img
-                    src="/assets/images/menu/basque-cake.svg"
-                    alt="basque-cake"
-                  />
+          <div class="col-lg-10 offset-lg-2 px-0 px-lg-4">
+            <!-- 主要內容 -->
+            <div class="px-5 px-md-auto">
+              <!-- menu-info -->
+              <section class="py-8 py-lg-12">
+                <img
+                  class="mb-lg-8"
+                  src="/assets/images/menu/menu.svg"
+                  alt="menu-title"
+                />
+                <p class="mb-lg-8 lh-lg text-primary">
+                  真正的專注<br />
+                  有時不是來自外在刺激的聚焦<br />
+                  而是與內在深處的連結。<br />
+                  因此,我們精心準備了這些飲品與餐點<br />
+                  希望它們能在你靜靜前行的旅途中，温柔地陪伴你。<br />
+                  <br />
+                  願你在每一次停留之中，都能更靠近自己。
+                </p>
+                <div class="d-flex flex-row-reverse">
+                  <a
+                    href="service.html"
+                    role="button"
+                    class="m_btn-base m_modal-btn-cancel rounded-7"
+                  >
+                    預約座位<%-
+                    include('./layout/components/moon-outline-switch'); -%>
+                  </a>
                 </div>
-                <div class="text-center">
-                  <p>一杯温潤順口的小白,輕輕喚醒日常的步調</p>
-                  <p>搭配一塊濃郁滑順、微焦帶香的巴斯克</p>
-                  <p>是屬於靜謐午後的小小獎賞。</p>
-                </div>
-              </div>
-            </section>
-            <hr class="menu__hr-divider my-6 my-lg-8" />
-            <!-- 咖啡飲品 -->
-            <section class="py-8 py-lg-12" id="menu-coffee">
-              <div>
-                <h2 class="fs-4 fs-lg-2 p-4">咖啡飲品</h2>
-                <h3 class="fs-6 fs-lg-lg p-4 border-top border-fc border-4">
-                  COFFEE
-                </h3>
-                <!-- black -->
-                <div
-                  class="swiper menu__itemDesktop-swiper mb-6 d-none d-md-block"
-                >
-                  <h4 class="fs-4 fs-lg-2 p-4 text-secondary mb-6 mb-lg-8">
+              </section>
+              <hr class="menu__hr-divider my-6 my-lg-8" />
+              <!-- 人氣精選 -->
+              <section class="menu__fav py-8 py-lg-12" id="menu-houseFav">
+                <div>
+                  <h1 class="fs-4 fs-lg-2 p-4">人氣精選</h1>
+                  <h3 class="fs-6 fs-lg-4 p-4 border-top border-fc border-4">
+                    HOUSE FAVORITES
+                  </h3>
+                  <div
+                    class="d-flex flex-column flex-md-row justify-content-around align-items-center align-items-md-baseline my-6 my-lg-8"
+                  >
                     <img
-                      class="me-4"
-                      src="/assets/images/icon/icon-dot.svg"
-                      alt="icon-dot"
-                    />BLACK
-                  </h4>
-                  <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                      <div class="row">
-                        <div class="col-4">
-                          <div class="card menu__card border-0">
-                            <img
-                              src="/assets/images/menu/black-coffee1.png"
-                              class="card-img-top mb-5 mb-lg-6"
-                              alt="black-coffee1"
-                            />
-                            <div class="card-body text-primary text-center">
-                              <h5 class="card-title fs-5 mb-5">濃縮咖啡</h5>
-                              <p class="card-text fs-lg">ESPRESSO</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-4">
-                          <div class="card menu__card border-0">
-                            <img
-                              src="/assets/images/menu/black-coffee2.png"
-                              class="card-img-top mb-5 mb-lg-6"
-                              alt="black-coffee2"
-                            />
-                            <div class="card-body text-primary text-center">
-                              <h5 class="card-title fs-5 mb-5">美式咖啡</h5>
-                              <p class="card-text fs-lg">AMERICANO</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-4">
-                          <div class="card menu__card border-0">
-                            <img
-                              src="/assets/images/menu/black-coffee3.png"
-                              class="card-img-top mb-5 mb-lg-6"
-                              alt="black-coffee3"
-                            />
-                            <div class="card-body text-primary text-center">
-                              <h5 class="card-title fs-5 mb-5">每日精選</h5>
-                              <p class="card-text fs-lg">BREWED COFFEE</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="row">
-                        <div class="col-4">
-                          <div class="card menu__card border-0">
-                            <img
-                              src="/assets/images/menu/black-coffee4.png"
-                              class="card-img-top mb-5 mb-lg-6"
-                              alt="black-coffee4"
-                            />
-                            <div class="card-body text-primary text-center">
-                              <h5 class="card-title fs-5 mb-5">黑糖咖啡</h5>
-                              <p class="card-text fs-lg">BROWN SUGAR COFFEE</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-4">
-                          <div class="card menu__card border-0">
-                            <img
-                              src="/assets/images/menu/black-coffee5.png"
-                              class="card-img-top mb-5 mb-lg-6"
-                              alt="black-coffee5"
-                            />
-                            <div class="card-body text-primary text-center">
-                              <h5 class="card-title fs-5 mb-5">冷萃咖啡</h5>
-                              <p class="card-text fs-lg">COLD BREW</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-4">
-                          <div class="card menu__card border-0">
-                            <img
-                              src="/assets/images/menu/black-coffee6.png"
-                              class="card-img-top mb-5 mb-lg-6"
-                              alt="black-coffee6"
-                            />
-                            <div class="card-body text-primary text-center">
-                              <h5 class="card-title fs-5 mb-5">義式濃縮咖啡</h5>
-                              <p class="card-text fs-lg">RISTRETTO</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <%- include('./layout/components/menu_swiper-button'); -%>
-                </div>
-                <div class="swiper menu__itemMobile-swiper mb-5 d-md-none">
-                  <h4 class="fs-4 fs-lg-2 p-4 text-secondary mb-6 mb-lg-8">
+                      src="/assets/images/menu/flat-white.svg"
+                      alt="flat-white"
+                    />
                     <img
-                      class="me-4"
-                      src="/assets/images/icon/icon-dot.svg"
-                      alt="icon-dot"
-                    />BLACK
-                  </h4>
-                  <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                      <div class="card menu__card border-0">
-                        <img
-                          src="/assets/images/menu/black-coffee1.png"
-                          class="card-img-top mb-5 mb-lg-6"
-                          alt="black-coffee1"
-                        />
-                        <div class="card-body text-primary text-center">
-                          <h5 class="card-title fs-6 mb-5">濃縮咖啡</h5>
-                          <p class="card-text fs-sm">ESPRESSO</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="card menu__card border-0">
-                        <img
-                          src="/assets/images/menu/black-coffee2.png"
-                          class="card-img-top mb-5 mb-lg-6"
-                          alt="black-coffee2"
-                        />
-                        <div class="card-body text-primary text-center">
-                          <h5 class="card-title fs-6 mb-5">美式咖啡</h5>
-                          <p class="card-text fs-sm">AMERICANO</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="card menu__card border-0">
-                        <img
-                          src="/assets/images/menu/black-coffee3.png"
-                          class="card-img-top mb-5 mb-lg-6"
-                          alt="black-coffee3"
-                        />
-                        <div class="card-body text-primary text-center">
-                          <h5 class="card-title fs-6 mb-5">每日精選</h5>
-                          <p class="card-text fs-sm">BREWED COFFEE</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="card menu__card border-0">
-                        <img
-                          src="/assets/images/menu/black-coffee4.png"
-                          class="card-img-top mb-5 mb-lg-6"
-                          alt="black-coffee4"
-                        />
-                        <div class="card-body text-primary text-center">
-                          <h5 class="card-title fs-6 mb-5">黑糖咖啡</h5>
-                          <p class="card-text fs-sm">BROWN SUGAR COFFEE</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="card menu__card border-0">
-                        <img
-                          src="/assets/images/menu/black-coffee5.png"
-                          class="card-img-top mb-5 mb-lg-6"
-                          alt="black-coffee5"
-                        />
-                        <div class="card-body text-primary text-center">
-                          <h5 class="card-title fs-6 mb-5">冷萃咖啡</h5>
-                          <p class="card-text fs-sm">COLD BREW</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="card menu__card border-0">
-                        <img
-                          src="/assets/images/menu/black-coffee6.png"
-                          class="card-img-top mb-5 mb-lg-6"
-                          alt="black-coffee6"
-                        />
-                        <div class="card-body text-primary text-center">
-                          <h5 class="card-title fs-6 mb-5">義式濃縮咖啡</h5>
-                          <p class="card-text fs-sm">RISTRETTO</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <%- include('./layout/components/menu_swiper-button'); -%>
-                </div>
-                <!-- white -->
-                <div
-                  class="swiper menu__itemDesktop-swiper mb-6 d-none d-md-block"
-                >
-                  <h4 class="fs-4 fs-lg-2 p-4 text-secondary mb-6 mb-lg-8">
+                      class="py-5 py-md-0"
+                      src="/assets/images/icon/icon-cross-fc.svg"
+                      alt="icon-cross"
+                    />
                     <img
-                      class="me-4"
-                      src="/assets/images/icon/icon-dot.svg"
-                      alt="icon-dot"
-                    />WHITE
-                  </h4>
-                  <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                      <div class="row">
-                        <div class="col-4">
-                          <div class="card menu__card border-0">
-                            <img
-                              src="/assets/images/menu/white-coffee1.png"
-                              class="card-img-top mb-5 mb-lg-6"
-                              alt="white-coffee1"
-                            />
-                            <div class="card-body text-primary text-center">
-                              <h5 class="card-title fs-5 mb-5">奶泡濃縮咖啡</h5>
-                              <p class="card-text fs-lg">MILK ESPRESSO</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-4">
-                          <div class="card menu__card border-0">
-                            <img
-                              src="/assets/images/menu/white-coffee2.png"
-                              class="card-img-top mb-5 mb-lg-6"
-                              alt="white-coffee2"
-                            />
-                            <div class="card-body text-primary text-center">
-                              <h5 class="card-title fs-5 mb-5">奶咖啡</h5>
-                              <p class="card-text fs-lg">MILK AMERICANO</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-4">
-                          <div class="card menu__card border-0">
-                            <img
-                              src="/assets/images/menu/white-coffee3.png"
-                              class="card-img-top mb-5 mb-lg-6"
-                              alt="white-coffee3"
-                            />
-                            <div class="card-body text-primary text-center">
-                              <h5 class="card-title fs-5 mb-5">卡布奇諾</h5>
-                              <p class="card-text fs-lg">CAPPUCCINO</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="row">
-                        <div class="col-4">
-                          <div class="card menu__card border-0">
-                            <img
-                              src="/assets/images/menu/white-coffee4.png"
-                              class="card-img-top mb-5 mb-lg-6"
-                              alt="white-coffee4"
-                            />
-                            <div class="card-body text-primary text-center">
-                              <h5 class="card-title fs-5 mb-5">拿鐵咖啡</h5>
-                              <p class="card-text fs-lg">LATTE</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-4">
-                          <div class="card menu__card border-0">
-                            <img
-                              src="/assets/images/menu/white-coffee5.png"
-                              class="card-img-top mb-5 mb-lg-6"
-                              alt="white-coffee5"
-                            />
-                            <div class="card-body text-primary text-center">
-                              <h5 class="card-title fs-5 mb-5">摩卡咖啡</h5>
-                              <p class="card-text fs-lg">MOCHA</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-4">
-                          <div class="card menu__card border-0">
-                            <img
-                              src="/assets/images/menu/white-coffee6.png"
-                              class="card-img-top mb-5 mb-lg-6"
-                              alt="white-coffee6"
-                            />
-                            <div class="card-body text-primary text-center">
-                              <h5 class="card-title fs-5 mb-5">白咖啡</h5>
-                              <p class="card-text fs-lg">WHITE COFFEE</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                      src="/assets/images/menu/basque-cake.svg"
+                      alt="basque-cake"
+                    />
                   </div>
-                  <%- include('./layout/components/menu_swiper-button'); -%>
-                </div>
-                <div class="swiper menu__itemMobile-swiper mb-5 d-md-none">
-                  <h4 class="fs-4 fs-lg-2 p-4 text-secondary mb-6 mb-lg-8">
-                    <img
-                      class="me-4"
-                      src="/assets/images/icon/icon-dot.svg"
-                      alt="icon-dot"
-                    />WHITE
-                  </h4>
-                  <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                      <div class="card menu__card border-0">
-                        <img
-                          src="/assets/images/menu/white-coffee1.png"
-                          class="card-img-top mb-5 mb-lg-6"
-                          alt="white-coffee1"
-                        />
-                        <div class="card-body text-primary text-center">
-                          <h5 class="card-title fs-6 mb-5">奶泡濃縮咖啡</h5>
-                          <p class="card-text fs-sm">MILK ESPRESSO</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="card menu__card border-0">
-                        <img
-                          src="/assets/images/menu/white-coffee2.png"
-                          class="card-img-top mb-5 mb-lg-6"
-                          alt="white-coffee2"
-                        />
-                        <div class="card-body text-primary text-center">
-                          <h5 class="card-title fs-6 mb-5">奶咖啡</h5>
-                          <p class="card-text fs-sm">MILK AMERICANO</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="card menu__card border-0">
-                        <img
-                          src="/assets/images/menu/white-coffee3.png"
-                          class="card-img-top mb-5 mb-lg-6"
-                          alt="white-coffee3"
-                        />
-                        <div class="card-body text-primary text-center">
-                          <h5 class="card-title fs-6 mb-5">卡布奇諾</h5>
-                          <p class="card-text fs-sm">CAPPUCCINO</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="card menu__card border-0">
-                        <img
-                          src="/assets/images/menu/white-coffee4.png"
-                          class="card-img-top mb-5 mb-lg-6"
-                          alt="white-coffee4"
-                        />
-                        <div class="card-body text-primary text-center">
-                          <h5 class="card-title fs-6 mb-5">拿鐵咖啡</h5>
-                          <p class="card-text fs-sm">LATTE</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="card menu__card border-0">
-                        <img
-                          src="/assets/images/menu/white-coffee5.png"
-                          class="card-img-top mb-5 mb-lg-6"
-                          alt="white-coffee5"
-                        />
-                        <div class="card-body text-primary text-center">
-                          <h5 class="card-title fs-6 mb-5">摩卡咖啡</h5>
-                          <p class="card-text fs-sm">MOCHA</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="card menu__card border-0">
-                        <img
-                          src="/assets/images/menu/white-coffee6.png"
-                          class="card-img-top mb-5 mb-lg-6"
-                          alt="white-coffee6"
-                        />
-                        <div class="card-body text-primary text-center">
-                          <h5 class="card-title fs-6 mb-5">白咖啡</h5>
-                          <p class="card-text fs-sm">WHITE COFFEE</p>
-                        </div>
-                      </div>
-                    </div>
+                  <div class="text-center">
+                    <p>一杯温潤順口的小白,輕輕喚醒日常的步調</p>
+                    <p>搭配一塊濃郁滑順、微焦帶香的巴斯克</p>
+                    <p>是屬於靜謐午後的小小獎賞。</p>
                   </div>
-                  <%- include('./layout/components/menu_swiper-button'); -%>
                 </div>
-              </div>
-            </section>
-            <hr class="menu__hr-divider my-6 my-lg-8" />
-            <!-- 非咖啡飲品 -->
-            <section class="py-8 py-lg-12" id="menu-noncoffee">
-              <div>
-                <h2 class="fs-4 fs-lg-2 p-4">非咖啡飲品</h2>
-                <h3 class="fs-6 fs-lg-lg p-4 border-top border-fc border-4">
-                  NON-COFFEE
-                </h3>
-                <!-- tea -->
-                <div
-                  class="swiper menu__itemDesktop-swiper mb-6 d-none d-md-block"
-                >
-                  <h4 class="fs-4 fs-lg-2 p-4 text-secondary mb-6 mb-lg-8">
-                    <img
-                      class="me-4"
-                      src="/assets/images/icon/icon-dot.svg"
-                      alt="icon-dot"
-                    />TEA
-                  </h4>
-                  <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                      <div class="row">
-                        <div class="col-4">
-                          <div class="card menu__card border-0">
-                            <img
-                              src="/assets/images/menu/tea1.png"
-                              class="card-img-top mb-5 mb-lg-6"
-                              alt="tea1"
-                            />
-                            <div class="card-body text-primary text-center">
-                              <h5 class="card-title fs-5 mb-5">錫蘭紅茶</h5>
-                              <p class="card-text fs-lg">CEYLON</p>
+              </section>
+              <hr class="menu__hr-divider my-6 my-lg-8" />
+              <!-- 咖啡飲品 -->
+              <section class="py-8 py-lg-12" id="menu-coffee">
+                <div>
+                  <h2 class="fs-4 fs-lg-2 p-4">咖啡飲品</h2>
+                  <h3 class="fs-6 fs-lg-lg p-4 border-top border-fc border-4">
+                    COFFEE
+                  </h3>
+                  <!-- black -->
+                  <div
+                    class="swiper menu__itemDesktop-swiper mb-6 d-none d-md-block"
+                  >
+                    <h4 class="fs-4 fs-lg-2 p-4 text-secondary mb-6 mb-lg-8">
+                      <img
+                        class="me-4"
+                        src="/assets/images/icon/icon-dot.svg"
+                        alt="icon-dot"
+                      />BLACK
+                    </h4>
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <div class="row">
+                          <div class="col-4">
+                            <div class="card menu__card border-0">
+                              <img
+                                src="/assets/images/menu/black-coffee1.png"
+                                class="card-img-top mb-5 mb-lg-6"
+                                alt="black-coffee1"
+                              />
+                              <div class="card-body text-primary text-center">
+                                <h5 class="card-title fs-5 mb-5">濃縮咖啡</h5>
+                                <p class="card-text fs-lg">ESPRESSO</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-4">
+                            <div class="card menu__card border-0">
+                              <img
+                                src="/assets/images/menu/black-coffee2.png"
+                                class="card-img-top mb-5 mb-lg-6"
+                                alt="black-coffee2"
+                              />
+                              <div class="card-body text-primary text-center">
+                                <h5 class="card-title fs-5 mb-5">美式咖啡</h5>
+                                <p class="card-text fs-lg">AMERICANO</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-4">
+                            <div class="card menu__card border-0">
+                              <img
+                                src="/assets/images/menu/black-coffee3.png"
+                                class="card-img-top mb-5 mb-lg-6"
+                                alt="black-coffee3"
+                              />
+                              <div class="card-body text-primary text-center">
+                                <h5 class="card-title fs-5 mb-5">每日精選</h5>
+                                <p class="card-text fs-lg">BREWED COFFEE</p>
+                              </div>
                             </div>
                           </div>
                         </div>
-                        <div class="col-4">
-                          <div class="card menu__card border-0">
-                            <img
-                              src="/assets/images/menu/tea2.png"
-                              class="card-img-top mb-5 mb-lg-6"
-                              alt="tea2"
-                            />
-                            <div class="card-body text-primary text-center">
-                              <h5 class="card-title fs-5 mb-5">伯爵紅茶</h5>
-                              <p class="card-text fs-lg">EARL-GREY</p>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="row">
+                          <div class="col-4">
+                            <div class="card menu__card border-0">
+                              <img
+                                src="/assets/images/menu/black-coffee4.png"
+                                class="card-img-top mb-5 mb-lg-6"
+                                alt="black-coffee4"
+                              />
+                              <div class="card-body text-primary text-center">
+                                <h5 class="card-title fs-5 mb-5">黑糖咖啡</h5>
+                                <p class="card-text fs-lg">
+                                  BROWN SUGAR COFFEE
+                                </p>
+                              </div>
                             </div>
                           </div>
-                        </div>
-                        <div class="col-4">
-                          <div class="card menu__card border-0">
-                            <img
-                              src="/assets/images/menu/tea3.png"
-                              class="card-img-top mb-5 mb-lg-6"
-                              alt="tea3"
-                            />
-                            <div class="card-body text-primary text-center">
-                              <h5 class="card-title fs-5 mb-5">金萱茶</h5>
-                              <p class="card-text fs-lg">JIN XUAN</p>
+                          <div class="col-4">
+                            <div class="card menu__card border-0">
+                              <img
+                                src="/assets/images/menu/black-coffee5.png"
+                                class="card-img-top mb-5 mb-lg-6"
+                                alt="black-coffee5"
+                              />
+                              <div class="card-body text-primary text-center">
+                                <h5 class="card-title fs-5 mb-5">冷萃咖啡</h5>
+                                <p class="card-text fs-lg">COLD BREW</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-4">
+                            <div class="card menu__card border-0">
+                              <img
+                                src="/assets/images/menu/black-coffee6.png"
+                                class="card-img-top mb-5 mb-lg-6"
+                                alt="black-coffee6"
+                              />
+                              <div class="card-body text-primary text-center">
+                                <h5 class="card-title fs-5 mb-5">
+                                  義式濃縮咖啡
+                                </h5>
+                                <p class="card-text fs-lg">RISTRETTO</p>
+                              </div>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                    <div class="swiper-slide">
-                      <div class="row">
-                        <div class="col-4">
-                          <div class="card menu__card border-0">
-                            <img
-                              src="/assets/images/menu/tea4.png"
-                              class="card-img-top mb-5 mb-lg-6"
-                              alt="tea4"
-                            />
-                            <div class="card-body text-primary text-center">
-                              <h5 class="card-title fs-5 mb-5">龍井茶</h5>
-                              <p class="card-text fs-lg">LONGJING</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-4">
-                          <div class="card menu__card border-0">
-                            <img
-                              src="/assets/images/menu/tea5.png"
-                              class="card-img-top mb-5 mb-lg-6"
-                              alt="tea5"
-                            />
-                            <div class="card-body text-primary text-center">
-                              <h5 class="card-title fs-5 mb-5">綠茶</h5>
-                              <p class="card-text fs-lg">GREEN TEA</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-4">
-                          <div class="card menu__card border-0">
-                            <img
-                              src="/assets/images/menu/tea6.png"
-                              class="card-img-top mb-5 mb-lg-6"
-                              alt="tea6"
-                            />
-                            <div class="card-body text-primary text-center">
-                              <h5 class="card-title fs-5 mb-5">普洱茶</h5>
-                              <p class="card-text fs-lg">PUER</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    <%- include('./layout/components/menu_swiper-button'); -%>
                   </div>
-                  <%- include('./layout/components/menu_swiper-button'); -%>
-                </div>
-                <div class="swiper menu__itemMobile-swiper mb-5 d-md-none">
-                  <h4 class="fs-4 fs-lg-2 p-4 text-secondary mb-6 mb-lg-8">
-                    <img
-                      class="me-4"
-                      src="/assets/images/icon/icon-dot.svg"
-                      alt="icon-dot"
-                    />TEA
-                  </h4>
-                  <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                      <div class="card menu__card border-0">
-                        <img
-                          src="/assets/images/menu/tea1.png"
-                          class="card-img-top mb-5 mb-lg-6"
-                          alt="tea1"
-                        />
-                        <div class="card-body text-primary text-center">
-                          <h5 class="card-title fs-6 mb-5">錫蘭紅茶</h5>
-                          <p class="card-text fs-sm">CEYLON</p>
+                  <div class="swiper menu__itemMobile-swiper mb-5 d-md-none">
+                    <h4 class="fs-4 fs-lg-2 p-4 text-secondary mb-6 mb-lg-8">
+                      <img
+                        class="me-4"
+                        src="/assets/images/icon/icon-dot.svg"
+                        alt="icon-dot"
+                      />BLACK
+                    </h4>
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <div class="card menu__card border-0">
+                          <img
+                            src="/assets/images/menu/black-coffee1.png"
+                            class="card-img-top mb-5 mb-lg-6"
+                            alt="black-coffee1"
+                          />
+                          <div class="card-body text-primary text-center">
+                            <h5 class="card-title fs-6 mb-5">濃縮咖啡</h5>
+                            <p class="card-text fs-sm">ESPRESSO</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="card menu__card border-0">
+                          <img
+                            src="/assets/images/menu/black-coffee2.png"
+                            class="card-img-top mb-5 mb-lg-6"
+                            alt="black-coffee2"
+                          />
+                          <div class="card-body text-primary text-center">
+                            <h5 class="card-title fs-6 mb-5">美式咖啡</h5>
+                            <p class="card-text fs-sm">AMERICANO</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="card menu__card border-0">
+                          <img
+                            src="/assets/images/menu/black-coffee3.png"
+                            class="card-img-top mb-5 mb-lg-6"
+                            alt="black-coffee3"
+                          />
+                          <div class="card-body text-primary text-center">
+                            <h5 class="card-title fs-6 mb-5">每日精選</h5>
+                            <p class="card-text fs-sm">BREWED COFFEE</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="card menu__card border-0">
+                          <img
+                            src="/assets/images/menu/black-coffee4.png"
+                            class="card-img-top mb-5 mb-lg-6"
+                            alt="black-coffee4"
+                          />
+                          <div class="card-body text-primary text-center">
+                            <h5 class="card-title fs-6 mb-5">黑糖咖啡</h5>
+                            <p class="card-text fs-sm">BROWN SUGAR COFFEE</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="card menu__card border-0">
+                          <img
+                            src="/assets/images/menu/black-coffee5.png"
+                            class="card-img-top mb-5 mb-lg-6"
+                            alt="black-coffee5"
+                          />
+                          <div class="card-body text-primary text-center">
+                            <h5 class="card-title fs-6 mb-5">冷萃咖啡</h5>
+                            <p class="card-text fs-sm">COLD BREW</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="card menu__card border-0">
+                          <img
+                            src="/assets/images/menu/black-coffee6.png"
+                            class="card-img-top mb-5 mb-lg-6"
+                            alt="black-coffee6"
+                          />
+                          <div class="card-body text-primary text-center">
+                            <h5 class="card-title fs-6 mb-5">義式濃縮咖啡</h5>
+                            <p class="card-text fs-sm">RISTRETTO</p>
+                          </div>
                         </div>
                       </div>
                     </div>
-                    <div class="swiper-slide">
-                      <div class="card menu__card border-0">
-                        <img
-                          src="/assets/images/menu/tea2.png"
-                          class="card-img-top mb-5 mb-lg-6"
-                          alt="tea2"
-                        />
-                        <div class="card-body text-primary text-center">
-                          <h5 class="card-title fs-6 mb-5">伯爵紅茶</h5>
-                          <p class="card-text fs-sm">EARL-GREY</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="card menu__card border-0">
-                        <img
-                          src="/assets/images/menu/tea3.png"
-                          class="card-img-top mb-5 mb-lg-6"
-                          alt="tea3"
-                        />
-                        <div class="card-body text-primary text-center">
-                          <h5 class="card-title fs-6 mb-5">金萱茶</h5>
-                          <p class="card-text fs-sm">JIN XUAN</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="card menu__card border-0">
-                        <img
-                          src="/assets/images/menu/tea4.png"
-                          class="card-img-top mb-5 mb-lg-6"
-                          alt="tea4"
-                        />
-                        <div class="card-body text-primary text-center">
-                          <h5 class="card-title fs-6 mb-5">龍井茶</h5>
-                          <p class="card-text fs-sm">LONGJING</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="card menu__card border-0">
-                        <img
-                          src="/assets/images/menu/tea5.png"
-                          class="card-img-top mb-5 mb-lg-6"
-                          alt="tea5"
-                        />
-                        <div class="card-body text-primary text-center">
-                          <h5 class="card-title fs-6 mb-5">綠茶</h5>
-                          <p class="card-text fs-sm">GREEN TEA</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="card menu__card border-0">
-                        <img
-                          src="/assets/images/menu/tea6.png"
-                          class="card-img-top mb-5 mb-lg-6"
-                          alt="tea6"
-                        />
-                        <div class="card-body text-primary text-center">
-                          <h5 class="card-title fs-6 mb-5">普洱茶</h5>
-                          <p class="card-text fs-sm">PUER</p>
-                        </div>
-                      </div>
-                    </div>
+                    <%- include('./layout/components/menu_swiper-button'); -%>
                   </div>
-                  <%- include('./layout/components/menu_swiper-button'); -%>
-                </div>
-                <!-- non-tea -->
-                <div
-                  class="swiper menu__itemDesktop-swiper mb-6 d-none d-md-block"
-                >
-                  <h4 class="fs-4 fs-lg-2 p-4 text-secondary mb-6 mb-lg-8">
-                    <img
-                      class="me-4"
-                      src="/assets/images/icon/icon-dot.svg"
-                      alt="icon-dot"
-                    />NON-TEA
-                  </h4>
-                  <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                      <div class="row">
-                        <div class="col-4">
-                          <div class="card menu__card border-0">
-                            <img
-                              src="/assets/images/menu/non-tea1.png"
-                              class="card-img-top mb-5 mb-lg-6"
-                              alt="non-tea1"
-                            />
-                            <div class="card-body text-primary text-center">
-                              <h5 class="card-title fs-5 mb-5">薄荷茶</h5>
-                              <p class="card-text fs-lg">MINT TEA</p>
+                  <!-- white -->
+                  <div
+                    class="swiper menu__itemDesktop-swiper mb-6 d-none d-md-block"
+                  >
+                    <h4 class="fs-4 fs-lg-2 p-4 text-secondary mb-6 mb-lg-8">
+                      <img
+                        class="me-4"
+                        src="/assets/images/icon/icon-dot.svg"
+                        alt="icon-dot"
+                      />WHITE
+                    </h4>
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <div class="row">
+                          <div class="col-4">
+                            <div class="card menu__card border-0">
+                              <img
+                                src="/assets/images/menu/white-coffee1.png"
+                                class="card-img-top mb-5 mb-lg-6"
+                                alt="white-coffee1"
+                              />
+                              <div class="card-body text-primary text-center">
+                                <h5 class="card-title fs-5 mb-5">
+                                  奶泡濃縮咖啡
+                                </h5>
+                                <p class="card-text fs-lg">MILK ESPRESSO</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-4">
+                            <div class="card menu__card border-0">
+                              <img
+                                src="/assets/images/menu/white-coffee2.png"
+                                class="card-img-top mb-5 mb-lg-6"
+                                alt="white-coffee2"
+                              />
+                              <div class="card-body text-primary text-center">
+                                <h5 class="card-title fs-5 mb-5">奶咖啡</h5>
+                                <p class="card-text fs-lg">MILK AMERICANO</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-4">
+                            <div class="card menu__card border-0">
+                              <img
+                                src="/assets/images/menu/white-coffee3.png"
+                                class="card-img-top mb-5 mb-lg-6"
+                                alt="white-coffee3"
+                              />
+                              <div class="card-body text-primary text-center">
+                                <h5 class="card-title fs-5 mb-5">卡布奇諾</h5>
+                                <p class="card-text fs-lg">CAPPUCCINO</p>
+                              </div>
                             </div>
                           </div>
                         </div>
-                        <div class="col-4">
-                          <div class="card menu__card border-0">
-                            <img
-                              src="/assets/images/menu/non-tea2.png"
-                              class="card-img-top mb-5 mb-lg-6"
-                              alt="non-tea2"
-                            />
-                            <div class="card-body text-primary text-center">
-                              <h5 class="card-title fs-5 mb-5">薰衣草花茶</h5>
-                              <p class="card-text fs-lg">LAVENDER TEA</p>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="row">
+                          <div class="col-4">
+                            <div class="card menu__card border-0">
+                              <img
+                                src="/assets/images/menu/white-coffee4.png"
+                                class="card-img-top mb-5 mb-lg-6"
+                                alt="white-coffee4"
+                              />
+                              <div class="card-body text-primary text-center">
+                                <h5 class="card-title fs-5 mb-5">拿鐵咖啡</h5>
+                                <p class="card-text fs-lg">LATTE</p>
+                              </div>
                             </div>
                           </div>
-                        </div>
-                        <div class="col-4">
-                          <div class="card menu__card border-0">
-                            <img
-                              src="/assets/images/menu/non-tea3.png"
-                              class="card-img-top mb-5 mb-lg-6"
-                              alt="non-tea3"
-                            />
-                            <div class="card-body text-primary text-center">
-                              <h5 class="card-title fs-5 mb-5">南非國寶茶</h5>
-                              <p class="card-text fs-lg">ROOIBOS</p>
+                          <div class="col-4">
+                            <div class="card menu__card border-0">
+                              <img
+                                src="/assets/images/menu/white-coffee5.png"
+                                class="card-img-top mb-5 mb-lg-6"
+                                alt="white-coffee5"
+                              />
+                              <div class="card-body text-primary text-center">
+                                <h5 class="card-title fs-5 mb-5">摩卡咖啡</h5>
+                                <p class="card-text fs-lg">MOCHA</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-4">
+                            <div class="card menu__card border-0">
+                              <img
+                                src="/assets/images/menu/white-coffee6.png"
+                                class="card-img-top mb-5 mb-lg-6"
+                                alt="white-coffee6"
+                              />
+                              <div class="card-body text-primary text-center">
+                                <h5 class="card-title fs-5 mb-5">白咖啡</h5>
+                                <p class="card-text fs-lg">WHITE COFFEE</p>
+                              </div>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                    <div class="swiper-slide">
-                      <div class="row">
-                        <div class="col-4">
-                          <div class="card menu__card border-0">
-                            <img
-                              src="/assets/images/menu/non-tea4.png"
-                              class="card-img-top mb-5 mb-lg-6"
-                              alt="non-tea4"
-                            />
-                            <div class="card-body text-primary text-center">
-                              <h5 class="card-title fs-5 mb-5">茉莉花茶</h5>
-                              <p class="card-text fs-lg">JASMINE TEA</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-4">
-                          <div class="card menu__card border-0">
-                            <img
-                              src="/assets/images/menu/non-tea5.png"
-                              class="card-img-top mb-5 mb-lg-6"
-                              alt="non-tea5"
-                            />
-                            <div class="card-body text-primary text-center">
-                              <h5 class="card-title fs-5 mb-5">菊花茶</h5>
-                              <p class="card-text fs-lg">CHRYSANTHEMUM TEA</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-4">
-                          <div class="card menu__card border-0">
-                            <img
-                              src="/assets/images/menu/non-tea6.png"
-                              class="card-img-top mb-5 mb-lg-6"
-                              alt="non-tea6"
-                            />
-                            <div class="card-body text-primary text-center">
-                              <h5 class="card-title fs-5 mb-5">柚子茶</h5>
-                              <p class="card-text fs-lg">YUZU TEA</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    <%- include('./layout/components/menu_swiper-button'); -%>
                   </div>
-                  <%- include('./layout/components/menu_swiper-button'); -%>
-                </div>
-                <div class="swiper menu__itemMobile-swiper mb-5 d-md-none">
-                  <h4 class="fs-4 fs-lg-2 p-4 text-secondary mb-6 mb-lg-8">
-                    <img
-                      class="me-4"
-                      src="/assets/images/icon/icon-dot.svg"
-                      alt="icon-dot"
-                    />NON-TEA
-                  </h4>
-                  <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                      <div class="card menu__card border-0">
-                        <img
-                          src="/assets/images/menu/non-tea1.png"
-                          class="card-img-top mb-5 mb-lg-6"
-                          alt="non-tea1"
-                        />
-                        <div class="card-body text-primary text-center">
-                          <h5 class="card-title fs-6 mb-5">薄荷茶</h5>
-                          <p class="card-text fs-sm">MINT TEA</p>
+                  <div class="swiper menu__itemMobile-swiper mb-5 d-md-none">
+                    <h4 class="fs-4 fs-lg-2 p-4 text-secondary mb-6 mb-lg-8">
+                      <img
+                        class="me-4"
+                        src="/assets/images/icon/icon-dot.svg"
+                        alt="icon-dot"
+                      />WHITE
+                    </h4>
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <div class="card menu__card border-0">
+                          <img
+                            src="/assets/images/menu/white-coffee1.png"
+                            class="card-img-top mb-5 mb-lg-6"
+                            alt="white-coffee1"
+                          />
+                          <div class="card-body text-primary text-center">
+                            <h5 class="card-title fs-6 mb-5">奶泡濃縮咖啡</h5>
+                            <p class="card-text fs-sm">MILK ESPRESSO</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="card menu__card border-0">
+                          <img
+                            src="/assets/images/menu/white-coffee2.png"
+                            class="card-img-top mb-5 mb-lg-6"
+                            alt="white-coffee2"
+                          />
+                          <div class="card-body text-primary text-center">
+                            <h5 class="card-title fs-6 mb-5">奶咖啡</h5>
+                            <p class="card-text fs-sm">MILK AMERICANO</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="card menu__card border-0">
+                          <img
+                            src="/assets/images/menu/white-coffee3.png"
+                            class="card-img-top mb-5 mb-lg-6"
+                            alt="white-coffee3"
+                          />
+                          <div class="card-body text-primary text-center">
+                            <h5 class="card-title fs-6 mb-5">卡布奇諾</h5>
+                            <p class="card-text fs-sm">CAPPUCCINO</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="card menu__card border-0">
+                          <img
+                            src="/assets/images/menu/white-coffee4.png"
+                            class="card-img-top mb-5 mb-lg-6"
+                            alt="white-coffee4"
+                          />
+                          <div class="card-body text-primary text-center">
+                            <h5 class="card-title fs-6 mb-5">拿鐵咖啡</h5>
+                            <p class="card-text fs-sm">LATTE</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="card menu__card border-0">
+                          <img
+                            src="/assets/images/menu/white-coffee5.png"
+                            class="card-img-top mb-5 mb-lg-6"
+                            alt="white-coffee5"
+                          />
+                          <div class="card-body text-primary text-center">
+                            <h5 class="card-title fs-6 mb-5">摩卡咖啡</h5>
+                            <p class="card-text fs-sm">MOCHA</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="card menu__card border-0">
+                          <img
+                            src="/assets/images/menu/white-coffee6.png"
+                            class="card-img-top mb-5 mb-lg-6"
+                            alt="white-coffee6"
+                          />
+                          <div class="card-body text-primary text-center">
+                            <h5 class="card-title fs-6 mb-5">白咖啡</h5>
+                            <p class="card-text fs-sm">WHITE COFFEE</p>
+                          </div>
                         </div>
                       </div>
                     </div>
-                    <div class="swiper-slide">
-                      <div class="card menu__card border-0">
-                        <img
-                          src="/assets/images/menu/non-tea2.png"
-                          class="card-img-top mb-5 mb-lg-6"
-                          alt="non-tea2"
-                        />
-                        <div class="card-body text-primary text-center">
-                          <h5 class="card-title fs-6 mb-5">薰衣草花茶</h5>
-                          <p class="card-text fs-sm">LAVENDER TEA</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="card menu__card border-0">
-                        <img
-                          src="/assets/images/menu/non-tea3.png"
-                          class="card-img-top mb-5 mb-lg-6"
-                          alt="non-tea3"
-                        />
-                        <div class="card-body text-primary text-center">
-                          <h5 class="card-title fs-6 mb-5">南非國寶茶</h5>
-                          <p class="card-text fs-sm">ROOIBOS</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="card menu__card border-0">
-                        <img
-                          src="/assets/images/menu/non-tea4.png"
-                          class="card-img-top mb-5 mb-lg-6"
-                          alt="non-tea4"
-                        />
-                        <div class="card-body text-primary text-center">
-                          <h5 class="card-title fs-6 mb-5">茉莉花茶</h5>
-                          <p class="card-text fs-sm">JASMINE TEA</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="card menu__card border-0">
-                        <img
-                          src="/assets/images/menu/non-tea5.png"
-                          class="card-img-top mb-5 mb-lg-6"
-                          alt="non-tea5"
-                        />
-                        <div class="card-body text-primary text-center">
-                          <h5 class="card-title fs-6 mb-5">菊花茶</h5>
-                          <p class="card-text fs-sm">CHRYSANTHEMUM TEA</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="card menu__card border-0">
-                        <img
-                          src="/assets/images/menu/non-tea6.png"
-                          class="card-img-top mb-5 mb-lg-6"
-                          alt="non-tea6"
-                        />
-                        <div class="card-body text-primary text-center">
-                          <h5 class="card-title fs-6 mb-5">柚子茶</h5>
-                          <p class="card-text fs-sm">YUZU TEA</p>
-                        </div>
-                      </div>
-                    </div>
+                    <%- include('./layout/components/menu_swiper-button'); -%>
                   </div>
-                  <%- include('./layout/components/menu_swiper-button'); -%>
                 </div>
-              </div>
-            </section>
-            <hr class="menu__hr-divider my-6 my-lg-8" />
-            <!-- 甜點 -->
-            <section class="py-8 py-lg-12" id="menu-dessert">
-              <div>
-                <h2 class="fs-4 fs-lg-2 p-4">療癒甜品</h2>
-                <h3 class="fs-6 fs-lg-lg p-4 border-top border-fc border-4">
-                  SWEET COMFORT
-                </h3>
-                <!-- dessert -->
-                <div
-                  class="swiper menu__itemDesktop-swiper mb-6 d-none d-md-block"
-                >
-                  <h4 class="fs-4 fs-lg-2 p-4 text-secondary mb-6 mb-lg-8">
-                    <img
-                      class="me-4"
-                      src="/assets/images/icon/icon-dot.svg"
-                      alt="icon-dot"
-                    />DESSERT
-                  </h4>
-                  <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                      <div class="row">
-                        <div class="col-4">
-                          <div class="card menu__card border-0">
-                            <img
-                              src="/assets/images/menu/dessert1.png"
-                              class="card-img-top mb-5 mb-lg-6"
-                              alt="dessert1"
-                            />
-                            <div class="card-body text-primary text-center">
-                              <h5 class="card-title fs-5 mb-5">提拉米蘇</h5>
-                              <p class="card-text fs-lg">TIRAMISU</p>
+              </section>
+              <hr class="menu__hr-divider my-6 my-lg-8" />
+              <!-- 非咖啡飲品 -->
+              <section class="py-8 py-lg-12" id="menu-noncoffee">
+                <div>
+                  <h2 class="fs-4 fs-lg-2 p-4">非咖啡飲品</h2>
+                  <h3 class="fs-6 fs-lg-lg p-4 border-top border-fc border-4">
+                    NON-COFFEE
+                  </h3>
+                  <!-- tea -->
+                  <div
+                    class="swiper menu__itemDesktop-swiper mb-6 d-none d-md-block"
+                  >
+                    <h4 class="fs-4 fs-lg-2 p-4 text-secondary mb-6 mb-lg-8">
+                      <img
+                        class="me-4"
+                        src="/assets/images/icon/icon-dot.svg"
+                        alt="icon-dot"
+                      />TEA
+                    </h4>
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <div class="row">
+                          <div class="col-4">
+                            <div class="card menu__card border-0">
+                              <img
+                                src="/assets/images/menu/tea1.png"
+                                class="card-img-top mb-5 mb-lg-6"
+                                alt="tea1"
+                              />
+                              <div class="card-body text-primary text-center">
+                                <h5 class="card-title fs-5 mb-5">錫蘭紅茶</h5>
+                                <p class="card-text fs-lg">CEYLON</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-4">
+                            <div class="card menu__card border-0">
+                              <img
+                                src="/assets/images/menu/tea2.png"
+                                class="card-img-top mb-5 mb-lg-6"
+                                alt="tea2"
+                              />
+                              <div class="card-body text-primary text-center">
+                                <h5 class="card-title fs-5 mb-5">伯爵紅茶</h5>
+                                <p class="card-text fs-lg">EARL-GREY</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-4">
+                            <div class="card menu__card border-0">
+                              <img
+                                src="/assets/images/menu/tea3.png"
+                                class="card-img-top mb-5 mb-lg-6"
+                                alt="tea3"
+                              />
+                              <div class="card-body text-primary text-center">
+                                <h5 class="card-title fs-5 mb-5">金萱茶</h5>
+                                <p class="card-text fs-lg">JIN XUAN</p>
+                              </div>
                             </div>
                           </div>
                         </div>
-                        <div class="col-4">
-                          <div class="card menu__card border-0">
-                            <img
-                              src="/assets/images/menu/dessert2.png"
-                              class="card-img-top mb-5 mb-lg-6"
-                              alt="dessert2"
-                            />
-                            <div class="card-body text-primary text-center">
-                              <h5 class="card-title fs-5 mb-5">巴斯克蛋糕</h5>
-                              <p class="card-text fs-lg">BASQUE CHEESE CAKE</p>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="row">
+                          <div class="col-4">
+                            <div class="card menu__card border-0">
+                              <img
+                                src="/assets/images/menu/tea4.png"
+                                class="card-img-top mb-5 mb-lg-6"
+                                alt="tea4"
+                              />
+                              <div class="card-body text-primary text-center">
+                                <h5 class="card-title fs-5 mb-5">龍井茶</h5>
+                                <p class="card-text fs-lg">LONGJING</p>
+                              </div>
                             </div>
                           </div>
-                        </div>
-                        <div class="col-4">
-                          <div class="card menu__card border-0">
-                            <img
-                              src="/assets/images/menu/dessert3.png"
-                              class="card-img-top mb-5 mb-lg-6"
-                              alt="dessert3"
-                            />
-                            <div class="card-body text-primary text-center">
-                              <h5 class="card-title fs-5 mb-5">焦糖布丁</h5>
-                              <p class="card-text fs-lg">CARAMEL PUDDING</p>
+                          <div class="col-4">
+                            <div class="card menu__card border-0">
+                              <img
+                                src="/assets/images/menu/tea5.png"
+                                class="card-img-top mb-5 mb-lg-6"
+                                alt="tea5"
+                              />
+                              <div class="card-body text-primary text-center">
+                                <h5 class="card-title fs-5 mb-5">綠茶</h5>
+                                <p class="card-text fs-lg">GREEN TEA</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-4">
+                            <div class="card menu__card border-0">
+                              <img
+                                src="/assets/images/menu/tea6.png"
+                                class="card-img-top mb-5 mb-lg-6"
+                                alt="tea6"
+                              />
+                              <div class="card-body text-primary text-center">
+                                <h5 class="card-title fs-5 mb-5">普洱茶</h5>
+                                <p class="card-text fs-lg">PUER</p>
+                              </div>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                    <div class="swiper-slide">
-                      <div class="row">
-                        <div class="col-4">
-                          <div class="card menu__card border-0">
-                            <img
-                              src="/assets/images/menu/dessert4.png"
-                              class="card-img-top mb-5 mb-lg-6"
-                              alt="dessert4"
-                            />
-                            <div class="card-body text-primary text-center">
-                              <h5 class="card-title fs-5 mb-5">抹茶蛋糕</h5>
-                              <p class="card-text fs-lg">MATCHA CAKE</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-4">
-                          <div class="card menu__card border-0">
-                            <img
-                              src="/assets/images/menu/dessert5.png"
-                              class="card-img-top mb-5 mb-lg-6"
-                              alt="dessert5"
-                            />
-                            <div class="card-body text-primary text-center">
-                              <h5 class="card-title fs-5 mb-5">檸檬塔</h5>
-                              <p class="card-text fs-lg">LEMON TART</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-4">
-                          <div class="card menu__card border-0">
-                            <img
-                              src="/assets/images/menu/dessert6.png"
-                              class="card-img-top mb-5 mb-lg-6"
-                              alt="dessert6"
-                            />
-                            <div class="card-body text-primary text-center">
-                              <h5 class="card-title fs-5 mb-5">水果沙拉</h5>
-                              <p class="card-text fs-lg">FRUIT SALAD</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    <%- include('./layout/components/menu_swiper-button'); -%>
                   </div>
-                  <%- include('./layout/components/menu_swiper-button'); -%>
-                </div>
-                <div class="swiper menu__itemMobile-swiper mb-5 d-md-none">
-                  <h4 class="fs-4 fs-lg-2 p-4 text-secondary mb-6 mb-lg-8">
-                    <img
-                      class="me-4"
-                      src="/assets/images/icon/icon-dot.svg"
-                      alt="icon-dot"
-                    />DESSERT
-                  </h4>
-                  <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                      <div class="card menu__card border-0">
-                        <img
-                          src="/assets/images/menu/dessert1.png"
-                          class="card-img-top mb-5 mb-lg-6"
-                          alt="dessert1"
-                        />
-                        <div class="card-body text-primary text-center">
-                          <h5 class="card-title fs-6 mb-5">提拉米蘇</h5>
-                          <p class="card-text fs-sm">TIRAMISU</p>
+                  <div class="swiper menu__itemMobile-swiper mb-5 d-md-none">
+                    <h4 class="fs-4 fs-lg-2 p-4 text-secondary mb-6 mb-lg-8">
+                      <img
+                        class="me-4"
+                        src="/assets/images/icon/icon-dot.svg"
+                        alt="icon-dot"
+                      />TEA
+                    </h4>
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <div class="card menu__card border-0">
+                          <img
+                            src="/assets/images/menu/tea1.png"
+                            class="card-img-top mb-5 mb-lg-6"
+                            alt="tea1"
+                          />
+                          <div class="card-body text-primary text-center">
+                            <h5 class="card-title fs-6 mb-5">錫蘭紅茶</h5>
+                            <p class="card-text fs-sm">CEYLON</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="card menu__card border-0">
+                          <img
+                            src="/assets/images/menu/tea2.png"
+                            class="card-img-top mb-5 mb-lg-6"
+                            alt="tea2"
+                          />
+                          <div class="card-body text-primary text-center">
+                            <h5 class="card-title fs-6 mb-5">伯爵紅茶</h5>
+                            <p class="card-text fs-sm">EARL-GREY</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="card menu__card border-0">
+                          <img
+                            src="/assets/images/menu/tea3.png"
+                            class="card-img-top mb-5 mb-lg-6"
+                            alt="tea3"
+                          />
+                          <div class="card-body text-primary text-center">
+                            <h5 class="card-title fs-6 mb-5">金萱茶</h5>
+                            <p class="card-text fs-sm">JIN XUAN</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="card menu__card border-0">
+                          <img
+                            src="/assets/images/menu/tea4.png"
+                            class="card-img-top mb-5 mb-lg-6"
+                            alt="tea4"
+                          />
+                          <div class="card-body text-primary text-center">
+                            <h5 class="card-title fs-6 mb-5">龍井茶</h5>
+                            <p class="card-text fs-sm">LONGJING</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="card menu__card border-0">
+                          <img
+                            src="/assets/images/menu/tea5.png"
+                            class="card-img-top mb-5 mb-lg-6"
+                            alt="tea5"
+                          />
+                          <div class="card-body text-primary text-center">
+                            <h5 class="card-title fs-6 mb-5">綠茶</h5>
+                            <p class="card-text fs-sm">GREEN TEA</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="card menu__card border-0">
+                          <img
+                            src="/assets/images/menu/tea6.png"
+                            class="card-img-top mb-5 mb-lg-6"
+                            alt="tea6"
+                          />
+                          <div class="card-body text-primary text-center">
+                            <h5 class="card-title fs-6 mb-5">普洱茶</h5>
+                            <p class="card-text fs-sm">PUER</p>
+                          </div>
                         </div>
                       </div>
                     </div>
-                    <div class="swiper-slide">
-                      <div class="card menu__card border-0">
-                        <img
-                          src="/assets/images/menu/dessert2.png"
-                          class="card-img-top mb-5 mb-lg-6"
-                          alt="dessert2"
-                        />
-                        <div class="card-body text-primary text-center">
-                          <h5 class="card-title fs-6 mb-5">巴斯克蛋糕</h5>
-                          <p class="card-text fs-sm">BASQUE CHEESE CAKE</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="card menu__card border-0">
-                        <img
-                          src="/assets/images/menu/dessert3.png"
-                          class="card-img-top mb-5 mb-lg-6"
-                          alt="dessert3"
-                        />
-                        <div class="card-body text-primary text-center">
-                          <h5 class="card-title fs-6 mb-5">焦糖布丁</h5>
-                          <p class="card-text fs-sm">CARAMEL PUDDING</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="card menu__card border-0">
-                        <img
-                          src="/assets/images/menu/dessert4.png"
-                          class="card-img-top mb-5 mb-lg-6"
-                          alt="dessert4"
-                        />
-                        <div class="card-body text-primary text-center">
-                          <h5 class="card-title fs-6 mb-5">抹茶蛋糕</h5>
-                          <p class="card-text fs-sm">MATCHA CAKE</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="card menu__card border-0">
-                        <img
-                          src="/assets/images/menu/dessert5.png"
-                          class="card-img-top mb-5 mb-lg-6"
-                          alt="dessert5"
-                        />
-                        <div class="card-body text-primary text-center">
-                          <h5 class="card-title fs-6 mb-5">檸檬塔</h5>
-                          <p class="card-text fs-sm">LEMON TART</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="card menu__card border-0">
-                        <img
-                          src="/assets/images/menu/dessert6.png"
-                          class="card-img-top mb-5 mb-lg-6"
-                          alt="dessert6"
-                        />
-                        <div class="card-body text-primary text-center">
-                          <h5 class="card-title fs-6 mb-5">水果沙拉</h5>
-                          <p class="card-text fs-sm">FRUIT SALAD</p>
-                        </div>
-                      </div>
-                    </div>
+                    <%- include('./layout/components/menu_swiper-button'); -%>
                   </div>
-                  <%- include('./layout/components/menu_swiper-button'); -%>
-                </div>
-                <!-- yogurt -->
-                <div
-                  class="swiper menu__itemDesktop-swiper mb-6 d-none d-md-block"
-                >
-                  <h4 class="fs-4 fs-lg-2 p-4 text-secondary mb-6 mb-lg-8">
-                    <img
-                      class="me-4"
-                      src="/assets/images/icon/icon-dot.svg"
-                      alt="icon-dot"
-                    />YOGURT
-                  </h4>
-                  <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                      <div class="row">
-                        <div class="col-4">
-                          <div class="card menu__card border-0">
-                            <img
-                              src="/assets/images/menu/yogurt1.png"
-                              class="card-img-top mb-5 mb-lg-6"
-                              alt="yogurt1"
-                            />
-                            <div class="card-body text-primary text-center">
-                              <h5 class="card-title fs-5 mb-5">水果優格碗</h5>
-                              <p class="card-text fs-lg">YOGURT WITH FRUIT</p>
+                  <!-- non-tea -->
+                  <div
+                    class="swiper menu__itemDesktop-swiper mb-6 d-none d-md-block"
+                  >
+                    <h4 class="fs-4 fs-lg-2 p-4 text-secondary mb-6 mb-lg-8">
+                      <img
+                        class="me-4"
+                        src="/assets/images/icon/icon-dot.svg"
+                        alt="icon-dot"
+                      />NON-TEA
+                    </h4>
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <div class="row">
+                          <div class="col-4">
+                            <div class="card menu__card border-0">
+                              <img
+                                src="/assets/images/menu/non-tea1.png"
+                                class="card-img-top mb-5 mb-lg-6"
+                                alt="non-tea1"
+                              />
+                              <div class="card-body text-primary text-center">
+                                <h5 class="card-title fs-5 mb-5">薄荷茶</h5>
+                                <p class="card-text fs-lg">MINT TEA</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-4">
+                            <div class="card menu__card border-0">
+                              <img
+                                src="/assets/images/menu/non-tea2.png"
+                                class="card-img-top mb-5 mb-lg-6"
+                                alt="non-tea2"
+                              />
+                              <div class="card-body text-primary text-center">
+                                <h5 class="card-title fs-5 mb-5">薰衣草花茶</h5>
+                                <p class="card-text fs-lg">LAVENDER TEA</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-4">
+                            <div class="card menu__card border-0">
+                              <img
+                                src="/assets/images/menu/non-tea3.png"
+                                class="card-img-top mb-5 mb-lg-6"
+                                alt="non-tea3"
+                              />
+                              <div class="card-body text-primary text-center">
+                                <h5 class="card-title fs-5 mb-5">南非國寶茶</h5>
+                                <p class="card-text fs-lg">ROOIBOS</p>
+                              </div>
                             </div>
                           </div>
                         </div>
-                        <div class="col-4">
-                          <div class="card menu__card border-0">
-                            <img
-                              src="/assets/images/menu/yogurt2.png"
-                              class="card-img-top mb-5 mb-lg-6"
-                              alt="yogurt2"
-                            />
-                            <div class="card-body text-primary text-center">
-                              <h5 class="card-title fs-5 mb-5">蜂蜜優格碗</h5>
-                              <p class="card-text fs-lg">YOGURT WITH HONEY</p>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="row">
+                          <div class="col-4">
+                            <div class="card menu__card border-0">
+                              <img
+                                src="/assets/images/menu/non-tea4.png"
+                                class="card-img-top mb-5 mb-lg-6"
+                                alt="non-tea4"
+                              />
+                              <div class="card-body text-primary text-center">
+                                <h5 class="card-title fs-5 mb-5">茉莉花茶</h5>
+                                <p class="card-text fs-lg">JASMINE TEA</p>
+                              </div>
                             </div>
                           </div>
-                        </div>
-                        <div class="col-4">
-                          <div class="card menu__card border-0">
-                            <img
-                              src="/assets/images/menu/yogurt3.png"
-                              class="card-img-top mb-5 mb-lg-6"
-                              alt="yogurt3"
-                            />
-                            <div class="card-body text-primary text-center">
-                              <h5 class="card-title fs-5 mb-5">堅果優格碗</h5>
-                              <p class="card-text fs-lg">YOGURT WITH NUTS</p>
+                          <div class="col-4">
+                            <div class="card menu__card border-0">
+                              <img
+                                src="/assets/images/menu/non-tea5.png"
+                                class="card-img-top mb-5 mb-lg-6"
+                                alt="non-tea5"
+                              />
+                              <div class="card-body text-primary text-center">
+                                <h5 class="card-title fs-5 mb-5">菊花茶</h5>
+                                <p class="card-text fs-lg">CHRYSANTHEMUM TEA</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-4">
+                            <div class="card menu__card border-0">
+                              <img
+                                src="/assets/images/menu/non-tea6.png"
+                                class="card-img-top mb-5 mb-lg-6"
+                                alt="non-tea6"
+                              />
+                              <div class="card-body text-primary text-center">
+                                <h5 class="card-title fs-5 mb-5">柚子茶</h5>
+                                <p class="card-text fs-lg">YUZU TEA</p>
+                              </div>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                    <div class="swiper-slide">
-                      <div class="row">
-                        <div class="col-4">
-                          <div class="card menu__card border-0">
-                            <img
-                              src="/assets/images/menu/yogurt4.png"
-                              class="card-img-top mb-5 mb-lg-6"
-                              alt="yogurt4"
-                            />
-                            <div class="card-body text-primary text-center">
-                              <h5 class="card-title fs-5 mb-5">巧克力優格碗</h5>
-                              <p class="card-text fs-lg">
-                                YOGURT WITH CHOCOLATE
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-4">
-                          <div class="card menu__card border-0">
-                            <img
-                              src="/assets/images/menu/yogurt5.png"
-                              class="card-img-top mb-5 mb-lg-6"
-                              alt="yogurt5"
-                            />
-                            <div class="card-body text-primary text-center">
-                              <h5 class="card-title fs-5 mb-5">藍莓優格碗</h5>
-                              <p class="card-text fs-lg">
-                                YOGURT WITH BLUEBERRIES
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-4">
-                          <div class="card menu__card border-0">
-                            <img
-                              src="/assets/images/menu/yogurt6.png"
-                              class="card-img-top mb-5 mb-lg-6"
-                              alt="yogurt6"
-                            />
-                            <div class="card-body text-primary text-center">
-                              <h5 class="card-title fs-5 mb-5">抹茶優格碗</h5>
-                              <p class="card-text fs-lg">YOGURT WITH MATCHA</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    <%- include('./layout/components/menu_swiper-button'); -%>
                   </div>
-                  <%- include('./layout/components/menu_swiper-button'); -%>
-                </div>
-                <div class="swiper menu__itemMobile-swiper mb-5 d-md-none">
-                  <h4 class="fs-4 fs-lg-2 p-4 text-secondary mb-6 mb-lg-8">
-                    <img
-                      class="me-4"
-                      src="/assets/images/icon/icon-dot.svg"
-                      alt="icon-dot"
-                    />YOGURT
-                  </h4>
-                  <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                      <div class="card menu__card border-0">
-                        <img
-                          src="/assets/images/menu/yogurt1.png"
-                          class="card-img-top mb-5 mb-lg-6"
-                          alt="yogurt1"
-                        />
-                        <div class="card-body text-primary text-center">
-                          <h5 class="card-title fs-6 mb-5">水果優格碗</h5>
-                          <p class="card-text fs-sm">YOGURT WITH FRUIT</p>
+                  <div class="swiper menu__itemMobile-swiper mb-5 d-md-none">
+                    <h4 class="fs-4 fs-lg-2 p-4 text-secondary mb-6 mb-lg-8">
+                      <img
+                        class="me-4"
+                        src="/assets/images/icon/icon-dot.svg"
+                        alt="icon-dot"
+                      />NON-TEA
+                    </h4>
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <div class="card menu__card border-0">
+                          <img
+                            src="/assets/images/menu/non-tea1.png"
+                            class="card-img-top mb-5 mb-lg-6"
+                            alt="non-tea1"
+                          />
+                          <div class="card-body text-primary text-center">
+                            <h5 class="card-title fs-6 mb-5">薄荷茶</h5>
+                            <p class="card-text fs-sm">MINT TEA</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="card menu__card border-0">
+                          <img
+                            src="/assets/images/menu/non-tea2.png"
+                            class="card-img-top mb-5 mb-lg-6"
+                            alt="non-tea2"
+                          />
+                          <div class="card-body text-primary text-center">
+                            <h5 class="card-title fs-6 mb-5">薰衣草花茶</h5>
+                            <p class="card-text fs-sm">LAVENDER TEA</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="card menu__card border-0">
+                          <img
+                            src="/assets/images/menu/non-tea3.png"
+                            class="card-img-top mb-5 mb-lg-6"
+                            alt="non-tea3"
+                          />
+                          <div class="card-body text-primary text-center">
+                            <h5 class="card-title fs-6 mb-5">南非國寶茶</h5>
+                            <p class="card-text fs-sm">ROOIBOS</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="card menu__card border-0">
+                          <img
+                            src="/assets/images/menu/non-tea4.png"
+                            class="card-img-top mb-5 mb-lg-6"
+                            alt="non-tea4"
+                          />
+                          <div class="card-body text-primary text-center">
+                            <h5 class="card-title fs-6 mb-5">茉莉花茶</h5>
+                            <p class="card-text fs-sm">JASMINE TEA</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="card menu__card border-0">
+                          <img
+                            src="/assets/images/menu/non-tea5.png"
+                            class="card-img-top mb-5 mb-lg-6"
+                            alt="non-tea5"
+                          />
+                          <div class="card-body text-primary text-center">
+                            <h5 class="card-title fs-6 mb-5">菊花茶</h5>
+                            <p class="card-text fs-sm">CHRYSANTHEMUM TEA</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="card menu__card border-0">
+                          <img
+                            src="/assets/images/menu/non-tea6.png"
+                            class="card-img-top mb-5 mb-lg-6"
+                            alt="non-tea6"
+                          />
+                          <div class="card-body text-primary text-center">
+                            <h5 class="card-title fs-6 mb-5">柚子茶</h5>
+                            <p class="card-text fs-sm">YUZU TEA</p>
+                          </div>
                         </div>
                       </div>
                     </div>
-                    <div class="swiper-slide">
-                      <div class="card menu__card border-0">
-                        <img
-                          src="/assets/images/menu/yogurt2.png"
-                          class="card-img-top mb-5 mb-lg-6"
-                          alt="yogurt2"
-                        />
-                        <div class="card-body text-primary text-center">
-                          <h5 class="card-title fs-6 mb-5">蜂蜜優格碗</h5>
-                          <p class="card-text fs-sm">YOGURT WITH HONEY</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="card menu__card border-0">
-                        <img
-                          src="/assets/images/menu/yogurt3.png"
-                          class="card-img-top mb-5 mb-lg-6"
-                          alt="yogurt3"
-                        />
-                        <div class="card-body text-primary text-center">
-                          <h5 class="card-title fs-6 mb-5">堅果優格碗</h5>
-                          <p class="card-text fs-sm">YOGURT WITH NUTS</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="card menu__card border-0">
-                        <img
-                          src="/assets/images/menu/yogurt4.png"
-                          class="card-img-top mb-5 mb-lg-6"
-                          alt="yogurt4"
-                        />
-                        <div class="card-body text-primary text-center">
-                          <h5 class="card-title fs-6 mb-5">巧克力優格碗</h5>
-                          <p class="card-text fs-sm">YOGURT WITH CHOCOLATE</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="card menu__card border-0">
-                        <img
-                          src="/assets/images/menu/yogurt5.png"
-                          class="card-img-top mb-5 mb-lg-6"
-                          alt="yogurt5"
-                        />
-                        <div class="card-body text-primary text-center">
-                          <h5 class="card-title fs-6 mb-5">藍莓優格碗</h5>
-                          <p class="card-text fs-sm">YOGURT WITH BLUEBERRIES</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="card menu__card border-0">
-                        <img
-                          src="/assets/images/menu/yogurt6.png"
-                          class="card-img-top mb-5 mb-lg-6"
-                          alt="yogurt6"
-                        />
-                        <div class="card-body text-primary text-center">
-                          <h5 class="card-title fs-6 mb-5">抹茶優格碗</h5>
-                          <p class="card-text fs-sm">YOGURT WITH MATCHA</p>
-                        </div>
-                      </div>
-                    </div>
+                    <%- include('./layout/components/menu_swiper-button'); -%>
                   </div>
-                  <%- include('./layout/components/menu_swiper-button'); -%>
                 </div>
-              </div>
-            </section>
-            <hr class="menu__hr-divider my-6 my-lg-8" />
-            <!-- 輕食 -->
-            <section class="py-8 py-lg-12" id="menu-lightMeal">
-              <div>
-                <h2 class="fs-4 fs-lg-2 p-4">輕食</h2>
-                <h3 class="fs-6 fs-lg-lg p-4 border-top border-fc border-4">
-                  LIGHT BITES
-                </h3>
-                <!-- bagel -->
-                <div
-                  class="swiper menu__itemDesktop-swiper mb-6 d-none d-md-block"
-                >
-                  <h4 class="fs-4 fs-lg-2 p-4 text-secondary mb-6 mb-lg-8">
-                    <img
-                      class="me-4"
-                      src="/assets/images/icon/icon-dot.svg"
-                      alt="icon-dot"
-                    />BAGEL
-                  </h4>
-                  <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                      <div class="row">
-                        <div class="col-4">
-                          <div class="card menu__card border-0">
-                            <img
-                              src="/assets/images/menu/bagel1.png"
-                              class="card-img-top mb-5 mb-lg-6"
-                              alt="bagel1"
-                            />
-                            <div class="card-body text-primary text-center">
-                              <h5 class="card-title fs-5 mb-5">輕貝果</h5>
-                              <p class="card-text fs-lg">LIGHT BAGEL</p>
+              </section>
+              <hr class="menu__hr-divider my-6 my-lg-8" />
+              <!-- 甜點 -->
+              <section class="py-8 py-lg-12" id="menu-dessert">
+                <div>
+                  <h2 class="fs-4 fs-lg-2 p-4">療癒甜品</h2>
+                  <h3 class="fs-6 fs-lg-lg p-4 border-top border-fc border-4">
+                    SWEET COMFORT
+                  </h3>
+                  <!-- dessert -->
+                  <div
+                    class="swiper menu__itemDesktop-swiper mb-6 d-none d-md-block"
+                  >
+                    <h4 class="fs-4 fs-lg-2 p-4 text-secondary mb-6 mb-lg-8">
+                      <img
+                        class="me-4"
+                        src="/assets/images/icon/icon-dot.svg"
+                        alt="icon-dot"
+                      />DESSERT
+                    </h4>
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <div class="row">
+                          <div class="col-4">
+                            <div class="card menu__card border-0">
+                              <img
+                                src="/assets/images/menu/dessert1.png"
+                                class="card-img-top mb-5 mb-lg-6"
+                                alt="dessert1"
+                              />
+                              <div class="card-body text-primary text-center">
+                                <h5 class="card-title fs-5 mb-5">提拉米蘇</h5>
+                                <p class="card-text fs-lg">TIRAMISU</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-4">
+                            <div class="card menu__card border-0">
+                              <img
+                                src="/assets/images/menu/dessert2.png"
+                                class="card-img-top mb-5 mb-lg-6"
+                                alt="dessert2"
+                              />
+                              <div class="card-body text-primary text-center">
+                                <h5 class="card-title fs-5 mb-5">巴斯克蛋糕</h5>
+                                <p class="card-text fs-lg">
+                                  BASQUE CHEESE CAKE
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-4">
+                            <div class="card menu__card border-0">
+                              <img
+                                src="/assets/images/menu/dessert3.png"
+                                class="card-img-top mb-5 mb-lg-6"
+                                alt="dessert3"
+                              />
+                              <div class="card-body text-primary text-center">
+                                <h5 class="card-title fs-5 mb-5">焦糖布丁</h5>
+                                <p class="card-text fs-lg">CARAMEL PUDDING</p>
+                              </div>
                             </div>
                           </div>
                         </div>
-                        <div class="col-4">
-                          <div class="card menu__card border-0">
-                            <img
-                              src="/assets/images/menu/bagel2.png"
-                              class="card-img-top mb-5 mb-lg-6"
-                              alt="bagel2"
-                            />
-                            <div class="card-body text-primary text-center">
-                              <h5 class="card-title fs-5 mb-5">醇貝果</h5>
-                              <p class="card-text fs-lg">SMOOTH BAGEL</p>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="row">
+                          <div class="col-4">
+                            <div class="card menu__card border-0">
+                              <img
+                                src="/assets/images/menu/dessert4.png"
+                                class="card-img-top mb-5 mb-lg-6"
+                                alt="dessert4"
+                              />
+                              <div class="card-body text-primary text-center">
+                                <h5 class="card-title fs-5 mb-5">抹茶蛋糕</h5>
+                                <p class="card-text fs-lg">MATCHA CAKE</p>
+                              </div>
                             </div>
                           </div>
-                        </div>
-                        <div class="col-4">
-                          <div class="card menu__card border-0">
-                            <img
-                              src="/assets/images/menu/bagel3.png"
-                              class="card-img-top mb-5 mb-lg-6"
-                              alt="bagel3"
-                            />
-                            <div class="card-body text-primary text-center">
-                              <h5 class="card-title fs-5 mb-5">香蒜貝果</h5>
-                              <p class="card-text fs-lg">GARLIC BAGEL</p>
+                          <div class="col-4">
+                            <div class="card menu__card border-0">
+                              <img
+                                src="/assets/images/menu/dessert5.png"
+                                class="card-img-top mb-5 mb-lg-6"
+                                alt="dessert5"
+                              />
+                              <div class="card-body text-primary text-center">
+                                <h5 class="card-title fs-5 mb-5">檸檬塔</h5>
+                                <p class="card-text fs-lg">LEMON TART</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-4">
+                            <div class="card menu__card border-0">
+                              <img
+                                src="/assets/images/menu/dessert6.png"
+                                class="card-img-top mb-5 mb-lg-6"
+                                alt="dessert6"
+                              />
+                              <div class="card-body text-primary text-center">
+                                <h5 class="card-title fs-5 mb-5">水果沙拉</h5>
+                                <p class="card-text fs-lg">FRUIT SALAD</p>
+                              </div>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                    <div class="swiper-slide">
-                      <div class="row">
-                        <div class="col-4">
-                          <div class="card menu__card border-0">
-                            <img
-                              src="/assets/images/menu/bagel4.png"
-                              class="card-img-top mb-5 mb-lg-6"
-                              alt="bagel4"
-                            />
-                            <div class="card-body text-primary text-center">
-                              <h5 class="card-title fs-5 mb-5">起司貝果</h5>
-                              <p class="card-text fs-lg">CHEESE BAGEL</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-4">
-                          <div class="card menu__card border-0">
-                            <img
-                              src="/assets/images/menu/bagel5.png"
-                              class="card-img-top mb-5 mb-lg-6"
-                              alt="bagel5"
-                            />
-                            <div class="card-body text-primary text-center">
-                              <h5 class="card-title fs-5 mb-5">莓果貝果</h5>
-                              <p class="card-text fs-lg">BERRY BAGEL</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-4">
-                          <div class="card menu__card border-0">
-                            <img
-                              src="/assets/images/menu/bagel6.png"
-                              class="card-img-top mb-5 mb-lg-6"
-                              alt="bagel6"
-                            />
-                            <div class="card-body text-primary text-center">
-                              <h5 class="card-title fs-5 mb-5">榛子貝果</h5>
-                              <p class="card-text fs-lg">HAZELNUT BAGEL</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    <%- include('./layout/components/menu_swiper-button'); -%>
                   </div>
-                  <%- include('./layout/components/menu_swiper-button'); -%>
-                </div>
-                <div class="swiper menu__itemMobile-swiper mb-5 d-md-none">
-                  <h4 class="fs-4 fs-lg-2 p-4 text-secondary mb-6 mb-lg-8">
-                    <img
-                      class="me-4"
-                      src="/assets/images/icon/icon-dot.svg"
-                      alt="icon-dot"
-                    />bagel
-                  </h4>
-                  <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                      <div class="card menu__card border-0">
-                        <img
-                          src="/assets/images/menu/bagel1.png"
-                          class="card-img-top mb-5 mb-lg-6"
-                          alt="bagel1"
-                        />
-                        <div class="card-body text-primary text-center">
-                          <h5 class="card-title fs-6 mb-5">輕貝果</h5>
-                          <p class="card-text fs-sm">LIGHT BAGEL</p>
+                  <div class="swiper menu__itemMobile-swiper mb-5 d-md-none">
+                    <h4 class="fs-4 fs-lg-2 p-4 text-secondary mb-6 mb-lg-8">
+                      <img
+                        class="me-4"
+                        src="/assets/images/icon/icon-dot.svg"
+                        alt="icon-dot"
+                      />DESSERT
+                    </h4>
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <div class="card menu__card border-0">
+                          <img
+                            src="/assets/images/menu/dessert1.png"
+                            class="card-img-top mb-5 mb-lg-6"
+                            alt="dessert1"
+                          />
+                          <div class="card-body text-primary text-center">
+                            <h5 class="card-title fs-6 mb-5">提拉米蘇</h5>
+                            <p class="card-text fs-sm">TIRAMISU</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="card menu__card border-0">
+                          <img
+                            src="/assets/images/menu/dessert2.png"
+                            class="card-img-top mb-5 mb-lg-6"
+                            alt="dessert2"
+                          />
+                          <div class="card-body text-primary text-center">
+                            <h5 class="card-title fs-6 mb-5">巴斯克蛋糕</h5>
+                            <p class="card-text fs-sm">BASQUE CHEESE CAKE</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="card menu__card border-0">
+                          <img
+                            src="/assets/images/menu/dessert3.png"
+                            class="card-img-top mb-5 mb-lg-6"
+                            alt="dessert3"
+                          />
+                          <div class="card-body text-primary text-center">
+                            <h5 class="card-title fs-6 mb-5">焦糖布丁</h5>
+                            <p class="card-text fs-sm">CARAMEL PUDDING</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="card menu__card border-0">
+                          <img
+                            src="/assets/images/menu/dessert4.png"
+                            class="card-img-top mb-5 mb-lg-6"
+                            alt="dessert4"
+                          />
+                          <div class="card-body text-primary text-center">
+                            <h5 class="card-title fs-6 mb-5">抹茶蛋糕</h5>
+                            <p class="card-text fs-sm">MATCHA CAKE</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="card menu__card border-0">
+                          <img
+                            src="/assets/images/menu/dessert5.png"
+                            class="card-img-top mb-5 mb-lg-6"
+                            alt="dessert5"
+                          />
+                          <div class="card-body text-primary text-center">
+                            <h5 class="card-title fs-6 mb-5">檸檬塔</h5>
+                            <p class="card-text fs-sm">LEMON TART</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="card menu__card border-0">
+                          <img
+                            src="/assets/images/menu/dessert6.png"
+                            class="card-img-top mb-5 mb-lg-6"
+                            alt="dessert6"
+                          />
+                          <div class="card-body text-primary text-center">
+                            <h5 class="card-title fs-6 mb-5">水果沙拉</h5>
+                            <p class="card-text fs-sm">FRUIT SALAD</p>
+                          </div>
                         </div>
                       </div>
                     </div>
-                    <div class="swiper-slide">
-                      <div class="card menu__card border-0">
-                        <img
-                          src="/assets/images/menu/bagel2.png"
-                          class="card-img-top mb-5 mb-lg-6"
-                          alt="bagel2"
-                        />
-                        <div class="card-body text-primary text-center">
-                          <h5 class="card-title fs-6 mb-5">醇貝果</h5>
-                          <p class="card-text fs-sm">SMOOTH BAGEL</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="card menu__card border-0">
-                        <img
-                          src="/assets/images/menu/bagel3.png"
-                          class="card-img-top mb-5 mb-lg-6"
-                          alt="bagel3"
-                        />
-                        <div class="card-body text-primary text-center">
-                          <h5 class="card-title fs-6 mb-5">香蒜貝果</h5>
-                          <p class="card-text fs-sm">GARLIC BAGEL</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="card menu__card border-0">
-                        <img
-                          src="/assets/images/menu/bagel4.png"
-                          class="card-img-top mb-5 mb-lg-6"
-                          alt="bagel4"
-                        />
-                        <div class="card-body text-primary text-center">
-                          <h5 class="card-title fs-6 mb-5">起司貝果</h5>
-                          <p class="card-text fs-sm">CHEESE BAGEL</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="card menu__card border-0">
-                        <img
-                          src="/assets/images/menu/bagel5.png"
-                          class="card-img-top mb-5 mb-lg-6"
-                          alt="bagel5"
-                        />
-                        <div class="card-body text-primary text-center">
-                          <h5 class="card-title fs-6 mb-5">莓果貝果</h5>
-                          <p class="card-text fs-sm">BERRY BAGEL</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="card menu__card border-0">
-                        <img
-                          src="/assets/images/menu/bagel6.png"
-                          class="card-img-top mb-5 mb-lg-6"
-                          alt="bagel6"
-                        />
-                        <div class="card-body text-primary text-center">
-                          <h5 class="card-title fs-6 mb-5">榛子貝果</h5>
-                          <p class="card-text fs-sm">HAZELNUT BAGEL</p>
-                        </div>
-                      </div>
-                    </div>
+                    <%- include('./layout/components/menu_swiper-button'); -%>
                   </div>
-                  <%- include('./layout/components/menu_swiper-button'); -%>
-                </div>
-                <!-- TOAST & SANDWICH -->
-                <div
-                  class="swiper menu__itemDesktop-swiper mb-6 d-none d-md-block"
-                >
-                  <h4 class="fs-4 fs-lg-2 p-4 text-secondary mb-6 mb-lg-8">
-                    <img
-                      class="me-4"
-                      src="/assets/images/icon/icon-dot.svg"
-                      alt="icon-dot"
-                    />TOAST & SANDWICH
-                  </h4>
-                  <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                      <div class="row">
-                        <div class="col-4">
-                          <div class="card menu__card border-0">
-                            <img
-                              src="/assets/images/menu/ts1.png"
-                              class="card-img-top mb-5 mb-lg-6"
-                              alt="ts1"
-                            />
-                            <div class="card-body text-primary text-center">
-                              <h5 class="card-title fs-5 mb-5">
-                                鹹奶油蜂蜜吐司
-                              </h5>
-                              <p class="card-text fs-lg">
-                                SALTED BUTTER HONEY TOAST
-                              </p>
+                  <!-- yogurt -->
+                  <div
+                    class="swiper menu__itemDesktop-swiper mb-6 d-none d-md-block"
+                  >
+                    <h4 class="fs-4 fs-lg-2 p-4 text-secondary mb-6 mb-lg-8">
+                      <img
+                        class="me-4"
+                        src="/assets/images/icon/icon-dot.svg"
+                        alt="icon-dot"
+                      />YOGURT
+                    </h4>
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <div class="row">
+                          <div class="col-4">
+                            <div class="card menu__card border-0">
+                              <img
+                                src="/assets/images/menu/yogurt1.png"
+                                class="card-img-top mb-5 mb-lg-6"
+                                alt="yogurt1"
+                              />
+                              <div class="card-body text-primary text-center">
+                                <h5 class="card-title fs-5 mb-5">水果優格碗</h5>
+                                <p class="card-text fs-lg">YOGURT WITH FRUIT</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-4">
+                            <div class="card menu__card border-0">
+                              <img
+                                src="/assets/images/menu/yogurt2.png"
+                                class="card-img-top mb-5 mb-lg-6"
+                                alt="yogurt2"
+                              />
+                              <div class="card-body text-primary text-center">
+                                <h5 class="card-title fs-5 mb-5">蜂蜜優格碗</h5>
+                                <p class="card-text fs-lg">YOGURT WITH HONEY</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-4">
+                            <div class="card menu__card border-0">
+                              <img
+                                src="/assets/images/menu/yogurt3.png"
+                                class="card-img-top mb-5 mb-lg-6"
+                                alt="yogurt3"
+                              />
+                              <div class="card-body text-primary text-center">
+                                <h5 class="card-title fs-5 mb-5">堅果優格碗</h5>
+                                <p class="card-text fs-lg">YOGURT WITH NUTS</p>
+                              </div>
                             </div>
                           </div>
                         </div>
-                        <div class="col-4">
-                          <div class="card menu__card border-0">
-                            <img
-                              src="/assets/images/menu/ts2.png"
-                              class="card-img-top mb-5 mb-lg-6"
-                              alt="ts2"
-                            />
-                            <div class="card-body text-primary text-center">
-                              <h5 class="card-title fs-5 mb-5">
-                                火腿起司三明治
-                              </h5>
-                              <p class="card-text fs-lg">
-                                HAM & CHEESE SANDWICH
-                              </p>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="row">
+                          <div class="col-4">
+                            <div class="card menu__card border-0">
+                              <img
+                                src="/assets/images/menu/yogurt4.png"
+                                class="card-img-top mb-5 mb-lg-6"
+                                alt="yogurt4"
+                              />
+                              <div class="card-body text-primary text-center">
+                                <h5 class="card-title fs-5 mb-5">
+                                  巧克力優格碗
+                                </h5>
+                                <p class="card-text fs-lg">
+                                  YOGURT WITH CHOCOLATE
+                                </p>
+                              </div>
                             </div>
                           </div>
-                        </div>
-                        <div class="col-4">
-                          <div class="card menu__card border-0">
-                            <img
-                              src="/assets/images/menu/ts3.png"
-                              class="card-img-top mb-5 mb-lg-6"
-                              alt="ts3"
-                            />
-                            <div class="card-body text-primary text-center">
-                              <h5 class="card-title fs-5 mb-5">果醬吐司</h5>
-                              <p class="card-text fs-lg">TOAST WITH TOAST</p>
+                          <div class="col-4">
+                            <div class="card menu__card border-0">
+                              <img
+                                src="/assets/images/menu/yogurt5.png"
+                                class="card-img-top mb-5 mb-lg-6"
+                                alt="yogurt5"
+                              />
+                              <div class="card-body text-primary text-center">
+                                <h5 class="card-title fs-5 mb-5">藍莓優格碗</h5>
+                                <p class="card-text fs-lg">
+                                  YOGURT WITH BLUEBERRIES
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-4">
+                            <div class="card menu__card border-0">
+                              <img
+                                src="/assets/images/menu/yogurt6.png"
+                                class="card-img-top mb-5 mb-lg-6"
+                                alt="yogurt6"
+                              />
+                              <div class="card-body text-primary text-center">
+                                <h5 class="card-title fs-5 mb-5">抹茶優格碗</h5>
+                                <p class="card-text fs-lg">
+                                  YOGURT WITH MATCHA
+                                </p>
+                              </div>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                    <div class="swiper-slide">
-                      <div class="row">
-                        <div class="col-4">
-                          <div class="card menu__card border-0">
-                            <img
-                              src="/assets/images/menu/ts4.png"
-                              class="card-img-top mb-5 mb-lg-6"
-                              alt="ts4"
-                            />
-                            <div class="card-body text-primary text-center">
-                              <h5 class="card-title fs-5 mb-5">
-                                鮪魚起司三明治
-                              </h5>
-                              <p class="card-text fs-lg">
-                                TUNA & CHEESE SANDWICH
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-4">
-                          <div class="card menu__card border-0">
-                            <img
-                              src="/assets/images/menu/ts5.png"
-                              class="card-img-top mb-5 mb-lg-6"
-                              alt="ts5"
-                            />
-                            <div class="card-body text-primary text-center">
-                              <h5 class="card-title fs-5 mb-5">
-                                蔬菜沙拉三明治
-                              </h5>
-                              <p class="card-text fs-lg">
-                                VEGETABLE SALAD SANDWICH
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-4">
-                          <div class="card menu__card border-0">
-                            <img
-                              src="/assets/images/menu/ts6.png"
-                              class="card-img-top mb-5 mb-lg-6"
-                              alt="ts6"
-                            />
-                            <div class="card-body text-primary text-center">
-                              <h5 class="card-title fs-5 mb-5">
-                                巧克力酥皮點心
-                              </h5>
-                              <p class="card-text fs-lg">
-                                CHOCOLATE PUFF PASTRY
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    <%- include('./layout/components/menu_swiper-button'); -%>
                   </div>
-                  <%- include('./layout/components/menu_swiper-button'); -%>
-                </div>
-                <div class="swiper menu__itemMobile-swiper mb-5 d-md-none">
-                  <h4 class="fs-4 fs-lg-2 p-4 text-secondary mb-6 mb-lg-8">
-                    <img
-                      class="me-4"
-                      src="/assets/images/icon/icon-dot.svg"
-                      alt="icon-dot"
-                    />TOAST & SANDWICH
-                  </h4>
-                  <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                      <div class="card menu__card border-0">
-                        <img
-                          src="/assets/images/menu/ts1.png"
-                          class="card-img-top mb-5 mb-lg-6"
-                          alt="ts1"
-                        />
-                        <div class="card-body text-primary text-center">
-                          <h5 class="card-title fs-6 mb-5">鹹奶油蜂蜜吐司</h5>
-                          <p class="card-text fs-sm">
-                            SALTED BUTTER HONEY TOAST
-                          </p>
+                  <div class="swiper menu__itemMobile-swiper mb-5 d-md-none">
+                    <h4 class="fs-4 fs-lg-2 p-4 text-secondary mb-6 mb-lg-8">
+                      <img
+                        class="me-4"
+                        src="/assets/images/icon/icon-dot.svg"
+                        alt="icon-dot"
+                      />YOGURT
+                    </h4>
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <div class="card menu__card border-0">
+                          <img
+                            src="/assets/images/menu/yogurt1.png"
+                            class="card-img-top mb-5 mb-lg-6"
+                            alt="yogurt1"
+                          />
+                          <div class="card-body text-primary text-center">
+                            <h5 class="card-title fs-6 mb-5">水果優格碗</h5>
+                            <p class="card-text fs-sm">YOGURT WITH FRUIT</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="card menu__card border-0">
+                          <img
+                            src="/assets/images/menu/yogurt2.png"
+                            class="card-img-top mb-5 mb-lg-6"
+                            alt="yogurt2"
+                          />
+                          <div class="card-body text-primary text-center">
+                            <h5 class="card-title fs-6 mb-5">蜂蜜優格碗</h5>
+                            <p class="card-text fs-sm">YOGURT WITH HONEY</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="card menu__card border-0">
+                          <img
+                            src="/assets/images/menu/yogurt3.png"
+                            class="card-img-top mb-5 mb-lg-6"
+                            alt="yogurt3"
+                          />
+                          <div class="card-body text-primary text-center">
+                            <h5 class="card-title fs-6 mb-5">堅果優格碗</h5>
+                            <p class="card-text fs-sm">YOGURT WITH NUTS</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="card menu__card border-0">
+                          <img
+                            src="/assets/images/menu/yogurt4.png"
+                            class="card-img-top mb-5 mb-lg-6"
+                            alt="yogurt4"
+                          />
+                          <div class="card-body text-primary text-center">
+                            <h5 class="card-title fs-6 mb-5">巧克力優格碗</h5>
+                            <p class="card-text fs-sm">YOGURT WITH CHOCOLATE</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="card menu__card border-0">
+                          <img
+                            src="/assets/images/menu/yogurt5.png"
+                            class="card-img-top mb-5 mb-lg-6"
+                            alt="yogurt5"
+                          />
+                          <div class="card-body text-primary text-center">
+                            <h5 class="card-title fs-6 mb-5">藍莓優格碗</h5>
+                            <p class="card-text fs-sm">
+                              YOGURT WITH BLUEBERRIES
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="card menu__card border-0">
+                          <img
+                            src="/assets/images/menu/yogurt6.png"
+                            class="card-img-top mb-5 mb-lg-6"
+                            alt="yogurt6"
+                          />
+                          <div class="card-body text-primary text-center">
+                            <h5 class="card-title fs-6 mb-5">抹茶優格碗</h5>
+                            <p class="card-text fs-sm">YOGURT WITH MATCHA</p>
+                          </div>
                         </div>
                       </div>
                     </div>
-                    <div class="swiper-slide">
-                      <div class="card menu__card border-0">
-                        <img
-                          src="/assets/images/menu/ts2.png"
-                          class="card-img-top mb-5 mb-lg-6"
-                          alt="ts2"
-                        />
-                        <div class="card-body text-primary text-center">
-                          <h5 class="card-title fs-6 mb-5">火腿起司三明治</h5>
-                          <p class="card-text fs-sm">HAM & CHEESE SANDWICH</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="card menu__card border-0">
-                        <img
-                          src="/assets/images/menu/ts3.png"
-                          class="card-img-top mb-5 mb-lg-6"
-                          alt="ts3"
-                        />
-                        <div class="card-body text-primary text-center">
-                          <h5 class="card-title fs-6 mb-5">果醬吐司</h5>
-                          <p class="card-text fs-sm">TOAST WITH TOAST</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="card menu__card border-0">
-                        <img
-                          src="/assets/images/menu/ts4.png"
-                          class="card-img-top mb-5 mb-lg-6"
-                          alt="ts4"
-                        />
-                        <div class="card-body text-primary text-center">
-                          <h5 class="card-title fs-6 mb-5">鮪魚起司三明治</h5>
-                          <p class="card-text fs-sm">TUNA & CHEESE SANDWICH</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="card menu__card border-0">
-                        <img
-                          src="/assets/images/menu/ts5.png"
-                          class="card-img-top mb-5 mb-lg-6"
-                          alt="ts5"
-                        />
-                        <div class="card-body text-primary text-center">
-                          <h5 class="card-title fs-6 mb-5">蔬菜沙拉三明治</h5>
-                          <p class="card-text fs-sm">
-                            VEGETABLE SALAD SANDWICH
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="card menu__card border-0">
-                        <img
-                          src="/assets/images/menu/ts6.png"
-                          class="card-img-top mb-5 mb-lg-6"
-                          alt="ts6"
-                        />
-                        <div class="card-body text-primary text-center">
-                          <h5 class="card-title fs-6 mb-5">巧克力酥皮點心</h5>
-                          <p class="card-text fs-sm">CHOCOLATE PUFF PASTRY</p>
-                        </div>
-                      </div>
-                    </div>
+                    <%- include('./layout/components/menu_swiper-button'); -%>
                   </div>
-                  <%- include('./layout/components/menu_swiper-button'); -%>
                 </div>
-              </div>
-            </section>
-            <hr class="menu__hr-divider my-6 my-lg-8" />
-            <div
-              class="d-flex justify-content-between align-items-center py-8 py-lg-12"
-            >
-              <a
-                role="button"
-                class="btn-outline-m btn-icon"
-                href="index.html"
-                style="width: 196px"
-                >回首頁</a
-              >
-              <a
-                role="button"
-                class="btn-primary-m btn-icon"
-                href="service.html"
-                style="width: 196px"
-                >預約座位</a
-              >
+              </section>
+              <hr class="menu__hr-divider my-6 my-lg-8" />
+              <!-- 輕食 -->
+              <section class="py-8 py-lg-12" id="menu-lightMeal">
+                <div>
+                  <h2 class="fs-4 fs-lg-2 p-4">輕食</h2>
+                  <h3 class="fs-6 fs-lg-lg p-4 border-top border-fc border-4">
+                    LIGHT BITES
+                  </h3>
+                  <!-- bagel -->
+                  <div
+                    class="swiper menu__itemDesktop-swiper mb-6 d-none d-md-block"
+                  >
+                    <h4 class="fs-4 fs-lg-2 p-4 text-secondary mb-6 mb-lg-8">
+                      <img
+                        class="me-4"
+                        src="/assets/images/icon/icon-dot.svg"
+                        alt="icon-dot"
+                      />BAGEL
+                    </h4>
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <div class="row">
+                          <div class="col-4">
+                            <div class="card menu__card border-0">
+                              <img
+                                src="/assets/images/menu/bagel1.png"
+                                class="card-img-top mb-5 mb-lg-6"
+                                alt="bagel1"
+                              />
+                              <div class="card-body text-primary text-center">
+                                <h5 class="card-title fs-5 mb-5">輕貝果</h5>
+                                <p class="card-text fs-lg">LIGHT BAGEL</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-4">
+                            <div class="card menu__card border-0">
+                              <img
+                                src="/assets/images/menu/bagel2.png"
+                                class="card-img-top mb-5 mb-lg-6"
+                                alt="bagel2"
+                              />
+                              <div class="card-body text-primary text-center">
+                                <h5 class="card-title fs-5 mb-5">醇貝果</h5>
+                                <p class="card-text fs-lg">SMOOTH BAGEL</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-4">
+                            <div class="card menu__card border-0">
+                              <img
+                                src="/assets/images/menu/bagel3.png"
+                                class="card-img-top mb-5 mb-lg-6"
+                                alt="bagel3"
+                              />
+                              <div class="card-body text-primary text-center">
+                                <h5 class="card-title fs-5 mb-5">香蒜貝果</h5>
+                                <p class="card-text fs-lg">GARLIC BAGEL</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="row">
+                          <div class="col-4">
+                            <div class="card menu__card border-0">
+                              <img
+                                src="/assets/images/menu/bagel4.png"
+                                class="card-img-top mb-5 mb-lg-6"
+                                alt="bagel4"
+                              />
+                              <div class="card-body text-primary text-center">
+                                <h5 class="card-title fs-5 mb-5">起司貝果</h5>
+                                <p class="card-text fs-lg">CHEESE BAGEL</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-4">
+                            <div class="card menu__card border-0">
+                              <img
+                                src="/assets/images/menu/bagel5.png"
+                                class="card-img-top mb-5 mb-lg-6"
+                                alt="bagel5"
+                              />
+                              <div class="card-body text-primary text-center">
+                                <h5 class="card-title fs-5 mb-5">莓果貝果</h5>
+                                <p class="card-text fs-lg">BERRY BAGEL</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-4">
+                            <div class="card menu__card border-0">
+                              <img
+                                src="/assets/images/menu/bagel6.png"
+                                class="card-img-top mb-5 mb-lg-6"
+                                alt="bagel6"
+                              />
+                              <div class="card-body text-primary text-center">
+                                <h5 class="card-title fs-5 mb-5">榛子貝果</h5>
+                                <p class="card-text fs-lg">HAZELNUT BAGEL</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <%- include('./layout/components/menu_swiper-button'); -%>
+                  </div>
+                  <div class="swiper menu__itemMobile-swiper mb-5 d-md-none">
+                    <h4 class="fs-4 fs-lg-2 p-4 text-secondary mb-6 mb-lg-8">
+                      <img
+                        class="me-4"
+                        src="/assets/images/icon/icon-dot.svg"
+                        alt="icon-dot"
+                      />bagel
+                    </h4>
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <div class="card menu__card border-0">
+                          <img
+                            src="/assets/images/menu/bagel1.png"
+                            class="card-img-top mb-5 mb-lg-6"
+                            alt="bagel1"
+                          />
+                          <div class="card-body text-primary text-center">
+                            <h5 class="card-title fs-6 mb-5">輕貝果</h5>
+                            <p class="card-text fs-sm">LIGHT BAGEL</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="card menu__card border-0">
+                          <img
+                            src="/assets/images/menu/bagel2.png"
+                            class="card-img-top mb-5 mb-lg-6"
+                            alt="bagel2"
+                          />
+                          <div class="card-body text-primary text-center">
+                            <h5 class="card-title fs-6 mb-5">醇貝果</h5>
+                            <p class="card-text fs-sm">SMOOTH BAGEL</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="card menu__card border-0">
+                          <img
+                            src="/assets/images/menu/bagel3.png"
+                            class="card-img-top mb-5 mb-lg-6"
+                            alt="bagel3"
+                          />
+                          <div class="card-body text-primary text-center">
+                            <h5 class="card-title fs-6 mb-5">香蒜貝果</h5>
+                            <p class="card-text fs-sm">GARLIC BAGEL</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="card menu__card border-0">
+                          <img
+                            src="/assets/images/menu/bagel4.png"
+                            class="card-img-top mb-5 mb-lg-6"
+                            alt="bagel4"
+                          />
+                          <div class="card-body text-primary text-center">
+                            <h5 class="card-title fs-6 mb-5">起司貝果</h5>
+                            <p class="card-text fs-sm">CHEESE BAGEL</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="card menu__card border-0">
+                          <img
+                            src="/assets/images/menu/bagel5.png"
+                            class="card-img-top mb-5 mb-lg-6"
+                            alt="bagel5"
+                          />
+                          <div class="card-body text-primary text-center">
+                            <h5 class="card-title fs-6 mb-5">莓果貝果</h5>
+                            <p class="card-text fs-sm">BERRY BAGEL</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="card menu__card border-0">
+                          <img
+                            src="/assets/images/menu/bagel6.png"
+                            class="card-img-top mb-5 mb-lg-6"
+                            alt="bagel6"
+                          />
+                          <div class="card-body text-primary text-center">
+                            <h5 class="card-title fs-6 mb-5">榛子貝果</h5>
+                            <p class="card-text fs-sm">HAZELNUT BAGEL</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <%- include('./layout/components/menu_swiper-button'); -%>
+                  </div>
+                  <!-- TOAST & SANDWICH -->
+                  <div
+                    class="swiper menu__itemDesktop-swiper mb-6 d-none d-md-block"
+                  >
+                    <h4 class="fs-4 fs-lg-2 p-4 text-secondary mb-6 mb-lg-8">
+                      <img
+                        class="me-4"
+                        src="/assets/images/icon/icon-dot.svg"
+                        alt="icon-dot"
+                      />TOAST & SANDWICH
+                    </h4>
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <div class="row">
+                          <div class="col-4">
+                            <div class="card menu__card border-0">
+                              <img
+                                src="/assets/images/menu/ts1.png"
+                                class="card-img-top mb-5 mb-lg-6"
+                                alt="ts1"
+                              />
+                              <div class="card-body text-primary text-center">
+                                <h5 class="card-title fs-5 mb-5">
+                                  鹹奶油蜂蜜吐司
+                                </h5>
+                                <p class="card-text fs-lg">
+                                  SALTED BUTTER HONEY TOAST
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-4">
+                            <div class="card menu__card border-0">
+                              <img
+                                src="/assets/images/menu/ts2.png"
+                                class="card-img-top mb-5 mb-lg-6"
+                                alt="ts2"
+                              />
+                              <div class="card-body text-primary text-center">
+                                <h5 class="card-title fs-5 mb-5">
+                                  火腿起司三明治
+                                </h5>
+                                <p class="card-text fs-lg">
+                                  HAM & CHEESE SANDWICH
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-4">
+                            <div class="card menu__card border-0">
+                              <img
+                                src="/assets/images/menu/ts3.png"
+                                class="card-img-top mb-5 mb-lg-6"
+                                alt="ts3"
+                              />
+                              <div class="card-body text-primary text-center">
+                                <h5 class="card-title fs-5 mb-5">果醬吐司</h5>
+                                <p class="card-text fs-lg">TOAST WITH TOAST</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="row">
+                          <div class="col-4">
+                            <div class="card menu__card border-0">
+                              <img
+                                src="/assets/images/menu/ts4.png"
+                                class="card-img-top mb-5 mb-lg-6"
+                                alt="ts4"
+                              />
+                              <div class="card-body text-primary text-center">
+                                <h5 class="card-title fs-5 mb-5">
+                                  鮪魚起司三明治
+                                </h5>
+                                <p class="card-text fs-lg">
+                                  TUNA & CHEESE SANDWICH
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-4">
+                            <div class="card menu__card border-0">
+                              <img
+                                src="/assets/images/menu/ts5.png"
+                                class="card-img-top mb-5 mb-lg-6"
+                                alt="ts5"
+                              />
+                              <div class="card-body text-primary text-center">
+                                <h5 class="card-title fs-5 mb-5">
+                                  蔬菜沙拉三明治
+                                </h5>
+                                <p class="card-text fs-lg">
+                                  VEGETABLE SALAD SANDWICH
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-4">
+                            <div class="card menu__card border-0">
+                              <img
+                                src="/assets/images/menu/ts6.png"
+                                class="card-img-top mb-5 mb-lg-6"
+                                alt="ts6"
+                              />
+                              <div class="card-body text-primary text-center">
+                                <h5 class="card-title fs-5 mb-5">
+                                  巧克力酥皮點心
+                                </h5>
+                                <p class="card-text fs-lg">
+                                  CHOCOLATE PUFF PASTRY
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <%- include('./layout/components/menu_swiper-button'); -%>
+                  </div>
+                  <div class="swiper menu__itemMobile-swiper mb-5 d-md-none">
+                    <h4 class="fs-4 fs-lg-2 p-4 text-secondary mb-6 mb-lg-8">
+                      <img
+                        class="me-4"
+                        src="/assets/images/icon/icon-dot.svg"
+                        alt="icon-dot"
+                      />TOAST & SANDWICH
+                    </h4>
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <div class="card menu__card border-0">
+                          <img
+                            src="/assets/images/menu/ts1.png"
+                            class="card-img-top mb-5 mb-lg-6"
+                            alt="ts1"
+                          />
+                          <div class="card-body text-primary text-center">
+                            <h5 class="card-title fs-6 mb-5">鹹奶油蜂蜜吐司</h5>
+                            <p class="card-text fs-sm">
+                              SALTED BUTTER HONEY TOAST
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="card menu__card border-0">
+                          <img
+                            src="/assets/images/menu/ts2.png"
+                            class="card-img-top mb-5 mb-lg-6"
+                            alt="ts2"
+                          />
+                          <div class="card-body text-primary text-center">
+                            <h5 class="card-title fs-6 mb-5">火腿起司三明治</h5>
+                            <p class="card-text fs-sm">HAM & CHEESE SANDWICH</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="card menu__card border-0">
+                          <img
+                            src="/assets/images/menu/ts3.png"
+                            class="card-img-top mb-5 mb-lg-6"
+                            alt="ts3"
+                          />
+                          <div class="card-body text-primary text-center">
+                            <h5 class="card-title fs-6 mb-5">果醬吐司</h5>
+                            <p class="card-text fs-sm">TOAST WITH TOAST</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="card menu__card border-0">
+                          <img
+                            src="/assets/images/menu/ts4.png"
+                            class="card-img-top mb-5 mb-lg-6"
+                            alt="ts4"
+                          />
+                          <div class="card-body text-primary text-center">
+                            <h5 class="card-title fs-6 mb-5">鮪魚起司三明治</h5>
+                            <p class="card-text fs-sm">
+                              TUNA & CHEESE SANDWICH
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="card menu__card border-0">
+                          <img
+                            src="/assets/images/menu/ts5.png"
+                            class="card-img-top mb-5 mb-lg-6"
+                            alt="ts5"
+                          />
+                          <div class="card-body text-primary text-center">
+                            <h5 class="card-title fs-6 mb-5">蔬菜沙拉三明治</h5>
+                            <p class="card-text fs-sm">
+                              VEGETABLE SALAD SANDWICH
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="card menu__card border-0">
+                          <img
+                            src="/assets/images/menu/ts6.png"
+                            class="card-img-top mb-5 mb-lg-6"
+                            alt="ts6"
+                          />
+                          <div class="card-body text-primary text-center">
+                            <h5 class="card-title fs-6 mb-5">巧克力酥皮點心</h5>
+                            <p class="card-text fs-sm">CHOCOLATE PUFF PASTRY</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <%- include('./layout/components/menu_swiper-button'); -%>
+                  </div>
+                </div>
+              </section>
+              <hr class="menu__hr-divider my-6 my-lg-8" />
             </div>
           </div>
         </div>
-      </section>
+      </div>
     </main>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 offset-lg-2">
+          <div
+            class="d-flex justify-content-between align-items-center py-8 py-lg-12"
+          >
+            <a
+              role="button"
+              class="m_btn-base m_modal-btn-cancel rounded-7 m_footer-btn"
+              href="index.html"
+              >回首頁<%-
+              include('./layout/components/moon-outline-switch');-%></a
+            >
+            <a
+              role="button"
+              class="m_btn-base m_modal-btn rounded-7 m_footer-btn"
+              href="service.html"
+              >預約座位<%- include('./layout/components/moon-switch');-%></a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
 
     <%- include('./layout/footer'); -%>
 
