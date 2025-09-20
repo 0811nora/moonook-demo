@@ -5,11 +5,12 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/moonook-demo/assets/logo-Be9wTYls.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/moonook-demo/assets/logo-BRQLKJ81.svg" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <title>會員中心 | 默隅 Moonook</title>
-  <script type="module" crossorigin src="/moonook-demo/assets/main-CkKuPpVq.js"></script>
-  <link rel="stylesheet" crossorigin href="/moonook-demo/assets/main-DuCdRr0G.css">
+  <script src="https://unpkg.com/feather-icons"></script>
+  <script type="module" crossorigin src="/moonook-demo/assets/main-DEkVRiRQ.js"></script>
+  <link rel="stylesheet" crossorigin href="/moonook-demo/assets/main-BLYYFi_B.css">
 </head>
 
 <body>
@@ -19,12 +20,12 @@
       <a href="index.html" class="me-auto">
         <img
           class="h-logo-white"
-          src="/moonook-demo/assets/logo_small_white-B4mvx7ux.svg"
+          src="/moonook-demo/assets/logo_small_white-BbogZjJN.svg"
           alt="logo_small_white"
         />
         <img
           class="h-logo-green d-none"
-          src="/moonook-demo/assets/logo_small_green-DSdplH0x.svg"
+          src="/moonook-demo/assets/logo_small_green-BruFvL_I.svg"
           alt="logo_small_green"
         />
       </a>
@@ -70,19 +71,20 @@
   <div class="userImg-btn d-none">
     <a href="member.html" class="btn border-0">
       <div class="rounded-circle overflow-hidden user-img">
-        <img src="/moonook-demo/assets/member_photo--2BvKFfG.jpg" class="w-100 h-100"  alt="">
+        <img src="/moonook-demo/assets/member_photo--2BvKFfG.jpg" class="w-100 h-100" alt="">
       </div>
     </a>
   </div>
 
-  <button type="button" id="logoutBtn" class="btn btn-primary">登出</button>
+  <!-- <button type="button" id="logoutBtn" class="btn btn-primary">登出</button> -->
 
 
   <div class="modal fade" id="userLoginPage" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
-      <button type="button" id="hiddenCloseBtn" class="btn-close d-none" data-bs-dismiss="modal" aria-label="Close"></button>
+      <button type="button" id="hiddenCloseBtn" class="btn-close d-none" data-bs-dismiss="modal"
+        aria-label="Close"></button>
 
-      <div class="modal-content p-lg-10 p-6 user-login" >
+      <div class="modal-content p-lg-10 p-6 user-login">
         <h3 class="text-center text-white mb-7 fs-4 fs-lg-3 mt-5 mt-lg-0">會員登入</h3>
         <div class="px-lg-8 px-5">
           <div class="form-floating mb-6">
@@ -100,12 +102,12 @@
 
           <div class="">
             <p class="login-alert d-none text-danger text-center">* 請輸入帳號及密碼 *</p>
-            <button type="button" class="confirm-login btn btn-primary-300 rounded-20px py-4  w-100 mb-7" >登入</button>
-            
+            <button type="button" class="confirm-login btn btn-primary-300 rounded-20px py-4  w-100 mb-7">登入</button>
+
           </div>
         </div>
-        
-        
+
+
       </div>
       <div class="modal-content p-lg-10 p-6 user-register d-none">
         <h3 class="text-center text-white mb-7 fs-4 fs-lg-3 mt-5 mt-lg-0">加入會員</h3>
@@ -120,7 +122,7 @@
               <label for="redisterTel">手機號碼</label>
             </div>
           </div>
-          
+
           <div class="form-floating mb-6">
             <input type="email" class="form-control" id="redisteraccount" placeholder="">
             <label for="redisteraccount">帳號</label>
@@ -139,18 +141,16 @@
 
           <div class="mb-4">
             <p class="redister-alert text-danger text-center d-none">* 所有欄位皆需填寫 *</p>
-            <button type="button" class="confirm-redister btn btn-primary-300 rounded-20px py-4  w-100 mb-7 " >註冊</button>
+            <button type="button"
+              class="confirm-redister btn btn-primary-300 rounded-20px py-4  w-100 mb-7 ">註冊</button>
           </div>
         </div>
       </div>
     </div>
   </div>
 </main>
-
-<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> -->
-
-
-        </li>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> -->        </li>
       </ul>
 
       <button
@@ -181,7 +181,7 @@
         <div class="offcanvas-header">
           <a href="index.html" class="me-auto"
             ><img
-              src="/moonook-demo/assets/logo_small_white-B4mvx7ux.svg"
+              src="/moonook-demo/assets/logo_small_white-BbogZjJN.svg"
               alt="logo_small_white"
           /></a>
           <button
@@ -285,101 +285,923 @@
     handleScroll();
   });
 </script>
-    <main class="container">
-      <div class="row">
-        <div class="col-lg-2 d-flex flex-column align-items-center">
-          <div class="ratio ratio-1x1 w-75">
-            <img src="/moonook-demo/assets/member_photo--2BvKFfG.jpg" alt="會員頭像"
-              class="img-fluid object-fit-cover d-block rounded-circle">
-          </div>
-          <ul class="nav flex-column">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">預約紀錄</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">基本資料</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">會員登出</a>
-            </li>
+    <div class="scroll-top-btn "></div>
 
-          </ul>
-        </div>
-        <div class="col-lg-10">
-          <nav class="container">
-            <div class="row">
-              <div class="dropdown col-lg-4">
-                <label for="date" class="form-label">日期</label>
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="date" data-bs-toggle="dropdown"
-                  aria-expanded="false">
-                  請選擇日期
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-              </div>
 
-              <div class="dropdown col-lg-4">
-                <label for="duration" class="form-label">時段</label>
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="duration" data-bs-toggle="dropdown"
-                  aria-expanded="false">
-                  請選擇時段
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-              </div>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const scrollBtn = document.querySelector(".scroll-top-btn");
 
-              <div class="col-lg-2">
+        // 初始化狀態
+        toggleScrollBtn();
 
-                <input type="text" class="form-control" placeholder="搜尋" aria-label="search bar"
-                  aria-describedby="inputGroup-sizing-default">
+        // 監聽滾動
+        window.addEventListener("scroll", toggleScrollBtn);
+
+        // 點擊回頂端
+        scrollBtn.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+            });
+        });
+
+        function toggleScrollBtn() {
+            if (window.scrollY > 250) {
+                scrollBtn.classList.add("show");
+            } else {
+                scrollBtn.classList.remove("show");
+            }
+        }
+    });
+</script>
+      <main class="container py-12">
+        <div class="row">
+          <!--左側列開始-->
+          <div class="col-lg-2 d-flex flex-column align-items-center">
+            <div class="ratio ratio-1x1 w-75">
+              <img src="/moonook-demo/assets/member_photo--2BvKFfG.jpg" alt="會員頭像"
+                class="img-fluid object-fit-cover d-block rounded-circle">
+
+            </div>
+            <!--導覽列-->
+            <div class="d-none d-lg-block d-flex align-items-start py-12">
+              <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+
+                <button class="nav-link active" id="v-pills-record-tab" data-bs-toggle="pill"
+                  data-bs-target="#v-pills-record" type="button" role="tab" aria-controls="v-pills-record"
+                  aria-selected="true">預約紀錄</button>
+                <button class="nav-link" id="v-pills-information-tab" data-bs-toggle="pill"
+                  data-bs-target="#v-pills-information" type="button" role="tab" aria-controls="v-pills-information"
+                  aria-selected="false">基本資料</button>
+                <button class="nav-link btn btn-secondary" id="logoutBtn" type="button">會員登出</button>
+
+                <!-- <button class="nav-link" id="logoutBtn" data-bs-toggle="pill" data-bs-target="#v-pills-logout"
+                  type="button" role="tab" aria-controls="v-pills-logout" aria-selected="false">會員登出</button> -->
               </div>
 
             </div>
-          </nav>
+            <!--結束導覽-->
 
-          <nav aria-label="Page navigation example">
-            <ul class="pagination justify-content-center">
-              <li class="page-item disabled">
-                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">
-                  <span aria-hidden="true">&laquo;</span>
-                </a>
-              </li>
-              <li class="page-item"><a class="page-link" href="#">2025</a></li>
-              <li class="page-item">
-                <a class="page-link" href="#">
-                  <span aria-hidden="true">&raquo;</span>
-                </a>
-              </li>
-            </ul>
-          </nav>
+            <!--RWD導覽列-->
+
+            <nav class="d-block d-lg-none navbar navbar-expand-lg navbar-light bg-light">
+              <div class="container-fluid">
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                  aria-label="Toggle navigation">
+
+                  <span id="selectedTabText" class="ms-2">預約紀錄</span>
+                  <i class="bi bi-chevron-down"></i>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                  <ul class="nav nav-pills flex-column">
+                    <li class="nav-item">
+                      <button class="nav-link active" id="v-pills-record-tab" data-bs-toggle="pill"
+                        data-bs-target="#v-pills-record" type="button" role="tab" aria-controls="v-pills-record"
+                        aria-selected="true">預約紀錄</button>
+                    </li>
+                    <li class="nav-item">
+                      <button class="nav-link" id="v-pills-information-tab" data-bs-toggle="pill"
+                        data-bs-target="#v-pills-information" type="button" role="tab"
+                        aria-controls="v-pills-information" aria-selected="false">基本資料</button>
+                    </li>
+                    <li class="nav-item">
+                      <button class="nav-link" id="v-pills-logout-tab" data-bs-toggle="pill"
+                        data-bs-target="#v-pills-logout" type="button" role="tab" aria-controls="v-pills-logout"
+                        aria-selected="false">會員登出</button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+
+            <script>
+              // 選取所有 nav-link 按鈕
+              const navButtons = document.querySelectorAll('.nav-link');
+              const displayText = document.getElementById('selectedTabText');
+
+              navButtons.forEach(btn => {
+                btn.addEventListener('click', function () {
+                  // 更新折疊按鈕旁的文字
+                  displayText.textContent = this.textContent;
+                });
+              });
+            </script>
 
 
+            <!--結束RWD導覽-->
 
+          </div> <!--左側列結束-->
 
-          <nav aria-label="Page navigation example">
-            <ul class="pagination">
-              <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-              <li class="page-item"><a class="page-link" href="#">1</a></li>
-              <li class="page-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item"><a class="page-link" href="#">Next</a></li>
-            </ul>
-          </nav>
+          <!--右側頁面開始-->
+          <div class="tab-content col-lg-10" id="v-pills-tabContent">
+            <div class="tab-pane fade show active" id="v-pills-record" role="tabpanel"
+              aria-labelledby="v-pills-record-tab">
+              <!--放預約頁-->
 
+              <!--時間搜尋欄結束-->
+              <nav class="container">
+                <div class="row">
+                  <div class="col-lg-4">
+                    
+<body>
+    <div class="date-picker-wrapper">
+        <!-- 日期輸入框 -->
+        <div class="date-input-container">
+            <input type="text" class="date-input" id="dateDisplay" placeholder="請選擇日期" readonly>
+            <span class="dropdown-arrow" id="dropdownArrow"><img src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M2.8975%207.40274C2.3675%207.93972%202.3675%208.81013%202.8975%209.34711L11.0404%2017.5973C11.5705%2018.1342%2012.4296%2018.1342%2012.9596%2017.5973L21.1025%209.34711C21.6325%208.81013%2021.6325%207.93972%2021.1025%207.40274C20.5725%206.86576%2019.7134%206.86576%2019.1834%207.40274L12%2014.6807L4.81661%207.40274C4.28661%206.86575%203.42751%206.86575%202.8975%207.40274Z'%20fill='%233E5E4E'/%3e%3c/svg%3e" alt=""></span>
         </div>
 
-      </div>
+        <!-- 遮罩層 -->
+        <div class="overlay" id="overlay"></div>
 
-    </main>
+        <!-- 月曆下拉框 -->
+        <div class="calendar-container" id="calendarContainer">
+            <div class="calendar-header">
+                <div class="month-nav">
+                    <div class="current-month" id="currentMonth"></div>
+                    <div class="nav-buttons">
+                        <button type="button" class="nav-btn" id="prevBtn">‹</button>
+                        <button type="button" class="nav-btn" id="nextBtn">›</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="calendar-body">
+                <div class="weekdays">
+                    <div class="weekday">一</div>
+                    <div class="weekday">二</div>
+                    <div class="weekday">三</div>
+                    <div class="weekday">四</div>
+                    <div class="weekday">五</div>
+                    <div class="weekday">六</div>
+                    <div class="weekday">日</div>
+                </div>
+                <div class="calendar-days" id="calendarDays"></div>
+            </div>
+        </div>
+
+        <!-- 隱藏的表單輸入框 -->
+        <input type="hidden" class="hidden-input" id="selectedDateInput" name="selectedDate">
+    </div>
+
+    <script>
+        class DropdownCalendar {
+            constructor(options = {}) {
+                this.currentDate = new Date();
+                this.selectedDate = null;
+                this.today = new Date();
+                this.isOpen = false;
+                
+                // 設定最小日期（預設為今天，不能選擇過去的日期）
+                this.minDate = options.minDate || new Date();
+                
+                // 設定最大日期（可選，預設無限制）
+                this.maxDate = options.maxDate || null;
+                
+                this.elements = {
+                    dateInput: document.getElementById('dateDisplay'),
+                    dropdownArrow: document.getElementById('dropdownArrow'),
+                    overlay: document.getElementById('overlay'),
+                    calendarContainer: document.getElementById('calendarContainer'),
+                    currentMonth: document.getElementById('currentMonth'),
+                    prevBtn: document.getElementById('prevBtn'),
+                    nextBtn: document.getElementById('nextBtn'),
+                    calendarDays: document.getElementById('calendarDays'),
+                    hiddenInput: document.getElementById('selectedDateInput')
+                };
+                
+                this.init();
+            }
+            
+            init() {
+                this.bindEvents();
+                this.render();
+            }
+            
+            bindEvents() {
+                // 點擊輸入框展開/收合
+                this.elements.dateInput.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    this.toggle();
+                });
+
+                // 點擊遮罩層關閉
+                this.elements.overlay.addEventListener('click', () => {
+                    this.close();
+                });
+
+                // 阻止月曆容器的點擊事件冒泡
+                this.elements.calendarContainer.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                });
+
+                // 月份導航按鈕
+                this.elements.prevBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    this.currentDate.setMonth(this.currentDate.getMonth() - 1);
+                    this.render();
+                });
+                
+                this.elements.nextBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    this.currentDate.setMonth(this.currentDate.getMonth() + 1);
+                    this.render();
+                });
+
+                // ESC 鍵關閉
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && this.isOpen) {
+                        this.close();
+                    }
+                });
+            }
+
+            clearSelection() {
+                this.selectedDate = null;
+                this.updateDateDisplay();
+                this.updateHiddenInput();
+                this.render();
+            }
+            
+            toggle() {
+                if (this.isOpen) {
+                    this.close();
+                } else {
+                    this.open();
+                }
+            }
+            
+            open() {
+                this.isOpen = true;
+                this.elements.calendarContainer.classList.add('show');
+                this.elements.overlay.classList.add('show');
+                this.elements.dropdownArrow.classList.add('rotated');
+                this.elements.dateInput.classList.add('active');
+            }
+            
+            close() {
+                this.isOpen = false;
+                this.elements.calendarContainer.classList.remove('show');
+                this.elements.overlay.classList.remove('show');
+                this.elements.dropdownArrow.classList.remove('rotated');
+                this.elements.dateInput.classList.remove('active');
+            }
+            
+            render() {
+                this.renderHeader();
+                this.renderDays();
+            }
+            
+            renderHeader() {
+                const year = this.currentDate.getFullYear();
+                const month = this.currentDate.getMonth();
+                this.elements.currentMonth.textContent = this.getMonthName(month, year);
+            }
+            
+            getMonthName(month, year) {
+                const monthNames = [
+                    '一月', '二月', '三月', '四月', '五月', '六月',
+                    '七月', '八月', '九月', '十月', '十一月', '十二月'
+                ];
+                return `${monthNames[month]} ${year}`;
+            }
+            
+            renderDays() {
+                const year = this.currentDate.getFullYear();
+                const month = this.currentDate.getMonth();
+                const firstDay = new Date(year, month, 1);
+                const lastDay = new Date(year, month + 1, 0);
+                const daysInMonth = lastDay.getDate();
+                
+                // 調整為週一開始
+                let startDate = (firstDay.getDay() + 6) % 7;
+                
+                this.elements.calendarDays.innerHTML = '';
+                
+                // 上個月的日期
+                const prevMonth = new Date(year, month - 1, 0);
+                for (let i = startDate - 1; i >= 0; i--) {
+                    const day = prevMonth.getDate() - i;
+                    const dayElement = this.createDayElement(day, 'other-month');
+                    this.elements.calendarDays.appendChild(dayElement);
+                }
+                
+                // 當月的日期
+                for (let day = 1; day <= daysInMonth; day++) {
+                    const currentDateObj = new Date(year, month, day);
+                    const dayElement = this.createDayElement(day, 'current-month', currentDateObj);
+                    
+                    // 檢查是否為今天
+                    if (this.isToday(year, month, day)) {
+                        dayElement.classList.add('today');
+                    }
+                    
+                    // 檢查是否為選中的日期
+                    if (this.selectedDate && this.isSameDate(this.selectedDate, currentDateObj)) {
+                        dayElement.classList.add('selected');
+                    }
+                    
+                    // 檢查是否為過期日期
+                    if (this.isDateDisabled(currentDateObj)) {
+                        dayElement.classList.add('disabled');
+                    }
+                    
+                    this.elements.calendarDays.appendChild(dayElement);
+                }
+                
+                // 下個月的日期
+                const totalCells = Math.ceil((startDate + daysInMonth) / 7) * 7;
+                const remainingCells = totalCells - (startDate + daysInMonth);
+                for (let day = 1; day <= remainingCells; day++) {
+                    const dayElement = this.createDayElement(day, 'other-month');
+                    this.elements.calendarDays.appendChild(dayElement);
+                }
+            }
+            
+            createDayElement(day, type, dateObj = null) {
+                const dayElement = document.createElement('button');
+                dayElement.className = `day ${type}`;
+                dayElement.textContent = day;
+                
+                if (type === 'current-month' && dateObj) {
+                    // 檢查日期是否被禁用
+                    if (this.isDateDisabled(dateObj)) {
+                        dayElement.disabled = true;
+                        dayElement.classList.add('disabled');
+                    } else {
+                        dayElement.addEventListener('click', (e) => {
+                            e.stopPropagation();
+                            this.selectDate(dateObj);
+                        });
+                    }
+                }
+                
+                return dayElement;
+            }
+            
+            selectDate(date) {
+                this.selectedDate = date;
+                this.updateDateDisplay();
+                this.updateHiddenInput();
+                this.render();
+                this.close(); // 選擇後自動關閉
+                
+                // 觸發自訂事件
+                const event = new CustomEvent('dateSelected', {
+                    detail: {
+                        date: date,
+                        formattedDate: this.formatDate(date)
+                    }
+                });
+                document.dispatchEvent(event);
+                
+                console.log('選中日期：', this.formatDate(date));
+            }
+            
+            updateDateDisplay() {
+                if (this.selectedDate) {
+                    this.elements.dateInput.value = this.formatDate(this.selectedDate);
+                    this.elements.dateInput.style.color = '#3E5E4E';
+                } else {
+                    this.elements.dateInput.value = '';
+                    this.elements.dateInput.placeholder = '請選擇日期';
+                }
+            }
+            
+            updateHiddenInput() {
+                if (this.selectedDate) {
+                    this.elements.hiddenInput.value = this.formatDate(this.selectedDate, 'YYYY-MM-DD');
+                }
+            }
+            
+            formatDate(date, format = 'YYYY / MM / DD') {
+                const year = date.getFullYear();
+                const month = String(date.getMonth() + 1).padStart(2, '0');
+                const day = String(date.getDate()).padStart(2, '0');
+                
+                return format
+                    .replace('YYYY', year)
+                    .replace('MM', month)
+                    .replace('DD', day);
+            }
+            
+            isToday(year, month, day) {
+                return year === this.today.getFullYear() &&
+                    month === this.today.getMonth() &&
+                    day === this.today.getDate();
+            }
+            
+            isSameDate(date1, date2) {
+                return date1.getFullYear() === date2.getFullYear() &&
+                    date1.getMonth() === date2.getMonth() &&
+                    date1.getDate() === date2.getDate();
+            }
+            
+            // 檢查日期是否被禁用（過期或超出範圍）
+            isDateDisabled(date) {
+                const dateToCheck = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+                const minDate = new Date(this.minDate.getFullYear(), this.minDate.getMonth(), this.minDate.getDate());
+                
+                // 檢查是否早於最小日期
+                if (dateToCheck < minDate) {
+                    return true;
+                }
+                
+                // 檢查是否晚於最大日期（如果有設定的話）
+                if (this.maxDate) {
+                    const maxDate = new Date(this.maxDate.getFullYear(), this.maxDate.getMonth(), this.maxDate.getDate());
+                    if (dateToCheck > maxDate) {
+                        return true;
+                    }
+                }
+                
+                return false;
+            }
+            
+            // 公開方法
+            getSelectedDate() {
+                return this.selectedDate;
+            }
+            
+            setSelectedDate(date) {
+                this.selectedDate = date;
+                this.currentDate = new Date(date);
+                this.updateDateDisplay();
+                this.updateHiddenInput();
+                this.render();
+            }
+
+            getFormattedDate() {
+                return this.selectedDate ? this.formatDate(this.selectedDate) : '';
+            }
+            
+            getValue() {
+                return this.elements.hiddenInput.value;
+            }
+            
+            // 設定最小日期（不能選擇此日期之前的日期）
+            setMinDate(date) {
+                this.minDate = new Date(date);
+                this.render();
+            }
+            
+            // 設定最大日期（不能選擇此日期之後的日期）
+            setMaxDate(date) {
+                this.maxDate = new Date(date);
+                this.render();
+            }
+            
+            // 取得最小日期
+            getMinDate() {
+                return this.minDate;
+            }
+            
+            // 取得最大日期
+            getMaxDate() {
+                return this.maxDate;
+            }
+        }
+        
+        // 初始化日期選擇器
+        const datePicker = new DropdownCalendar({
+            // minDate: new Date(), // 預設不能選擇今天之前的日期
+            // maxDate: new Date('2025-12-31') // 可選：設定最大日期
+        });
+        
+        // 監聽日期選擇事件
+        document.addEventListener('dateSelected', function(event) {
+            console.log('用戶選擇了：', event.detail.formattedDate);
+            // console.log('Date 物件：', event.detail.date);
+            // console.log('表單值：', datePicker.getValue());
+            
+        });
+        
+    </script>
+</body>
+</html>                  </div>
+                  <div class="col-lg-4">
+                    <div class="">
+    <div class="timeslot-dropdown-container">
+        <div class="timeslot-dropdown-header" onclick="toggleTimeslotDropdown()">
+            <span id="timeslot-selected-time">請選擇時段</span>
+            <div class="timeslot-dropdown-arrow">
+                <img src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M2.8975%207.40274C2.3675%207.93972%202.3675%208.81013%202.8975%209.34711L11.0404%2017.5973C11.5705%2018.1342%2012.4296%2018.1342%2012.9596%2017.5973L21.1025%209.34711C21.6325%208.81013%2021.6325%207.93972%2021.1025%207.40274C20.5725%206.86576%2019.7134%206.86576%2019.1834%207.40274L12%2014.6807L4.81661%207.40274C4.28661%206.86575%203.42751%206.86575%202.8975%207.40274Z'%20fill='%233E5E4E'/%3e%3c/svg%3e" alt="">
+            </div>
+        </div>
+        
+        <div class="timeslot-dropdown-content" id="timeslot-dropdown-content">
+            <div class="timeslot-container">
+                <div class="timeslot-item available" onclick="selectTimeslot('08:00-10:00', 'available')">
+                    08:00-10:00 (靜謐充裕)
+                </div>
+                
+                <div class="timeslot-item available" onclick="selectTimeslot('10:00-12:00', 'available')">
+                    10:00-12:00 (靜謐充裕)
+                </div>
+                
+                <div class="timeslot-item moderate" onclick="selectTimeslot('12:00-14:00', 'moderate')">
+                    12:00-14:00 (舒適剛好)
+                </div>
+                
+                <div class="timeslot-item limited" onclick="selectTimeslot('14:00-16:00', 'limited')">
+                    14:00-16:00 (座位稀少)
+                </div>
+                
+                <div class="timeslot-item moderate" onclick="selectTimeslot('16:00-18:00', 'moderate')">
+                    16:00-18:00 (舒適剛好)
+                </div>
+                
+                <div class="timeslot-item available" onclick="selectTimeslot('18:00-20:00', 'available')">
+                    18:00-20:00 (靜謐充裕)
+                </div>
+            </div>
+            
+            <div class="timeslot-legend">
+                <div class="timeslot-legend-item">
+                    <div class="timeslot-legend-dot available"></div>
+                    <span class="text-primary-500 ">
+                        <img src="data:image/svg+xml,%3csvg%20width='16'%20height='17'%20viewBox='0%200%2016%2017'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M13.9745%209.02667C13.8697%2010.1615%2013.4438%2011.2429%2012.7467%2012.1445C12.0496%2013.0461%2011.1102%2013.7305%2010.0383%2014.1177C8.96649%2014.5049%207.80653%2014.5787%206.69421%2014.3307C5.58189%2014.0827%204.56321%2013.523%203.75736%2012.7172C2.95151%2011.9113%202.39184%2010.8927%202.14382%209.78033C1.89579%208.66801%201.96969%207.50806%202.35685%206.4362C2.74401%205.36434%203.42843%204.42491%204.33002%203.72784C5.23161%203.03076%206.31307%202.60487%207.44788%202.5C6.78349%203.39884%206.46378%204.5063%206.5469%205.62094C6.63002%206.73559%207.11045%207.78337%207.90081%208.57373C8.69117%209.36409%209.73896%209.84452%2010.8536%209.92765C11.9682%2010.0108%2013.0757%209.69106%2013.9745%209.02667Z'%20fill='%23849266'/%3e%3c/svg%3e" class="me-2" alt="">靜謐充裕 (70% 以上空位)</span>
+                </div>
+                <div class="timeslot-legend-item">
+                    <div class="timeslot-legend-dot moderate"></div>
+                    <span class="text-accent">
+                        <img src="data:image/svg+xml,%3csvg%20width='16'%20height='17'%20viewBox='0%200%2016%2017'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M13.9745%209.02667C13.8697%2010.1615%2013.4438%2011.2429%2012.7467%2012.1445C12.0496%2013.0461%2011.1102%2013.7305%2010.0383%2014.1177C8.96649%2014.5049%207.80653%2014.5787%206.69421%2014.3307C5.58189%2014.0827%204.56321%2013.523%203.75736%2012.7172C2.95151%2011.9113%202.39184%2010.8927%202.14382%209.78033C1.89579%208.66801%201.96969%207.50806%202.35685%206.4362C2.74401%205.36434%203.42843%204.42491%204.33002%203.72784C5.23161%203.03076%206.31307%202.60487%207.44788%202.5C6.78349%203.39884%206.46378%204.5063%206.5469%205.62094C6.63002%206.73559%207.11045%207.78337%207.90081%208.57373C8.69117%209.36409%209.73896%209.84452%2010.8536%209.92765C11.9682%2010.0108%2013.0757%209.69106%2013.9745%209.02667Z'%20fill='%23988C6B'/%3e%3c/svg%3e" class="me-2"  alt="">舒適剛好 (40-70% 空位)</span>
+                </div>
+                <div class="timeslot-legend-item">
+                    <div class="timeslot-legend-dot limited"></div>
+                    <span class="text-red-sp">
+                        <img src="data:image/svg+xml,%3csvg%20width='16'%20height='17'%20viewBox='0%200%2016%2017'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M13.9745%209.02667C13.8697%2010.1615%2013.4438%2011.2429%2012.7467%2012.1445C12.0496%2013.0461%2011.1102%2013.7305%2010.0383%2014.1177C8.96649%2014.5049%207.80653%2014.5787%206.69421%2014.3307C5.58189%2014.0827%204.56321%2013.523%203.75736%2012.7172C2.95151%2011.9113%202.39184%2010.8927%202.14382%209.78033C1.89579%208.66801%201.96969%207.50806%202.35685%206.4362C2.74401%205.36434%203.42843%204.42491%204.33002%203.72784C5.23161%203.03076%206.31307%202.60487%207.44788%202.5C6.78349%203.39884%206.46378%204.5063%206.5469%205.62094C6.63002%206.73559%207.11045%207.78337%207.90081%208.57373C8.69117%209.36409%209.73896%209.84452%2010.8536%209.92765C11.9682%2010.0108%2013.0757%209.69106%2013.9745%209.02667Z'%20fill='%239C6667'/%3e%3c/svg%3e" class="me-2"  alt="">座位稀少 (10-40% 空位)</span>
+                </div>
+                <div class="timeslot-legend-item">
+                    <div class="timeslot-legend-dot full"></div>
+                    <span class="text-red-dis" >
+                        <img src="data:image/svg+xml,%3csvg%20width='16'%20height='17'%20viewBox='0%200%2016%2017'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M13.9745%209.02667C13.8697%2010.1615%2013.4438%2011.2429%2012.7467%2012.1445C12.0496%2013.0461%2011.1102%2013.7305%2010.0383%2014.1177C8.96649%2014.5049%207.80653%2014.5787%206.69421%2014.3307C5.58189%2014.0827%204.56321%2013.523%203.75736%2012.7172C2.95151%2011.9113%202.39184%2010.8927%202.14382%209.78033C1.89579%208.66801%201.96969%207.50806%202.35685%206.4362C2.74401%205.36434%203.42843%204.42491%204.33002%203.72784C5.23161%203.03076%206.31307%202.60487%207.44788%202.5C6.78349%203.39884%206.46378%204.5063%206.5469%205.62094C6.63002%206.73559%207.11045%207.78337%207.90081%208.57373C8.69117%209.36409%209.73896%209.84452%2010.8536%209.92765C11.9682%2010.0108%2013.0757%209.69106%2013.9745%209.02667Z'%20fill='%23beabab'/%3e%3c/svg%3e" class="me-2"  alt="">客滿 (0% 空位)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
-    <footer class="bg-fc position-relative z-1">
+<script>
+    let selectedTimeslotValue = null;
+    let selectedTimeslotStatus = null;
+
+    function toggleTimeslotDropdown() {
+        const header = document.querySelector('.timeslot-dropdown-header');
+        const content = document.getElementById('timeslot-dropdown-content');
+        
+        header.classList.toggle('active');
+        content.classList.toggle('active');
+    }
+
+    function selectTimeslot(timeValue, status) {
+        const selectedTime = document.getElementById('timeslot-selected-time');
+        const header = document.querySelector('.timeslot-dropdown-header');
+        const content = document.getElementById('timeslot-dropdown-content');
+        
+        // 儲存選擇的值
+        selectedTimeslotValue = timeValue;
+        selectedTimeslotStatus = status;
+        
+        // 根據狀態顯示對應的文字
+        let statusText = '';
+        switch(status) {
+            case 'available':
+                statusText = '(靜謐充裕)';
+                break;
+            case 'moderate':
+                statusText = '(舒適剛好)';
+                break;
+            case 'limited':
+                statusText = '(座位稀少)';
+                break;
+            case 'full':
+                statusText = '(客滿)';
+                break;
+        }
+        
+        selectedTime.textContent = timeValue + ' ' + statusText;
+        header.classList.remove('active');
+        content.classList.remove('active');
+        
+        // 觸發自定義事件，方便外部監聽
+        const event = new CustomEvent('timeslotSelected', {
+            detail: {
+                time: timeValue,
+                status: status,
+                displayText: timeValue + ' ' + statusText
+            }
+        });
+        document.dispatchEvent(event);
+    }
+
+    // 提供全域函數來取得選擇的值
+    function getSelectedTimeslot() {
+        return {
+            time: selectedTimeslotValue,
+            status: selectedTimeslotStatus,
+            displayText: selectedTimeslotValue ? selectedTimeslotValue + ' ' + getTimeslotStatusText(selectedTimeslotStatus) : null
+        };
+    }
+
+    function getTimeslotStatusText(status) {
+        switch(status) {
+            case 'available': return '(靜謐充裕)';
+            case 'moderate': return '(舒適剛好)';
+            case 'limited': return '(座位稀少)';
+            case 'full': return '(客滿)';
+            default: return '';
+        }
+    }
+
+    // 點擊外部關閉下拉選單
+    document.addEventListener('click', function(event) {
+        const container = document.querySelector('.timeslot-dropdown-container');
+        if (!container.contains(event.target)) {
+            const header = document.querySelector('.timeslot-dropdown-header');
+            const content = document.getElementById('timeslot-dropdown-content');
+            header.classList.remove('active');
+            content.classList.remove('active');
+        }
+    });
+
+    // 示範如何監聽選擇事件
+    document.addEventListener('timeslotSelected', function(event) {
+        console.log('選擇的時間:', event.detail.time);
+        // console.log('選擇的狀態:', event.detail.status);
+        // console.log('顯示文字:', event.detail.displayText);
+    });
+</script>                  </div>
+                  <!-- <div class="dropdown col-lg-4">
+                    <label for="date" class="form-label">日期</label>
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="date" data-bs-toggle="dropdown"
+                      aria-expanded="false">
+                      請選擇日期
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </div> -->
+
+                  <!-- <div class="dropdown col-lg-4">
+                    <label for="duration" class="form-label">時段</label>
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="duration"
+                      data-bs-toggle="dropdown" aria-expanded="false">
+                      請選擇時段
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </div> -->
+                  <!--時間搜尋欄結束-->
+                  <!--搜尋欄開始-->
+                  <div class="col-lg-2 position-relative">
+
+                    <input type="text" class=" text-center rounded-7" placeholder="搜尋" aria-label="search bar"
+                      aria-describedby="search bar">
+                    <button class="btn input-group-text" type="button" id="button-addon2">
+                      <i class="position-absolute bottom-50 end-50 bi bi-search"></i></button>
+                  </div>
+
+                </div>
+              </nav>
+              <!--搜尋欄結束-->
+
+              <!--年份選擇-->
+              <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center">
+                  <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">
+                      <span aria-hidden="true">&laquo;</span>
+                    </a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">2025</a></li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">
+                      <span aria-hidden="true">&raquo;</span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+              <!--年份選擇結束-->
+              <!--中間卡片-->
+              <!--表頭-->
+              <table class="d-none d-lg-table table text-center">
+                <thead>
+                  <tr>
+                    <th scope="col">日期</th>
+                    <th scope="col">時段</th>
+                    <th scope="col">座位</th>
+                    <th scope="col">狀態</th>
+                    <th scope="col">修改</th>
+                  </tr>
+                </thead>
+              </table>
+              <!--表頭over-->
+
+              <!--卡片來囉-->
+              <div class="container">
+                <div class="row">
+                  <!--卡片1-->
+                  <div class="col-6 col-lg-12 ">
+                    <div class="card text-center">
+                      <div class="card-body d-flex flex-wrap justify-content-lg-between align-items-lg-center">
+                        <time class="col-12 col-lg-2">07月25日<span class="d-lg-none d-block border-bottom"></span>
+                        </time>
+                        <p class="col-12 col-lg-2 d-flex d-lg-block"><span
+                            class="d-lg-none d-block border-end">時段</span>12:00-14:00
+                        </p>
+                        <p class="col-12 col-lg-2 d-flex d-lg-block"><span
+                            class="d-lg-none d-block border-end">座位</span>A4</p>
+                        <p class="col-12 col-lg-2 d-flex d-lg-block"><span
+                            class="d-lg-none d-block border-end">狀態</span>預約
+                        </p>
+                        <div class="dropdown col-12 col-lg-2">
+                          <button class="btn btn-secondary dropdown-toggle" type="button" id="date"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            修改
+                          </button>
+                          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item" href="#">確定修改</a></li>
+                            <li><a class="dropdown-item" href="#">取消修改</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--卡片2-->
+                  <div class="col-6 col-lg-12 ">
+                    <div class="card text-center">
+                      <div class="card-body d-flex flex-wrap justify-content-lg-between align-items-lg-center">
+                        <time class="col-12 col-lg-2">07月25日<span class="d-lg-none d-block border-bottom"></span>
+                        </time>
+                        <p class="col-12 col-lg-2 d-flex"><span
+                            class="d-lg-none d-block border-end">時段</span>12:00-14:00
+                        </p>
+                        <p class="col-12 col-lg-2 d-flex"><span class="d-lg-none d-block border-end">座位</span>A4</p>
+                        <p class="col-12 col-lg-2 d-flex"><span class="d-lg-none d-block border-end">狀態</span>預約
+                        </p>
+                        <div class="dropdown col-12 col-lg-2">
+                          <button class="btn btn-secondary dropdown-toggle" type="button" id="date"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            修改
+                          </button>
+                          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item" href="#">確定修改</a></li>
+                            <li><a class="dropdown-item" href="#">取消修改</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--卡片3-->
+                  <div class="col-6 col-lg-12 ">
+                    <div class="card text-center">
+                      <div class="card-body d-flex flex-wrap justify-content-lg-between align-items-lg-center">
+                        <time class="col-12 col-lg-2">07月25日<span class="d-lg-none d-block border-bottom"></span>
+                        </time>
+                        <p class="col-12 col-lg-2 d-flex"><span
+                            class="d-lg-none d-block border-end">時段</span>12:00-14:00
+                        </p>
+                        <p class="col-12 col-lg-2 d-flex"><span class="d-lg-none d-block border-end">座位</span>A4</p>
+                        <p class="col-12 col-lg-2 d-flex"><span class="d-lg-none d-block border-end">狀態</span>預約
+                        </p>
+                        <div class="dropdown col-12 col-lg-2">
+                          <button class="btn btn-secondary dropdown-toggle" type="button" id="date"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            修改
+                          </button>
+                          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item" href="#">確定修改</a></li>
+                            <li><a class="dropdown-item" href="#">取消修改</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!--卡片4-->
+                  <div class="col-6 col-lg-12 ">
+                    <div class="card text-center">
+                      <div class="card-body d-flex flex-wrap justify-content-lg-between align-items-lg-center">
+                        <time class="col-12 col-lg-2">07月25日<span class="d-lg-none d-block border-bottom"></span>
+                        </time>
+                        <p class="col-12 col-lg-2 d-flex"><span
+                            class="d-lg-none d-block border-end">時段</span>12:00-14:00
+                        </p>
+                        <p class="col-12 col-lg-2 d-flex"><span class="d-lg-none d-block border-end">座位</span>A4</p>
+                        <p class="col-12 col-lg-2 d-flex"><span class="d-lg-none d-block border-end">狀態</span>預約
+                        </p>
+                        <div class="dropdown col-12 col-lg-2">
+                          <button class="btn btn-secondary dropdown-toggle" type="button" id="date"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            修改
+                          </button>
+                          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item" href="#">確定修改</a></li>
+                            <li><a class="dropdown-item" href="#">取消修改</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!--卡片5-->
+                  <div class="col-6 col-lg-12 ">
+                    <div class="card text-center">
+                      <div class="card-body d-flex flex-wrap justify-content-lg-between align-items-lg-center">
+                        <time class="col-12 col-lg-2">07月25日<span class="d-lg-none d-block border-bottom"></span>
+                        </time>
+                        <p class="col-12 col-lg-2 d-flex"><span
+                            class="d-lg-none d-block border-end">時段</span>12:00-14:00
+                        </p>
+                        <p class="col-12 col-lg-2 d-flex"><span class="d-lg-none d-block border-end">座位</span>A4</p>
+                        <p class="col-12 col-lg-2 d-flex"><span class="d-lg-none d-block border-end">狀態</span>預約
+                        </p>
+                        <div class="dropdown col-12 col-lg-2">
+                          <button class="btn btn-secondary dropdown-toggle" type="button" id="date"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            修改
+                          </button>
+                          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item" href="#">確定修改</a></li>
+                            <li><a class="dropdown-item" href="#">取消修改</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--卡片6-->
+                  <div class="col-6 col-lg-12 ">
+                    <div class="card text-center">
+                      <div class="card-body d-flex flex-wrap justify-content-lg-between align-items-lg-center">
+                        <time class="col-12 col-lg-2">07月25日<span class="d-lg-none d-block border-bottom"></span>
+                        </time>
+                        <p class="col-12 col-lg-2 d-flex"><span
+                            class="d-lg-none d-block border-end">時段</span>12:00-14:00
+                        </p>
+                        <p class="col-12 col-lg-2 d-flex"><span class="d-lg-none d-block border-end">座位</span>A4</p>
+                        <p class="col-12 col-lg-2 d-flex"><span class="d-lg-none d-block border-end">狀態</span>預約
+                        </p>
+                        <div class="dropdown col-12 col-lg-2">
+                          <button class="btn btn-secondary dropdown-toggle" type="button" id="date"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            修改
+                          </button>
+                          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item" href="#">確定修改</a></li>
+                            <li><a class="dropdown-item" href="#">取消修改</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <!--卡片over-->
+
+              <!--中間卡片結束-->
+              <!--底部頁數-->
+              <nav aria-label="Page navigation example">
+                <ul class="pagination  d-flex justify-content-center">
+                  <li class="page-item"><a class="page-link" href="#">上一頁</a></li>
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item"><a class="page-link" href="#">下一頁</a></li>
+                </ul>
+              </nav>
+              <!--底部頁數結束-->
+            </div>
+            <!--預約頁結束-->
+            <!--基本資料開始-->
+            <div class="tab-pane fade " id="v-pills-information" role="tabpanel"
+              aria-labelledby="v-pills-information-tab">
+              偶四基本資料</div>
+            <!--基本資料結束-->
+            <!--會員登出開始-->
+            <div class="tab-pane fade" id="v-pills-logout" role="tabpanel" aria-labelledby="v-pills-logout-tab">
+              偶會有登出功能</div>
+            <!--會員登出結束-->
+          </div>
+
+        </div>
+        </div>
+      </main>
+
+
+      <footer class="bg-fc position-relative z-1">
   <div class="container py-5 py-lg-12 text-fcbg">
     <div
       class="d-flex flex-column flex-lg-row justify-content-between align-items-center align-items-lg-stretch mb-6 mb-lg-12"
@@ -388,7 +1210,7 @@
       <div>
         <img
           class="mb-8"
-          src="/moonook-demo/assets/Logo-BOPmqeYa.svg"
+          src="/moonook-demo/assets/Logo-SBKDe3fx.svg"
           alt="logo_small_white"
         />
         <p class="mb-4">地址：台北市中山區幸福路77號</p>
@@ -426,30 +1248,32 @@
     <div class="d-none d-lg-block">
       <img
         class="f-pagetop-def"
-        src="/moonook-demo/assets/footer_pagetop_def-CK01M_Xc.svg"
+        src="/moonook-demo/assets/footer_pagetop_def-B6aOTXcw.svg"
         alt="footer_pagetop_def"
       />
       <img
         class="f-pagetop-hov d-none"
-        src="/moonook-demo/assets/footer_pagetop_hov-3nYPp1CE.svg"
+        src="/moonook-demo/assets/footer_pagetop_hov-CRttxFFC.svg"
         alt="footer_pagetop_hov"
       />
     </div>
     <div class="d-lg-none">
       <img
         class="f-pagetop-sm-def"
-        src="/moonook-demo/assets/footer_pagetop_sm_def-DPl3mA9U.svg"
+        src="/moonook-demo/assets/footer_pagetop_sm_def-CSO1Mz-R.svg"
         alt="footer_pagetop_def"
       />
       <img
         class="f-pagetop-sm-hov d-none"
-        src="/moonook-demo/assets/footer_pagetop_sm_hov-egUxG-pV.svg"
+        src="/moonook-demo/assets/footer_pagetop_sm_hov-ijH0v1WY.svg"
         alt="footer_pagetop_hov"
       />
     </div>
   </a>
 </footer>
-
+        <script>
+          feather.replace();
+        </script>
 </body>
 
 </html>
