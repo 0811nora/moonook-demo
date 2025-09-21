@@ -19,8 +19,8 @@
         background: $fcbg-50;
         border: 2px solid $fc-600;
         border-radius: 15px;
-        padding: 12px 50px 12px 20px;
-        font-size: 18px;
+        padding: 9px 50px 9px 20px;
+        font-size: 17px;
         color: $fc;
         width: 100%;
         cursor: pointer;
@@ -67,7 +67,7 @@
         top: 100%;
         left: 0;
         right: 0;
-        z-index: 1000;
+        z-index: 999;
         margin-top: 5px;
         background: $fcbg-50;;
         border: 2px solid $fc-600;
@@ -78,8 +78,8 @@
         transform: translateY(-10px);
         transition: all 0.3s ease;
         box-shadow: 1px 1px 5px 2px #3e615889;
-        min-width: 400px;                /* 日曆最小寬度 280px */
-        width: min(max(100%, 400px), 500px);        /* 取較大值：input寬度 或 280px */
+        min-width: 380px;                /* 日曆最小寬度 280px */
+        width: min(max(100%, 380px), 500px);        /* 取較大值：input寬度 或 280px */
     }
 
     .calendar-container.show {
