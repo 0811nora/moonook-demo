@@ -1,12 +1,7 @@
-<<<<<<< HEAD
 import './assets/scss/all.scss';
 import 'bootstrap/dist/js/bootstrap.min.js';
 import './login.js';
 
-=======
-import "./assets/scss/all.scss";
-import "bootstrap/dist/js/bootstrap.min.js";
->>>>>>> origin/main
 
 console.log("Hello world");
 
