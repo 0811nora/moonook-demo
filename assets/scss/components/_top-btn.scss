@@ -6,7 +6,7 @@
     position: fixed;
     right: 21px;
     bottom: 50px;
-    z-index: 1000;
+    z-index: 999;
     background: url("/assets/images/icon/icon-top-smBtn.svg") no-repeat center/contain;
     transition: background 0.2s ease-in;
     opacity: 0;

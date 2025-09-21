@@ -1,6 +1,5 @@
 import './assets/scss/all.scss';
-import 'bootstrap/dist/js/bootstrap.min.js';
-
+// import 'bootstrap/dist/js/bootstrap.min.js';
 
 
 
@@ -19,7 +18,7 @@ const redisterAlert = document.querySelector(".redister-alert");
 
 
 
-const userLoginPage = document.getElementById("userLoginPage");
+// const userLoginPage = document.getElementById("userLoginPage");
 
 
 const loginInput = document.getElementById("loginInput");
@@ -42,6 +41,11 @@ if (storedLoginState === null) {
 }
 
 checkloginState();
+
+
+
+
+
 
 // 顯示「會員登入」畫面
 function showUserLogin(){

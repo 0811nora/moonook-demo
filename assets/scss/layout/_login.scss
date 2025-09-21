@@ -1,4 +1,8 @@
+.modal-backdrop {
+    --bs-backdrop-zindex: 500;
+}
 .login-page{
+
     .user-img{
         width: 24px;
         height: 24px;
@@ -6,6 +10,9 @@
     .modal{
         --bs-modal-width: 600px;
     }
+
+
+    
     .modal-content {
         background-color: #d4d4d43a;
         // background-color: transparent;
