@@ -1,7 +1,12 @@
 header {
+  // 通用
+  img {
+    object-fit: contain;
+  }
   a {
     display: inline-block;
   }
+
   /* 導覽列初始樣式 */
   #h-main-nav {
     background-color: transparent;
