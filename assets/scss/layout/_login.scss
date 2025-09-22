@@ -1,5 +1,5 @@
 .modal-backdrop {
-    --bs-backdrop-zindex: 500;
+    --bs-backdrop-zindex: 1000;
 }
 .login-page{
 
@@ -19,6 +19,7 @@
         backdrop-filter: blur(12px);
         border-radius: 100px 0 100px 0;
         box-shadow: 10px 8px 10px #32323277;
+        z-index: 1000;
 
     }
     .form-control{

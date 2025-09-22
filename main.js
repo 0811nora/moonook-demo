@@ -47,6 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 可調整的時間設定
     const minDisplayTime = 1500;    //設定最少時間
+    const maxDisplayTime = 3000;  // 最多顯示 3 秒
 
     console.log("Loading 開始");
 
@@ -63,7 +64,13 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // 根據最小時間來判斷
+    setTimeout(() => {
+        console.log("強制關閉 loader (最大時間)");
+        hideLoader();
+    }, maxDisplayTime);
+
+
+
     setTimeout(() => {
         // 檢查頁面載入狀態
         if (document.readyState === 'complete') {
