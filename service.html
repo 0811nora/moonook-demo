@@ -8,11 +8,39 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
   <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"> -->
   <title>預約空間 | 默隅 Moonook</title>
-  <script type="module" crossorigin src="/moonook-demo/assets/main-BaMs5ps8.js"></script>
-  <link rel="stylesheet" crossorigin href="/moonook-demo/assets/main-CZYddpmJ.css">
-</head>
-<body>
 
+
+
+  <script type="module" crossorigin src="/moonook-demo/assets/main-BedftPHL.js"></script>
+  <link rel="stylesheet" crossorigin href="/moonook-demo/assets/main-eBZQ9Drs.css">
+</head>
+<body class="loaded">
+    <div id="loader" class="loader-container">
+  <div class="spinner">
+    <svg
+      class="logo"
+      width="200"
+      height="200"
+      viewBox="0 0 27 27"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M26.3945 10.3477C26.3565 10.1443 26.0636 9.7484 25.8006 9.7484H19.7504V1.20603C19.7504 1.0623 19.6636 0.918571 19.4982 0.793825C19.3436 0.677215 19.0941 0.563316 18.8826 0.603994L0.824293 0.644672L0.753782 0.65552C0.460901 0.753147 0.34702 1.01349 0.262952 1.20332L0.230411 1.27925L0.187012 25.0731L0.192441 25.1518C0.206 25.4311 0.230417 25.8542 0.677875 26.006L0.713131 26.0169L25.6297 26.0711C25.6569 26.0711 25.6812 26.0711 25.7029 26.0711C26.0934 26.0711 26.1938 25.8867 26.2941 25.6074L26.3158 25.5477L26.3999 10.3613V10.3396L26.3945 10.3477ZM18.8203 11.2779H24.8704L24.789 24.5443H1.79788V2.21755H18.2209V10.6786C18.2209 10.8847 18.6114 11.2752 18.8175 11.2752L18.8203 11.2779Z"
+        fill="#FFFBF3"
+      />
+      <path
+        id="moon-path"
+        d="M19.4599 17.9274C13.3202 19.6982 8.21107 13.3091 10.7006 7.5057C11.0151 6.77349 12.4687 5.18705 10.7765 5.42298C8.13243 5.7918 5.58057 8.66909 4.8538 11.1369C2.72769 18.3694 9.74871 24.5498 16.7182 21.922C18.1257 21.3904 20.7534 19.4487 21.1467 17.9545C21.4423 16.8237 19.9399 17.7891 19.4572 17.9301L19.4599 17.9274Z"
+        fill="#FFFBF3"
+      />
+    </svg>
+    <p>
+      LOADING<span class="dot1">.</span><span class="dot2">.</span
+      ><span class="dot3">.</span>
+    </p>
+  </div>
+</div>
 
   <main class="service-section bggg-color">
     <div class="scroll-top-btn "></div>
@@ -372,7 +400,7 @@
               <p class="text-fcbg fs-lg-xl fs-normal mb-6">線上預約，抵達即可入座</p>
               <p class="text-fcbg fs-lg-xl fs-normal mb-8">兩小時專屬片段，讓時間回到你手中</p>
               <div class="w-lg-100 w-sm-108px mx-auto">
-                <a href="#booking-area" class="btn btn-fcbg   w-100 fs-lg">立即預約</a>
+                <a href="#booking-area" class="btn-base btn-white ">立即預約</a>
               </div>
             </div>
           </div>
@@ -383,7 +411,7 @@
 
 
     <!-- 預約頁-預約功能區 -->
-    <section class="bg-fcbg py-lg-12 py-8 px-3 s__booking-fuc">
+    <section class="bg-fcbg py-lg-12 py-8 px-3 s__booking-fuc overflow-hidden">
       
       <div class="container">
         <div class="row">
@@ -952,8 +980,8 @@
     });
 </script>                      </div>
                     </div> 
-                    <div class="text-center ">
-                      <button class="check-seat-btn btn btn-primary w-lg-196px rounded-5 " type="button" disabled>查詢座位</button>
+                    <div class="text-center">
+                      <button class="check-seat-btn btn-base btn-primary  rounded-5 " type="button" disabled>查詢座位</button>
                     </div>
                   </form>
                 </div>
@@ -988,7 +1016,7 @@
                           </div>
                           
                           
-                          <button type="button" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#seatModal">預約</button>
+                          <button type="button" class="btn-base btn-primary w-100" data-bs-toggle="modal" data-bs-target="#seatModal">預約</button>
 
                           <div class="modal fade" id="seatModal" tabindex="-1" aria-labelledby="seatModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered">
@@ -1026,8 +1054,8 @@
                                 </div>
                                 
                                 <div class=" text-center">
-                                  <button type="button" class="btn btn-secondary me-4" data-bs-dismiss="modal">重選選位</button>
-                                  <button type="button" class="comfirmBooking_btn btn btn-primary">確認預約</button>
+                                  <button type="button" class="btn-base btn-secondary me-4" data-bs-dismiss="modal">重選選位</button>
+                                  <button type="button" class="comfirmBooking_btn btn-base btn-primary">確認預約</button>
                                 </div>
                               </div>
 
@@ -1038,7 +1066,7 @@
                                 </div>
                                 <h3 class="fs-2 fw-bold mb-6">已預約成功！</h3>
                                 <p class="fs-lg mb-8">當日請至櫃檯報到即可入座。</p>
-                                <a href="member.html" class="btn btn-primary">查看預約紀錄</a>
+                                <a href="member.html" class="btn-base btn-primary">查看預約紀錄</a>
                               </div>
                             </div>
                           </div>
@@ -1122,7 +1150,7 @@
               <li class="list-style-circle fw-bold fs-lg-5 fw-normal ">當次消費可折抵30元飲品</li>
             </ul>
             <div class="w-lg-268px">
-              <a href="menu.html" class="btn btn-primary w-100 rounded-28">詳細菜單</a>
+              <a href="menu.html" class="btn-base btn-primary w-100 rounded-28">詳細菜單</a>
             </div>
           </div>
         </div>
@@ -1264,7 +1292,6 @@
   <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> -->
   
   <script>
-
 
 
 
