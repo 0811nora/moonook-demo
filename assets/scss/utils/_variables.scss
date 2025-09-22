@@ -380,6 +380,15 @@ $neutral-800: #434349;
 $neutral-900: #3b3c3f;
 $neutral-950: #1a1a1c;
 
+// status
+$pri-hvr: #e6e4cf;
+$full: #9c6667;
+$mid-full: $accent;
+$non-full: $primary;
+$full-hvr: #c8adae;
+$mid-full-hvr: #c6c0b0;
+$non-full-hvr: #bcc3ad;
+
 // scss-docs-start theme-color-variables
 // $primary:       $blue !default;
 $primary: #849266 !default;
@@ -475,6 +484,15 @@ $theme-colors: (
   "neutral-800": $neutral-800,
   "neutral-900": $neutral-900,
   "neutral-950": $neutral-950,
+
+  //status
+  "pri-hvr": $pri-hvr,
+  "full": $full,
+  "mid-full": $mid-full,
+  "non-full": $non-full,
+  "full-hvr": $full-hvr,
+  "mid-full-hvr": $mid-full-hvr,
+  "non-full-hvr": $non-full-hvr,
 
   // "primary": $primary,
   // "secondary": $secondary,
@@ -750,7 +768,9 @@ $border-radius-sm: 0.25rem !default; // 4
 $border-radius-md: 0.5rem !default; // 8
 $border-radius-lg: 0.75rem !default; // 12
 $border-radius-xl: 1rem !default; // 16
-$border-radius-xxl: 9999px !default; // 9999
+$border-radius-xxl: 1.5rem !default; // 24
+$border-radius-3xl: 1.75rem !default; // 28
+$border-radius-4xl: 9999px !default; // 9999
 $border-radius-pill: 50rem !default;
 // scss-docs-end border-radius-variables
 // fusv-disable
