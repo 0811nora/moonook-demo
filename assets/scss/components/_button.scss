@@ -1,9 +1,9 @@
 // button base setting
 // 按鈕圓角要自己套class(請參照變數rounded區)
 .btn-base {
-  padding: 12px;
+  padding: 12px 24px;
   font-size: 18px;
-  display: flex;
+  display: inline-flex; 
   justify-content: center;
   align-items: center;
   cursor: pointer;
@@ -15,8 +15,8 @@
     height: 24px;
   }
   @media (max-width: 576px) {
-    width: 100%;
-    padding: 8px;
+    // width: 100%;  
+    padding: 10px 20px;
     font-size: 14px;
     img {
       width: 20px;
@@ -41,6 +41,12 @@
     border: 1px solid $fc;
     box-shadow: 0 0 0 0.25rem rgba($fc, 0.25);
   }
+  &:disabled{
+    background-color: $fc;
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
 }
 
 // button outline
@@ -48,6 +54,7 @@
   color: $fc;
   background-color: transparent;
   border: 1px solid $fc;
+  border-radius: 9999px;
   &:hover {
     background-color: $fc;
     border: 1px solid $fc;
@@ -55,15 +62,42 @@
   }
   &:active,
   &:focus {
-    color: $fc;
-    background-color: transparent;
+    color: $fcbg;
+    background-color: $fc;
     border: 1px solid $fc;
-    opacity: 0.5;
     box-shadow: 0 0 0 0.25rem rgba($fc, 0.25);
+  }
+  &:disabled{
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
   }
 }
 
 // button white
+
+.btn-white {
+  color: $fc;
+  background-color: $fcbg;
+  border-radius: 9999px;
+  border: 1px solid transparent;
+  &:hover {
+    background-color: $fc;
+    color: $fcbg;
+  }
+  &:active,
+  &:focus {
+    color: $fcbg;
+    background-color: $fc;
+    border: 1px solid $fc;
+    box-shadow: 0 0 0 0.25rem rgba($fc, 0.25);
+  }
+  &:disabled{
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
 
 // moon-icon
 button,
