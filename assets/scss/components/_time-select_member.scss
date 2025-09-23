@@ -20,14 +20,14 @@
 
 .timeslot-dropdown-header_member {
     background: $fcbg-50;
-    border: 2px solid $fc-600;
-    border-radius: 15px;
-    padding: 9px 20px;
+    border: 1px solid $fc-600;
+    border-radius: 12px;
+    padding: 7px 20px;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 17px;
+    font-size: 16px;
     color: $fc;
     transition: all 0.3s ease;
 

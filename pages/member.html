@@ -103,21 +103,19 @@
               <!--放預約頁-->
 
               <!--時間搜尋欄結束-->
-              <nav class="container">
-                <div class="row">
-                  <div class="col-lg-5 gx-1">
+              <nav class="container-fluid">
+                <div class="row flex-nowrap align-items-center justify-content-lg-between">
+                  <div class="col-lg-5">
                     <%- include('./layout/components/calendar_member'); -%>
                   </div>
-                  <div class="col-lg-5 gx-1">
+                  <div class="col-lg-5">
                     <%- include('./layout/components/time-select_member'); -%>
                   </div>
-
                   <!--時間搜尋欄結束-->
                   <!--搜尋欄開始-->
-                  <div class="col-auto position-relative">
-
-                    <input type="text" class=" text-center rounded-7" placeholder="搜尋" aria-label="search bar"
-                      aria-describedby="search bar">
+                  <div class="col-lg-3 d-flex align-items-center position-relative">
+                    <input type="text" class="m_searchbar form-control text-center rounded-7" placeholder="搜尋"
+                      aria-label="search bar" aria-describedby="search bar">
                     <button class="btn input-group-text" type="button" id="button-addon2">
                       <i class="position-absolute bottom-50 end-50 bi bi-search"></i></button>
                   </div>
