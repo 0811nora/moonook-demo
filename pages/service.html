@@ -15,7 +15,7 @@
 <body class="loaded">
     <%- include('./layout/components/loader'); -%>
 
-  <main class="service-section bggg-color">
+  <main class="service-section bggg-color overflow-hidden">
     <%- include('./layout/components/top-btn'); -%>
     <%- include('./layout/header'); -%>
 
@@ -56,8 +56,8 @@
               <h2 class="fs-lg-1 fs-xl text-fcbg mb-8 ">選擇專注，也選擇空間</h2>
               <p class="text-fcbg fs-lg-xl fs-normal mb-6">線上預約，抵達即可入座</p>
               <p class="text-fcbg fs-lg-xl fs-normal mb-8">兩小時專屬片段，讓時間回到你手中</p>
-              <div class="w-lg-100 w-sm-108px mx-auto">
-                <a href="#booking-area" class="btn-base btn-white ">立即預約</a>
+              <div class="w-lg-100  mx-auto">
+                <a href="#booking-area" class="btn-base btn-white w-100">立即預約<span class="ms-3"><%- include('./layout/components/moon-outline-switch');-%></span></a>
               </div>
             </div>
           </div>
@@ -80,7 +80,7 @@
               <img src="/assets/images/service/booking-title.png"  class="w-100 " alt="">
             </div>
             <div class="bg-primary-200 p-6 position-relative rounded-28 ">
-              <div class="d-none">
+              <div class="">
                 <div class="position-absolute top-020 start-0">
                   <img src="/assets/images/service/icon-leaf-left-light.svg" alt="">
                 </div>
@@ -100,20 +100,20 @@
                   <h2 class="text-center text-pc-600 fs-lg-2 fs-xl mb-lg-9 mb-6">立即預約</h2>
                   <form id="bookingForm">
                     <div class=" d-flex justify-content-between align-items-center mb-6 position-relative">
-                      <label for="" class="fs-lg d-inline-block text-nowrap me-lg-6 me-5">日期</label>
+                      <label for="" class="fs-lg d-inline-block text-nowrap me-lg-5 me-4">日期</label>
                       <div class="flex-grow-1 ">
                         <%- include('./layout/components/calendar'); -%>
                       </div>
                       
                     </div>
                     <div class="form-group d-flex justify-content-between align-items-center position-relative mb-lg-8 mb-6">
-                      <label for="custom-select" class="fs-lg d-inline-block text-nowrap me-lg-6 me-5" >時間</label>
+                      <label for="custom-select" class="fs-lg d-inline-block text-nowrap me-lg-5 me-4" >時間</label>
                       <div class="flex-grow-1">
                         <%- include('./layout/components/time-select'); -%>
                       </div>
                     </div> 
                     <div class="text-center">
-                      <button class="check-seat-btn btn-base btn-primary  rounded-5 " type="button" disabled>查詢座位</button>
+                      <button class="check-seat-btn btn-base btn-primary w-lg-196px  rounded-5 " type="button" disabled>查詢座位<span class="ms-3"><%- include('./layout/components/moon-switch');-%></span></button>
                     </div>
                   </form>
                 </div>
@@ -126,10 +126,10 @@
 
                   <div class="h-lg-365px all-seat  p-lg-6 p-5 d-none  border-style rounded-3">
                     <div class="w-100 h-100">
-                      <h3 class="fs-lg-3 fs-5 text-pc-600 mb-3">請選擇座位：</h3>
+                      <h3 class="fs-lg-3 fs-6 text-pc-600 mb-lg-3 mb-4">請選擇座位：</h3>
                       <div class="">
                         <form id="bookingSeat">
-                          <div class="s__choose-seats d-flex  column-gap-lg-6 gap-5 flex-wrap p-lg-5 p-4 mb-4">
+                          <div class="s__choose-seats d-flex  column-gap-lg-6 gap-5 flex-wrap p-lg-5 p-lg-4 mb-4">
                             <button type="button" class="s__seat-btn disabled" >A1</button>
                             <button type="button" class="s__seat-btn " >A2</button>
                             <button type="button" class="s__seat-btn " >A3</button>
@@ -148,7 +148,7 @@
                           </div>
                           
                           
-                          <button type="button" class="btn-base btn-primary w-100" data-bs-toggle="modal" data-bs-target="#seatModal">預約</button>
+                          <button type="button" class="btn-base btn-white w-100" data-bs-toggle="modal" data-bs-target="#seatModal">預約 <span class="ms-3"><%- include('./layout/components/moon-outline-switch');-%></span></button>
 
                           <div class="modal fade" id="seatModal" tabindex="-1" aria-labelledby="seatModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered">
@@ -186,19 +186,19 @@
                                 </div>
                                 
                                 <div class=" text-center">
-                                  <button type="button" class="btn-base btn-secondary me-4" data-bs-dismiss="modal">重選選位</button>
-                                  <button type="button" class="comfirmBooking_btn btn-base btn-primary">確認預約</button>
+                                  <button type="button" class="btn-base btn-outline me-4 w-lg-196px" data-bs-dismiss="modal">重選選位</button>
+                                  <button type="button" class="comfirmBooking_btn btn-base btn-primary w-lg-196px">確認預約</button>
                                 </div>
                               </div>
 
-                              <div class="modal-content doneBooking-content d-none text-center p-8 m-5">
+                              <div class="modal-content doneBooking-content d-none text-center p-lg-8 p-6 m-5 rounded-6">
                                 <div class="text-end">
                                   <button type="button" class="btn-close close-done-booking" data-bs-dismiss="modal" aria-label="Close"></button>
 
                                 </div>
-                                <h3 class="fs-2 fw-bold mb-6">已預約成功！</h3>
-                                <p class="fs-lg mb-8">當日請至櫃檯報到即可入座。</p>
-                                <a href="member.html" class="btn-base btn-primary">查看預約紀錄</a>
+                                <h3 class="fs-lg-2 fs-4 fw-bold mb-lg-6 mb-4">已預約成功！</h3>
+                                <p class="fs-lg-lg fs-sm mb-lg-8 mb-5">當日請至櫃檯報到即可入座。</p>
+                                <a href="member.html" class="btn-base btn-primary w-lg-196px">查看預約紀錄<span class="ms-3"> <%- include('./layout/components/moon-switch');-%></span></a>
                               </div>
                             </div>
                           </div>
@@ -282,7 +282,7 @@
               <li class="list-style-circle fw-bold fs-lg-5 fw-normal ">當次消費可折抵30元飲品</li>
             </ul>
             <div class="w-lg-268px">
-              <a href="menu.html" class="btn-base btn-primary w-100 rounded-28">詳細菜單</a>
+              <a href="menu.html" class="btn-base btn-primary w-100 rounded-28">詳細菜單<span class="ms-2"><%- include('./layout/components/moon-switch');-%></span></a>
             </div>
           </div>
         </div>
@@ -385,7 +385,7 @@
       <div class="container">
         <div class="row position-relative">
           
-          <div class="col-lg-10 col-9 mx-auto">
+          <div class="col-lg-10 col-9 mx-auto mb-7">
             <div class="swiper mySwiper-bottom ">
               <div class="swiper-wrapper ">
                 <div class="swiper-slide ">
@@ -408,14 +408,16 @@
                 </div>
               </div>
             </div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next me-lg-6 "></div>
+            <div class="swiper-button-prev ms-lg-6 "></div>
           </div>
         </div>
         
       </div>
       
     </section>
+
+    <%- include('./layout/footer'); -%>
 
   </main>
     
