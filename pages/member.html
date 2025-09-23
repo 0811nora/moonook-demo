@@ -12,9 +12,9 @@
 </head>
 
 <body class="loaded">
-  <div
+  <!-- <div
     style="position: absolute; width: 100%; height: 100%; background-image: url(../assets/images/backgroundimg_member.png);">
-  </div>
+  </div> -->
   <!-- 在想一下 -->
   <!-- <%- include('./layout/components/loader'); -%> -->
   <%- include('./layout/components/top-btn'); -%>
@@ -71,8 +71,7 @@
                         aria-controls="v-pills-information" aria-selected="false">基本資料</button>
                     </li>
                     <li class="nav-item">
-                      <button class="nav-link" id="logoutBtn" data-bs-toggle="pill" data-bs-target="#v-pills-logout"
-                        type="button" role="tab" aria-controls="v-pills-logout" aria-selected="false">會員登出</button>
+                      <button class="nav-link btn btn-secondary" id="logoutBtn" type="button">會員登出</button>
                     </li>
                   </ul>
                 </div>
@@ -106,10 +105,10 @@
               <!--時間搜尋欄結束-->
               <nav class="container">
                 <div class="row">
-                  <div class="col-lg-5">
+                  <div class="col-lg-5 gx-1">
                     <%- include('./layout/components/calendar_member'); -%>
                   </div>
-                  <div class="col-lg-5">
+                  <div class="col-lg-5 gx-1">
                     <%- include('./layout/components/time-select_member'); -%>
                   </div>
 

@@ -18,7 +18,7 @@
     max-width: 600px;
 }
 
-.timeslot-dropdown-header {
+.timeslot-dropdown-header_member {
     background: $fcbg-50;
     border: 2px solid $fc-600;
     border-radius: 15px;
@@ -30,9 +30,12 @@
     font-size: 17px;
     color: $fc;
     transition: all 0.3s ease;
+
 }
 
-.timeslot-dropdown-header:focus {
+
+
+.timeslot-dropdown-header_member:focus {
     background: $fcbg-50;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
     transform: translateY(-2px);
@@ -53,7 +56,7 @@
 }
 
 
-.timeslot-dropdown-header.active .timeslot-dropdown-arrow {
+.timeslot-dropdown-header_member.active .timeslot-dropdown-arrow {
     transform: rotate(180deg);
 }
 
@@ -219,7 +222,7 @@
 @media (max-width: 992px) {
 
 
-    .timeslot-dropdown-header {
+    .timeslot-dropdown-header_member {
         padding: 12px 17px 12px 15px;
         font-size: 15px;
         width: 100%;

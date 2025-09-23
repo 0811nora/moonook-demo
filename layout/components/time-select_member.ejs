@@ -1,9 +1,14 @@
 <div class="">
-    <div class="timeslot-dropdown-container">
-        <div class="timeslot-dropdown-header" onclick="toggleTimeslotDropdown()">
-            <span id="timeslot-selected-time">請選擇時段</span>
-            <div class="timeslot-dropdown-arrow">
-                <img src="/assets/images/service/icon-select.svg" alt="">
+    <div class="timeslot-dropdown-container d-flex align-items-center justify-content-center">
+        <div class="col-auto px-5">
+            <p>時段</p>
+        </div>
+        <div class="col">
+            <div class="timeslot-dropdown-header_member" onclick="toggleTimeslotDropdown()">
+                <span style="opacity: 0.5;" id="timeslot-selected-time">請選擇時段</span>
+                <div class="timeslot-dropdown-arrow">
+                    <img src="/assets/images/service/icon-select.svg" alt="">
+                </div>
             </div>
         </div>
 
@@ -66,7 +71,7 @@
     let selectedTimeslotStatus = null;
 
     function toggleTimeslotDropdown() {
-        const header = document.querySelector('.timeslot-dropdown-header');
+        const header = document.querySelector('.timeslot-dropdown-header_member');
         const content = document.getElementById('timeslot-dropdown-content');
 
         header.classList.toggle('active');
@@ -75,7 +80,7 @@
 
     function selectTimeslot(timeValue, status) {
         const selectedTime = document.getElementById('timeslot-selected-time');
-        const header = document.querySelector('.timeslot-dropdown-header');
+        const header = document.querySelector('.timeslot-dropdown-header_member');
         const content = document.getElementById('timeslot-dropdown-content');
 
         // 儲存選擇的值
@@ -137,7 +142,7 @@
     document.addEventListener('click', function (event) {
         const container = document.querySelector('.timeslot-dropdown-container');
         if (!container.contains(event.target)) {
-            const header = document.querySelector('.timeslot-dropdown-header');
+            const header = document.querySelector('.timeslot-dropdown-header_member');
             const content = document.getElementById('timeslot-dropdown-content');
             header.classList.remove('active');
             content.classList.remove('active');

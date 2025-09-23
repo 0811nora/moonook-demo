@@ -26,7 +26,11 @@
         cursor: pointer;
         position: relative;
 
+    }
 
+    .date-input::placeholder {
+        opacity: 0.5;
+        /* 50% */
     }
 
     .date-input:focus {
