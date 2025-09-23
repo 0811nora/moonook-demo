@@ -5,7 +5,7 @@
 }
 
 
-.date-picker-wrapper {
+.date-picker-wrapper_member {
     position: relative;
     width: 100%;
     max-width: 600px;
@@ -16,7 +16,7 @@
     }
 
     .date-input {
-        background: $fcbg-50;
+        background: $fcbg;
         border: 2px solid $fc-600;
         border-radius: 15px;
         padding: 9px 50px 9px 20px;
