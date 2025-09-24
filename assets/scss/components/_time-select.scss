@@ -21,13 +21,13 @@
 .timeslot-dropdown-header {
     background: $fcbg-50;
     border: 2px solid $fc-600;
-    border-radius: 15px;
+    border-radius: 16px;
     padding: 9px 20px;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 17px;
+    font-size: 16px;
     color: $fc;
     transition: all 0.3s ease;
 }
@@ -72,8 +72,8 @@
     backdrop-filter: blur(10px);
     z-index: 1000;
     overflow: hidden;
-    min-width: 300px;
-    width: min(max(100%, 300px), 400px);
+    min-width: 260px;
+    width: min(max(100%, 260px), 400px);
 
 }
 
@@ -201,8 +201,8 @@
 
 
     .timeslot-dropdown-header {
-        padding: 12px 17px 12px 15px;
-        font-size: 15px;
+        padding: 7px 17px 7px 15px;
+        font-size: 14px;
         width: 100%;
     }
 
