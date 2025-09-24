@@ -67,6 +67,38 @@
     .swiper-pagination-bullet-active {
         background: $primary-200; 
     }
+    .swiper-button-next {
+        background: url("/assets/images/service/icon-swiper-right.svg") no-repeat center;
+        background-size: contain;
+        width: 60px; 
+        height: 60px; 
+        &::after{
+            display: none;
+        }
+    }
+
+    .swiper-button-prev {
+        background: url("/assets/images/service/icon-swiper-left.svg") no-repeat center;
+        background-size: contain;
+        width: 60px; 
+        height: 60px;
+        &::after{
+            display: none;
+        }
+    }
+
+    @include size-sm{
+        .swiper-button-next,
+        .swiper-button-prev {
+            width: 32px; 
+            height: 32px;
+        }
+    }
+
+
+
+
+
 
 
 
