@@ -17,6 +17,10 @@ $utilities: map-merge(
         4: $border-radius-xl,
         // 16
         5: $border-radius-xxl,
+        // 24
+        6: $border-radius-3xl,
+        // 28
+        7: $border-radius-4xl,
         // 9999
         circle: 50%,
         pill: var(--#{$prefix}border-radius-pill),
