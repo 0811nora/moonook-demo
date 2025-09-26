@@ -1,46 +1,61 @@
 <main class="login-page">
-
   <div class="userIcon-btn d-inline-block">
-    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#userLoginPage" >
-
+    <button
+      type="button"
+      class="btn"
+      data-bs-toggle="modal"
+      data-bs-target="#userLoginPage"
+    >
       <div class="h-person-w">
         <img
-            class="align-bottom h-person-w "
-            src="/assets/images/header/icon-person.png"
-            alt="person"/>
+          class="align-bottom h-person-w"
+          src="/assets/images/header/icon-person.png"
+          alt="person"
+        />
       </div>
       <div class="h-person-g d-none">
         <img
           class="align-bottom h-person-g d-none"
           src="/assets/images/header/icon-person-g.png"
-          alt="person"/>
+          alt="person"
+        />
       </div>
     </button>
   </div>
 
-  
-
   <div class="userImg-btn d-none">
     <a href="member.html" class="btn border-0">
       <div class="rounded-circle overflow-hidden user-img">
-        <img src="/assets/images/member_photo.jpg" class="w-100 h-100" alt="">
+        <img
+          src="/assets/images/member_photo.jpg"
+          class="w-100 h-100 object-fit-cover align-bottom"
+          alt=""
+        />
       </div>
     </a>
   </div>
 
   <!-- <button type="button" id="logoutBtn" class="btn btn-primary">登出</button> -->
 
-
-  <div class="modal fade" id="userLoginPage" tabindex="-1" aria-labelledby="exampleModalLabel" >
+  <div
+    class="modal fade"
+    id="userLoginPage"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+  >
     <div class="modal-dialog modal-dialog-centered">
-      <button type="button" id="hiddenCloseBtn" class="btn-close d-none" data-bs-dismiss="modal"
-        aria-label="Close"></button>
+      <button
+        type="button"
+        id="hiddenCloseBtn"
+        class="btn-close d-none"
+        data-bs-dismiss="modal"
+        aria-label="Close"
+      ></button>
 
-      
-      <div class="modal-content  user-login">
-        <div class="text-center text-white login-title ">
-            <img src="/assets/images/header/logo_small_white.svg" alt="">
-        </div> 
+      <div class="modal-content user-login">
+        <div class="text-center text-white login-title">
+          <img src="/assets/images/header/logo_small_white.svg" alt="" />
+        </div>
 
         <div class="px-lg-8 px-6">
           <!-- <div class="form-floating mb-6">
@@ -49,8 +64,17 @@
           </div> -->
 
           <div class="input-group mb-6">
-            <span class="input-group-text" id="basic-addon1"><img src="/assets/images/service/icon-person-login.svg" alt=""></span>
-            <input type="text" class="form-control" id="loginInput" placeholder="帳號" aria-label="Username" aria-describedby="basic-addon1">
+            <span class="input-group-text" id="basic-addon1"
+              ><img src="/assets/images/service/icon-person-login.svg" alt=""
+            /></span>
+            <input
+              type="text"
+              class="form-control"
+              id="loginInput"
+              placeholder="帳號"
+              aria-label="Username"
+              aria-describedby="basic-addon1"
+            />
           </div>
 
           <!-- <div class="form-floating mb-4">
@@ -59,33 +83,59 @@
           </div> -->
 
           <div class="input-group mb-2">
-            <span class="input-group-text " id="basic-addon2"><img src="/assets/images/icon/icon-password.svg" alt=""></span>
-            <input type="password" class="form-control" id="loginPassword" placeholder="密碼" aria-label="Username" aria-describedby="basic-addon2">
+            <span class="input-group-text" id="basic-addon2"
+              ><img src="/assets/images/icon/icon-password.svg" alt=""
+            /></span>
+            <input
+              type="password"
+              class="form-control"
+              id="loginPassword"
+              placeholder="密碼"
+              aria-label="Username"
+              aria-describedby="basic-addon2"
+            />
           </div>
 
           <div class="text-end p-3">
-            <button class="go-register-btn btn-base btn-outline fw-bold border-0 fs-lg-6 fs-sm px-0">加入會員</button>
+            <button
+              class="go-register-btn btn-base btn-outline fw-bold border-0 fs-lg-6 fs-sm px-0"
+            >
+              加入會員
+            </button>
             <!-- <button class="btn p-0 text-primary-300 fw-bold border-0 fs-6">忘記密碼</button> -->
           </div>
 
           <div class="">
-            <p class="login-alert d-none  danger-color text-center mb-4 ">* 請輸入帳號及密碼 *</p>
-            <button type="button" class=" confirm-login btn-base border-0 btn-primary-300 rounded-30px py-4  w-100 mb-7 fw-bold ">登入</button>
-
+            <p class="login-alert d-none danger-color text-center mb-4">
+              * 請輸入帳號及密碼 *
+            </p>
+            <button
+              type="button"
+              class="confirm-login btn-base border-0 btn-primary-300 rounded-30px py-4 w-100 mb-7 fw-bold"
+            >
+              登入
+            </button>
           </div>
         </div>
-
-
       </div>
-      <div class="modal-content  user-register d-none">
+      <div class="modal-content user-register d-none">
         <!-- <h3 class="text-center text-white mb-7 fs-5 fs-lg-3 mt-5 mt-lg-0">加入會員</h3> -->
-        <div class="text-center text-white login-title ">
-            <img src="/assets/images/header/logo_small_white.svg" alt="">
-        </div> 
+        <div class="text-center text-white login-title">
+          <img src="/assets/images/header/logo_small_white.svg" alt="" />
+        </div>
         <div class="px-lg-8 px-6">
           <div class="input-group mb-6">
-            <span class="input-group-text" id="basic-addon3"><img src="/assets/images/service/icon-name.svg" alt=""></span>
-            <input type="text" class="form-control" id="redisterName" placeholder="姓名" aria-label="Username" aria-describedby="basic-addon3">
+            <span class="input-group-text" id="basic-addon3"
+              ><img src="/assets/images/service/icon-name.svg" alt=""
+            /></span>
+            <input
+              type="text"
+              class="form-control"
+              id="redisterName"
+              placeholder="姓名"
+              aria-label="Username"
+              aria-describedby="basic-addon3"
+            />
           </div>
           <!-- <div class="form-floating mb-6">
             <input type="text" class="form-control" id="redisterName" placeholder="">
@@ -97,10 +147,18 @@
           </div> -->
 
           <div class="input-group mb-6">
-            <span class="input-group-text" id="basic-addon4"><img src="/assets/images/service/icon-phone.svg" alt=""></span>
-            <input type="tel" class="form-control" id="redisterTel" placeholder="手機號碼" aria-label="Username" aria-describedby="basic-addon4">
+            <span class="input-group-text" id="basic-addon4"
+              ><img src="/assets/images/service/icon-phone.svg" alt=""
+            /></span>
+            <input
+              type="tel"
+              class="form-control"
+              id="redisterTel"
+              placeholder="手機號碼"
+              aria-label="Username"
+              aria-describedby="basic-addon4"
+            />
           </div>
-
 
           <!-- <div class="form-floating mb-6">
             <input type="email" class="form-control" id="redisteraccount" placeholder="">
@@ -108,8 +166,17 @@
           </div> -->
 
           <div class="input-group mb-6">
-            <span class="input-group-text" id="basic-addon5"><img src="/assets/images/service/icon-person-login.svg" alt=""></span>
-            <input type="text" class="form-control" id="redisteraccount" placeholder="帳號" aria-label="Username" aria-describedby="basic-addon5">
+            <span class="input-group-text" id="basic-addon5"
+              ><img src="/assets/images/service/icon-person-login.svg" alt=""
+            /></span>
+            <input
+              type="text"
+              class="form-control"
+              id="redisteraccount"
+              placeholder="帳號"
+              aria-label="Username"
+              aria-describedby="basic-addon5"
+            />
           </div>
 
           <!-- <div class="form-floating mb-6">
@@ -121,35 +188,55 @@
             <label for="redisterPassword2">確認密碼</label>
           </div> -->
 
-
           <div class="input-group mb-6">
-            <span class="input-group-text " id="basic-addon6"><img src="/assets/images/icon/icon-password.svg" alt=""></span>
-            <input type="password" class="form-control" id="redisterPassword" placeholder="密碼" aria-label="Username" aria-describedby="basic-addon6">
+            <span class="input-group-text" id="basic-addon6"
+              ><img src="/assets/images/icon/icon-password.svg" alt=""
+            /></span>
+            <input
+              type="password"
+              class="form-control"
+              id="redisterPassword"
+              placeholder="密碼"
+              aria-label="Username"
+              aria-describedby="basic-addon6"
+            />
           </div>
 
           <div class="input-group mb-2">
-            <span class="input-group-text " id="basic-addon7"><img src="/assets/images/service/icon-password-check.svg" alt=""></span>
-            <input type="password" class="form-control" id="redisterPassword2" placeholder="確認密碼" aria-label="Username" aria-describedby="basic-addon7">
+            <span class="input-group-text" id="basic-addon7"
+              ><img src="/assets/images/service/icon-password-check.svg" alt=""
+            /></span>
+            <input
+              type="password"
+              class="form-control"
+              id="redisterPassword2"
+              placeholder="確認密碼"
+              aria-label="Username"
+              aria-describedby="basic-addon7"
+            />
           </div>
 
-
           <div class="text-end p-3 mb-4">
-            <button class="go-login-btn btn-base btn-outline fw-bold border-0 fs-lg-6 fs-sm px-0">會員登入</button>
+            <button
+              class="go-login-btn btn-base btn-outline fw-bold border-0 fs-lg-6 fs-sm px-0"
+            >
+              會員登入
+            </button>
           </div>
 
           <div class="mb-4">
-            <p class="redister-alert d-none  danger-color text-center mb-4">* 所有欄位皆需填寫 *</p>
-            <button type="button"
-              class="confirm-redister btn-base border-0 btn-primary-300 rounded-30px py-4  w-100 mb-7 fw-bold ">註冊</button>
+            <p class="redister-alert d-none danger-color text-center mb-4">
+              * 所有欄位皆需填寫 *
+            </p>
+            <button
+              type="button"
+              class="confirm-redister btn-base border-0 btn-primary-300 rounded-30px py-4 w-100 mb-7 fw-bold"
+            >
+              註冊
+            </button>
           </div>
         </div>
       </div>
     </div>
   </div>
 </main>
-
-
-
-
-
-
