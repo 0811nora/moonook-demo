@@ -10,6 +10,7 @@
   flex-shrink: 0;
   overflow: hidden;
   z-index: 10;
+  transition: background .4s ease;
   img {
     width: 24px;
     height: 24px;

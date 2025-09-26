@@ -41,7 +41,7 @@
     </p>
   </div>
   <!-- Pagetop -->
-  <a class="f-pagetop" href="#">
+  <a class="f-pagetop" id="scrollToTopBtn" href="#">
     <div class="d-none d-lg-block">
       <img
         class="f-pagetop-def"
@@ -68,3 +68,22 @@
     </div>
   </a>
 </footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // 取得按鈕元素
+    var scrollButton = document.getElementById("scrollToTopBtn");
+
+    // 為按鈕添加點擊事件監聽器
+    scrollButton.addEventListener("click", function (e) {
+      // 阻止預設的錨點跳轉行為 (阻止頁面立即跳到 #)
+      e.preventDefault();
+
+      // 執行平滑滾動到頁面頂端
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    });
+  });
+</script>

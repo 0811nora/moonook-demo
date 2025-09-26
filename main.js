@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 可調整的時間設定
     const minDisplayTime = 1500;    //設定最少時間
-    const maxDisplayTime = 3000;  // 最多顯示 3 秒
+    const maxDisplayTime = 2000;  // 最多顯示 3 秒
 
     console.log("Loading 開始");
 

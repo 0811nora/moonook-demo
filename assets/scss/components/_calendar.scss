@@ -18,15 +18,18 @@
     .date-input {
         background: $fcbg-50;
         border: 2px solid $fc-600;
-        border-radius: 15px;
+        border-radius: 16px;
         padding: 9px 50px 9px 20px;
         font-size: 17px;
         color: $fc;
         width: 100%;
         cursor: pointer;
         position: relative;
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> main
     }
 
     .date-input:focus {
@@ -115,7 +118,7 @@
     }
 
     .current-month {
-        font-size: 22px;
+        font-size: 18px;
         font-weight: bold;
         color: #374151;
         flex: 1;
@@ -247,8 +250,8 @@
         }
 
         .date-input {
-            padding: 12px 45px 12px 15px;
-            font-size: 15px;
+            padding: 8px 45px 8px 15px;
+            font-size: 14px;
         }
 
         .calendar-container {

@@ -7,35 +7,78 @@
         width: 24px;
         height: 24px;
     }
+    .w-20px{
+        width: 20px;
+    }
     .modal{
-        --bs-modal-width: 600px;
+        --bs-modal-width: 420px;
+    }
+    .danger-color{
+        color: #e82d34;
+        background-color: #f8d9d956;
+        border-radius: 12px;
+        width: 200px;
+        margin: 0 auto;
     }
 
 
     
     .modal-content {
-        background-color: #d4d4d43a;
+        background-color: #d4d4d442;
         // background-color: transparent;
-        backdrop-filter: blur(12px);
-        border-radius: 100px 0 100px 0;
-        box-shadow: 10px 8px 10px #32323277;
+        backdrop-filter: blur(6px);
+        border-radius: 40px ;
+        box-shadow: 10px 8px 10px #45444469;
         z-index: 1000;
+
+        .login-title{
+            background-color: #d4d4d475;
+            border-radius: 40px 40px 0 0;
+            padding: 14px ;
+            margin-bottom: 26px;
+        }
+        .input-group-text {
+            background-color: #b1bb9b;
+            border: none;
+            
+        }
 
     }
     .form-control{
-
-        border-radius:  0 20px 0 20px;
+        border-radius: 30px;
         background-color: #ffffff6f;
         backdrop-filter: blur(5px);
         border: none;
+        padding: 12px;
+    }
 
+    .input-group-text {
+        border-radius: 30px;
+        padding: 0 18px;
     }
     label[for="floatingInput"],
     label[for="floatingPassword"] {
         color: #646464;
     }
-    .rounded-20px{
-        border-radius: 20px;
+    .rounded-30px{
+        border-radius: 30px;
+    }
+
+    .btn-primary-300 {
+        color: $fc;
+        background-color: $primary-300;
+        &:hover {
+            background-color: $fc-500;
+            color: $primary-50;
+        }
+
+    }
+    .btn-outline{
+        color: $primary-300 ;
+        &:hover{
+            background-color: transparent;
+            color: $fc-500 ;
+        }
     }
 }
 
@@ -45,6 +88,9 @@
             margin: 0 auto;
             
 
+        }
+        .form-control{
+            padding: 10px;
         }
     } 
 }
