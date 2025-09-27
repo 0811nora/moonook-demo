@@ -125,7 +125,7 @@
                   </div>
 
                   <div class="h-lg-365px all-seat  p-lg-6 p-5 d-none  border-style rounded-3">
-                    <div class="w-100 h-100">
+                    <div class="w-100 ">
                       <h3 class="fs-lg-3 fs-6 text-pc-600 mb-lg-3 mb-4">請選擇座位：</h3>
                       <div class="">
                         <form id="bookingSeat">
@@ -148,7 +148,10 @@
                           </div>
                           
                           
-                          <button type="button" class="btn-base btn-white w-100" data-bs-toggle="modal" data-bs-target="#seatModal">預約 <span class="ms-3"><%- include('./layout/components/moon-outline-switch');-%></span></button>
+                          <!-- <button type="button" id="checkBookingBtn" class="btn-base btn-white w-100" data-bs-toggle="modal" data-bs-target="#seatModal">預約 <span class="ms-3"><%- include('./layout/components/moon-outline-switch');-%></span></button> -->
+
+                          <button type="button" id="checkBookingBtn" class="btn-base btn-white w-100" >預約 <span class="ms-3"><%- include('./layout/components/moon-outline-switch');-%></span></button>
+                          
 
                           <div class="modal fade" id="seatModal" tabindex="-1" aria-labelledby="seatModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered">
@@ -442,6 +445,9 @@
     const showTime = document.querySelector(".show-time");
     const showSeat = document.querySelector(".show-seat");
 
+    const checkBookingBtn = document.getElementById("checkBookingBtn");
+
+
 
     let bookingDate;
     let bookingtime;
@@ -561,6 +567,46 @@
             resetAll();
         }
     });
+
+
+      document.getElementById('checkBookingBtn').addEventListener('click', function(event) {
+          // 直接在這裡讀取最新的登入狀態
+          let storedLoginState = JSON.parse(sessionStorage.getItem('loginState'));
+          
+          if (storedLoginState === null) {
+              storedLoginState = false;
+              sessionStorage.setItem('loginState', JSON.stringify(storedLoginState));
+          }
+          
+          console.log('目前登入狀態：', storedLoginState);
+          
+          if(storedLoginState === false){ 
+              // 未登入：開啟登入視窗
+              const tempBtn = document.createElement('button');
+              tempBtn.setAttribute('data-bs-toggle', 'modal');
+              tempBtn.setAttribute('data-bs-target', '#userLoginPage');
+              tempBtn.style.display = 'none';
+              document.body.appendChild(tempBtn);
+              tempBtn.click();
+              document.body.removeChild(tempBtn);
+              
+              console.log('用戶未登入，開啟登入視窗');
+          } else {
+              // 已登入：開啟座位確認視窗
+              const tempBtn = document.createElement('button');
+              tempBtn.setAttribute('data-bs-toggle', 'modal');
+              tempBtn.setAttribute('data-bs-target', '#seatModal');
+              tempBtn.style.display = 'none';
+              document.body.appendChild(tempBtn);
+              tempBtn.click();
+              document.body.removeChild(tempBtn);
+              
+              console.log('用戶已登入，開啟座位確認視窗');
+          }
+      });
+
+
+
 
     function resetAll() {
         // 清除時間選擇 - 使用新的時間下拉選單方法

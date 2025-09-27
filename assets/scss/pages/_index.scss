@@ -59,6 +59,12 @@
     max-width: 636px;
   }
 
+  .rounded-lg-0 {
+    @include size-lg {
+      border-radius: 0 !important;
+    }
+  }
+
   .i-menu-card-bg-blue {
     background: linear-gradient(
       to right,
@@ -116,18 +122,6 @@
     @include size-sm {
       height: 200px;
     }
-    .i-reviews-avatar-w {
-      height: 80px;
-      @include size-sm {
-        height: 56px;
-      }
-    }
-    .i-reviews-star-w {
-      height: 20px;
-      @include size-sm {
-        height: 15px;
-      }
-    }
   }
 
   .swiper-pagination-fraction {
@@ -173,7 +167,7 @@
     background-color: $fc;
     transition: width 0.3s ease-in-out;
   }
-
+  // 裝飾
   .i-deco-1 {
     top: -192px;
     left: 0px;
@@ -211,6 +205,7 @@
       padding-bottom: 52px;
     }
 
+    // 裝飾的hover位置
     &:hover {
       .i-deco-3 {
         bottom: -186px;
@@ -229,27 +224,23 @@
 
   /* 新增偽元素來作為背景層 */
   .slogan-bg::before {
-    content: ""; /* 偽元素必須有 content 屬性 */
-
-    /* 絕對定位，讓它填滿整個父容器 */
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-
-    /* 這裡才是背景顏色和過渡效果的設定 */
     background-color: $primary;
-    border-radius: 28px;
+    border-radius: 100px;
     transition: transform 0.7s ease-in-out;
-
-    /* 將背景層放在內容物的後面 */
     z-index: -1;
+    @include size-sm {
+      border-radius: 28px;
+    }
   }
-
   /* 在 hover 時只對偽元素進行變形 */
   .slogan-bg:hover::before {
-    transform: scale(1.5); /* 將放大倍數改為你想要的數值，例如 1.1 */
+    transform: scale(1.5);
   }
   .slogan-img-hov {
     transition: transform 1s ease-in-out;
