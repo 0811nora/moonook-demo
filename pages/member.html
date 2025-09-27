@@ -71,7 +71,7 @@
                         aria-controls="v-pills-information" aria-selected="false">基本資料</button>
                     </li>
                     <li class="nav-item">
-                      <button class="nav-link btn btn-secondary" id="logoutBtn" type="button">會員登出</button>
+                      <button class="nav-link btn btn-secondary" id="logoutBtnrwd" type="button">會員登出</button>
                     </li>
                   </ul>
                 </div>
@@ -103,7 +103,7 @@
               <!--放預約頁-->
 
               <!--時間搜尋欄結束-->
-              <nav class="container-fluid">
+              <nav class="container-fluid mb-5">
                 <div class="row flex-nowrap align-items-center justify-content-lg-between">
                   <div class="col-lg-5">
                     <%- include('./layout/components/calendar_member'); -%>
@@ -116,8 +116,8 @@
                   <div class="col-lg-3 d-flex align-items-center position-relative">
                     <input type="text" class="m_searchbar form-control text-center rounded-7" placeholder="搜尋"
                       aria-label="search bar" aria-describedby="search bar">
-                    <button class="btn input-group-text" type="button" id="button-addon2">
-                      <i class="position-absolute bottom-50 end-50 bi bi-search"></i></button>
+                    <button class="m_searchBtn " type="button" id="button-addon2">
+                      <i data-feather="search"></i></button>
                   </div>
 
                 </div>
@@ -125,212 +125,219 @@
               <!--搜尋欄結束-->
 
               <!--年份選擇-->
-              <nav aria-label="Page navigation example">
+              <%- include('./layout/components/year'); -%>
+                <!-- <nav aria-label="Page navigation example">
                 <ul class="pagination justify-content-center">
                   <li class="page-item disabled">
                     <a class="page-link" href="#" tabindex="-1" aria-disabled="true">
-                      <span aria-hidden="true">&laquo;</span>
+                      <span aria-hidden="true"><i data-feather="chevron-left"></i></span>
                     </a>
                   </li>
                   <li class="page-item"><a class="page-link" href="#">2025</a></li>
                   <li class="page-item">
                     <a class="page-link" href="#">
-                      <span aria-hidden="true">&raquo;</span>
+                      <span aria-hidden="true"><i data-feather="chevron-right"></i></span>
                     </a>
                   </li>
                 </ul>
-              </nav>
-              <!--年份選擇結束-->
-              <!--中間卡片-->
-              <!--表頭-->
-              <table class="d-none d-lg-table table text-center">
-                <thead>
-                  <tr>
-                    <th scope="col">日期</th>
-                    <th scope="col">時段</th>
-                    <th scope="col">座位</th>
-                    <th scope="col">狀態</th>
-                    <th scope="col">修改</th>
-                  </tr>
-                </thead>
-              </table>
-              <!--表頭over-->
+              </nav> -->
+                <!--年份選擇結束-->
+                <!--中間卡片-->
+                <!--表頭-->
+                <table class="d-none d-lg-table table text-center">
+                  <thead>
+                    <tr>
+                      <th scope="col">日期</th>
+                      <th scope="col">時段</th>
+                      <th scope="col">座位</th>
+                      <th scope="col">狀態</th>
+                      <th scope="col">修改</th>
+                    </tr>
+                  </thead>
+                </table>
+                <!--表頭over-->
 
-              <!--卡片來囉-->
-              <div class="container">
-                <div class="row">
-                  <!--卡片1-->
-                  <div class="col-6 col-lg-12 ">
-                    <div class="card text-center">
-                      <div class="card-body d-flex flex-wrap justify-content-lg-between align-items-lg-center">
-                        <time class="col-12 col-lg-2">07月25日<span class="d-lg-none d-block border-bottom"></span>
-                        </time>
-                        <p class="col-12 col-lg-2 d-flex d-lg-block"><span
-                            class="d-lg-none d-block border-end">時段</span>12:00-14:00
-                        </p>
-                        <p class="col-12 col-lg-2 d-flex d-lg-block"><span
-                            class="d-lg-none d-block border-end">座位</span>A4</p>
-                        <p class="col-12 col-lg-2 d-flex d-lg-block"><span
-                            class="d-lg-none d-block border-end">狀態</span>預約
-                        </p>
-                        <div class="dropdown col-12 col-lg-2">
-                          <button class="btn btn-secondary dropdown-toggle" type="button" id="date"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            修改
-                          </button>
-                          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            <li><a class="dropdown-item" href="#">確定修改</a></li>
-                            <li><a class="dropdown-item" href="#">取消修改</a></li>
-                          </ul>
+                <!--卡片來囉-->
+                <div class="container">
+                  <div class="row">
+                    <!--卡片1-->
+                    <div class="col-6 col-lg-12 ">
+                      <div class="card text-center">
+                        <div class="card-body d-flex flex-wrap justify-content-lg-between align-items-lg-center">
+                          <time class="col-12 col-lg-2">07月25日<span class="d-lg-none d-block border-bottom"></span>
+                          </time>
+                          <p class="col-12 col-lg-2 d-flex d-lg-block"><span
+                              class="d-lg-none d-block border-end">時段</span>12:00-14:00
+                          </p>
+                          <p class="col-12 col-lg-2 d-flex d-lg-block"><span
+                              class="d-lg-none d-block border-end">座位</span>A4</p>
+                          <p class="col-12 col-lg-2 d-flex d-lg-block"><span
+                              class="d-lg-none d-block border-end">狀態</span>預約
+                          </p>
+                          <div class="dropdown col-12 col-lg-2">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="date"
+                              data-bs-toggle="dropdown" aria-expanded="false">
+                              修改
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                              <li><a class="dropdown-item" href="#">確定修改</a></li>
+                              <li><a class="dropdown-item" href="#">取消修改</a></li>
+                            </ul>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <!--卡片2-->
-                  <div class="col-6 col-lg-12 ">
-                    <div class="card text-center">
-                      <div class="card-body d-flex flex-wrap justify-content-lg-between align-items-lg-center">
-                        <time class="col-12 col-lg-2">07月25日<span class="d-lg-none d-block border-bottom"></span>
-                        </time>
-                        <p class="col-12 col-lg-2 d-flex"><span
-                            class="d-lg-none d-block border-end">時段</span>12:00-14:00
-                        </p>
-                        <p class="col-12 col-lg-2 d-flex"><span class="d-lg-none d-block border-end">座位</span>A4</p>
-                        <p class="col-12 col-lg-2 d-flex"><span class="d-lg-none d-block border-end">狀態</span>預約
-                        </p>
-                        <div class="dropdown col-12 col-lg-2">
-                          <button class="btn btn-secondary dropdown-toggle" type="button" id="date"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            修改
-                          </button>
-                          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            <li><a class="dropdown-item" href="#">確定修改</a></li>
-                            <li><a class="dropdown-item" href="#">取消修改</a></li>
-                          </ul>
+                    <!--卡片2-->
+                    <div class="col-6 col-lg-12 ">
+                      <div class="card text-center">
+                        <div class="card-body d-flex flex-wrap justify-content-lg-between align-items-lg-center">
+                          <time class="col-12 col-lg-2">07月25日<span class="d-lg-none d-block border-bottom"></span>
+                          </time>
+                          <p class="col-12 col-lg-2 d-flex d-lg-block"><span
+                              class="d-lg-none d-block border-end">時段</span>12:00-14:00
+                          </p>
+                          <p class="col-12 col-lg-2 d-flex d-lg-block"><span
+                              class="d-lg-none d-block border-end">座位</span>A4</p>
+                          <p class="col-12 col-lg-2 d-flex d-lg-block"><span
+                              class="d-lg-none d-block border-end">狀態</span>預約
+                          </p>
+                          <div class="dropdown col-12 col-lg-2">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="date"
+                              data-bs-toggle="dropdown" aria-expanded="false">
+                              修改
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                              <li><a class="dropdown-item" href="#">確定修改</a></li>
+                              <li><a class="dropdown-item" href="#">取消修改</a></li>
+                            </ul>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <!--卡片3-->
-                  <div class="col-6 col-lg-12 ">
-                    <div class="card text-center">
-                      <div class="card-body d-flex flex-wrap justify-content-lg-between align-items-lg-center">
-                        <time class="col-12 col-lg-2">07月25日<span class="d-lg-none d-block border-bottom"></span>
-                        </time>
-                        <p class="col-12 col-lg-2 d-flex"><span
-                            class="d-lg-none d-block border-end">時段</span>12:00-14:00
-                        </p>
-                        <p class="col-12 col-lg-2 d-flex"><span class="d-lg-none d-block border-end">座位</span>A4</p>
-                        <p class="col-12 col-lg-2 d-flex"><span class="d-lg-none d-block border-end">狀態</span>預約
-                        </p>
-                        <div class="dropdown col-12 col-lg-2">
-                          <button class="btn btn-secondary dropdown-toggle" type="button" id="date"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            修改
-                          </button>
-                          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            <li><a class="dropdown-item" href="#">確定修改</a></li>
-                            <li><a class="dropdown-item" href="#">取消修改</a></li>
-                          </ul>
+                    <!--卡片3-->
+                    <div class="col-6 col-lg-12 ">
+                      <div class="card text-center">
+                        <div class="card-body d-flex flex-wrap justify-content-lg-between align-items-lg-center">
+                          <time class="col-12 col-lg-2">07月25日<span class="d-lg-none d-block border-bottom"></span>
+                          </time>
+                          <p class="col-12 col-lg-2 d-flex d-lg-block"><span
+                              class="d-lg-none d-block border-end">時段</span>12:00-14:00
+                          </p>
+                          <p class="col-12 col-lg-2 d-flex d-lg-block"><span
+                              class="d-lg-none d-block border-end">座位</span>A4</p>
+                          <p class="col-12 col-lg-2 d-flex d-lg-block"><span
+                              class="d-lg-none d-block border-end">狀態</span>預約
+                          </p>
+                          <div class="dropdown col-12 col-lg-2">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="date"
+                              data-bs-toggle="dropdown" aria-expanded="false">
+                              修改
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                              <li><a class="dropdown-item" href="#">確定修改</a></li>
+                              <li><a class="dropdown-item" href="#">取消修改</a></li>
+                            </ul>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
 
-                  <!--卡片4-->
-                  <div class="col-6 col-lg-12 ">
-                    <div class="card text-center">
-                      <div class="card-body d-flex flex-wrap justify-content-lg-between align-items-lg-center">
-                        <time class="col-12 col-lg-2">07月25日<span class="d-lg-none d-block border-bottom"></span>
-                        </time>
-                        <p class="col-12 col-lg-2 d-flex"><span
-                            class="d-lg-none d-block border-end">時段</span>12:00-14:00
-                        </p>
-                        <p class="col-12 col-lg-2 d-flex"><span class="d-lg-none d-block border-end">座位</span>A4</p>
-                        <p class="col-12 col-lg-2 d-flex"><span class="d-lg-none d-block border-end">狀態</span>預約
-                        </p>
-                        <div class="dropdown col-12 col-lg-2">
-                          <button class="btn btn-secondary dropdown-toggle" type="button" id="date"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            修改
-                          </button>
-                          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            <li><a class="dropdown-item" href="#">確定修改</a></li>
-                            <li><a class="dropdown-item" href="#">取消修改</a></li>
-                          </ul>
+                    <!--卡片4-->
+                    <div class="col-6 col-lg-12 ">
+                      <div class="card text-center">
+                        <div class="card-body d-flex flex-wrap justify-content-lg-between align-items-lg-center">
+                          <time class="col-12 col-lg-2">07月25日<span class="d-lg-none d-block border-bottom"></span>
+                          </time>
+                          <p class="col-12 col-lg-2 d-flex d-lg-block"><span
+                              class="d-lg-none d-block border-end">時段</span>12:00-14:00
+                          </p>
+                          <p class="col-12 col-lg-2 d-flex d-lg-block"><span
+                              class="d-lg-none d-block border-end">座位</span>A4</p>
+                          <p class="col-12 col-lg-2 d-flex d-lg-block"><span
+                              class="d-lg-none d-block border-end">狀態</span>預約
+                          </p>
+                          <div class="dropdown col-12 col-lg-2">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="date"
+                              data-bs-toggle="dropdown" aria-expanded="false">
+                              修改
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                              <li><a class="dropdown-item" href="#">確定修改</a></li>
+                              <li><a class="dropdown-item" href="#">取消修改</a></li>
+                            </ul>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-
-                  <!--卡片5-->
-                  <div class="col-6 col-lg-12 ">
-                    <div class="card text-center">
-                      <div class="card-body d-flex flex-wrap justify-content-lg-between align-items-lg-center">
-                        <time class="col-12 col-lg-2">07月25日<span class="d-lg-none d-block border-bottom"></span>
-                        </time>
-                        <p class="col-12 col-lg-2 d-flex"><span
-                            class="d-lg-none d-block border-end">時段</span>12:00-14:00
-                        </p>
-                        <p class="col-12 col-lg-2 d-flex"><span class="d-lg-none d-block border-end">座位</span>A4</p>
-                        <p class="col-12 col-lg-2 d-flex"><span class="d-lg-none d-block border-end">狀態</span>預約
-                        </p>
-                        <div class="dropdown col-12 col-lg-2">
-                          <button class="btn btn-secondary dropdown-toggle" type="button" id="date"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            修改
-                          </button>
-                          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            <li><a class="dropdown-item" href="#">確定修改</a></li>
-                            <li><a class="dropdown-item" href="#">取消修改</a></li>
-                          </ul>
+                    <!--卡片5-->
+                    <div class="col-6 col-lg-12 ">
+                      <div class="card text-center">
+                        <div class="card-body d-flex flex-wrap justify-content-lg-between align-items-lg-center">
+                          <time class="col-12 col-lg-2">07月25日<span class="d-lg-none d-block border-bottom"></span>
+                          </time>
+                          <p class="col-12 col-lg-2 d-flex d-lg-block"><span
+                              class="d-lg-none d-block border-end">時段</span>12:00-14:00
+                          </p>
+                          <p class="col-12 col-lg-2 d-flex d-lg-block"><span
+                              class="d-lg-none d-block border-end">座位</span>A4</p>
+                          <p class="col-12 col-lg-2 d-flex d-lg-block"><span
+                              class="d-lg-none d-block border-end">狀態</span>預約
+                          </p>
+                          <div class="dropdown col-12 col-lg-2">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="date"
+                              data-bs-toggle="dropdown" aria-expanded="false">
+                              修改
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                              <li><a class="dropdown-item" href="#">確定修改</a></li>
+                              <li><a class="dropdown-item" href="#">取消修改</a></li>
+                            </ul>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <!--卡片6-->
-                  <div class="col-6 col-lg-12 ">
-                    <div class="card text-center">
-                      <div class="card-body d-flex flex-wrap justify-content-lg-between align-items-lg-center">
-                        <time class="col-12 col-lg-2">07月25日<span class="d-lg-none d-block border-bottom"></span>
-                        </time>
-                        <p class="col-12 col-lg-2 d-flex"><span
-                            class="d-lg-none d-block border-end">時段</span>12:00-14:00
-                        </p>
-                        <p class="col-12 col-lg-2 d-flex"><span class="d-lg-none d-block border-end">座位</span>A4</p>
-                        <p class="col-12 col-lg-2 d-flex"><span class="d-lg-none d-block border-end">狀態</span>預約
-                        </p>
-                        <div class="dropdown col-12 col-lg-2">
-                          <button class="btn btn-secondary dropdown-toggle" type="button" id="date"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            修改
-                          </button>
-                          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            <li><a class="dropdown-item" href="#">確定修改</a></li>
-                            <li><a class="dropdown-item" href="#">取消修改</a></li>
-                          </ul>
+                    <!--卡片6-->
+                    <div class="col-6 col-lg-12 ">
+                      <div class="card text-center">
+                        <div class="card-body d-flex flex-wrap justify-content-lg-between align-items-lg-center">
+                          <time class="col-12 col-lg-2">07月25日<span class="d-lg-none d-block border-bottom"></span>
+                          </time>
+                          <p class="col-12 col-lg-2 d-flex d-lg-block"><span
+                              class="d-lg-none d-block border-end">時段</span>12:00-14:00
+                          </p>
+                          <p class="col-12 col-lg-2 d-flex d-lg-block"><span
+                              class="d-lg-none d-block border-end">座位</span>A4</p>
+                          <p class="col-12 col-lg-2 d-flex d-lg-block"><span
+                              class="d-lg-none d-block border-end">狀態</span>預約
+                          </p>
+                          <div class="dropdown col-12 col-lg-2">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="date"
+                              data-bs-toggle="dropdown" aria-expanded="false">
+                              修改
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                              <li><a class="dropdown-item" href="#">確定修改</a></li>
+                              <li><a class="dropdown-item" href="#">取消修改</a></li>
+                            </ul>
+                          </div>
                         </div>
                       </div>
                     </div>
+                    <!--卡片over-->
                   </div>
-
                 </div>
-              </div>
-
-              <!--卡片over-->
-
-              <!--中間卡片結束-->
-              <!--底部頁數-->
-              <nav aria-label="Page navigation example">
-                <ul class="pagination  d-flex justify-content-center">
-                  <li class="page-item"><a class="page-link" href="#">上一頁</a></li>
-                  <li class="page-item"><a class="page-link" href="#">1</a></li>
-                  <li class="page-item"><a class="page-link" href="#">2</a></li>
-                  <li class="page-item"><a class="page-link" href="#">3</a></li>
-                  <li class="page-item"><a class="page-link" href="#">下一頁</a></li>
-                </ul>
-              </nav>
-              <!--底部頁數結束-->
+                <!--中間卡片結束-->
+                <!--底部頁數-->
+                <nav aria-label="Page navigation example">
+                  <ul class="pagination  d-flex justify-content-center">
+                    <li class="page-item"><a class="page-link" href="#">上一頁</a></li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">下一頁</a></li>
+                  </ul>
+                </nav>
+                <!--底部頁數結束-->
             </div>
             <!--預約頁結束-->
             <!--基本資料開始-->
