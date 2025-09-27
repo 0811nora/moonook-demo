@@ -1,9 +1,26 @@
+.m_searchpart:hover {
+  .m_searchbar {
+    background-color: $fc-600;
+    color: $fcbg;
+
+    &::placeholder {
+      color: $fcbg;
+    }
+  }
+
+  .m_searchBtn {
+    background-color: $fc-600;
+    color: $fcbg;
+  }
+}
+
 .m_searchbar {
   border-radius: $border-radius-xxl;
   color: $fc-600;
   background-color: $fcbg;
   border: $fc-600 solid 1px;
   padding: 7px;
+
 }
 
 .m_searchBtn {
@@ -15,13 +32,177 @@
   vertical-align: middle;
   cursor: pointer;
   position: absolute;
-  right: 45px;
+  right: 30px;
   top: 5px;
+
+  @media (min-width: 1400px) {
+    right: 50px;
+
+  }
+}
+
+.m_searchtext {
+  &-m {
+    text-align: start;
+    padding-left: $spacer*1.6;
+  }
+
+  &-lg {
+    @media (min-width: 1400px) {
+      padding-left: $spacer*3;
+    }
+  }
+
+}
+
+.m_yearChange {
+  display: flex;
+  padding-left: 0;
+  list-style: none;
+  background-color: $fcbg;
+
+  &_item {
+    margin: 0 0.25rem;
+    font-weight: 700;
+    font-size: 24px;
+    padding: 0.375rem 0.75rem;
+    display: block;
+
+
+  }
+
+  &_link {
+    color: $fc-600;
+    text-decoration: none;
+
+    &:hover {
+      color: $fc-200;
+    }
+  }
+
+}
+
+table th.m_bookstate_head {
+  font-weight: 400;
+  font-size: 18px;
+  color: $fc-600;
+  padding: 24px 28px;
+  border-bottom: 1px solid $fc-600;
+}
+
+.m_date {
+  &Month {
+    font-weight: 700;
+    font-size: 18px;
+  }
+
+  &Day {
+    font-weight: 700;
+    font-size: 32px;
+  }
+
+}
+
+
+.m_bookinfo {
+
+  border: 1px solid $fc-600;
+  background-color: $fcbg;
+  padding: 14px 16px;
+
+  &:hover,
+  &:focus {
+    background-color: $pri-hvr;
+
+    .m_borderRight {
+      border-right: none;
+    }
+
+    .m_btn_revise {
+      color: $fcbg;
+      background-color: $fc-600;
+      border-color: $fcbg;
+    }
+  }
+
+}
+
+.m_borderRight {
+  border-right: none;
+  align-self: stretch;
+
+  @media (min-width: 992px) {
+    border-right: 1px solid $primary-500;
+  }
+
+}
+
+.m_btn_revise {
+  color: $fc-600;
+  background-color: $fcbg;
+  border-color: $fc-600;
+}
+
+
+.m_btn_revise:focus,
+.m_btn_revise.focus {
+  box-shadow: 0 0 4 0 $fc-600;
+
+}
+
+.m_btn_revise:disabled,
+.m_btn_revise.disabled {
+  background-color: $fc-600;
+  border-color: $fc-600;
+}
+
+.m_btn_revise.dropdown-toggle::after {
+  display: none;
+}
+
+.m_complete {
+  color: $full;
+  font-weight: 400;
+}
+
+.m_cancel {
+  color: $non-full;
+  font-weight: 400;
 }
 
 
 
+.m_page {
+  padding: 8px 16px;
+  border-top: 1px solid $fc-600;
+  border-bottom: 1px solid $fc-600;
+  list-style: none;
 
+  &:hover {
+    background-color: $fc-600;
+    color: $fcbg;
+  }
+
+  &_tail {
+    border: 1px solid $fc-600;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+
+  &_middle {
+    border-left: 1px solid $fc-600;
+    border-right: 1px solid $fc-600;
+  }
+
+  &_head {
+
+    border: 1px solid $fc-600;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+
+  }
+
+}
 
 // 基本資料頁設定
 // 標題參照菜單頁 手機h4/電腦h2 color:$fc

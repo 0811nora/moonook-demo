@@ -18,6 +18,7 @@ const redisterAlert = document.querySelector(".redister-alert");
 const loginInput = document.getElementById("loginInput");
 const loginPassword = document.getElementById("loginPassword");
 const logoutBtn = document.getElementById("logoutBtn");
+const logoutBtnrwd = document.getElementById("logoutBtnrwd");
 
 const registerName = document.getElementById("redisterName");
 const registerTel = document.getElementById("redisterTel");
