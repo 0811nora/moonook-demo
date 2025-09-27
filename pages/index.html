@@ -66,10 +66,10 @@
           <div class="col-xl-6 col-lg-6 order-lg-2 mb-6 mb-lg-8 mb-xl-0">
             <!-- 標語 -->
             <div
-              class="d-lg-flex justify-content-lg-between align-items-center pb-6 border-bottom border-fc mb-6"
+              class="d-xxl-flex justify-content-xxl-between align-items-center pb-6 border-bottom border-fc mb-6"
             >
               <div class="d-flex">
-                <div class="text-fc mb-6 mb-lg-0">
+                <div class="text-fc mb-6 mb-xxl-0">
                   <h4 class="mb-4 fs-5 fs-xl-4">在默隅 Moonook</h4>
                   <h4 class="fs-5 fs-xl-4 text-nowrap">
                     我們為你留下一個不被打擾的角落 .
@@ -87,7 +87,7 @@
                 />
               </div>
               <!-- 預約按鈕 -->
-              <div class="">
+              <!-- <div>
                 <button
                   type="button"
                   class="btn border-3 border-fc rounded-5 fs-sm fs-xxl-lg p-3"
@@ -99,11 +99,15 @@
                     alt="icon-moon"
                   />
                 </button>
-              </div>
+              </div> -->
+              <button type="button" class="btn-base btn-outline">
+                立即預約 <%-
+                include('./layout/components/moon-outline-switch');-%>
+              </button>
             </div>
             <div>
               <!-- 卡片1 -->
-              <div class="bg-primary-100 px-4 py-xl-7 py-5 mb-6">
+              <div class="bg-primary-100 px-4 py-7 mb-6 rounded-6">
                 <div class="d-flex mb-xl-6 mb-4">
                   <img
                     class="mx-3"
@@ -152,7 +156,7 @@
                 </div>
               </div>
               <!-- 卡片2 -->
-              <div class="bg-primary-100 px-4 py-xl-7 py-5 mb-6">
+              <div class="bg-primary-100 px-4 py-7 mb-6 rounded-6">
                 <div class="d-flex mb-xl-6 mb-4">
                   <img
                     class="mx-3"
@@ -205,7 +209,7 @@
                 </div>
               </div>
               <!-- 卡片3 -->
-              <div class="bg-primary-100 px-4 py-xl-7 py-5">
+              <div class="bg-primary-100 px-4 py-7 rounded-6">
                 <div class="d-flex mb-xl-6 mb-4">
                   <img
                     class="mx-3"
@@ -351,9 +355,11 @@
           </h2>
         </div>
 
-        <div class="">
+        <div>
           <!-- 卡片1 -->
-          <div class="i-menu-card-bg-blue mb-6 mx-5 mx-lg-0">
+          <div
+            class="i-menu-card-bg-blue mb-6 mx-5 mx-lg-0 rounded-6 rounded-lg-0"
+          >
             <div
               class="container d-lg-flex align-items-center position-relative"
             >
@@ -398,7 +404,9 @@
             </div>
           </div>
           <!-- 卡片2 -->
-          <div class="i-menu-card-bg-yellow mb-6 mx-5 mx-lg-0">
+          <div
+            class="i-menu-card-bg-yellow mb-6 mx-5 mx-lg-0 rounded-6 rounded-lg-0"
+          >
             <div
               class="container d-lg-flex flex-row-reverse align-items-center"
             >
@@ -440,7 +448,9 @@
             </div>
           </div>
           <!-- 卡片3 -->
-          <div class="i-menu-card-bg-blue mb-8 mx-5 mx-lg-0">
+          <div
+            class="i-menu-card-bg-blue mb-8 mx-5 mx-lg-0 rounded-6 rounded-lg-0"
+          >
             <div
               class="container d-lg-flex align-items-center position-relative"
             >
@@ -487,7 +497,7 @@
         </div>
 
         <div class="text-center">
-          <button
+          <!-- <button
             type="button"
             class="btn border-3 border-fc rounded-5 fs-sm fs-lg-lg p-3"
           >
@@ -497,6 +507,9 @@
               src="/assets/images/index/icon-moon.svg"
               alt="icon-moon"
             />
+          </button> -->
+          <button type="button" class="btn-base btn-outline">
+            詳細菜單 <%- include('./layout/components/moon-outline-switch');-%>
           </button>
         </div>
       </section>
@@ -511,15 +524,20 @@
         <div class="swiper i-reviewsSwiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide h-100">
-              <div class="bg-accent p-6 rounded-4 h-100">
+              <div class="bg-accent p-6 rounded-5 h-100">
                 <div
-                  class="d-flex justify-content-between align-items-center mb-3"
+                  class="d-flex justify-content-between align-items-center mb-6"
                 >
                   <div class="d-flex align-items-center">
-                    <div class="me-4">
+                    <div class="me-5">
                       <img
-                        class="i-reviews-avatar-w"
+                        class="d-none d-lg-block"
                         src="/assets/images/index/Dt-girl.png"
+                        alt="Dt-girl"
+                      />
+                      <img
+                        class="d-lg-none"
+                        src="/assets/images/index/Dt-girl-sm.png"
                         alt="Dt-girl"
                       />
                     </div>
@@ -527,8 +545,13 @@
                   </div>
                   <div>
                     <img
-                      class="i-reviews-star-w"
+                      class="d-none d-lg-block"
                       src="/assets/images/index/Rating.png"
+                      alt="star"
+                    />
+                    <img
+                      class="d-lg-none"
+                      src="/assets/images/index/Rating-sm.png"
                       alt="star"
                     />
                   </div>
@@ -541,24 +564,34 @@
               </div>
             </div>
             <div class="swiper-slide h-100">
-              <div class="bg-accent p-6 rounded-4 h-100">
+              <div class="bg-accent p-6 rounded-5 h-100">
                 <div
-                  class="d-flex justify-content-between align-items-center mb-3"
+                  class="d-flex justify-content-between align-items-center mb-6"
                 >
                   <div class="d-flex align-items-center">
-                    <div class="me-4">
+                    <div class="me-5">
                       <img
-                        class="i-reviews-avatar-w"
+                        class="d-none d-lg-block"
                         src="/assets/images/index/Dt-boy.png"
-                        alt="Dt-girl"
+                        alt="Dt-boy"
+                      />
+                      <img
+                        class="d-lg-none"
+                        src="/assets/images/index/Dt-boy-sm.png"
+                        alt="Dt-boy"
                       />
                     </div>
                     <p class="fs-lg-4 fs-5 fw-bold text-fcbg">阿智</p>
                   </div>
                   <div>
                     <img
-                      class="i-reviews-star-w"
+                      class="d-none d-lg-block"
                       src="/assets/images/index/Rating.png"
+                      alt="star"
+                    />
+                    <img
+                      class="d-lg-none"
+                      src="/assets/images/index/Rating-sm.png"
                       alt="star"
                     />
                   </div>
@@ -571,24 +604,34 @@
               </div>
             </div>
             <div class="swiper-slide h-100">
-              <div class="bg-accent p-6 rounded-4 h-100">
+              <div class="bg-accent p-6 rounded-5 h-100">
                 <div
-                  class="d-flex justify-content-between align-items-center mb-3"
+                  class="d-flex justify-content-between align-items-center mb-6"
                 >
                   <div class="d-flex align-items-center">
-                    <div class="me-4">
+                    <div class="me-5">
                       <img
-                        class="i-reviews-avatar-w"
+                        class="d-none d-lg-block"
                         src="/assets/images/index/Dt-girl.png"
                         alt="Dt-girl"
                       />
+                      <img
+                        class="d-lg-none"
+                        src="/assets/images/index/Dt-girl-sm.png"
+                        alt="Dt-girl"
+                      />
                     </div>
-                    <p class="fs-lg-4 fs-5 fw-bold text-fcbg">Chia-En</p>
+                    <p class="fs-xxl-4 fs-5 fw-bold text-fcbg">Chia-En</p>
                   </div>
                   <div>
                     <img
-                      class="i-reviews-star-w"
+                      class="d-none d-lg-block"
                       src="/assets/images/index/Rating.png"
+                      alt="star"
+                    />
+                    <img
+                      class="d-lg-none"
+                      src="/assets/images/index/Rating-sm.png"
                       alt="star"
                     />
                   </div>
@@ -602,24 +645,34 @@
               </div>
             </div>
             <div class="swiper-slide h-100">
-              <div class="bg-accent p-6 rounded-4 h-100">
+              <div class="bg-accent p-6 rounded-5 h-100">
                 <div
-                  class="d-flex justify-content-between align-items-center mb-3"
+                  class="d-flex justify-content-between align-items-center mb-6"
                 >
                   <div class="d-flex align-items-center">
-                    <div class="me-4">
+                    <div class="me-5">
                       <img
-                        class="i-reviews-avatar-w"
+                        class="d-none d-lg-block"
                         src="/assets/images/index/Dt-boy.png"
-                        alt="Dt-girl"
+                        alt="Dt-boy"
+                      />
+                      <img
+                        class="d-lg-none"
+                        src="/assets/images/index/Dt-boy-sm.png"
+                        alt="Dt-boy"
                       />
                     </div>
-                    <p class="fs-lg-4 fs-5 fw-bold text-fcbg">Wesley C.</p>
+                    <p class="fs-xxl-4 fs-5 fw-bold text-fcbg">Wesley</p>
                   </div>
                   <div>
                     <img
-                      class="i-reviews-star-w"
+                      class="d-none d-lg-block"
                       src="/assets/images/index/Rating.png"
+                      alt="star"
+                    />
+                    <img
+                      class="d-lg-none"
+                      src="/assets/images/index/Rating-sm.png"
                       alt="star"
                     />
                   </div>
@@ -630,15 +683,20 @@
               </div>
             </div>
             <div class="swiper-slide h-100">
-              <div class="bg-accent p-6 rounded-4 h-100">
+              <div class="bg-accent p-6 rounded-5 h-100">
                 <div
-                  class="d-flex justify-content-between align-items-center mb-3"
+                  class="d-flex justify-content-between align-items-center mb-6"
                 >
                   <div class="d-flex align-items-center">
-                    <div class="me-4">
+                    <div class="me-5">
                       <img
-                        class="i-reviews-avatar-w"
+                        class="d-none d-lg-block"
                         src="/assets/images/index/Dt-girl.png"
+                        alt="Dt-girl"
+                      />
+                      <img
+                        class="d-lg-none"
+                        src="/assets/images/index/Dt-girl-sm.png"
                         alt="Dt-girl"
                       />
                     </div>
@@ -646,8 +704,13 @@
                   </div>
                   <div>
                     <img
-                      class="i-reviews-star-w"
+                      class="d-none d-lg-block"
                       src="/assets/images/index/Rating.png"
+                      alt="star"
+                    />
+                    <img
+                      class="d-lg-none"
+                      src="/assets/images/index/Rating-sm.png"
                       alt="star"
                     />
                   </div>
@@ -660,15 +723,20 @@
               </div>
             </div>
             <div class="swiper-slide h-100">
-              <div class="bg-accent p-6 rounded-4 h-100">
+              <div class="bg-accent p-6 rounded-5 h-100">
                 <div
-                  class="d-flex justify-content-between align-items-center mb-3"
+                  class="d-flex justify-content-between align-items-center mb-6"
                 >
                   <div class="d-flex align-items-center">
-                    <div class="me-4">
+                    <div class="me-5">
                       <img
-                        class="i-reviews-avatar-w"
+                        class="d-none d-lg-block"
                         src="/assets/images/index/Dt-girl.png"
+                        alt="Dt-girl"
+                      />
+                      <img
+                        class="d-lg-none"
+                        src="/assets/images/index/Dt-girl-sm.png"
                         alt="Dt-girl"
                       />
                     </div>
@@ -676,8 +744,13 @@
                   </div>
                   <div>
                     <img
-                      class="i-reviews-star-w"
+                      class="d-none d-lg-block"
                       src="/assets/images/index/Rating.png"
+                      alt="star"
+                    />
+                    <img
+                      class="d-lg-none"
+                      src="/assets/images/index/Rating-sm.png"
                       alt="star"
                     />
                   </div>
@@ -743,7 +816,7 @@
             alt="deco-4-sm"
           />
           <div
-            class="slogan-img-w rounded-3 overflow-hidden mx-lg-auto mx-sm-7 mx-auto"
+            class="slogan-img-w rounded-5 overflow-hidden mx-lg-auto mx-sm-7 mx-auto"
           >
             <img
               class="slogan-img-hov d-none d-sm-block"
