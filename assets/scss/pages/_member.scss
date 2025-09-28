@@ -160,6 +160,18 @@ table th.m_bookstate_head {
   display: none;
 }
 
+.nav-pills .nav-link.m_btn_nav {
+  color: $fc-600;
+  background-color: $fcbg;
+  border: 1px solid $fc-600;
+}
+
+.nav-pills .nav-link.m_btn_nav:hover,
+.nav-pills .nav-link.m_btn_nav.active {
+  color: $fcbg;
+  background-color: $fc-600;
+}
+
 .m_complete {
   color: $full;
   font-weight: 400;
@@ -202,6 +214,44 @@ table th.m_bookstate_head {
 
   }
 
+}
+
+.logout-icon-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+}
+
+.logout-icon-wrapper img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+}
+
+.icon-white {
+  display: none;
+}
+
+/* hover 時 */
+.nav-link.btn:hover .icon-white {
+  display: block;
+}
+
+.nav-link.btn:hover .icon-normal {
+  display: none;
+}
+
+/* active class 時 */
+.nav-link.btn.active .icon-white {
+  display: block;
+}
+
+.nav-link.btn.active .icon-normal {
+  display: none;
 }
 
 // 基本資料頁設定
