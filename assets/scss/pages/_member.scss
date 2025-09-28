@@ -93,12 +93,22 @@ table th.m_bookstate_head {
 .m_date {
   &Month {
     font-weight: 700;
-    font-size: 18px;
+    font-size: 16px;
+
+    @media (min-width: 992px) {
+      font-size: 18px;
+    }
+
   }
 
   &Day {
     font-weight: 700;
-    font-size: 32px;
+    font-size: 24px;
+
+    @media (min-width: 992px) {
+      font-size: 32px;
+    }
+
   }
 
 }
@@ -108,7 +118,12 @@ table th.m_bookstate_head {
 
   border: 1px solid $fc-600;
   background-color: $fcbg;
-  padding: 14px 16px;
+  padding: 14px 12px;
+
+  @media (min-width:992px) {
+    padding: 14px 16px;
+  }
+
 
   &:hover,
   &:focus {
@@ -131,10 +146,30 @@ table th.m_bookstate_head {
   border-right: none;
   align-self: stretch;
 
+
   @media (min-width: 992px) {
     border-right: 1px solid $primary-500;
+
   }
 
+}
+
+.m_primaryborderright {
+  border-right: 1px solid $primary;
+
+  @media (min-width: 992px) {
+    border-right: none;
+
+  }
+}
+
+
+.m_borderBottom {
+  border-bottom: 1px solid $primary-500;
+
+  @media (min-width: 992px) {
+    border-bottom: none;
+  }
 }
 
 .m_btn_revise {
@@ -236,7 +271,6 @@ table th.m_bookstate_head {
   display: none;
 }
 
-/* hover 時 */
 .nav-link.btn:hover .icon-white {
   display: block;
 }
@@ -245,7 +279,6 @@ table th.m_bookstate_head {
   display: none;
 }
 
-/* active class 時 */
 .nav-link.btn.active .icon-white {
   display: block;
 }
@@ -253,6 +286,8 @@ table th.m_bookstate_head {
 .nav-link.btn.active .icon-normal {
   display: none;
 }
+
+
 
 // 基本資料頁設定
 // 標題參照菜單頁 手機h4/電腦h2 color:$fc
