@@ -269,7 +269,33 @@ table th.m_bookstate_head {
   display: none;
 }
 
+.dropdown-menu .dropdown-item.m_revise_drop {
+  background-color: $fcbg;
+  color: $fc-600;
+  font-size: 18px;
 
+  &:hover {
+    background-color: $pri-hvr;
+  }
+}
+
+.dropdown-menu.m_revise_dropall {
+  border: 1px solid $fc-600;
+}
+
+.m_card {
+  height: 260px;
+
+  @media (min-width: 992px) {
+    height: auto;
+  }
+
+}
+
+.cannotsee {
+  visibility: hidden;
+
+}
 
 // 基本資料頁設定
 // 標題參照菜單頁 手機h4/電腦h2 color:$fc
@@ -398,6 +424,7 @@ span.flatpickr-weekday {
 }
 
 .flatpickr-day {
+
   &:hover,
   &:active {
     background-color: $fc-100;

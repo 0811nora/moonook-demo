@@ -7,14 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/logo.svg" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined"
-      rel="stylesheet"
-    />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet" />
   <title>會員中心 | 默隅 Moonook</title>
   <script src="https://unpkg.com/feather-icons"></script>
 </head>
@@ -149,17 +143,17 @@
               <!--時間搜尋欄結束-->
               <nav class="container-fluid mb-5">
                 <div
-                  class="row flex-lg-nowrap flex-lg-row flex-column justify-content-lg-between justify-content-center">
-                  <div class="col-lg-5 col-8 mb-5">
+                  class="row flex-lg-nowrap flex-lg-row flex-column justify-content-lg-between justify-content-center align-items-center">
+                  <div class="col-lg-5 mb-5 ">
                     <%- include('./layout/components/calendar_member'); -%>
                   </div>
-                  <div class="col-lg-5 col-8 mb-5">
+                  <div class="col-lg-5 mb-5">
                     <%- include('./layout/components/time-select_member'); -%>
                   </div>
 
                   <!--時間搜尋欄結束-->
                   <!--搜尋欄開始-->
-                  <div class="col-lg-2 col-4">
+                  <div class="col-lg-2 ">
                     <div class="d-flex align-items-center position-relative m_searchpart">
                       <input type="text" class="m_searchbar form-control m_searchtext-m m_searchtext-lg rounded-7"
                         placeholder="搜尋" aria-label="search bar" aria-describedby="search bar">
@@ -213,7 +207,7 @@
                 <div class="row">
                   <!--卡片1-->
                   <div class="col-6 col-lg-12 mb-5">
-                    <div class="card border-0 text-center ">
+                    <div class="card m_card border-0 text-center ">
                       <div
                         class="card-body  flex-wrap row g-1 justify-content-lg-between align-items-lg-center m_bookinfo rounded-3">
                         <time class="col-12 col-lg-2">
@@ -223,46 +217,46 @@
                           </span>
 
                         </time>
-                        <p class="col-12 col-lg-2 m_borderRight fs-lg-lg d-flex ">
-                          <span class=" my-4 flex-grow-1 align-items-center justify-content-center">
+                        <p class="col-lg-2 m_borderRight fs-lg-lg d-flex">
+                          <span class=" my-3 flex-grow-1 d-flex align-items-center justify-content-center">
                             <span class="d-lg-none text-center m_primaryborderright fs-sm px-2">時段</span>
-                            <span>
+                            <span class="mx-auto">
                               12:00-14:00</span>
                           </span>
                         </p>
 
-                        <p class="col-12 col-lg-2 m_borderRight fs-lg-lg d-flex ">
-                          <span class=" my-4 flex-grow-1 align-items-center justify-content-center">
+                        <p class=" col-lg-2 m_borderRight fs-lg-lg d-flex ">
+                          <span class=" my-3 flex-grow-1 d-flex align-items-lg-center justify-content-lg-center">
                             <span class="d-lg-none text-center m_primaryborderright fs-sm px-2">座位</span>
-                            <span>
+                            <span class="mx-auto">
                               A4</span>
                           </span>
                         </p>
 
 
-                        <p class="col-12 col-lg-2 m_borderRight fs-lg-lg d-flex ">
-                          <span class=" my-4 flex-grow-1 align-items-center justify-content-center">
-                            <span class="d-lg-none text-center m_primaryborderright fs-sm px-2 ">狀態</span>
-                            <span class="fw-bold">
+                        <p class=" col-lg-2 m_borderRight fs-lg-lg d-flex ">
+                          <span class=" my-3 flex-grow-1 d-flex align-items-lg-center justify-content-lg-center">
+                            <span class="d-lg-none text-center m_primaryborderright fs-sm px-2">狀態</span>
+                            <span class="fw-bold mx-auto">
                               預約</span>
                           </span>
                         </p>
 
-                        <div class="dropdown col-12 col-lg-2 m_dropdown">
+                        <div class="dropdown col-lg-2 m_dropdown">
                           <button class="btn m_btn_revise rounded-7 p-3 dropdown-toggle w-100" type="button" id="date"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             修改
                             <i data-feather="chevron-down"></i>
                           </button>
-                          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                          <ul class="dropdown-menu m_revise_dropall" aria-labelledby="dropdownMenuButton1">
                             <li>
-                              <a class="dropdown-item" href="#">
-                                <i data-feather="circle"></i>確定修改
+                              <a class="dropdown-item m_revise_drop" href="#">
+                                <i data-feather="circle" class="fs-lg"></i><span class="ps-2">確定修改</span>
                               </a>
                             </li>
                             <li>
-                              <a class="dropdown-item" href="#">
-                                <i data-feather="x"></i>
+                              <a class="dropdown-item m_revise_drop" href="#">
+                                <i data-feather="x" class="fs-lg"></i>
                                 取消修改
                               </a>
                             </li>
@@ -273,46 +267,59 @@
                   </div>
                   <!--卡片2-->
                   <div class="col-6 col-lg-12 mb-5">
-                    <div class="card border-0 text-center ">
+                    <div class="card m_card border-0 text-center ">
                       <div
-                        class="card-body d-flex flex-wrap justify-content-lg-between align-items-lg-center m_bookinfo rounded-3">
+                        class="card-body  flex-wrap row g-1 justify-content-lg-between align-items-lg-center m_bookinfo rounded-3">
                         <time class="col-12 col-lg-2">
                           <span>
                             <p class="m_dateMonth m_borderRight">07月</p>
-                            <p class="m_dateDay m_borderRight">25日</p>
+                            <p class="m_dateDay m_borderRight m_borderBottom">25日</p>
                           </span>
-                          <span class="d-lg-none d-block border-bottom"></span>
+
                         </time>
-                        <p class="col-12 col-lg-2 m_borderRight fs-lg d-flex">
-                          <span class="flex-grow-1 d-flex align-items-center justify-content-center">
-                            <span class="d-lg-none border-end me-2">時段</span>
-                            12:00-14:00
+                        <p class="col-lg-2 m_borderRight fs-lg-lg d-flex">
+                          <span class=" my-3 flex-grow-1 d-flex align-items-center justify-content-center">
+                            <span class="d-lg-none text-center m_primaryborderright fs-sm px-2">時段</span>
+                            <span class="mx-auto">
+                              12:00-14:00</span>
                           </span>
                         </p>
 
-                        <p class="col-12 col-lg-2 m_borderRight fs-lg d-flex">
-                          <span class="flex-grow-1 d-flex align-items-center justify-content-center">
-                            <span class="d-lg-none border-end me-2">座位</span>
-                            A4
+                        <p class=" col-lg-2 m_borderRight fs-lg-lg d-flex ">
+                          <span class=" my-3 flex-grow-1 d-flex align-items-lg-center justify-content-lg-center">
+                            <span class="d-lg-none text-center m_primaryborderright fs-sm px-2">座位</span>
+                            <span class="mx-auto">
+                              A4</span>
                           </span>
                         </p>
 
-                        <p class="col-12 col-lg-2 m_borderRight fs-lg fw-bold d-flex">
-                          <span class="flex-grow-1 d-flex align-items-center justify-content-center">
-                            <span class="d-lg-none border-end me-2">狀態</span>
-                            預約
+
+                        <p class=" col-lg-2 m_borderRight fs-lg-lg d-flex ">
+                          <span class=" my-3 flex-grow-1 d-flex align-items-lg-center justify-content-lg-center">
+                            <span class="d-lg-none text-center m_primaryborderright fs-sm px-2">狀態</span>
+                            <span class="fw-bold mx-auto">
+                              預約</span>
                           </span>
                         </p>
 
-                        <div class="dropdown col-12 col-lg-2">
+                        <div class="dropdown col-lg-2 m_dropdown">
                           <button class="btn m_btn_revise rounded-7 p-3 dropdown-toggle w-100" type="button" id="date"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             修改
                             <i data-feather="chevron-down"></i>
                           </button>
-                          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            <li><a class="dropdown-item" href="#">確定修改</a></li>
-                            <li><a class="dropdown-item" href="#">取消修改</a></li>
+                          <ul class="dropdown-menu m_revise_dropall" aria-labelledby="dropdownMenuButton1">
+                            <li>
+                              <a class="dropdown-item m_revise_drop" href="#">
+                                <i data-feather="circle" class="fs-lg"></i><span class="ps-2">確定修改</span>
+                              </a>
+                            </li>
+                            <li>
+                              <a class="dropdown-item m_revise_drop" href="#">
+                                <i data-feather="x" class="fs-lg"></i>
+                                取消修改
+                              </a>
+                            </li>
                           </ul>
                         </div>
                       </div>
@@ -320,46 +327,59 @@
                   </div>
                   <!--卡片3-->
                   <div class="col-6 col-lg-12 mb-5">
-                    <div class="card border-0 text-center ">
+                    <div class="card m_card border-0 text-center ">
                       <div
-                        class="card-body d-flex flex-wrap justify-content-lg-between align-items-lg-center m_bookinfo rounded-3">
+                        class="card-body  flex-wrap row g-1 justify-content-lg-between align-items-lg-center m_bookinfo rounded-3">
                         <time class="col-12 col-lg-2">
                           <span>
                             <p class="m_dateMonth m_borderRight">07月</p>
-                            <p class="m_dateDay m_borderRight">25日</p>
+                            <p class="m_dateDay m_borderRight m_borderBottom">25日</p>
                           </span>
-                          <span class="d-lg-none d-block border-bottom"></span>
+
                         </time>
-                        <p class="col-12 col-lg-2 m_borderRight fs-lg d-flex">
-                          <span class="flex-grow-1 d-flex align-items-center justify-content-center">
-                            <span class="d-lg-none border-end me-2">時段</span>
-                            12:00-14:00
+                        <p class="col-lg-2 m_borderRight fs-lg-lg d-flex">
+                          <span class=" my-3 flex-grow-1 d-flex align-items-center justify-content-center">
+                            <span class="d-lg-none text-center m_primaryborderright fs-sm px-2">時段</span>
+                            <span class="mx-auto">
+                              12:00-14:00</span>
                           </span>
                         </p>
 
-                        <p class="col-12 col-lg-2 m_borderRight fs-lg d-flex">
-                          <span class="flex-grow-1 d-flex align-items-center justify-content-center">
-                            <span class="d-lg-none border-end me-2">座位</span>
-                            A4
+                        <p class=" col-lg-2 m_borderRight fs-lg-lg d-flex ">
+                          <span class=" my-3 flex-grow-1 d-flex align-items-lg-center justify-content-lg-center">
+                            <span class="d-lg-none text-center m_primaryborderright fs-sm px-2">座位</span>
+                            <span class="mx-auto">
+                              A4</span>
                           </span>
                         </p>
 
-                        <p class="col-12 col-lg-2 m_borderRight fs-lg fw-bold d-flex">
-                          <span class="flex-grow-1 d-flex align-items-center justify-content-center">
-                            <span class="d-lg-none border-end me-2">狀態</span>
-                            預約
+
+                        <p class=" col-lg-2 m_borderRight fs-lg-lg d-flex ">
+                          <span class=" my-3 flex-grow-1 d-flex align-items-lg-center justify-content-lg-center">
+                            <span class="d-lg-none text-center m_primaryborderright fs-sm px-2">狀態</span>
+                            <span class="fw-bold mx-auto">
+                              預約</span>
                           </span>
                         </p>
 
-                        <div class="dropdown col-12 col-lg-2">
+                        <div class="dropdown col-lg-2 m_dropdown">
                           <button class="btn m_btn_revise rounded-7 p-3 dropdown-toggle w-100" type="button" id="date"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             修改
                             <i data-feather="chevron-down"></i>
                           </button>
-                          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            <li><a class="dropdown-item" href="#">確定修改</a></li>
-                            <li><a class="dropdown-item" href="#">取消修改</a></li>
+                          <ul class="dropdown-menu m_revise_dropall" aria-labelledby="dropdownMenuButton1">
+                            <li>
+                              <a class="dropdown-item m_revise_drop" href="#">
+                                <i data-feather="circle" class="fs-lg"></i><span class="ps-2">確定修改</span>
+                              </a>
+                            </li>
+                            <li>
+                              <a class="dropdown-item m_revise_drop" href="#">
+                                <i data-feather="x" class="fs-lg"></i>
+                                取消修改
+                              </a>
+                            </li>
                           </ul>
                         </div>
                       </div>
@@ -367,68 +387,76 @@
                   </div>
                   <!--卡片4-->
                   <div class="col-6 col-lg-12 mb-5">
-                    <div class="card border-0 text-center ">
+                    <div class="card m_card border-0 text-center ">
                       <div
-                        class="card-body d-flex flex-wrap justify-content-lg-between align-items-lg-center m_bookinfo rounded-3">
+                        class="card-body  flex-wrap row g-1 justify-content-lg-between align-items-lg-center m_bookinfo rounded-3 justify-content-start flex-column flex-lg-row">
                         <time class="col-12 col-lg-2">
                           <span>
                             <p class="m_dateMonth m_borderRight">07月</p>
-                            <p class="m_dateDay m_borderRight">25日</p>
+                            <p class="m_dateDay m_borderRight m_borderBottom">25日</p>
                           </span>
-                          <span class="d-lg-none d-block border-bottom"></span>
+
                         </time>
-                        <p class="col-12 col-lg-2 m_borderRight fs-lg d-flex">
-                          <span class="flex-grow-1 d-flex align-items-center justify-content-center">
-                            <span class="d-lg-none border-end me-2">時段</span>
-                            12:00-14:00
+                        <p class="col-lg-2 m_borderRight fs-lg-lg d-flex">
+                          <span class=" my-3 flex-grow-1 d-flex align-items-center justify-content-center">
+                            <span class="d-lg-none text-center m_primaryborderright fs-sm px-2">時段</span>
+                            <span class="mx-auto">
+                              12:00-14:00</span>
                           </span>
                         </p>
 
-                        <p class="col-12 col-lg-2 m_borderRight fs-lg d-flex">
-                          <span class="flex-grow-1 d-flex align-items-center justify-content-center">
-                            <span class="d-lg-none border-end me-2">座位</span>
-                            A4
+                        <p class=" col-lg-2 m_borderRight fs-lg-lg d-flex ">
+                          <span class=" my-3 flex-grow-1 d-flex align-items-lg-center justify-content-lg-center">
+                            <span class="d-lg-none text-center m_primaryborderright fs-sm px-2">座位</span>
+                            <span class="mx-auto">
+                              A4</span>
                           </span>
                         </p>
 
-                        <p class="col-12 col-lg-2 m_borderRight fs-lg fw-bold d-flex">
-                          <span class="flex-grow-1 d-flex align-items-center justify-content-center">
-                            <span class="d-lg-none border-end me-2">狀態</span>
-                            <span class="m_complete">
-                              已完成
-                            </span>
+                        <p class=" col-lg-2 m_borderRight fs-lg-lg d-flex ">
+                          <span class=" my-3 flex-grow-1 d-flex align-items-lg-center justify-content-lg-center">
+                            <span class="d-lg-none text-center m_primaryborderright fs-sm px-2">狀態</span>
+                            <span class="m_complete mx-auto">
+                              已完成</span>
                           </span>
                         </p>
 
-                        <div class="dropdown col-12 col-lg-2">
-
+                        <div class="dropdown col-lg-2 m_dropdown cannotsee">
+                          <button class="btn m_btn_revise rounded-7 p-3 dropdown-toggle w-100" type="button" id="date"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            修改
+                            <i data-feather="chevron-down"></i>
+                          </button>
                         </div>
+
                       </div>
                     </div>
                   </div>
                   <!--卡片5-->
                   <div class="col-6 col-lg-12 mb-5">
-                    <div class="card border-0 text-center ">
+                    <div class="card m_card border-0 text-center ">
                       <div
-                        class="card-body d-flex flex-wrap justify-content-lg-between align-items-lg-center m_bookinfo rounded-3">
+                        class="card-body  flex-wrap row g-1 justify-content-lg-between align-items-lg-center m_bookinfo rounded-3 justify-content-start flex-column flex-lg-row">
                         <time class="col-12 col-lg-2">
                           <span>
                             <p class="m_dateMonth m_borderRight">07月</p>
-                            <p class="m_dateDay m_borderRight">25日</p>
+                            <p class="m_dateDay m_borderRight m_borderBottom">25日</p>
                           </span>
-                          <span class="d-lg-none d-block border-bottom"></span>
+
                         </time>
-                        <p class="col-12 col-lg-2 m_borderRight fs-lg d-flex">
-                          <span class="flex-grow-1 d-flex align-items-center justify-content-center">
-                            <span class="d-lg-none border-end me-2">時段</span>
-                            12:00-14:00
+                        <p class="col-lg-2 m_borderRight fs-lg-lg d-flex">
+                          <span class=" my-3 flex-grow-1 d-flex align-items-center justify-content-center">
+                            <span class="d-lg-none text-center m_primaryborderright fs-sm px-2">時段</span>
+                            <span class="mx-auto">
+                              12:00-14:00</span>
                           </span>
                         </p>
 
-                        <p class="col-12 col-lg-2 m_borderRight fs-lg d-flex">
-                          <span class="flex-grow-1 d-flex align-items-center justify-content-center">
-                            <span class="d-lg-none border-end me-2">座位</span>
-                            A4
+                        <p class=" col-lg-2 m_borderRight fs-lg-lg d-flex ">
+                          <span class=" my-3 flex-grow-1 d-flex align-items-lg-center justify-content-lg-center">
+                            <span class="d-lg-none text-center m_primaryborderright fs-sm px-2">座位</span>
+                            <span class="mx-auto">
+                              A4</span>
                           </span>
                         </p>
 
@@ -449,27 +477,29 @@
                   </div>
                   <!--卡片6-->
                   <div class="col-6 col-lg-12 mb-5">
-                    <div class="card border-0 text-center ">
+                    <div class="card m_card border-0 text-center ">
                       <div
-                        class="card-body d-flex flex-wrap justify-content-lg-between align-items-lg-center m_bookinfo rounded-3">
+                        class="card-body  flex-wrap row g-1 justify-content-lg-between align-items-lg-center m_bookinfo rounded-3 justify-content-start flex-column flex-lg-row">
                         <time class="col-12 col-lg-2">
                           <span>
                             <p class="m_dateMonth m_borderRight">07月</p>
-                            <p class="m_dateDay m_borderRight">25日</p>
+                            <p class="m_dateDay m_borderRight m_borderBottom">25日</p>
                           </span>
-                          <span class="d-lg-none d-block border-bottom"></span>
+
                         </time>
-                        <p class="col-12 col-lg-2 m_borderRight fs-lg d-flex">
-                          <span class="flex-grow-1 d-flex align-items-center justify-content-center">
-                            <span class="d-lg-none border-end me-2">時段</span>
-                            12:00-14:00
+                        <p class="col-lg-2 m_borderRight fs-lg-lg d-flex">
+                          <span class=" my-3 flex-grow-1 d-flex align-items-center justify-content-center">
+                            <span class="d-lg-none text-center m_primaryborderright fs-sm px-2">時段</span>
+                            <span class="mx-auto">
+                              12:00-14:00</span>
                           </span>
                         </p>
 
-                        <p class="col-12 col-lg-2 m_borderRight fs-lg d-flex">
-                          <span class="flex-grow-1 d-flex align-items-center justify-content-center">
-                            <span class="d-lg-none border-end me-2">座位</span>
-                            A4
+                        <p class=" col-lg-2 m_borderRight fs-lg-lg d-flex ">
+                          <span class=" my-3 flex-grow-1 d-flex align-items-lg-center justify-content-lg-center">
+                            <span class="d-lg-none text-center m_primaryborderright fs-sm px-2">座位</span>
+                            <span class="mx-auto">
+                              A4</span>
                           </span>
                         </p>
 
