@@ -1,0 +1,158 @@
+<div class="">
+    <div class="timeslot-dropdown-container d-flex align-items-center justify-content-center">
+        <div class="col-auto px-5">
+            <p>時段</p>
+        </div>
+        <div class="col">
+            <div class="timeslot-dropdown-header_member" onclick="toggleTimeslotDropdown()">
+                <span style="opacity: 0.5;" id="timeslot-selected-time">請選擇時段</span>
+                <div class="timeslot-dropdown-arrow">
+                    <img src="/assets/images/service/icon-select.svg" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="timeslot-dropdown-content" id="timeslot-dropdown-content">
+            <div class="timeslot-container">
+                <div class="timeslot-item available" onclick="selectTimeslot('08:00-10:00', 'available')">
+                    08:00-10:00 (靜謐充裕)
+                </div>
+
+                <div class="timeslot-item available" onclick="selectTimeslot('10:00-12:00', 'available')">
+                    10:00-12:00 (靜謐充裕)
+                </div>
+
+                <div class="timeslot-item moderate" onclick="selectTimeslot('12:00-14:00', 'moderate')">
+                    12:00-14:00 (舒適剛好)
+                </div>
+
+                <div class="timeslot-item limited" onclick="selectTimeslot('14:00-16:00', 'limited')">
+                    14:00-16:00 (座位稀少)
+                </div>
+
+                <div class="timeslot-item moderate" onclick="selectTimeslot('16:00-18:00', 'moderate')">
+                    16:00-18:00 (舒適剛好)
+                </div>
+
+                <div class="timeslot-item available" onclick="selectTimeslot('18:00-20:00', 'available')">
+                    18:00-20:00 (靜謐充裕)
+                </div>
+            </div>
+
+            <div class="timeslot-legend">
+                <div class="timeslot-legend-item">
+                    <div class="timeslot-legend-dot available"></div>
+                    <span class="text-primary-500 ">
+                        <img src="/assets/images/service/icon-moon70.svg" class="me-2" alt="">靜謐充裕 (70% 以上空位)</span>
+                </div>
+                <div class="timeslot-legend-item">
+                    <div class="timeslot-legend-dot moderate"></div>
+                    <span class="text-accent">
+                        <img src="/assets/images/service/icon-moon40.svg" class="me-2" alt="">舒適剛好 (40-70% 空位)</span>
+                </div>
+                <div class="timeslot-legend-item">
+                    <div class="timeslot-legend-dot limited"></div>
+                    <span class="text-red-sp">
+                        <img src="/assets/images/service/icon-moon10.svg" class="me-2" alt="">座位稀少 (10-40% 空位)</span>
+                </div>
+                <div class="timeslot-legend-item">
+                    <div class="timeslot-legend-dot full"></div>
+                    <span class="text-red-dis">
+                        <img src="/assets/images/service/icon-moon0.svg" class="me-2" alt="">客滿 (0% 空位)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    let selectedTimeslotValue = null;
+    let selectedTimeslotStatus = null;
+
+    function toggleTimeslotDropdown() {
+        const header = document.querySelector('.timeslot-dropdown-header_member');
+        const content = document.getElementById('timeslot-dropdown-content');
+
+        header.classList.toggle('active');
+        content.classList.toggle('active');
+    }
+
+    function selectTimeslot(timeValue, status) {
+        const selectedTime = document.getElementById('timeslot-selected-time');
+        const header = document.querySelector('.timeslot-dropdown-header_member');
+        const content = document.getElementById('timeslot-dropdown-content');
+
+        // 儲存選擇的值
+        selectedTimeslotValue = timeValue;
+        selectedTimeslotStatus = status;
+
+        // 根據狀態顯示對應的文字
+        let statusText = '';
+        switch (status) {
+            case 'available':
+                statusText = '(靜謐充裕)';
+                break;
+            case 'moderate':
+                statusText = '(舒適剛好)';
+                break;
+            case 'limited':
+                statusText = '(座位稀少)';
+                break;
+            case 'full':
+                statusText = '(客滿)';
+                break;
+        }
+
+        selectedTime.textContent = timeValue + ' ' + statusText;
+        header.classList.remove('active');
+        content.classList.remove('active');
+
+        // 觸發自定義事件，方便外部監聽
+        const event = new CustomEvent('timeslotSelected', {
+            detail: {
+                time: timeValue,
+                status: status,
+                displayText: timeValue + ' ' + statusText
+            }
+        });
+        document.dispatchEvent(event);
+    }
+
+    // 提供全域函數來取得選擇的值
+    function getSelectedTimeslot() {
+        return {
+            time: selectedTimeslotValue,
+            status: selectedTimeslotStatus,
+            displayText: selectedTimeslotValue ? selectedTimeslotValue + ' ' + getTimeslotStatusText(selectedTimeslotStatus) : null
+        };
+    }
+
+    function getTimeslotStatusText(status) {
+        switch (status) {
+            case 'available': return '(靜謐充裕)';
+            case 'moderate': return '(舒適剛好)';
+            case 'limited': return '(座位稀少)';
+            case 'full': return '(客滿)';
+            default: return '';
+        }
+    }
+
+    // 點擊外部關閉下拉選單
+    document.addEventListener('click', function (event) {
+        const container = document.querySelector('.timeslot-dropdown-container');
+        if (!container.contains(event.target)) {
+            const header = document.querySelector('.timeslot-dropdown-header_member');
+            const content = document.getElementById('timeslot-dropdown-content');
+            header.classList.remove('active');
+            content.classList.remove('active');
+        }
+    });
+
+    // 示範如何監聽選擇事件
+    document.addEventListener('timeslotSelected', function (event) {
+        console.log('選擇的時間:', event.detail.time);
+        // console.log('選擇的狀態:', event.detail.status);
+        // console.log('顯示文字:', event.detail.displayText);
+    });
+</script>

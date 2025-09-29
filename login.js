@@ -18,6 +18,7 @@ const redisterAlert = document.querySelector(".redister-alert");
 const loginInput = document.getElementById("loginInput");
 const loginPassword = document.getElementById("loginPassword");
 const logoutBtn = document.getElementById("logoutBtn");
+const logoutBtnrwd = document.getElementById("logoutBtnrwd");
 
 const registerName = document.getElementById("redisterName");
 const registerTel = document.getElementById("redisterTel");
@@ -35,17 +36,17 @@ if (storedLoginState === null) {
 checkloginState();
 
 // 所有函數定義保持不變...
-function showUserLogin(){
+function showUserLogin() {
     if (userLogin) userLogin.classList.remove("d-none");
     console.log("顯示「會員登入」畫面");
 }
 
-function hideUserLogin(){
+function hideUserLogin() {
     if (userLogin) userLogin.classList.add("d-none");
     console.log("隱藏「會員登入」畫面");
 }
 
-function showUserRegister(){
+function showUserRegister() {
     if (userRegister) {
         userRegister.classList.add("d-block");
         userRegister.classList.remove("d-none");
@@ -53,7 +54,7 @@ function showUserRegister(){
     console.log("顯示「會員註冊」畫面");
 }
 
-function hideUserRegistern(){
+function hideUserRegistern() {
     if (userRegister) {
         userRegister.classList.add("d-none");
         userRegister.classList.remove("d-block");
@@ -61,65 +62,65 @@ function hideUserRegistern(){
     console.log("隱藏「會員註冊」畫面");
 }
 
-function showUserIconBtn(){
+function showUserIconBtn() {
     if (userIconBtn) {
         userIconBtn.classList.remove("d-none");
         userIconBtn.classList.add("d-inline-block");
     }
 }
 
-function hideUserIconBtn(){
+function hideUserIconBtn() {
     if (userIconBtn) {
         userIconBtn.classList.add("d-none");
         userIconBtn.classList.remove("d-inline-block");
     }
 }
 
-function showUserImgBtn(){
+function showUserImgBtn() {
     if (userImgBtn) {
         userImgBtn.classList.add("d-inline-block");
         userImgBtn.classList.remove("d-none");
     }
 }
 
-function hideUserImgBtn(){
+function hideUserImgBtn() {
     if (userImgBtn) {
         userImgBtn.classList.add("d-none");
         userImgBtn.classList.remove("d-inline-block");
     }
 }
 
-function showLoginAlert(){
+function showLoginAlert() {
     if (loginAlert) {
         loginAlert.classList.add("d-block");
         loginAlert.classList.remove("d-none");
     }
 }
 
-function hideLoginAlert(){
+function hideLoginAlert() {
     if (loginAlert) {
         loginAlert.classList.remove("d-block");
         loginAlert.classList.add("d-none");
     }
 }
 
-function showredisterAlert(){
+function showredisterAlert() {
     if (redisterAlert) {
         redisterAlert.classList.add("d-block");
         redisterAlert.classList.remove("d-none");
     }
 }
 
-function hideredisterAlert(){
+function hideredisterAlert() {
     if (redisterAlert) {
         redisterAlert.classList.remove("d-block");
         redisterAlert.classList.add("d-none");
     }
 }
 
-function clearInfo(){
+function clearInfo() {
     const registerIdArr = [registerName, registerTel, registerAccount, registerPassword, registerPassword2].filter(el => el);
-    registerIdArr.forEach((input)=>{
+    registerIdArr.forEach((input) => {
         input.value = "";
     })
     if (loginInput) loginInput.value = "";
@@ -129,7 +130,7 @@ function clearInfo(){
 
 // 事件監聽器 - 加入存在檢查
 if (goRegisterBtn) {
-    goRegisterBtn.addEventListener("click",()=>{
+    goRegisterBtn.addEventListener("click", () => {
         hideUserLogin();
         showUserRegister();
         hideLoginAlert();
@@ -138,7 +139,7 @@ if (goRegisterBtn) {
 }
 
 if (goLoginBtn) {
-    goLoginBtn.addEventListener("click",()=>{
+    goLoginBtn.addEventListener("click", () => {
         hideUserRegistern();
         showUserLogin();
         console.log("切換到登入頁");
@@ -146,12 +147,12 @@ if (goLoginBtn) {
 }
 
 if (confirmLogin) {
-    confirmLogin.addEventListener("click",()=>{
-        if(!loginInput || !loginPassword || loginInput.value === "" || loginPassword.value === ""){
+    confirmLogin.addEventListener("click", () => {
+        if (!loginInput || !loginPassword || loginInput.value === "" || loginPassword.value === "") {
             showLoginAlert();
             console.log("帳號密碼未輸入完整")
             return;
-        }else{
+        } else {
             hideLoginAlert();
             storedLoginState = true;
             sessionStorage.setItem('loginState', JSON.stringify(storedLoginState));
@@ -168,13 +169,13 @@ if (confirmLogin) {
 const registerIdArr = [registerName, registerTel, registerAccount, registerPassword, registerPassword2].filter(el => el);
 
 if (confirmRedister) {
-    confirmRedister.addEventListener("click",()=>{
+    confirmRedister.addEventListener("click", () => {
         const allFilled = registerIdArr.every(input => input && input.value !== "");
-        
-        if(!allFilled){
+
+        if (!allFilled) {
             console.log("欄位未完整填寫")
             showredisterAlert();
-        }else{
+        } else {
             storedLoginState = true;
             sessionStorage.setItem('loginState', JSON.stringify(storedLoginState));
             console.log(`目前登入狀態：${storedLoginState}`)
@@ -188,7 +189,7 @@ if (confirmRedister) {
 }
 
 if (logoutBtn) {
-    logoutBtn.addEventListener("click",()=>{
+    logoutBtn.addEventListener("click", () => {
         storedLoginState = false;
         sessionStorage.setItem('loginState', JSON.stringify(storedLoginState));
         checkloginState();
@@ -196,21 +197,30 @@ if (logoutBtn) {
     })
 }
 
-function checkloginState(){
+if (logoutBtnrwd) {
+    logoutBtnrwd.addEventListener("click", () => {
+        storedLoginState = false;
+        sessionStorage.setItem('loginState', JSON.stringify(storedLoginState));
+        checkloginState();
+        logoutAct();
+    })
+}
+
+function checkloginState() {
     let storedLoginState = JSON.parse(sessionStorage.getItem('loginState'));
-    if(storedLoginState){
+    if (storedLoginState) {
         hideUserIconBtn();
         showUserImgBtn()
         console.log(`會員已登入，目前登入狀態：${storedLoginState}`);
-    }else{
+    } else {
         showUserIconBtn();
         hideUserImgBtn()
         console.log(`會員已登出，目前登入狀態：${storedLoginState}`);
     }
 }
 
-function logoutAct(){
-    window.location.href = "./index.html"; 
+function logoutAct() {
+    window.location.href = "./index.html";
 }
 
 

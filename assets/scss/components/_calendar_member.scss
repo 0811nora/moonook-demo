@@ -5,7 +5,7 @@
 }
 
 
-.date-picker-wrapper {
+.date-picker-wrapper_member {
     position: relative;
     width: 100%;
     max-width: 600px;
@@ -16,15 +16,21 @@
     }
 
     .date-input {
-        background: $fcbg-50;
-        border: 2px solid $fc-600;
-        border-radius: 16px;
-        padding: 9px 50px 9px 20px;
-        font-size: 17px;
+        background: $fcbg;
+        border: 1px solid $fc-600;
+        border-radius: 12px;
+        padding: 7px 50px 7px 20px;
+        font-size: 16px;
         color: $fc;
         width: 100%;
         cursor: pointer;
         position: relative;
+
+    }
+
+    .date-input::placeholder {
+        opacity: 0.5;
+        /* 50% */
     }
 
     .date-input:focus {
@@ -113,7 +119,7 @@
     }
 
     .current-month {
-        font-size: 18px;
+        font-size: 22px;
         font-weight: bold;
         color: #374151;
         flex: 1;
@@ -245,8 +251,8 @@
         }
 
         .date-input {
-            padding: 8px 45px 8px 15px;
-            font-size: 14px;
+            padding: 12px 45px 12px 15px;
+            font-size: 15px;
         }
 
         .calendar-container {
