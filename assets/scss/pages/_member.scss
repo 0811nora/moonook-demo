@@ -108,7 +108,6 @@ table th.m_bookstate_head {
 
 .m_bookinfo {
   border: 1px solid $fc-600;
-  background-color: $fcbg;
   padding: 14px 12px;
 
   @media (min-width:992px) {
@@ -130,6 +129,12 @@ table th.m_bookstate_head {
       border-color: $fcbg;
     }
   }
+}
+
+.card,
+.card-body,
+.m_bookinfo {
+  background: transparent none;
 }
 
 .m_borderRight {
@@ -299,7 +304,17 @@ table th.m_bookstate_head {
 
 
 .m_background {
-  background-image: url("/assets/images/backgroundpic.png");
+  position: relative;
+  z-index: 0;
+}
+
+.m_background::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("/assets/images/backgroundpic.png") center/cover no-repeat;
+  filter: grayscale(100%);
+  z-index: -1;
 }
 
 // 基本資料頁設定
