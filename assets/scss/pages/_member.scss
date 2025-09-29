@@ -20,7 +20,6 @@
   background-color: $fcbg;
   border: $fc-600 solid 1px;
   padding: 7px;
-
 }
 
 .m_searchBtn {
@@ -37,22 +36,20 @@
 
   @media (min-width: 1400px) {
     right: 50px;
-
   }
 }
 
 .m_searchtext {
   &-m {
     text-align: start;
-    padding-left: $spacer*1.6;
+    padding-left: $spacer * 1.6;
   }
 
   &-lg {
     @media (min-width: 1400px) {
-      padding-left: $spacer*3;
+      padding-left: $spacer * 3;
     }
   }
-
 }
 
 .m_yearChange {
@@ -67,8 +64,6 @@
     font-size: 24px;
     padding: 0.375rem 0.75rem;
     display: block;
-
-
   }
 
   &_link {
@@ -79,7 +74,6 @@
       color: $fc-200;
     }
   }
-
 }
 
 table th.m_bookstate_head {
@@ -110,12 +104,9 @@ table th.m_bookstate_head {
     }
 
   }
-
 }
 
-
 .m_bookinfo {
-
   border: 1px solid $fc-600;
   background-color: $fcbg;
   padding: 14px 12px;
@@ -139,7 +130,6 @@ table th.m_bookstate_head {
       border-color: $fcbg;
     }
   }
-
 }
 
 .m_borderRight {
@@ -151,7 +141,6 @@ table th.m_bookstate_head {
     border-right: 1px solid $primary-500;
 
   }
-
 }
 
 .m_primaryborderright {
@@ -178,11 +167,9 @@ table th.m_bookstate_head {
   border-color: $fc-600;
 }
 
-
 .m_btn_revise:focus,
 .m_btn_revise.focus {
   box-shadow: 0 0 4 0 $fc-600;
-
 }
 
 .m_btn_revise:disabled,
@@ -217,8 +204,6 @@ table th.m_bookstate_head {
   font-weight: 400;
 }
 
-
-
 .m_page {
   padding: 8px 16px;
   border-top: 1px solid $fc-600;
@@ -242,13 +227,10 @@ table th.m_bookstate_head {
   }
 
   &_head {
-
     border: 1px solid $fc-600;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
-
   }
-
 }
 
 .logout-icon-wrapper {
@@ -310,7 +292,7 @@ table th.m_bookstate_head {
   color: $fcbg;
   background-color: $fc;
   border-radius: 50px;
-  z-index: 5;
+  z-index: 20;
 
   &:hover {
     background-color: $primary-200;
@@ -416,7 +398,6 @@ span.flatpickr-weekday {
 }
 
 .flatpickr-day {
-
   &:hover,
   &:active {
     background-color: $fc-100;
