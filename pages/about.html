@@ -19,10 +19,12 @@
     />
     <title>品牌故事 | 默隅 Moonook</title>
   </head>
-  <body>
-    <%- include('./layout/header'); -%>
+  <body class="loaded">
+    <%- include('./layout/components/loader'); -%> <%-
+    include('./layout/components/top-btn'); -%> <%- include('./layout/header');
+    -%>
     
-    <div class="fcbg-50">
+    <div class="fcbg-50 text-primary">
       <!-- banner -->
       <div class="container-fluid">
         <div class="row justify-content-center">
@@ -107,7 +109,7 @@
       </div>
       <!-- 服務特色 -->
       <div class="d-flex justify-content-center">
-          <p class="section-title mt-12">服務特色</p>
+          <p class="section-title text-fc mt-12">服務特色</p>
         </div>
       <div class="mb-12">  
         <!-- 服務一 -->
@@ -124,7 +126,7 @@
                   </div>
                   <div class="row">
                     <div class="col text-center d-sm-block d-md-none">
-                      <h4 class="py-sm-6">事前預約 安心到場</h4>
+                      <h4 class="py-sm-6 text-fc">事前預約 安心到場</h4>
                       <p class="">你可以線上預約時段與座位，抵達前一切已安排好。</p>
                       <p>不必碰運氣，也不必等待。</p>
                     </div>
@@ -134,8 +136,8 @@
                   <div class="row flex-md-row d-sm-none d-md-block">
                     <div class=" col d-flex mt-10">
                         <div class="fs-2 fw-bold fc-600 p-8">
-                          <p class="mb-md-6">事前預約</p>
-                          <p class="ms-md-11">安心到場</p>
+                          <p class="mb-md-6 text-fc">事前預約</p>
+                          <p class="ms-md-11 text-fc">安心到場</p>
                         </div>
                         <img src="/assets/images/about/3dot.png" class="d-sm-none d-md-block p-10" alt="3dots">
                     </div>
@@ -201,7 +203,7 @@
                   <img src="/assets/images/about/3dotwhite.png" class="z-2 position-absolute bottom-0 end-100 d-sm-none d-md-block" alt="twin-leafs">
                   <div class="row">
                     <div class="col text-center d-sm-block d-md-none">
-                      <h4 class="py-sm-6">指定座位 自行挑選</h4>
+                      <h4 class="py-sm-6 text-fc">指定座位 自行挑選</h4>
                       <p>預約時可選擇空間內可用的座位，避免到場後手忙腳亂。</p>
                       <p>讓你以最合適的方式開始這段時間。</p>
                     </div>
@@ -211,8 +213,8 @@
                   <div class="row flex-md-row d-sm-none d-md-block">
                     <div class="col d-flex mt-10">
                     <div class="fs-2 fw-bold fc-600 p-8">
-                      <p class="mb-6">指定座位</p>
-                      <p class="ms-11">自行挑選</p>
+                      <p class="mb-6 text-fc">指定座位</p>
+                      <p class="ms-11 text-fc">自行挑選</p>
                     </div>
                     <img src="/assets/images/about/3dot.png" class="p-10 d-sm-none d-md-block" alt="3dots">
                   </div>
@@ -274,7 +276,7 @@
                   <img src="/assets/images/about/3dotwhite.png" class="z2 position-absolute bottom-0 end-100 d-sm-none d-md-block" alt="twin-leafs">
                   <div class="row">
                     <div class="col text-center d-sm-block d-md-none">
-                      <h4 class="py-sm-6">空間默契 自然維持</h4>
+                      <h4 class="py-sm-6 text-fc">空間默契 自然維持</h4>
                       <p>沒有多餘的規定，只有彼此間對安静的理解與尊重。</p>
                       <p>這份默契，讓空間保持舒適與專注。</p>
                     </div>
@@ -283,8 +285,8 @@
                 <div class="col-md-6 position-relative d-sm-none d-md-block">
                   <div class="d-flex mt-10">
                     <div class="fs-2 fw-bold fc-600 p-8">
-                      <p class="mb-6">空間默契</p>
-                      <p class="ms-11">自然維持</p>
+                      <p class="mb-6 text-fc">空間默契</p>
+                      <p class="ms-11 text-fc">自然維持</p>
                     </div>
                     <img src="/assets/images/about/3dot.png" class=" p-10 d-sm-none d-md-block" alt="3dots">
                   </div>
@@ -320,13 +322,13 @@
               <div class="position-absolute top-0 start-0 translate-middle">
                   <img src="/assets/images/about/ltleaf.png" alt="lefttopleaf">
                 </div>
-                <div class="position-absolute top-0 start-100 translate-middle">
+                <div class="position-absolute top-0 start-100 translate-middle" style="width: 34px">
                   <img src="/assets/images/about/rtleaf.png" alt="righttopleaf">
                 </div>
                 <div class="position-absolute top-100 start-0 translate-middle">
                   <img src="/assets/images/about/lbleaf.png" alt="leftbottomleaf">
                 </div>
-                <div class="position-absolute top-100 start-100 translate-middle" >
+                <div class="position-absolute top-100 start-100 translate-middle" style="width: 34px">
                   <img src="/assets/images/about/rbleaf.png" alt="rightbottomleaf">
                 </div>
               <div class="row b-color justify-content-center pt-8 pb-8 rounded-4">
