@@ -41,16 +41,37 @@
             <div class="d-none d-lg-block d-flex align-items-start py-12">
               <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
 
-                <button class="nav-link active" id="v-pills-record-tab" data-bs-toggle="pill"
-                  data-bs-target="#v-pills-record" type="button" role="tab" aria-controls="v-pills-record"
-                  aria-selected="true"><img src="/assets/images/icon/icon-reserve-member.svg" alt="">預約紀錄<i
-                    data-feather="chevron-right"></i></button>
-                <button class="nav-link" id="v-pills-information-tab" data-bs-toggle="pill"
-                  data-bs-target="#v-pills-information" type="button" role="tab" aria-controls="v-pills-information"
-                  aria-selected="false"><i data-feather="file-text"></i>基本資料<i
-                    data-feather="chevron-right"></i></button>
-                <button class="nav-link btn btn-secondary" id="logoutBtn" type="button"><i
-                    data-feather="log-out"></i>會員登出<i data-feather="chevron-right"></i></button>
+                <button class="nav-link btn active m_btn_nav d-flex align-items-center justify-content-between mb-6"
+                  data-bs-toggle="pill" data-bs-target="#v-pills-record" type="button" role="tab"
+                  aria-controls="v-pills-record" aria-selected="true">
+                  <div class="logout-icon-wrapper">
+                    <img src="/assets/images/icon/icon-reserve-member.svg" alt="reserve-member" class="icon-normal">
+                    <img src="/assets/images/icon/icon-reservewhite-member.svg" alt="reserve-member" class="icon-white">
+                  </div>
+
+                  預約紀錄
+                  <i data-feather="chevron-right"></i>
+                </button>
+
+                <button class="nav-link btn m_btn_nav d-flex align-items-center justify-content-between mb-6"
+                  id="v-pills-information-tab" data-bs-toggle="pill" data-bs-target="#v-pills-information" type="button"
+                  role="tab" aria-controls="v-pills-information" aria-selected="false">
+                  <div class="logout-icon-wrapper">
+                    <img src="/assets/images/icon/icon-basicInfo-member.svg" alt="icon-basicinfo-member"
+                      class="icon-normal">
+                    <img src="/assets/images/icon/icon-basicInfowhite-member.svg" alt="icon-basicinfo-member"
+                      class="icon-white">
+                  </div>
+                  基本資料<i data-feather="chevron-right"></i>
+                </button>
+                <button class="nav-link btn m_btn_nav d-flex align-items-center justify-content-between" id="logoutBtn"
+                  type="button">
+                  <div class="logout-icon-wrapper">
+                    <img src="/assets/images/icon/icon-logout-member.svg" alt="logout" class="icon-normal">
+                    <img src="/assets/images/icon/icon-logoutwhite-member.svg" alt="logout" class="icon-white">
+                  </div>
+                  會員登出<i data-feather="chevron-right"></i>
+                </button>
               </div>
 
             </div>
@@ -64,17 +85,31 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                   data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
                   aria-label="Toggle navigation">
-
-                  <span id="selectedTabText" class="ms-2">預約紀錄</span>
-                  <i class="bi bi-chevron-down"></i>
+                  <span id="selectedTabText" class="ms-2">
+                    <div class="logout-icon-wrapper">
+                      <img src="/assets/images/icon/icon-reserve-member.svg" alt="reserve-member" class="icon-normal">
+                      <img src="/assets/images/icon/icon-reservewhite-member.svg" alt="reserve-member"
+                        class="icon-white">
+                    </div>預約紀錄
+                  </span>
+                  <i data-feather="chevron-down"></i>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                   <ul class="nav nav-pills flex-column">
                     <li class="nav-item">
-                      <button class="nav-link active" id="v-pills-record-tab" data-bs-toggle="pill"
-                        data-bs-target="#v-pills-record" type="button" role="tab" aria-controls="v-pills-record"
-                        aria-selected="true">預約紀錄</button>
+                      <button
+                        class="nav-link btn active m_btn_nav d-flex align-items-center justify-content-between mb-2"
+                        data-bs-toggle="pill" data-bs-target="#v-pills-record" type="button" role="tab"
+                        aria-controls="v-pills-record" aria-selected="true">
+                        <div class="logout-icon-wrapper">
+                          <img src="/assets/images/icon/icon-reserve-member.svg" alt="reserve-member"
+                            class="icon-normal">
+                          <img src="/assets/images/icon/icon-reservewhite-member.svg" alt="reserve-member"
+                            class="icon-white">
+                        </div>
+                        預約紀錄
+                      </button>
                     </li>
                     <li class="nav-item">
                       <button class="nav-link" id="v-pills-information-tab" data-bs-toggle="pill"
@@ -114,7 +149,7 @@
               <!--時間搜尋欄結束-->
               <nav class="container-fluid mb-5">
                 <div
-                  class="row flex-lg-nowrap flex-lg-row flex-column align-items-center justify-content-lg-between justify-content-center">
+                  class="row flex-lg-nowrap flex-lg-row flex-column justify-content-lg-between justify-content-center">
                   <div class="col-lg-5 col-8 mb-5">
                     <%- include('./layout/components/calendar_member'); -%>
                   </div>
@@ -124,13 +159,14 @@
 
                   <!--時間搜尋欄結束-->
                   <!--搜尋欄開始-->
-                  <div class="col-lg-2 col-4 d-flex align-items-center position-relative m_searchpart">
-                    <input type="text" class="m_searchbar form-control m_searchtext-m m_searchtext-lg rounded-7"
-                      placeholder="搜尋" aria-label="search bar" aria-describedby="search bar">
-                    <button class="m_searchBtn " type="button" id="button-addon2">
-                      <i data-feather="search"></i></button>
+                  <div class="col-lg-2 col-4">
+                    <div class="d-flex align-items-center position-relative m_searchpart">
+                      <input type="text" class="m_searchbar form-control m_searchtext-m m_searchtext-lg rounded-7"
+                        placeholder="搜尋" aria-label="search bar" aria-describedby="search bar">
+                      <button class="m_searchBtn " type="button" id="button-addon2">
+                        <i data-feather="search"></i></button>
+                    </div>
                   </div>
-
                 </div>
               </nav>
               <!--搜尋欄結束-->
@@ -179,49 +215,57 @@
                   <div class="col-6 col-lg-12 mb-5">
                     <div class="card border-0 text-center ">
                       <div
-                        class="card-body d-flex flex-wrap justify-content-lg-between align-items-lg-center m_bookinfo rounded-3">
+                        class="card-body  flex-wrap row g-1 justify-content-lg-between align-items-lg-center m_bookinfo rounded-3">
                         <time class="col-12 col-lg-2">
                           <span>
                             <p class="m_dateMonth m_borderRight">07月</p>
-                            <p class="m_dateDay m_borderRight">25日</p>
+                            <p class="m_dateDay m_borderRight m_borderBottom">25日</p>
                           </span>
-                          <span class="d-lg-none d-block border-bottom"></span>
+
                         </time>
-                        <p class="col-12 col-lg-2 m_borderRight fs-lg d-flex">
-                          <span class="flex-grow-1 d-flex align-items-center justify-content-center">
-                            <span class="d-lg-none border-end me-2">時段</span>
-                            12:00-14:00
+                        <p class="col-12 col-lg-2 m_borderRight fs-lg-lg d-flex ">
+                          <span class=" my-4 flex-grow-1 align-items-center justify-content-center">
+                            <span class="d-lg-none text-center m_primaryborderright fs-sm px-2">時段</span>
+                            <span>
+                              12:00-14:00</span>
                           </span>
                         </p>
-                        <!-- <p class="col-12 col-lg-2 d-flex d-lg-block fs-lg  m_borderRight"><span
-                            class="d-lg-none d-block border-end">時段</span>12:00-14:00
-                        </p> -->
-                        <p class="col-12 col-lg-2 m_borderRight fs-lg d-flex">
-                          <span class="flex-grow-1 d-flex align-items-center justify-content-center">
-                            <span class="d-lg-none border-end me-2">座位</span>
-                            A4
+
+                        <p class="col-12 col-lg-2 m_borderRight fs-lg-lg d-flex ">
+                          <span class=" my-4 flex-grow-1 align-items-center justify-content-center">
+                            <span class="d-lg-none text-center m_primaryborderright fs-sm px-2">座位</span>
+                            <span>
+                              A4</span>
                           </span>
                         </p>
-                        <!-- <p class="col-12 col-lg-2 d-flex d-lg-block fs-lg"><span
-                            class="d-lg-none d-block border-end">座位</span>A4</p> -->
-                        <p class="col-12 col-lg-2 m_borderRight fs-lg fw-bold d-flex">
-                          <span class="flex-grow-1 d-flex align-items-center justify-content-center">
-                            <span class="d-lg-none border-end me-2">狀態</span>
-                            預約
+
+
+                        <p class="col-12 col-lg-2 m_borderRight fs-lg-lg d-flex ">
+                          <span class=" my-4 flex-grow-1 align-items-center justify-content-center">
+                            <span class="d-lg-none text-center m_primaryborderright fs-sm px-2 ">狀態</span>
+                            <span class="fw-bold">
+                              預約</span>
                           </span>
                         </p>
-                        <!-- <p class="col-12 col-lg-2 d-flex d-lg-block fs-lg fw-bold"><span
-                            class="d-lg-none d-block border-end">狀態</span>預約
-                        </p> -->
-                        <div class="dropdown col-12 col-lg-2">
+
+                        <div class="dropdown col-12 col-lg-2 m_dropdown">
                           <button class="btn m_btn_revise rounded-7 p-3 dropdown-toggle w-100" type="button" id="date"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             修改
                             <i data-feather="chevron-down"></i>
                           </button>
                           <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            <li><a class="dropdown-item" href="#">確定修改</a></li>
-                            <li><a class="dropdown-item" href="#">取消修改</a></li>
+                            <li>
+                              <a class="dropdown-item" href="#">
+                                <i data-feather="circle"></i>確定修改
+                              </a>
+                            </li>
+                            <li>
+                              <a class="dropdown-item" href="#">
+                                <i data-feather="x"></i>
+                                取消修改
+                              </a>
+                            </li>
                           </ul>
                         </div>
                       </div>
