@@ -81,14 +81,14 @@ img {
   top: 80px;
   width: 20vw;
   max-width: 400px;
-  height: 680px;
+  height: 80vh;
+  max-height: 630px;
   border-top-right-radius: 28px;
   border-bottom-right-radius: 28px;
 
   // hover跑出底線效果
   a {
     display: block;
-    // position: relative;
     p {
       position: relative;
       width: fit-content;
@@ -137,18 +137,20 @@ img {
   height: auto;
   position: relative;
   border-radius: 28px;
-  background-image: url(/assets/images/menu/menu-bg.png);
+  background-image: url(/assets/images/menu/house-fav.png);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   @media (max-width: 768px) {
-    background-image: url(/assets/images/menu/menu-mob-bg.png);
+    //background-image: url(/assets/images/menu/menu-mob-bg.png);
   }
   &::before {
     content: "";
     position: absolute;
     top: 0;
+    bottom: 0;
     left: 0;
+    right: 0;
     background-color: rgba($fcbg, 0.8);
   }
 }
