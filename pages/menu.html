@@ -14,6 +14,10 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
     <title>靜隅食光 | 默隅 Moonook</title>
   </head>
   <body class="loaded">
@@ -90,18 +94,20 @@
       </div>
     </section>
     <main class="position-relative d-flex justify-content-between">
-      <div class="menu__sidebar-container">
+      <div
+        class="menu__sidebar-container animate__animated animate__fadeInLeft animate__delay-5s"
+      >
         <!-- side-bar -->
         <div
-          class="menu__side-bar bg-secondary d-none d-lg-block px-6 py-lg-7 py-xxl-8 my-12"
+          class="menu__side-bar bg-secondary d-none d-lg-block px-6 py-lg-6 py-xxl-8 my-lg-8 my-xxl-12"
         >
           <img
             class="leaf-decor-t"
             src="/assets/images/menu/leaf-2.svg"
             alt="icon-leaf"
           />
-          <div class="p-6">
-            <h3 class="fs-4 text-fcbg mb-8">CATEGORY</h3>
+          <div class="p-4">
+            <h3 class="fs-4 text-fcbg mb-6">CATEGORY</h3>
             <ul class="list-unstyled text-fcbg d-flex flex-column gap-5 mb-0">
               <li class="menu__sideBar-border">
                 <a class="fw-medium lh-xs text-fcbg" href="#menu-houseFav"
@@ -148,7 +154,14 @@
             <!-- 主要內容 -->
             <div class="px-5 px-md-auto">
               <!-- menu-info -->
-              <section class="py-8 py-lg-12">
+              <section
+                class="py-8 py-lg-12 position-relative animate__animated animate__fadeInUp animate__delay-3s"
+              >
+                <!-- <img
+                  class="menu__info-bg"
+                  src="/assets/images/menu/menu-bg.png"
+                  alt="menu-bg"
+                /> -->
                 <img
                   class="mb-lg-8"
                   src="/assets/images/menu/menu.svg"
@@ -177,7 +190,7 @@
               <hr class="menu__hr-divider my-6 my-lg-8" />
               <!-- 人氣精選 -->
               <section class="menu__fav py-8 py-lg-12" id="menu-houseFav">
-                <div>
+                <div class="position-relative">
                   <h1 class="fs-4 fs-lg-2 p-4">人氣精選</h1>
                   <h3 class="fs-6 fs-lg-4 p-4 border-top border-fc border-4">
                     HOUSE FAVORITES
@@ -279,10 +292,8 @@
                                 alt="black-coffee4"
                               />
                               <div class="card-body text-primary text-center">
-                                <h5 class="card-title fs-5 mb-5">黑糖咖啡</h5>
-                                <p class="card-text fs-lg">
-                                  BROWN SUGAR COFFEE
-                                </p>
+                                <h5 class="card-title fs-5 mb-5">冰釀咖啡</h5>
+                                <p class="card-text fs-lg">COLD BREW COFFEE</p>
                               </div>
                             </div>
                           </div>
@@ -375,8 +386,8 @@
                             alt="black-coffee4"
                           />
                           <div class="card-body text-primary text-center">
-                            <h5 class="card-title fs-6 mb-5">黑糖咖啡</h5>
-                            <p class="card-text fs-sm">BROWN SUGAR COFFEE</p>
+                            <h5 class="card-title fs-6 mb-5">冰釀咖啡</h5>
+                            <p class="card-text fs-sm">COLD BREW COFFEE</p>
                           </div>
                         </div>
                       </div>
@@ -431,10 +442,8 @@
                                 alt="white-coffee1"
                               />
                               <div class="card-body text-primary text-center">
-                                <h5 class="card-title fs-5 mb-5">
-                                  奶泡濃縮咖啡
-                                </h5>
-                                <p class="card-text fs-lg">MILK ESPRESSO</p>
+                                <h5 class="card-title fs-5 mb-5">拿鐵</h5>
+                                <p class="card-text fs-lg">LATTE</p>
                               </div>
                             </div>
                           </div>
@@ -446,8 +455,8 @@
                                 alt="white-coffee2"
                               />
                               <div class="card-body text-primary text-center">
-                                <h5 class="card-title fs-5 mb-5">奶咖啡</h5>
-                                <p class="card-text fs-lg">MILK AMERICANO</p>
+                                <h5 class="card-title fs-5 mb-5">澳洲小白</h5>
+                                <p class="card-text fs-lg">FLAT WHITE</p>
                               </div>
                             </div>
                           </div>
@@ -476,8 +485,8 @@
                                 alt="white-coffee4"
                               />
                               <div class="card-body text-primary text-center">
-                                <h5 class="card-title fs-5 mb-5">拿鐵咖啡</h5>
-                                <p class="card-text fs-lg">LATTE</p>
+                                <h5 class="card-title fs-5 mb-5">摩卡咖啡</h5>
+                                <p class="card-text fs-lg">MOCHA</p>
                               </div>
                             </div>
                           </div>
@@ -489,8 +498,8 @@
                                 alt="white-coffee5"
                               />
                               <div class="card-body text-primary text-center">
-                                <h5 class="card-title fs-5 mb-5">摩卡咖啡</h5>
-                                <p class="card-text fs-lg">MOCHA</p>
+                                <h5 class="card-title fs-5 mb-5">抹茶拿鐵</h5>
+                                <p class="card-text fs-lg">MACHA LATTE</p>
                               </div>
                             </div>
                           </div>
@@ -502,8 +511,8 @@
                                 alt="white-coffee6"
                               />
                               <div class="card-body text-primary text-center">
-                                <h5 class="card-title fs-5 mb-5">白咖啡</h5>
-                                <p class="card-text fs-lg">WHITE COFFEE</p>
+                                <h5 class="card-title fs-5 mb-5">棉花糖拿鐵</h5>
+                                <p class="card-text fs-lg">MARSHMALLOW LATTE</p>
                               </div>
                             </div>
                           </div>
@@ -529,8 +538,8 @@
                             alt="white-coffee1"
                           />
                           <div class="card-body text-primary text-center">
-                            <h5 class="card-title fs-6 mb-5">奶泡濃縮咖啡</h5>
-                            <p class="card-text fs-sm">MILK ESPRESSO</p>
+                            <h5 class="card-title fs-6 mb-5">拿鐵</h5>
+                            <p class="card-text fs-sm">LATTE</p>
                           </div>
                         </div>
                       </div>
@@ -542,8 +551,8 @@
                             alt="white-coffee2"
                           />
                           <div class="card-body text-primary text-center">
-                            <h5 class="card-title fs-6 mb-5">奶咖啡</h5>
-                            <p class="card-text fs-sm">MILK AMERICANO</p>
+                            <h5 class="card-title fs-6 mb-5">澳洲小白</h5>
+                            <p class="card-text fs-sm">FLAT WHITE</p>
                           </div>
                         </div>
                       </div>
@@ -568,8 +577,8 @@
                             alt="white-coffee4"
                           />
                           <div class="card-body text-primary text-center">
-                            <h5 class="card-title fs-6 mb-5">拿鐵咖啡</h5>
-                            <p class="card-text fs-sm">LATTE</p>
+                            <h5 class="card-title fs-6 mb-5">摩卡咖啡</h5>
+                            <p class="card-text fs-sm">MOCHA</p>
                           </div>
                         </div>
                       </div>
@@ -581,8 +590,8 @@
                             alt="white-coffee5"
                           />
                           <div class="card-body text-primary text-center">
-                            <h5 class="card-title fs-6 mb-5">摩卡咖啡</h5>
-                            <p class="card-text fs-sm">MOCHA</p>
+                            <h5 class="card-title fs-6 mb-5">抹茶拿鐵</h5>
+                            <p class="card-text fs-sm">MACHA LATTE</p>
                           </div>
                         </div>
                       </div>
@@ -594,8 +603,8 @@
                             alt="white-coffee6"
                           />
                           <div class="card-body text-primary text-center">
-                            <h5 class="card-title fs-6 mb-5">白咖啡</h5>
-                            <p class="card-text fs-sm">WHITE COFFEE</p>
+                            <h5 class="card-title fs-6 mb-5">棉花糖拿鐵</h5>
+                            <p class="card-text fs-sm">MARSHMALLOW LATTE</p>
                           </div>
                         </div>
                       </div>
@@ -1486,8 +1495,8 @@
                                 alt="bagel5"
                               />
                               <div class="card-body text-primary text-center">
-                                <h5 class="card-title fs-5 mb-5">莓果貝果</h5>
-                                <p class="card-text fs-lg">BERRY BAGEL</p>
+                                <h5 class="card-title fs-5 mb-5">水果貝果</h5>
+                                <p class="card-text fs-lg">FRUIT BAGEL</p>
                               </div>
                             </div>
                           </div>
@@ -1499,8 +1508,8 @@
                                 alt="bagel6"
                               />
                               <div class="card-body text-primary text-center">
-                                <h5 class="card-title fs-5 mb-5">榛子貝果</h5>
-                                <p class="card-text fs-lg">HAZELNUT BAGEL</p>
+                                <h5 class="card-title fs-5 mb-5">總匯貝果</h5>
+                                <p class="card-text fs-lg">BAGEL SANDWICH</p>
                               </div>
                             </div>
                           </div>
@@ -1578,8 +1587,8 @@
                             alt="bagel5"
                           />
                           <div class="card-body text-primary text-center">
-                            <h5 class="card-title fs-6 mb-5">莓果貝果</h5>
-                            <p class="card-text fs-sm">BERRY BAGEL</p>
+                            <h5 class="card-title fs-6 mb-5">水果貝果</h5>
+                            <p class="card-text fs-sm">FRUIT BAGEL</p>
                           </div>
                         </div>
                       </div>
@@ -1591,8 +1600,8 @@
                             alt="bagel6"
                           />
                           <div class="card-body text-primary text-center">
-                            <h5 class="card-title fs-6 mb-5">榛子貝果</h5>
-                            <p class="card-text fs-sm">HAZELNUT BAGEL</p>
+                            <h5 class="card-title fs-6 mb-5">總匯貝果</h5>
+                            <p class="card-text fs-sm">BAGEL SANDWICH</p>
                           </div>
                         </div>
                       </div>
@@ -1655,8 +1664,12 @@
                                 alt="ts3"
                               />
                               <div class="card-body text-primary text-center">
-                                <h5 class="card-title fs-5 mb-5">果醬吐司</h5>
-                                <p class="card-text fs-lg">TOAST WITH TOAST</p>
+                                <h5 class="card-title fs-5 mb-5">
+                                  甜梨烤核桃吐司
+                                </h5>
+                                <p class="card-text fs-lg">
+                                  PEAR & GORGONZOLA ON WALNUT TOAST
+                                </p>
                               </div>
                             </div>
                           </div>
@@ -1707,10 +1720,10 @@
                               />
                               <div class="card-body text-primary text-center">
                                 <h5 class="card-title fs-5 mb-5">
-                                  巧克力酥皮點心
+                                  煙燻鮭魚酪梨吐司
                                 </h5>
                                 <p class="card-text fs-lg">
-                                  CHOCOLATE PUFF PASTRY
+                                  SALMON AVOCADO TOAST
                                 </p>
                               </div>
                             </div>
@@ -1765,8 +1778,10 @@
                             alt="ts3"
                           />
                           <div class="card-body text-primary text-center">
-                            <h5 class="card-title fs-6 mb-5">果醬吐司</h5>
-                            <p class="card-text fs-sm">TOAST WITH TOAST</p>
+                            <h5 class="card-title fs-6 mb-5">甜梨烤核桃吐司</h5>
+                            <p class="card-text fs-sm">
+                              PEAR & GORGONZOLA ON WALNUT TOAST
+                            </p>
                           </div>
                         </div>
                       </div>
@@ -1808,8 +1823,10 @@
                             alt="ts6"
                           />
                           <div class="card-body text-primary text-center">
-                            <h5 class="card-title fs-6 mb-5">巧克力酥皮點心</h5>
-                            <p class="card-text fs-sm">CHOCOLATE PUFF PASTRY</p>
+                            <h5 class="card-title fs-6 mb-5">
+                              煙燻鮭魚酪梨吐司
+                            </h5>
+                            <p class="card-text fs-sm">SALMON AVOCADO TOAST</p>
                           </div>
                         </div>
                       </div>

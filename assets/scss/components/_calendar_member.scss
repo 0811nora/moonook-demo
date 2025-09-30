@@ -1,0 +1,264 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+.date-picker-wrapper_member {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+
+
+    .date-input-container {
+        position: relative;
+    }
+
+    .date-input {
+        background: $fcbg;
+        border: 1px solid $fc-600;
+        border-radius: 12px;
+        padding: 7px 50px 7px 20px;
+        font-size: 16px;
+        color: $fc;
+        width: 100%;
+        cursor: pointer;
+        position: relative;
+
+    }
+
+    .date-input::placeholder {
+        opacity: 0.5;
+        /* 50% */
+    }
+
+    .date-input:focus {
+        outline: none;
+        border-color: #4a5568;
+        box-shadow: 1px 1px 5px 2px #3e615889;
+
+    }
+
+    .date-input::placeholder {
+        color: $fc;
+    }
+
+    .date-input.active {
+        border-color: #4a5568;
+        box-shadow: 1px 1px 5px 2px #3e615889;
+
+    }
+
+    .dropdown-arrow {
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #6c7b7f;
+        font-size: 18px;
+        pointer-events: none;
+        transition: transform 0.3s ease;
+    }
+
+    .dropdown-arrow.rotated {
+        transform: translateY(-50%) rotate(180deg);
+    }
+
+    /* 虛線邊框效果 */
+    .calendar-container {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        z-index: 999;
+        margin-top: 5px;
+        background: $fcbg-50;
+        ;
+        border: 2px solid $fc-600;
+        border-radius: 20px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: all 0.3s ease;
+        box-shadow: 1px 1px 5px 2px #3e615889;
+        min-width: 380px;
+        /* 日曆最小寬度 280px */
+        width: min(max(100%, 380px), 500px);
+        /* 取較大值：input寬度 或 280px */
+    }
+
+    .calendar-container.show {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .day.disabled {
+        color: $fc-200 !important;
+        cursor: not-allowed !important;
+        opacity: 0.5;
+    }
+
+    .day.disabled:hover {
+        background: #f9fafb !important;
+        color: #d1d5db !important;
+        transform: none !important;
+    }
+
+
+    .calendar-header {
+        padding: 20px 25px 15px;
+    }
+
+    .month-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .current-month {
+        font-size: 22px;
+        font-weight: bold;
+        color: #374151;
+        flex: 1;
+    }
+
+    .nav-buttons {
+        display: flex;
+        gap: 8px;
+    }
+
+    .nav-btn {
+        background: none;
+        border: none;
+        color: #6c7b7f;
+        cursor: pointer;
+        font-size: 24px;
+        padding: 5px 8px;
+        border-radius: 6px;
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s ease;
+    }
+
+    .nav-btn:hover {
+        background: #e5e7eb;
+        color: #374151;
+    }
+
+    .calendar-body {
+        padding: 0 16px 16px;
+    }
+
+    .weekdays {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: clamp(3px, 1.5vw, 8px);
+        margin-bottom: 15px;
+    }
+
+    .weekday {
+        text-align: center;
+        font-weight: bold;
+        color: #6b7280;
+        font-size: clamp(12px, 2.5vw, 16px);
+        padding: 8px 2px;
+    }
+
+    .calendar-days {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: clamp(3px, 1.5vw, 8px);
+    }
+
+    .day {
+        aspect-ratio: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        border-radius: 8px;
+        font-size: clamp(12px, 2.8vw, 18px);
+        font-weight: 500;
+        transition: all 0.2s ease;
+        background: transparent;
+        border: none;
+        color: #374151;
+        min-height: clamp(24px, 6vw, 38px);
+    }
+
+    .day:hover {
+        background: $fc-200;
+        color: #1f2937;
+    }
+
+    .day.other-month {
+        color: #d1d5db;
+        cursor: default;
+    }
+
+    .day.other-month:hover {
+        background: transparent;
+        color: #d1d5db;
+    }
+
+    .day.today {
+        border: 2px dotted $fc-500;
+        color: $fc-500;
+        font-weight: bold;
+    }
+
+    .day.selected {
+        background: $fc-400;
+        color: white;
+        font-weight: bold;
+    }
+
+
+    /* 遮罩層，點擊外部關閉 */
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 999;
+        display: none;
+    }
+
+    .overlay.show {
+        display: block;
+    }
+
+    /* 隱藏輸入框 */
+    .hidden-input {
+        display: none;
+    }
+
+    /* 響應式設計 */
+    @media (max-width: 992px) {
+        .date-picker-wrapper {
+            max-width: 340px;
+        }
+
+        .calendar-body {
+            padding: 0 20px 20px;
+        }
+
+        .date-input {
+            padding: 12px 45px 12px 15px;
+            font-size: 15px;
+        }
+
+        .calendar-container {
+            min-width: auto;
+            width: auto;
+        }
+    }
+
+}

@@ -1,0 +1,379 @@
+<div class="date-picker-wrapper_member container">
+    <!-- 日期輸入框 -->
+    <div class="date-input-container row align-items-center justify-content-center">
+        <div class="col-auto">
+            <label for="dateDisplay">日期</label>
+        </div>
+        <div class="col">
+            <input type="text" class="date-input" id="dateDisplay" placeholder="請選擇日期" readonly>
+            <span class="dropdown-arrow me-3" id="dropdownArrow"><img src="/assets/images/service/icon-select.svg"
+                    alt=""></span>
+        </div>
+    </div>
+
+    <!-- 遮罩層 -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- 月曆下拉框 -->
+    <div class="calendar-container" id="calendarContainer">
+        <div class="calendar-header">
+            <div class="month-nav">
+                <div class="current-month" id="currentMonth"></div>
+                <div class="nav-buttons">
+                    <button type="button" class="nav-btn" id="prevBtn">‹</button>
+                    <button type="button" class="nav-btn" id="nextBtn">›</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="calendar-body">
+            <div class="weekdays">
+                <div class="weekday">一</div>
+                <div class="weekday">二</div>
+                <div class="weekday">三</div>
+                <div class="weekday">四</div>
+                <div class="weekday">五</div>
+                <div class="weekday">六</div>
+                <div class="weekday">日</div>
+            </div>
+            <div class="calendar-days" id="calendarDays"></div>
+        </div>
+    </div>
+
+    <!-- 隱藏的表單輸入框 -->
+    <input type="hidden" class="hidden-input" id="selectedDateInput" name="selectedDate">
+</div>
+
+<script>
+    class DropdownCalendar {
+        constructor(options = {}) {
+            this.currentDate = new Date();
+            this.selectedDate = null;
+            this.today = new Date();
+            this.isOpen = false;
+
+            // 設定最小日期（預設為今天，不能選擇過去的日期）
+            this.minDate = options.minDate || new Date();
+
+            // 設定最大日期（可選，預設無限制）
+            this.maxDate = options.maxDate || null;
+
+            this.elements = {
+                dateInput: document.getElementById('dateDisplay'),
+                dropdownArrow: document.getElementById('dropdownArrow'),
+                overlay: document.getElementById('overlay'),
+                calendarContainer: document.getElementById('calendarContainer'),
+                currentMonth: document.getElementById('currentMonth'),
+                prevBtn: document.getElementById('prevBtn'),
+                nextBtn: document.getElementById('nextBtn'),
+                calendarDays: document.getElementById('calendarDays'),
+                hiddenInput: document.getElementById('selectedDateInput')
+            };
+
+            this.init();
+        }
+
+        init() {
+            this.bindEvents();
+            this.render();
+        }
+
+        bindEvents() {
+            // 點擊輸入框展開/收合
+            this.elements.dateInput.addEventListener('click', (e) => {
+                e.stopPropagation();
+                this.toggle();
+            });
+
+            // 點擊遮罩層關閉
+            this.elements.overlay.addEventListener('click', () => {
+                this.close();
+            });
+
+            // 阻止月曆容器的點擊事件冒泡
+            this.elements.calendarContainer.addEventListener('click', (e) => {
+                e.stopPropagation();
+            });
+
+            // 月份導航按鈕
+            this.elements.prevBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                this.currentDate.setMonth(this.currentDate.getMonth() - 1);
+                this.render();
+            });
+
+            this.elements.nextBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                this.currentDate.setMonth(this.currentDate.getMonth() + 1);
+                this.render();
+            });
+
+            // ESC 鍵關閉
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && this.isOpen) {
+                    this.close();
+                }
+            });
+        }
+
+        clearSelection() {
+            this.selectedDate = null;
+            this.updateDateDisplay();
+            this.updateHiddenInput();
+            this.render();
+        }
+
+        toggle() {
+            if (this.isOpen) {
+                this.close();
+            } else {
+                this.open();
+            }
+        }
+
+        open() {
+            this.isOpen = true;
+            this.elements.calendarContainer.classList.add('show');
+            this.elements.overlay.classList.add('show');
+            this.elements.dropdownArrow.classList.add('rotated');
+            this.elements.dateInput.classList.add('active');
+        }
+
+        close() {
+            this.isOpen = false;
+            this.elements.calendarContainer.classList.remove('show');
+            this.elements.overlay.classList.remove('show');
+            this.elements.dropdownArrow.classList.remove('rotated');
+            this.elements.dateInput.classList.remove('active');
+        }
+
+        render() {
+            this.renderHeader();
+            this.renderDays();
+        }
+
+        renderHeader() {
+            const year = this.currentDate.getFullYear();
+            const month = this.currentDate.getMonth();
+            this.elements.currentMonth.textContent = this.getMonthName(month, year);
+        }
+
+        getMonthName(month, year) {
+            const monthNames = [
+                '一月', '二月', '三月', '四月', '五月', '六月',
+                '七月', '八月', '九月', '十月', '十一月', '十二月'
+            ];
+            return `${monthNames[month]} ${year}`;
+        }
+
+        renderDays() {
+            const year = this.currentDate.getFullYear();
+            const month = this.currentDate.getMonth();
+            const firstDay = new Date(year, month, 1);
+            const lastDay = new Date(year, month + 1, 0);
+            const daysInMonth = lastDay.getDate();
+
+            // 調整為週一開始
+            let startDate = (firstDay.getDay() + 6) % 7;
+
+            this.elements.calendarDays.innerHTML = '';
+
+            // 上個月的日期
+            const prevMonth = new Date(year, month - 1, 0);
+            for (let i = startDate - 1; i >= 0; i--) {
+                const day = prevMonth.getDate() - i;
+                const dayElement = this.createDayElement(day, 'other-month');
+                this.elements.calendarDays.appendChild(dayElement);
+            }
+
+            // 當月的日期
+            for (let day = 1; day <= daysInMonth; day++) {
+                const currentDateObj = new Date(year, month, day);
+                const dayElement = this.createDayElement(day, 'current-month', currentDateObj);
+
+                // 檢查是否為今天
+                if (this.isToday(year, month, day)) {
+                    dayElement.classList.add('today');
+                }
+
+                // 檢查是否為選中的日期
+                if (this.selectedDate && this.isSameDate(this.selectedDate, currentDateObj)) {
+                    dayElement.classList.add('selected');
+                }
+
+                // 檢查是否為過期日期
+                if (this.isDateDisabled(currentDateObj)) {
+                    dayElement.classList.add('disabled');
+                }
+
+                this.elements.calendarDays.appendChild(dayElement);
+            }
+
+            // 下個月的日期
+            const totalCells = Math.ceil((startDate + daysInMonth) / 7) * 7;
+            const remainingCells = totalCells - (startDate + daysInMonth);
+            for (let day = 1; day <= remainingCells; day++) {
+                const dayElement = this.createDayElement(day, 'other-month');
+                this.elements.calendarDays.appendChild(dayElement);
+            }
+        }
+
+        createDayElement(day, type, dateObj = null) {
+            const dayElement = document.createElement('button');
+            dayElement.className = `day ${type}`;
+            dayElement.textContent = day;
+
+            if (type === 'current-month' && dateObj) {
+                // 檢查日期是否被禁用
+                if (this.isDateDisabled(dateObj)) {
+                    dayElement.disabled = true;
+                    dayElement.classList.add('disabled');
+                } else {
+                    dayElement.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        this.selectDate(dateObj);
+                    });
+                }
+            }
+
+            return dayElement;
+        }
+
+        selectDate(date) {
+            this.selectedDate = date;
+            this.updateDateDisplay();
+            this.updateHiddenInput();
+            this.render();
+            this.close(); // 選擇後自動關閉
+
+            // 觸發自訂事件
+            const event = new CustomEvent('dateSelected', {
+                detail: {
+                    date: date,
+                    formattedDate: this.formatDate(date)
+                }
+            });
+            document.dispatchEvent(event);
+
+            console.log('選中日期：', this.formatDate(date));
+        }
+
+        updateDateDisplay() {
+            if (this.selectedDate) {
+                this.elements.dateInput.value = this.formatDate(this.selectedDate);
+                this.elements.dateInput.style.color = '#3E5E4E';
+            } else {
+                this.elements.dateInput.value = '';
+                this.elements.dateInput.placeholder = '請選擇日期';
+            }
+        }
+
+        updateHiddenInput() {
+            if (this.selectedDate) {
+                this.elements.hiddenInput.value = this.formatDate(this.selectedDate, 'YYYY-MM-DD');
+            }
+        }
+
+        formatDate(date, format = 'YYYY / MM / DD') {
+            const year = date.getFullYear();
+            const month = String(date.getMonth() + 1).padStart(2, '0');
+            const day = String(date.getDate()).padStart(2, '0');
+
+            return format
+                .replace('YYYY', year)
+                .replace('MM', month)
+                .replace('DD', day);
+        }
+
+        isToday(year, month, day) {
+            return year === this.today.getFullYear() &&
+                month === this.today.getMonth() &&
+                day === this.today.getDate();
+        }
+
+        isSameDate(date1, date2) {
+            return date1.getFullYear() === date2.getFullYear() &&
+                date1.getMonth() === date2.getMonth() &&
+                date1.getDate() === date2.getDate();
+        }
+
+        // 檢查日期是否被禁用（過期或超出範圍）
+        isDateDisabled(date) {
+            const dateToCheck = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+            const minDate = new Date(this.minDate.getFullYear(), this.minDate.getMonth(), this.minDate.getDate());
+
+            // 檢查是否早於最小日期
+            if (dateToCheck < minDate) {
+                return true;
+            }
+
+            // 檢查是否晚於最大日期（如果有設定的話）
+            if (this.maxDate) {
+                const maxDate = new Date(this.maxDate.getFullYear(), this.maxDate.getMonth(), this.maxDate.getDate());
+                if (dateToCheck > maxDate) {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        // 公開方法
+        getSelectedDate() {
+            return this.selectedDate;
+        }
+
+        setSelectedDate(date) {
+            this.selectedDate = date;
+            this.currentDate = new Date(date);
+            this.updateDateDisplay();
+            this.updateHiddenInput();
+            this.render();
+        }
+
+        getFormattedDate() {
+            return this.selectedDate ? this.formatDate(this.selectedDate) : '';
+        }
+
+        getValue() {
+            return this.elements.hiddenInput.value;
+        }
+
+        // 設定最小日期（不能選擇此日期之前的日期）
+        setMinDate(date) {
+            this.minDate = new Date(date);
+            this.render();
+        }
+
+        // 設定最大日期（不能選擇此日期之後的日期）
+        setMaxDate(date) {
+            this.maxDate = new Date(date);
+            this.render();
+        }
+
+        // 取得最小日期
+        getMinDate() {
+            return this.minDate;
+        }
+
+        // 取得最大日期
+        getMaxDate() {
+            return this.maxDate;
+        }
+    }
+
+    // 初始化日期選擇器
+    const datePicker = new DropdownCalendar({
+        // minDate: new Date(), // 預設不能選擇今天之前的日期
+        // maxDate: new Date('2025-12-31') // 可選：設定最大日期
+    });
+
+    // 監聽日期選擇事件
+    document.addEventListener('dateSelected', function (event) {
+        console.log('用戶選擇了：', event.detail.formattedDate);
+        // console.log('Date 物件：', event.detail.date);
+        // console.log('表單值：', datePicker.getValue());
+
+    });
+
+</script>

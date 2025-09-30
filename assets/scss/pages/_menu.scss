@@ -62,13 +62,6 @@ img {
   z-index: 10;
 }
 
-// side-bar 設計稿有調整 待改
-// .menu__side-bar {
-//   opacity: 1;
-//   transform: translateX(-100%);
-//   transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-// }
-
 .menu__sidebar-container {
   position: absolute;
   margin-left: calc((100vw - 100%) / 2 * -1);
@@ -81,14 +74,14 @@ img {
   top: 80px;
   width: 20vw;
   max-width: 400px;
-  height: 680px;
+  height: 80vh;
+  max-height: 630px;
   border-top-right-radius: 28px;
   border-bottom-right-radius: 28px;
 
   // hover跑出底線效果
   a {
     display: block;
-    // position: relative;
     p {
       position: relative;
       width: fit-content;
@@ -132,23 +125,35 @@ img {
   border-bottom: 1px dashed $fcbg;
 }
 
+.menu__info-bg {
+  width: 40%;
+  position: absolute;
+  top: 40px;
+  right: 0;
+  object-fit: fill;
+  object-position: center;
+  opacity: 0.1;
+}
+
 .menu__fav {
   width: 100%;
   height: auto;
   position: relative;
   border-radius: 28px;
-  background-image: url(/assets/images/menu/menu-bg.png);
+  background-image: url(/assets/images/menu/house-fav.png);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   @media (max-width: 768px) {
-    background-image: url(/assets/images/menu/menu-mob-bg.png);
+    //background-image: url(/assets/images/menu/menu-mob-bg.png);
   }
   &::before {
     content: "";
     position: absolute;
     top: 0;
+    bottom: 0;
     left: 0;
+    right: 0;
     background-color: rgba($fcbg, 0.8);
   }
 }
@@ -174,6 +179,10 @@ img {
       color: $fc;
       background-color: transparent;
     }
+  }
+  img {
+    border-radius: 28px;
+    overflow: hidden;
   }
 }
 
@@ -313,4 +322,15 @@ img {
   @media (max-width: 576px) {
     width: 108px;
   }
+}
+
+// 確保元素在動畫觸發前是完全不可見
+.animate-on-scroll {
+  visibility: hidden;
+  /* 或者使用 opacity: 0; */
+}
+
+// 一旦加上 animate__animated，我們就允許它顯示，等待 Animate.css 的動畫來改變其狀態
+.animate__animated {
+  visibility: visible;
 }

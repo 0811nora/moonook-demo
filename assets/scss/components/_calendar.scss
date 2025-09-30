@@ -35,7 +35,7 @@
     }
 
     .date-input::placeholder {
-        color: $fc;   
+        color: $fc;
     }
 
     .date-input.active {
@@ -67,7 +67,8 @@
         right: 0;
         z-index: 999;
         margin-top: 5px;
-        background: $fcbg-50;;
+        background: $fcbg-50;
+        ;
         border: 2px solid $fc-600;
         border-radius: 20px;
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
@@ -76,8 +77,10 @@
         transform: translateY(-10px);
         transition: all 0.3s ease;
         box-shadow: 1px 1px 5px 2px #3e615889;
-        min-width: 380px;                /* 日曆最小寬度 280px */
-        width: min(max(100%, 380px), 500px);        /* 取較大值：input寬度 或 280px */
+        min-width: 380px;
+        /* 日曆最小寬度 280px */
+        width: min(max(100%, 380px), 500px);
+        /* 取較大值：input寬度 或 280px */
     }
 
     .calendar-container.show {
@@ -199,7 +202,7 @@
     }
 
     .day.today {
-        border:2px dotted $fc-500;
+        border: 2px dotted $fc-500;
         color: $fc-500;
         font-weight: bold;
     }
@@ -236,18 +239,19 @@
         .date-picker-wrapper {
             max-width: 340px;
         }
-        
+
         .calendar-body {
             padding: 0 20px 20px;
         }
-        
+
         .date-input {
             padding: 8px 45px 8px 15px;
             font-size: 14px;
         }
+
         .calendar-container {
-            min-width: auto;               
-            width: auto;         
+            min-width: auto;
+            width: auto;
         }
     }
 
