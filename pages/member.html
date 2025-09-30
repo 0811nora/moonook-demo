@@ -26,6 +26,10 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
     <title>會員中心 | 默隅 Moonook</title>
     <script src="https://unpkg.com/feather-icons"></script>
   </head>
@@ -961,12 +965,16 @@
                           >生日</label
                         >
                         <div class="col-10">
-                          <%- include('./layout/components/calendar'); -%>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="inputBirth"
+                          />
                         </div>
                       </div>
                       <!-- 輸入偏好標籤 -->
                       <div
-                        class="col-md-6 d-flex flex-column align-items-md-center mb-4"
+                        class="col-md-6 d-flex flex-column align-items-md-center mb-6 mb-lg-4"
                       >
                         <p class="col-12 col-form-label">
                           跟我們分享你的喜好吧
@@ -998,86 +1006,6 @@
                           修改密碼<%-
                           include('./layout/components/moon-switch'); -%>
                         </button>
-                        <!-- <div
-                          class="modal fade"
-                          id="passwordChange2"
-                          tabindex="-1"
-                          aria-labelledby="passwordChange2"
-                          aria-hidden="true"
-                        >
-                          <div class="modal-dialog modal-dialog-centered ">
-                            <div class="modal-content ">
-                              <div class="modal-header">
-                                <p class="modal-title T-M" id="passwordChange2">
-                                  修改密碼
-                                </p>
-                                <button
-                                  type="button"
-                                  class="btn-close"
-                                  data-bs-dismiss="modal"
-                                  aria-label="Close"
-                                ></button>
-                              </div>
-                              <div class="modal-body p-4">
-                                <div class="form-floating mb-4">
-                                  <input
-                                    type="password"
-                                    class="form-control"
-                                    id="floatingPassword"
-                                    placeholder="password"
-                                  />
-                                  <label for="floatingPassword"
-                                    >請輸入新密碼</label
-                                  >
-                                  <span
-                                    id="checkEye"
-                                    class="material-symbols-outlined visibility"
-                                  >
-                                    visibility
-                                  </span>
-                                  <div class="fs-sm ps-3">
-                                    請輸入8～20位數，需同時包含英文及數字。
-                                  </div>
-                                </div>
-                                <div class="form-floating">
-                                  <input
-                                    type="password"
-                                    class="form-control"
-                                    id="floatingPasswordCheck"
-                                    placeholder="password"
-                                  />
-                                  <label for="floatingPasswordCheck"
-                                    >再次確認新密碼</label
-                                  >
-                                  <span
-                                    id="checkEyeCheck"
-                                    class="material-symbols-outlined visibility"
-                                  >
-                                    visibility
-                                  </span>
-                                </div>
-                              </div>
-                              <div class="modal-footer">
-                                <button
-                                  type="button"
-                                  class="m_btn-base m_modal-btn-cancel"
-                                  data-bs-dismiss="modal"
-                                  aria-label="Close"
-                                >
-                                  取消修改
-                                </button>
-                                <button
-                                  type="button"
-                                  class="btn-base btn-primary d-flex align-items-center"
-                                >
-                                  確認修改<%-
-                                  include('./layout/components/moon-switch');
-                                  -%>
-                                </button>
-                              </div>
-                            </div>
-                          </div>
-                        </div> -->
                       </div>
                     </form>
                   </div>
@@ -1129,12 +1057,10 @@
       aria-labelledby="passwordChange2"
       aria-hidden="true"
     >
-      <div class="modal-dialog modal-dialog-centered ">
-        <div class="modal-content ">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
           <div class="modal-header">
-            <p class="modal-title T-M" id="passwordChange2">
-              修改密碼
-            </p>
+            <p class="modal-title T-M" id="passwordChange2">修改密碼</p>
             <button
               type="button"
               class="btn-close"
@@ -1150,13 +1076,8 @@
                 id="floatingPassword"
                 placeholder="password"
               />
-              <label for="floatingPassword"
-                >請輸入新密碼</label
-              >
-              <span
-                id="checkEye"
-                class="material-symbols-outlined visibility"
-              >
+              <label for="floatingPassword">請輸入新密碼</label>
+              <span id="checkEye" class="material-symbols-outlined visibility">
                 visibility
               </span>
               <div class="fs-sm ps-3">
@@ -1170,9 +1091,7 @@
                 id="floatingPasswordCheck"
                 placeholder="password"
               />
-              <label for="floatingPasswordCheck"
-                >再次確認新密碼</label
-              >
+              <label for="floatingPasswordCheck">再次確認新密碼</label>
               <span
                 id="checkEyeCheck"
                 class="material-symbols-outlined visibility"
@@ -1194,9 +1113,7 @@
               type="button"
               class="btn-base btn-primary d-flex align-items-center"
             >
-              確認修改<%-
-              include('./layout/components/moon-switch');
-              -%>
+              確認修改<%- include('./layout/components/moon-switch'); -%>
             </button>
           </div>
         </div>
@@ -1207,8 +1124,15 @@
       feather.replace();
     </script>
     <script type="module" src="../main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
     <script>
+      // 生日日期選擇器
+      flatpickr("#inputBirth", {
+        dateFormat: "Y-m-d",
+        maxDate: "today",
+        locale: "zh",
+      });
       // 偏好標籤輸入器
       var textRemove = new Choices(
         document.getElementById("choices-text-remove-button"),

@@ -323,3 +323,14 @@ img {
     width: 108px;
   }
 }
+
+// 確保元素在動畫觸發前是完全不可見
+.animate-on-scroll {
+  visibility: hidden;
+  /* 或者使用 opacity: 0; */
+}
+
+// 一旦加上 animate__animated，我們就允許它顯示，等待 Animate.css 的動畫來改變其狀態
+.animate__animated {
+  visibility: visible;
+}

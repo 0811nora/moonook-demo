@@ -370,7 +370,7 @@ table th.m_bookstate_head {
   width: 100%;
   height: auto;
   color: $fc;
-  border: 2px solid $fc;
+  border: 1px solid $fc;
   border-radius: 16px;
   padding: 9px 50px 9px 20px;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -516,7 +516,7 @@ span.flatpickr-weekday {
   align-items: center;
   padding: 2px 12px;
   border: 1px solid $fc;
-  border-radius: 8px;
+  border-radius: 16px;
   font-size: 14px;
   min-height: 50px;
   overflow: none;
@@ -666,7 +666,3 @@ span.flatpickr-weekday {
   transform: translateY(-50%);
   cursor: pointer;
 }
-
-
-
-
