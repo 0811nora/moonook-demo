@@ -147,6 +147,9 @@
 
     .s__seat-service{
         background-image: url("/assets/images/service/seat-service-img.png") ;
+        .card{
+            background: $fcbg;
+        }
     }
 
     .s__price{
