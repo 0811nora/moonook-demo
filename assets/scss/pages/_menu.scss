@@ -62,13 +62,6 @@ img {
   z-index: 10;
 }
 
-// side-bar 設計稿有調整 待改
-// .menu__side-bar {
-//   opacity: 1;
-//   transform: translateX(-100%);
-//   transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-// }
-
 .menu__sidebar-container {
   position: absolute;
   margin-left: calc((100vw - 100%) / 2 * -1);
@@ -132,6 +125,16 @@ img {
   border-bottom: 1px dashed $fcbg;
 }
 
+.menu__info-bg {
+  width: 40%;
+  position: absolute;
+  top: 40px;
+  right: 0;
+  object-fit: fill;
+  object-position: center;
+  opacity: 0.1;
+}
+
 .menu__fav {
   width: 100%;
   height: auto;
@@ -176,6 +179,10 @@ img {
       color: $fc;
       background-color: transparent;
     }
+  }
+  img {
+    border-radius: 28px;
+    overflow: hidden;
   }
 }
 
