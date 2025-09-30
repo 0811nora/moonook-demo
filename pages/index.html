@@ -868,7 +868,6 @@
 
     <script>
       var swiper = new Swiper(".i-reviewsSwiper", {
-        // autoplay: true,
         pagination: {
           el: ".i-reviews-swiper-pagination",
           type: "fraction",
@@ -884,10 +883,13 @@
           nextEl: ".i-reviews-swiper-button-next",
           prevEl: ".i-reviews-swiper-button-prev",
         },
+        autoplay: {
+          delay: 3000,
+        },
         slidesPerView: 1.1,
         spaceBetween: 12,
         breakpoints: {
-          1200: {
+          1400: {
             slidesPerView: 3.1,
             spaceBetween: 24,
           },
@@ -916,8 +918,6 @@
         const progressBar = document.querySelector(
           ".i-reviews-swiper-pagination-progressbar"
         );
-
-        // --- 核心修改部分 ---
 
         // 獲取當前可見幻燈片組的索引 (從 0 開始)
         const activeIndex = swiperInstance.snapIndex;
