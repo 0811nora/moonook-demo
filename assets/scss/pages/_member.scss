@@ -193,6 +193,14 @@ table th.m_bookstate_head {
   border: 1px solid $fc-600;
 }
 
+.nav-pills .nav-link.m_btn_nav_sm {
+  color: $fc-600;
+  background-color: transparent;
+
+}
+
+
+
 .nav-pills .nav-link.m_btn_nav:hover,
 .nav-pills .nav-link.m_btn_nav.active {
   color: $fcbg;
@@ -272,6 +280,12 @@ table th.m_bookstate_head {
 
 .nav-link.btn.active .icon-normal {
   display: none;
+}
+
+.m_nav-border{
+  border: 2px solid $fc-600;
+  border-radius: 8px;
+  box-shadow: 1px 1px 6px 2px #04401343;
 }
 
 .dropdown-menu .dropdown-item.m_revise_drop {
@@ -637,3 +651,4 @@ span.flatpickr-weekday {
   transform: translateY(-50%);
   cursor: pointer;
 }
+
