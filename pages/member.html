@@ -38,7 +38,7 @@
                     data-bs-toggle="pill" data-bs-target="#v-pills-record" type="button" role="tab"
                     aria-controls="v-pills-record" aria-selected="true">
                     <div class="logout-icon-wrapper">
-                      <img src="/assets/images/icon/icon-reserve-member.svg" alt="reserve-member" class="icon-normal">
+                      <img src="/assets/images/icon/icon-reserve-member.svg" alt="reserve-member" class="icon-normal ">
                       <img src="/assets/images/icon/icon-reservewhite-member.svg" alt="reserve-member"
                         class="icon-white">
                     </div>
@@ -52,7 +52,7 @@
                     type="button" role="tab" aria-controls="v-pills-information" aria-selected="false">
                     <div class="logout-icon-wrapper">
                       <img src="/assets/images/icon/icon-basicInfo-member.svg" alt="icon-basicinfo-member"
-                        class="icon-normal">
+                        class="icon-normal ">
                       <img src="/assets/images/icon/icon-basicInfowhite-member.svg" alt="icon-basicinfo-member"
                         class="icon-white">
                     </div>
@@ -73,44 +73,39 @@
 
               <!--RWD導覽列-->
 
-              <nav class="d-block d-lg-none navbar navbar-expand-lg navbar-light bg-light">
-                <div class="container-fluid">
-                  <button class="navbar-toggler w-100" type="button" data-bs-toggle="collapse"
+              <nav class="d-block d-lg-none navbar navbar-expand-lg navbar-light  w-100 mb-4">
+                <div class="container-fluid ">
+                  <button class="navbar-toggler bg-fc-600 text-fcbg w-100 p-3" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
                     aria-label="Toggle navigation">
-                    <span id="selectedTabText" class="ms-2">
-                      <div class="logout-icon-wrapper">
-                        <img src="/assets/images/icon/icon-reserve-member.svg" alt="reserve-member" class="icon-normal">
-                        <img src="/assets/images/icon/icon-reservewhite-member.svg" alt="reserve-member"
-                          class="icon-white">
-                      </div>預約紀錄
+                    <span id="selectedTabText" class="d-flex justify-content-center align-items-center">
+                      <img src="/assets/images/icon/icon-reservewhite-member.svg" alt="reserve-member" class="icon-normal me-3 ">預約紀錄
+                      <i data-feather="chevron-down"></i>
                     </span>
-                    <i data-feather="chevron-down"></i>
                   </button>
 
-                  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                  <div class="collapse navbar-collapse m_nav-border" id="navbarNavDropdown">
                     <ul class="nav nav-pills flex-column">
                       <li class="nav-item">
                         <button
-                          class="nav-link btn active m_btn_nav d-flex align-items-center justify-content-between mb-2 w-100"
+                          class="nav-link btn active  d-flex align-items-center justify-content-center mb-2 w-100 m_btn_nav_sm "
                           data-bs-toggle="pill" data-bs-target="#v-pills-record" type="button" role="tab"
                           aria-controls="v-pills-record" aria-selected="true">
-                          <div class="logout-icon-wrapper">
+                          <div class="logout-icon-wrapper me-3">
                             <img src="/assets/images/icon/icon-reserve-member.svg" alt="reserve-member"
                               class="icon-normal">
-                            <img src="/assets/images/icon/icon-reservewhite-member.svg" alt="reserve-member"
-                              class="icon-white">
+                            <img src="/assets/images/icon/icon-reserve-member.svg" alt="reserve-member" class="icon-white ">
                           </div>
                           預約紀錄
                         </button>
                       </li>
                       <li class="nav-item">
-                        <button class="nav-link w-100" id="v-pills-information-tab" data-bs-toggle="pill"
+                        <button class="nav-link w-100 text-fc-600 bg-fcbg" id="v-pills-information-tab" data-bs-toggle="pill"
                           data-bs-target="#v-pills-information" type="button" role="tab"
-                          aria-controls="v-pills-information" aria-selected="false">基本資料</button>
+                          aria-controls="v-pills-information" aria-selected="false"><img src="/assets/images/icon/icon-basicInfo-member.svg" class="me-2" alt="">基本資料</button>
                       </li>
                       <li class="nav-item">
-                        <button class="nav-link w-100 btn btn-secondary" id="logoutBtnrwd" type="button">會員登出</button>
+                        <button class="nav-link w-100  text-fc-600" id="logoutBtnrwd" type="button"><img src="/assets/images/icon/icon-logout-member.svg" class="me-2" alt="">會員登出</button>
                       </li>
                     </ul>
                   </div>
@@ -118,16 +113,40 @@
               </nav>
 
               <script>
-                // 選取所有 nav-link 按鈕
+                // // 選取所有 nav-link 按鈕
+                // const navButtons = document.querySelectorAll('.nav-link');
+                // const displayText = document.getElementById('selectedTabText');
+
+                // navButtons.forEach(btn => {
+                //   btn.addEventListener('click', function () {
+                //     // 更新折疊按鈕旁的文字
+                //     displayText.textContent = this.textContent;
+                //   });
+                // });
                 const navButtons = document.querySelectorAll('.nav-link');
                 const displayText = document.getElementById('selectedTabText');
 
                 navButtons.forEach(btn => {
                   btn.addEventListener('click', function () {
-                    // 更新折疊按鈕旁的文字
-                    displayText.textContent = this.textContent;
+                    // 取得按鈕的文字
+                    const btnText = this.textContent.trim();
+                    
+                    // 更新文字，並在後面加上下拉箭頭
+                    displayText.textContent = btnText;
+                    
+                    // 重新加入 chevron icon
+                    const chevronIcon = document.createElement('i');
+                    chevronIcon.setAttribute('data-feather', 'chevron-down');
+                    displayText.appendChild(chevronIcon);
+                    
+                    // 重新初始化 feather icons
+                    if (typeof feather !== 'undefined') {
+                      feather.replace();
+                    }
                   });
                 });
+
+
               </script>
               <!--結束RWD導覽-->
 
