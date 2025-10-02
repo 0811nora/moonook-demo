@@ -9,8 +9,18 @@ header {
 
   /* 導覽列初始樣式 */
   #h-main-nav {
-    background-color: transparent;
+    background: linear-gradient(
+      to bottom,
+      rgb(65, 62, 64) 0%,
+      rgba(245, 240, 232, 0) 100%
+    );
     transition: background-color 0.5s ease-in-out;
+    padding-bottom: 32px;
+  }
+  #h-main-nav-member {
+    background: transparent;
+    transition: background-color 0.5s ease-in-out;
+    padding-bottom: 32px;
   }
 
   .h-nav-link-item {
@@ -25,8 +35,17 @@ header {
   #h-main-nav.scrolled {
     background: linear-gradient(
       to bottom,
-      rgb(245, 240, 232, 0.9) 60%,
-      rgb(245, 240, 232, 0) 100%
+      rgba(245, 240, 232, 1) 0%,
+      rgba(245, 240, 232, 0.6) 50%,
+      rgba(245, 240, 232, 0) 100%
+    );
+  }
+  #h-main-nav-member.scrolled {
+    background: linear-gradient(
+      to bottom,
+      rgba(245, 240, 232, 1) 0%,
+      rgba(245, 240, 232, 0.6) 50%,
+      rgba(245, 240, 232, 0) 100%
     );
   }
 
