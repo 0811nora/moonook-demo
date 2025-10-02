@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/logo.svg"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <title>預約空間 | 默隅 Moonook</title>
 
 
@@ -19,7 +19,8 @@
     <%- include('./layout/components/top-btn'); -%>
     <%- include('./layout/header'); -%>
 
-  
+
+
     <!-- 預約頁-banner區塊 -->
     <section class="s__banner bgPhoto-set position-relative">
       <div class="swiper mySwiper-top h-680px">
@@ -50,10 +51,10 @@
 
       <div class="w-100 position-absolute top-0 start-0 z-index-100">
         <div class="container h-680px ">
-          <div class="d-flex align-items-center h-100">
-            <div class="s__title">
+          <div class="d-flex align-items-center h-100 " >
+            <div class="s__title " >
 
-              <h2 class="fs-lg-1 fs-xl text-fcbg mb-8 ">選擇專注，也選擇空間</h2>
+              <h2 class="fs-lg-1 fs-xl text-fcbg mb-8 " >選擇專注，也選擇空間</h2>
               <p class="text-fcbg fs-lg-xl fs-normal mb-6">線上預約，抵達即可入座</p>
               <p class="text-fcbg fs-lg-xl fs-normal mb-8">兩小時專屬片段，讓時間回到你手中</p>
               <div class="w-lg-100  mx-auto">
@@ -76,8 +77,8 @@
 
 
             <!-- 預約功能主圖片 -->
-            <div class=" " id="booking-area">
-              <img src="/assets/images/service/booking-title.png"  class="w-100 " alt="">
+            <div class=" " id="booking-area" >
+              <img src="/assets/images/service/booking-title.png"  class="w-100 " alt="" >
             </div>
             <div class="bg-primary-200 p-6 position-relative rounded-28 ">
               <div class="">
@@ -95,7 +96,7 @@
                 </div>
               </div>
               
-              <div class="s__booking-date d-lg-flex gap-6">
+              <div class="s__booking-date d-lg-flex gap-6 " >
                 <div class="w-lg-45  p-lg-6 px-0 py-6" >
                   <h2 class="text-center text-pc-600 fs-lg-2 fs-xl mb-lg-9 mb-6">立即預約</h2>
                   <form id="bookingForm">
@@ -231,7 +232,7 @@
           <div class="col-lg-8 mx-auto ">
 
             <div class="py-8 px-lg-0 px-8 d-flex flex-column flex-lg-row justify-content-between gap-6">
-              <div class="card p-lg-6 p-6 w-lg-196px rounded-28">
+              <div class="card p-lg-6 p-6 w-lg-196px rounded-28" >
                 <div class="border-bottom text-center pb-4 mb-3">
                   <div class="mb-4">
                     <img src="/assets/images/service/icon-wifi.svg" alt="">
@@ -426,10 +427,16 @@
     
 
   <script type="module" src="../main.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> -->
-  
+
   <script>
+
+  document.addEventListener("DOMContentLoaded", function() {
+    AOS.init();
+    console.log("AOS 已初始化");
+  });
 
 
 
@@ -677,6 +684,6 @@
           },
         }
       });
-  //   </script> 
+    </script> 
   </body>
 </html>
