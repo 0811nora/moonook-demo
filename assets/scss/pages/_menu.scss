@@ -324,13 +324,87 @@ img {
   }
 }
 
-// 確保元素在動畫觸發前是完全不可見
-.animate-on-scroll {
-  visibility: hidden;
-  /* 或者使用 opacity: 0; */
+// 葉子動畫
+
+.leaf-spinner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.leaf-p {
+  font-family: "Source Code Pro", monospace;
+  color: #f3f6f4;
+  margin-top: 8px;
+  span {
+    padding: 0px;
+  }
 }
 
-// 一旦加上 animate__animated，我們就允許它顯示，等待 Animate.css 的動畫來改變其狀態
-.animate__animated {
-  visibility: visible;
+.leaf-step1,
+.leaf-step2,
+.leaf-step3,
+.leaf-step4,
+.leaf-step5,
+.leaf-step6,
+.leaf-step7,
+.leaf-step8 {
+  animation: leaf-fade 4s linear infinite;
+}
+
+@keyframes leaf-fade {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+.leaf-step1 {
+  animation-delay: 0s;
+  transform: translateY(-10px);
+}
+
+.leaf-step2 {
+  animation-delay: 0.5s;
+  transform: translateY(10px);
+}
+
+.leaf-step3 {
+  animation-delay: 1s;
+  transform: translateY(-8px);
+}
+
+.leaf-step4 {
+  animation-delay: 1.5s;
+  transform: translateY(12px);
+}
+.leaf-step5 {
+  animation-delay: 2s;
+  transform: translateY(-12px);
+}
+
+.leaf-step6 {
+  animation-delay: 2.5s;
+  transform: translateY(8px);
+}
+
+.leaf-step7 {
+  animation-delay: 3s;
+  transform: translateY(-12px);
+}
+
+.leaf-step8 {
+  animation-delay: 3.5s;
+  transform: translateY(8px);
 }

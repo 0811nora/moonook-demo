@@ -14,10 +14,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <title>靜隅食光 | 默隅 Moonook</title>
   </head>
   <body class="loaded">
@@ -94,9 +91,7 @@
       </div>
     </section>
     <main class="position-relative d-flex justify-content-between">
-      <div
-        class="menu__sidebar-container animate__animated animate__fadeInLeft animate__delay-3s"
-      >
+      <div class="menu__sidebar-container">
         <!-- side-bar -->
         <div
           class="menu__side-bar bg-secondary d-none d-lg-block px-6 py-lg-6 py-xxl-8 my-lg-8 my-xxl-12"
@@ -154,15 +149,14 @@
             <!-- 主要內容 -->
             <div class="px-5 px-md-auto">
               <!-- menu-info -->
-              <section
-                class="py-8 py-lg-12 position-relative animate__animated animate__fadeInUp animate__delay-3s"
-              >
+              <section class="py-8 py-lg-12 position-relative">
                 <!-- <img
                   class="menu__info-bg"
                   src="/assets/images/menu/menu-bg.png"
                   alt="menu-bg"
                 /> -->
                 <img
+                  data-aos="fade-down"
                   class="mb-lg-8"
                   src="/assets/images/menu/menu.svg"
                   alt="menu-title"
@@ -185,11 +179,18 @@
                     預約座位<%-
                     include('./layout/components/moon-outline-switch'); -%>
                   </a>
+                  <div class="leaf-spinner d-none d-md-flex me-6">
+                    <%- include('./layout/components/menu_leaf-spinner'); -%>
+                  </div>
                 </div>
               </section>
               <hr class="menu__hr-divider my-6 my-lg-8" />
               <!-- 人氣精選 -->
-              <section class="menu__fav py-8 py-lg-12" id="menu-houseFav">
+              <section
+                data-aos="fade-up"
+                class="menu__fav py-8 py-lg-12"
+                id="menu-houseFav"
+              >
                 <div class="position-relative">
                   <h1 class="fs-4 fs-lg-2 p-4">人氣精選</h1>
                   <h3 class="fs-6 fs-lg-4 p-4 border-top border-fc border-4">
@@ -229,6 +230,7 @@
                   </h3>
                   <!-- black -->
                   <div
+                    data-aos="fade-down"
                     class="swiper menu__itemDesktop-swiper mb-6 d-none d-md-block"
                   >
                     <h4 class="fs-4 fs-lg-2 p-4 text-secondary mb-6 mb-lg-8">
@@ -330,7 +332,10 @@
                     </div>
                     <%- include('./layout/components/menu_swiper-button'); -%>
                   </div>
-                  <div class="swiper menu__itemMobile-swiper mb-5 d-md-none">
+                  <div
+                    data-aos="fade-up"
+                    class="swiper menu__itemMobile-swiper mb-5 d-md-none"
+                  >
                     <h4 class="fs-4 fs-lg-2 p-4 text-secondary mb-6 mb-lg-8">
                       <img
                         class="me-4"
@@ -422,6 +427,7 @@
                   </div>
                   <!-- white -->
                   <div
+                    data-aos="fade-down"
                     class="swiper menu__itemDesktop-swiper mb-6 d-none d-md-block"
                   >
                     <h4 class="fs-4 fs-lg-2 p-4 text-secondary mb-6 mb-lg-8">
@@ -521,7 +527,10 @@
                     </div>
                     <%- include('./layout/components/menu_swiper-button'); -%>
                   </div>
-                  <div class="swiper menu__itemMobile-swiper mb-5 d-md-none">
+                  <div
+                    data-aos="fade-up"
+                    class="swiper menu__itemMobile-swiper mb-5 d-md-none"
+                  >
                     <h4 class="fs-4 fs-lg-2 p-4 text-secondary mb-6 mb-lg-8">
                       <img
                         class="me-4"
@@ -623,6 +632,7 @@
                   </h3>
                   <!-- tea -->
                   <div
+                    data-aos="fade-down"
                     class="swiper menu__itemDesktop-swiper mb-6 d-none d-md-block"
                   >
                     <h4 class="fs-4 fs-lg-2 p-4 text-secondary mb-6 mb-lg-8">
@@ -722,7 +732,10 @@
                     </div>
                     <%- include('./layout/components/menu_swiper-button'); -%>
                   </div>
-                  <div class="swiper menu__itemMobile-swiper mb-5 d-md-none">
+                  <div
+                    data-aos="fade-up"
+                    class="swiper menu__itemMobile-swiper mb-5 d-md-none"
+                  >
                     <h4 class="fs-4 fs-lg-2 p-4 text-secondary mb-6 mb-lg-8">
                       <img
                         class="me-4"
@@ -814,6 +827,7 @@
                   </div>
                   <!-- non-tea -->
                   <div
+                    data-aos="fade-down"
                     class="swiper menu__itemDesktop-swiper mb-6 d-none d-md-block"
                   >
                     <h4 class="fs-4 fs-lg-2 p-4 text-secondary mb-6 mb-lg-8">
@@ -913,7 +927,10 @@
                     </div>
                     <%- include('./layout/components/menu_swiper-button'); -%>
                   </div>
-                  <div class="swiper menu__itemMobile-swiper mb-5 d-md-none">
+                  <div
+                    data-aos="fade-up"
+                    class="swiper menu__itemMobile-swiper mb-5 d-md-none"
+                  >
                     <h4 class="fs-4 fs-lg-2 p-4 text-secondary mb-6 mb-lg-8">
                       <img
                         class="me-4"
@@ -1015,6 +1032,7 @@
                   </h3>
                   <!-- dessert -->
                   <div
+                    data-aos="fade-down"
                     class="swiper menu__itemDesktop-swiper mb-6 d-none d-md-block"
                   >
                     <h4 class="fs-4 fs-lg-2 p-4 text-secondary mb-6 mb-lg-8">
@@ -1116,7 +1134,10 @@
                     </div>
                     <%- include('./layout/components/menu_swiper-button'); -%>
                   </div>
-                  <div class="swiper menu__itemMobile-swiper mb-5 d-md-none">
+                  <div
+                    data-aos="fade-up"
+                    class="swiper menu__itemMobile-swiper mb-5 d-md-none"
+                  >
                     <h4 class="fs-4 fs-lg-2 p-4 text-secondary mb-6 mb-lg-8">
                       <img
                         class="me-4"
@@ -1208,6 +1229,7 @@
                   </div>
                   <!-- yogurt -->
                   <div
+                    data-aos="fade-down"
                     class="swiper menu__itemDesktop-swiper mb-6 d-none d-md-block"
                   >
                     <h4 class="fs-4 fs-lg-2 p-4 text-secondary mb-6 mb-lg-8">
@@ -1315,7 +1337,10 @@
                     </div>
                     <%- include('./layout/components/menu_swiper-button'); -%>
                   </div>
-                  <div class="swiper menu__itemMobile-swiper mb-5 d-md-none">
+                  <div
+                    data-aos="fade-up"
+                    class="swiper menu__itemMobile-swiper mb-5 d-md-none"
+                  >
                     <h4 class="fs-4 fs-lg-2 p-4 text-secondary mb-6 mb-lg-8">
                       <img
                         class="me-4"
@@ -1419,6 +1444,7 @@
                   </h3>
                   <!-- bagel -->
                   <div
+                    data-aos="fade-down"
                     class="swiper menu__itemDesktop-swiper mb-6 d-none d-md-block"
                   >
                     <h4 class="fs-4 fs-lg-2 p-4 text-secondary mb-6 mb-lg-8">
@@ -1518,7 +1544,10 @@
                     </div>
                     <%- include('./layout/components/menu_swiper-button'); -%>
                   </div>
-                  <div class="swiper menu__itemMobile-swiper mb-5 d-md-none">
+                  <div
+                    data-aos="fade-up"
+                    class="swiper menu__itemMobile-swiper mb-5 d-md-none"
+                  >
                     <h4 class="fs-4 fs-lg-2 p-4 text-secondary mb-6 mb-lg-8">
                       <img
                         class="me-4"
@@ -1610,6 +1639,7 @@
                   </div>
                   <!-- TOAST & SANDWICH -->
                   <div
+                    data-aos="fade-down"
                     class="swiper menu__itemDesktop-swiper mb-6 d-none d-md-block"
                   >
                     <h4 class="fs-4 fs-lg-2 p-4 text-secondary mb-6 mb-lg-8">
@@ -1733,7 +1763,10 @@
                     </div>
                     <%- include('./layout/components/menu_swiper-button'); -%>
                   </div>
-                  <div class="swiper menu__itemMobile-swiper mb-5 d-md-none">
+                  <div
+                    data-aos="fade-up"
+                    class="swiper menu__itemMobile-swiper mb-5 d-md-none"
+                  >
                     <h4 class="fs-4 fs-lg-2 p-4 text-secondary mb-6 mb-lg-8">
                       <img
                         class="me-4"
@@ -1877,6 +1910,14 @@
         pagination: {
           el: ".swiper-pagination",
         },
+        autoplay: {
+          delay: 3000,
+        },
+        effect: "fade",
+        fadeEffect: {
+          crossFade: true,
+        },
+        speed: 1000,
       });
     </script>
     <script>
@@ -1957,39 +1998,9 @@
           });
         });
     </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-      // side-bar
-      let heroHeight = document.querySelector(".menu__hero").offsetHeight;
-      const sidebar = document.querySelector(".menu__side-bar");
-
-      window.addEventListener("scroll", function () {
-        if (window.scrollY > heroHeight) {
-          sidebar.classList.add("show");
-        } else {
-          sidebar.classList.remove("show");
-        }
-      });
-      // side-bar scroll
-      const mainContent = document.getElementById("main-content");
-      const sideBar = document.querySelector(".menu__side-bar");
-
-      let isSideBarVisible = false;
-
-      function handleScroll() {
-        const mainRect = mainContent.getBoundingClientRect();
-
-        if (mainRect.top <= 0 && !isSideBarVisible) {
-          sideBar.classList.add("fade-in");
-          isSideBarVisible = true;
-        } else if (mainRect.top > 0 && isSideBarVisible) {
-          sideBar.classList.remove("fade-in");
-          isSideBarVisible = false;
-        }
-      }
-
-      window.addEventListener("scroll", handleScroll);
-
-      document.addEventListener("DOMContentLoaded", handleScroll);
+      AOS.init();
     </script>
     <!-- 小玩一下vanilla tilt js -->
     <script type="text/javascript" src="vanilla-tilt.js"></script>
