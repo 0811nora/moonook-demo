@@ -55,7 +55,12 @@
       </section>
 
       <!-- 預約空間介紹 -->
-      <section class="container py-8 py-lg-12">
+      <section
+        class="container py-8 py-lg-12"
+        data-aos="fade-up-right"
+        data-aos-duration="1500"
+        data-aos-offset="300"
+      >
         <h2
           class="d-inline-block fs-4 fs-lg-1 p-4 text-fc border-bottom border-4 border-fc mb-8"
         >
@@ -359,6 +364,9 @@
           <!-- 卡片1 -->
           <div
             class="i-menu-card-bg-blue mb-6 mx-5 mx-lg-0 rounded-6 rounded-lg-0"
+            data-aos="fade-left"
+            data-aos-duration="1500"
+            data-aos-offset="300"
           >
             <div
               class="container d-lg-flex align-items-center position-relative"
@@ -406,6 +414,9 @@
           <!-- 卡片2 -->
           <div
             class="i-menu-card-bg-yellow mb-6 mx-5 mx-lg-0 rounded-6 rounded-lg-0"
+            data-aos="fade-right"
+            data-aos-duration="1500"
+            data-aos-offset="500"
           >
             <div
               class="container d-lg-flex flex-row-reverse align-items-center"
@@ -450,6 +461,9 @@
           <!-- 卡片3 -->
           <div
             class="i-menu-card-bg-blue mb-8 mx-5 mx-lg-0 rounded-6 rounded-lg-0"
+            data-aos="fade-left"
+            data-aos-duration="1500"
+            data-aos-offset="500"
           >
             <div
               class="container d-lg-flex align-items-center position-relative"
@@ -841,6 +855,12 @@
       </section>
     </main>
     <%- include('./layout/footer'); -%>
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
 
     <script type="module" src="../main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
